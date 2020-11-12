@@ -11,24 +11,23 @@ export default function Home() {
 
     gsap.registerPlugin(ScrollTrigger);
 
-    let projects = gsap.utils.toArray(".project");
+    let projects = gsap.utils.toArray(".project-row .project");
 
     gsap.to(projects, {
       xPercent: -100 * (projects.length - 1),
       ease: "none",
       scrollTrigger: {
-        trigger: ".project-row",
+        trigger: ".project-container",
         pin: true,
         start: "top top",
-        scrub: true,
+        scrub: 1,
         snap: {
           snapTo: 1 / (projects.length - 1),
           duration: { min: 0.2, max: 0.3 },
           delay: 0,
         },
         // Base vertical scrolling on how wide the container is so it feels more natural.
-        end: () =>
-          "+=" + document.querySelector(".project-row").offsetHeight,
+        end: () => "+=" + document.querySelector(".project-row").offsetHeight,
       },
     });
 
@@ -66,15 +65,12 @@ export default function Home() {
         <div className="project-row">
           <div className="project">
             <img src="/images/www.grademyaid.com_.png" alt="grademyaid" />
-            <h3>grademyaid</h3>
           </div>
           <div className="project">
             <img src="/images/www.grademyaid.com_.png" alt="grademyaid" />
-            <h3>grademyaid</h3>
           </div>
           <div className="project">
             <img src="/images/www.grademyaid.com_.png" alt="grademyaid" />
-            <h3>grademyaid</h3>
           </div>
         </div>
       </div>

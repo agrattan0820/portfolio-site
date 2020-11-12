@@ -59,13 +59,17 @@
     }
   }
   .project-container {
+    position: relative;
     height: 100vh;
     height: calc(car(--vh, 1vh) * 100);
     .project-row {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
       width: 300%;
       display: flex;
+      align-self: center;
       overflow: hidden;
-      align-items: center;
       flex-wrap: nowrap;
       .project {
         width: 100%;
@@ -75,7 +79,6 @@
         justify-content: center;
         align-items: center;
         position: relative;
-        overflow: hidden;
         h3 {
           text-align: center;
           color: $white;
