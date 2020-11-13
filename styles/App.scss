@@ -14,3 +14,8 @@ html {
   background: $black;
   scroll-behavior: smooth;
 }
+
+body {
+  // No scrolling during intro animation
+  overflow-y: hidden;
+}
