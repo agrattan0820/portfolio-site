@@ -29,7 +29,7 @@ export default function Home() {
       name: "Virtual Safari",
       description:
         "A recreation of Timon and Pumbaa's Virtual Safari, a choose-your-own adventure from The Lion King DVD.",
-      image: "/images/Virtual_Safari_Snippet.png",
+      image: "/images/Virtual_Safari_Screenshot.png",
       link: "https://virtualsafari.netlify.app/",
       page: "https://github.com/GameDog9988/Virtual-Safari",
     },
