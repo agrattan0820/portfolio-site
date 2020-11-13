@@ -29,7 +29,7 @@
       li {
         padding: 0 32px;
         @media (max-width: 976px) {
-          padding: 0 16px;
+          padding: 0 8px;
         }
         a {
           color: $white;
@@ -51,6 +51,7 @@
     width: 75%;
     margin: auto;
     color: $white;
+    font-family: $font;
     @media (max-width: 967px) {
       width: 90%;
     }
@@ -59,12 +60,32 @@
       @media (max-width: 967px) {
         font-size: 2.5rem;
       }
+      .playful {
+        transition: all 0.4s cubic-bezier(0.15, 0.75, 0.45, 0.95) 0s;
+        animation: 10s ease 0s infinite alternate none running rainbow;
+      }
     }
     .job-title {
       font-size: 1.4rem;
       font-weight: 400;
       @media (max-width: 967px) {
         font-size: 0.9rem;
+      }
+    }
+    .scroll-indicator {
+      position: absolute;
+      top: 90%;
+      left: 50%;
+      transform: translateY(-90%);
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      p {
+        @media (max-width: 967px) {
+          font-size: 0.875rem;
+        }
       }
     }
   }
@@ -175,5 +196,23 @@
         }
       }
     }
+  }
+}
+
+@keyframes rainbow {
+  0% {
+    color: rgb(240, 77, 255);
+  }
+  25% {
+    color: rgb(255, 77, 77);
+  }
+  50% {
+    color: rgb(255, 197, 77);
+  }
+  75% {
+    color: rgb(106, 237, 118);
+  }
+  100% {
+    color: rgb(0, 153, 255);
   }
 }

@@ -8,6 +8,9 @@
     "start": "next start"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.12",
     "gsap": "^3.5.1",
     "next": "10.0.1",
     "next-transpile-modules": "^4.1.0",

@@ -1,8 +1,10 @@
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
   const projectArray = [
@@ -83,6 +85,7 @@ export default function Home() {
         duration: 0.8,
         y: 100,
         opacity: 0,
+        delay: 0.2,
         ease: "power4.out",
       })
       .from(".job-title", {
@@ -149,8 +152,14 @@ export default function Home() {
         </div>
       </nav>
       <main className="main">
-        <h1 className="title">I create playful experiences.</h1>
+        <h1 className="title">
+          I create <span className="playful">playful</span> experiences.
+        </h1>
         <h3 className="job-title">Alexander Grattan / Full Stack Developer</h3>
+        <div className="scroll-indicator">
+          <p>Projects</p>
+          <FontAwesomeIcon icon={faChevronDown} />
+        </div>
       </main>
       <div className="project-container">
         <div className="project-row">
