@@ -43,7 +43,7 @@
   }
   main {
     height: 100vh;
-    height: calc(car(--vh, 1vh) * 100);
+    height: calc(var(--vh, 1vh) * 100);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -71,7 +71,7 @@
   .project-container {
     position: relative;
     height: 100vh;
-    height: calc(car(--vh, 1vh) * 100);
+    height: calc(var(--vh, 1vh) * 100);
     .project-row {
       position: absolute;
       top: 50%;
