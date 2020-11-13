@@ -72,9 +72,37 @@ export default function Home() {
 
     window.addEventListener("resize", debouncedHandleResize);
 
+    let tl = gsap.timeline();
+
     gsap.registerPlugin(ScrollTrigger);
 
     let projects = gsap.utils.toArray(".project-row .project");
+
+    tl.to("body", { duration: 0, css: { visibility: "visible" } })
+      .from(".title", {
+        duration: 0.8,
+        y: 100,
+        opacity: 0,
+        ease: "power4.out",
+      })
+      .from(".job-title", {
+        duration: 0.8,
+        y: 100,
+        opacity: 0,
+        ease: "power4.out",
+      });
+
+    gsap.from(".project-row", {
+      scrollTrigger: {
+        trigger: ".project-container",
+        start: "top bottom",
+        toggleActions: "restart",
+      },
+      x: "100vw",
+      opacity: 0,
+      duration: 2,
+      ease: "power4.out",
+    });
 
     gsap.to(projects, {
       xPercent: -100 * (projects.length - 1),
@@ -93,9 +121,6 @@ export default function Home() {
         end: () => "+=" + document.querySelector(".project-row").offsetHeight,
       },
     });
-
-    gsap.to("body", { duration: 0, css: { visibility: "visible" } });
-    gsap.from(".title", { duration: 1, y: 20, opacity: 0, ease: "power4.out" });
     return () => {
       window.removeEventListener("resize", debouncedHandleResize);
     };

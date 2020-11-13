@@ -82,6 +82,7 @@
       overflow: hidden;
       flex-wrap: nowrap;
       .project {
+        position: relative;
         width: 100%;
         height: 100%;
         display: flex;
@@ -129,7 +130,7 @@
                 border-radius: 15px;
                 border: none;
                 outline: none;
-                background: cornflowerblue;
+                background: snow;
                 font-weight: 700;
                 font-family: $font;
                 @media (max-width: 967px) {
