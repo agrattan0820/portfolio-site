@@ -5,6 +5,41 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useEffect } from "react";
 
 export default function Home() {
+  const projectArray = [
+    {
+      name: "grademyaid",
+      description:
+        "A website that allows students to grade and compare scores for their college financial aid packages using data from the US Department of Education.",
+      image: "/images/www.grademyaid.com_.png",
+      link: "https://www.grademyaid.com/",
+      page: "https://github.com/GameDog9988/grade-my-aid",
+    },
+    {
+      name: "New York Times Critic's Picks",
+      description:
+        "A website that showcases movies that The New York Times considers critic's picks using their API.",
+      image: "/images/NYT_Critic_Picks.png",
+      link: "https://nytcriticpicks.netlify.app",
+      page: "https://github.com/GameDog9988/Movie-Review-App",
+    },
+    {
+      name: "Virtual Safari",
+      description:
+        "A recreation of Timon and Pumbaa's Virtual Safari, a choose-your-own adventure from The Lion King DVD.",
+      image: "/images/Virtual_Safari_Snippet.png",
+      link: "https://virtualsafari.netlify.app/",
+      page: "https://github.com/GameDog9988/Virtual-Safari",
+    },
+    {
+      name: "Danny's Subs",
+      description:
+        "This ficticious restaurant website was my first foray into using GSAP's animation library in React.",
+      image: "/images/Danny_Subs.png",
+      link: "https://dannysubs.netlify.app",
+      page: "https://github.com/GameDog9988/Restaurant-React",
+    },
+  ];
+
   useEffect(() => {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
@@ -63,22 +98,54 @@ export default function Home() {
       </main>
       <div className="project-container">
         <div className="project-row">
-          <div className="project">
-            <img src="/images/www.grademyaid.com_.png" alt="grademyaid" />
-          </div>
-          <div className="project">
-            <img src="/images/www.grademyaid.com_.png" alt="grademyaid" />
-          </div>
-          <div className="project">
-            <img src="/images/www.grademyaid.com_.png" alt="grademyaid" />
-          </div>
+          {projectArray.map(({ name, description, image, link, page }) => (
+            <div className="project">
+              <img src={image} alt={name} />
+              <div className="project-info">
+                <h3>{name}</h3>
+                <p>{description}</p>
+                <div className="project-btns">
+                  <a href={page} target="_blank" rel="noopener noreferrer">
+                    <button>Learn More</button>
+                  </a>
+                  <a href={link} target="_blank" rel="noopener noreferrer">
+                    <button>To Site</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
       <footer>
         <ul className="footer-links">
-          <li>GitHub</li>
-          <li>Resume</li>
-          <li>Twitter</li>
+          <li>
+            <a
+              href="https://github.com/GameDog9988"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+          </li>
+          <li>
+            <a
+              href="Resume_Alexander_Grattan.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Resume
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://twitter.com/agrattan0820"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Twitter
+            </a>
+          </li>
         </ul>
       </footer>
     </div>
