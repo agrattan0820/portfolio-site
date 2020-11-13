@@ -120,6 +120,12 @@ export default function Home() {
           y: 100,
           opacity: 0,
           ease: "power4.out",
+        })
+        .from(".scroll-indicator", {
+          duration: 0.8,
+          y: 100,
+          opacity: 0,
+          ease: "power4.out",
         });
 
       gsap.from(".project-row", {
