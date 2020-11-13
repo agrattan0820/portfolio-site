@@ -87,6 +87,10 @@
           font-size: 0.875rem;
         }
       }
+      @media (max-width: 967px) {
+        top: 85%;
+        transform: translate(-50%, -85%);
+      }
     }
   }
   .project-container {
