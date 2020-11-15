@@ -126,11 +126,16 @@
           color: $white;
           margin: 0 32px;
           @media (max-width: 967px) {
-            width: 250px;
+            width: 275px;
           }
           .tools-list {
             margin-top: 8px;
             font-family: $font;
+            li {
+              @media (max-width: 967px) {
+                font-size: 0.875rem;
+              }
+            }
           }
           h3 {
             font-size: 2rem;
@@ -148,10 +153,14 @@
             font-weight: 300;
             @media (max-width: 967px) {
               font-size: 0.875rem;
+              line-height: 20px;
             }
           }
           .project-btns {
             display: flex;
+            @media (max-width: 967px) {
+              justify-content: center;
+            }
             .project-btn {
               cursor: pointer;
               margin-right: 15px;
@@ -165,7 +174,6 @@
               font-family: $font;
               @media (max-width: 967px) {
                 width: 100px;
-                height: 50px;
               }
             }
             a {
@@ -186,7 +194,7 @@
           border-radius: 20px;
           margin: 0 32px;
           @media (max-width: 967px) {
-            width: 80%;
+            width: 200px;
             margin-bottom: 1rem;
           }
         }
