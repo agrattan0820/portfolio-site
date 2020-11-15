@@ -3,7 +3,7 @@
   width: 100%;
   margin: 0 auto;
   overflow: hidden;
-  nav {
+  .home-nav {
     width: 100%;
     position: absolute;
     top: 50px;
@@ -41,7 +41,7 @@
       }
     }
   }
-  main {
+  .main-home {
     height: 100vh;
     height: calc(var(--vh, 1vh) * 100);
     display: flex;
@@ -102,7 +102,7 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      width: 400%;
+      width: 500%;
       height: 100%;
       display: flex;
       overflow: hidden;
@@ -126,7 +126,11 @@
           color: $white;
           margin: 0 32px;
           @media (max-width: 967px) {
-            width: 200px;
+            width: 250px;
+          }
+          .tools-list {
+            margin-top: 8px;
+            font-family: $font;
           }
           h3 {
             font-size: 2rem;
@@ -134,6 +138,9 @@
             @media (max-width: 967px) {
               font-size: 1.4rem;
             }
+          }
+          h4 {
+            margin-bottom: 0;
           }
           p {
             margin: 1rem 0;
@@ -145,37 +152,42 @@
           }
           .project-btns {
             display: flex;
+            .project-btn {
+              cursor: pointer;
+              margin-right: 15px;
+              width: 125px;
+              height: 50px;
+              border-radius: 15px;
+              border: none;
+              outline: none;
+              background: snow;
+              font-weight: 700;
+              font-family: $font;
+              @media (max-width: 967px) {
+                width: 100px;
+                height: 50px;
+              }
+            }
             a {
               text-decoration: none;
               color: $white;
-              margin-right: 16px;
-              button {
-                cursor: pointer;
-                width: 150px;
-                height: 50px;
-                border-radius: 15px;
-                border: none;
-                outline: none;
-                background: snow;
-                font-weight: 700;
-                font-family: $font;
-                @media (max-width: 967px) {
-                  width: 100px;
-                  height: 50px;
-                }
+              margin: 0;
+              padding: 0;
+              .project-btn {
+                @extend .project-btn;
               }
             }
           }
         }
 
         img {
-          width: 700px;
+          width: 800px;
           height: auto;
           border-radius: 20px;
           margin: 0 32px;
           @media (max-width: 967px) {
-            width: 90%;
-            margin: 1rem 0;
+            width: 80%;
+            margin-bottom: 1rem;
           }
         }
       }
@@ -183,7 +195,20 @@
   }
 
   footer {
-    height: 100px;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: $font;
+    h2 {
+      color: $white;
+      font-size: 4rem;
+      @media (max-width: 967px) {
+        font-size: 2.5rem;
+      }
+    }
     .footer-links {
       display: flex;
       justify-content: center;

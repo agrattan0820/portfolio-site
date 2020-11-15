@@ -1,48 +1,19 @@
 import { useEffect, useState, useRef } from "react";
+import { projectsList } from "../components/data";
 import Head from "next/head";
 import Link from "next/link";
 import IntroOverlay from "../components/introOverlay";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import {
+  faGithub,
+  faLinkedin,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
-  const projectArray = [
-    {
-      name: "grademyaid",
-      description:
-        "A website that allows students to grade and compare scores for their college financial aid packages using data from the US Department of Education.",
-      image: "/images/www.grademyaid.com_.png",
-      link: "https://www.grademyaid.com/",
-      page: "https://github.com/GameDog9988/grade-my-aid",
-    },
-    {
-      name: "New York Times Critic's Picks",
-      description:
-        "A website that showcases movies that The New York Times considers critic's picks using their API.",
-      image: "/images/NYT_Critic_Picks.png",
-      link: "https://nytcriticpicks.netlify.app",
-      page: "https://github.com/GameDog9988/Movie-Review-App",
-    },
-    {
-      name: "Virtual Safari",
-      description:
-        "A recreation of Timon and Pumbaa's Virtual Safari, a choose-your-own adventure from The Lion King DVD.",
-      image: "/images/Virtual_Safari_Screenshot.png",
-      link: "https://virtualsafari.netlify.app/",
-      page: "https://github.com/GameDog9988/Virtual-Safari",
-    },
-    {
-      name: "Danny's Subs",
-      description:
-        "This ficticious restaurant website was my first foray into using GSAP's animation library in React.",
-      image: "/images/Danny_Subs.png",
-      link: "https://dannysubs.netlify.app",
-      page: "https://github.com/GameDog9988/Restaurant-React",
-    },
-  ];
-
   const [dimensions, setDimensions] = useState();
   const [animationComplete, setAnimationComplete] = useState(false);
   const projectsRef = useRef(null);
@@ -109,20 +80,20 @@ export default function Home() {
           ease: "power4.out",
         })
         .from(".title", {
-          duration: 0.8,
+          duration: 0.6,
           y: 100,
           opacity: 0,
           delay: 0.2,
           ease: "power4.out",
         })
         .from(".job-title", {
-          duration: 0.8,
+          duration: 0.6,
           y: 100,
           opacity: 0,
           ease: "power4.out",
         })
         .from(".scroll-indicator", {
-          duration: 0.8,
+          duration: 0.6,
           y: 100,
           opacity: 0,
           ease: "power4.out",
@@ -174,23 +145,41 @@ export default function Home() {
       </Head>
       {animationComplete === false && <IntroOverlay />}
       <div className="after-animation">
-        <nav>
+        <nav className="home-nav">
           <div className="space-between">
             <div className="logo">AG</div>
             <ul className="nav-list">
               <li>
-                <Link href="/">Home</Link>
+                <a
+                  href="/Resume_Alexander_Grattan.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Resume
+                </a>
               </li>
               <li>
-                <Link href="/about">About Me</Link>
+                <a
+                  href="https://github.com/GameDog9988"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FontAwesomeIcon icon={faGithub} size="2x" />
+                </a>
               </li>
               <li>
-                <Link href="/contact">Contact</Link>
+                <a
+                  href="https://www.linkedin.com/in/alexander-grattan-11a187149/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FontAwesomeIcon icon={faLinkedin} size="2x" />
+                </a>
               </li>
             </ul>
           </div>
         </nav>
-        <main className="main">
+        <main className="main-home">
           <h1 className="title">
             I create <span className="playful">playful</span> experiences.
           </h1>
@@ -204,26 +193,37 @@ export default function Home() {
         </main>
         <div className="project-container" ref={projectsRef}>
           <div className="project-row">
-            {projectArray.map(({ name, description, image, link, page }) => (
-              <div className="project">
-                <img src={image} alt={name} />
-                <div className="project-info">
-                  <h3>{name}</h3>
-                  <p>{description}</p>
-                  <div className="project-btns">
-                    <a href={page} target="_blank" rel="noopener noreferrer">
-                      <button>Learn More</button>
-                    </a>
-                    <a href={link} target="_blank" rel="noopener noreferrer">
-                      <button>To Site</button>
-                    </a>
+            {projectsList.map(
+              ({ name, description, image, link, page, tools }) => (
+                <div className="project">
+                  <img src={image} alt={name} />
+                  <div className="project-info">
+                    <h3>{name}</h3>
+                    {description.split("\n").map((str) => (
+                      <p>{str}</p>
+                    ))}
+                    <h4>Tools used:</h4>
+                    <ul className="tools-list">
+                      {tools.map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
+                    <div className="project-btns">
+                      <a href={link} target="_blank" rel="noopener noreferrer">
+                        <button className="project-btn">To Site</button>
+                      </a>
+                      <a href={page} target="_blank" rel="noopener noreferrer">
+                        <button className="project-btn">The Code</button>
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              )
+            )}
           </div>
         </div>
         <footer>
+          <h2>Connect with Me</h2>
           <ul className="footer-links">
             <li>
               <a
@@ -231,16 +231,16 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                GitHub
+                <FontAwesomeIcon icon={faGithub} size="2x" />
               </a>
             </li>
             <li>
               <a
-                href="Resume_Alexander_Grattan.pdf"
+                href="https://www.linkedin.com/in/alexander-grattan-11a187149/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Resume
+                <FontAwesomeIcon icon={faLinkedin} size="2x" />
               </a>
             </li>
             <li>
@@ -249,7 +249,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Twitter
+                <FontAwesomeIcon icon={faTwitter} size="2x" />
               </a>
             </li>
           </ul>
