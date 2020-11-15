@@ -98,6 +98,26 @@
     position: relative;
     height: 100vh;
     height: calc(var(--vh, 1vh) * 100);
+    @media (max-width: 967px) {
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .scroll-right {
+      font-family: $font;
+      color: $white;
+      height: 10vh;
+      height: calc(var(--vh, 1vh) * 10);
+      margin: auto;
+      display: none;
+      @media (max-width: 967px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      h4 {
+        margin: 1rem;
+      }
+    }
     .project-row {
       position: absolute;
       top: 50%;
@@ -107,6 +127,7 @@
       display: flex;
       overflow: hidden;
       flex-wrap: nowrap;
+
       .project {
         position: relative;
         width: 100%;
@@ -206,8 +227,8 @@
   }
 
   footer {
-    height: 100vh;
-    height: calc(var(--vh, 1vh) * 100);
+    height: 90vh;
+    height: calc(var(--vh, 1vh) * 90);
     display: flex;
     justify-content: center;
     align-items: center;

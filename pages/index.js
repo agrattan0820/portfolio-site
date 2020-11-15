@@ -10,7 +10,10 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChevronRight,
+  faChevronDown,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
   const [dimensions, setDimensions] = useState();
@@ -110,23 +113,28 @@ export default function Home() {
         ease: "power3.out",
       });
 
-      gsap.to(projects, {
-        xPercent: -100 * (projects.length - 1),
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".project-container",
-          pin: true,
-          start: "top top",
-          scrub: 1,
-          snap: {
-            snapTo: 1 / (projects.length - 1),
-            duration: { min: 0.2, max: 0.3 },
-            delay: 0,
+      let x = window.matchMedia("(min-width: 967px)");
+
+      if (x.matches) {
+        gsap.to(projects, {
+          xPercent: -100 * (projects.length - 1),
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".project-container",
+            pin: true,
+            start: "top top",
+            scrub: 0.75,
+            snap: {
+              snapTo: 1 / (projects.length - 1),
+              duration: { min: 0.2, max: 3 },
+              delay: 0,
+            },
+            // Base vertical scrolling on how wide the container is so it feels more natural.
+            end: () =>
+              "+=" + document.querySelector(".project-row").offsetHeight,
           },
-          // Base vertical scrolling on how wide the container is so it feels more natural.
-          end: () => "+=" + document.querySelector(".project-row").offsetHeight,
-        },
-      });
+        });
+      }
     };
 
     homeAnimation(completeAnimation);
@@ -217,6 +225,10 @@ export default function Home() {
                 </div>
               )
             )}
+          </div>
+          <div className="scroll-right">
+            <h4>Scroll right for more</h4>
+            <FontAwesomeIcon icon={faChevronRight} />
           </div>
         </div>
         <footer>
