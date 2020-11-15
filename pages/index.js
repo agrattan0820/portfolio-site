@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { projectsList } from "../components/data";
 import Head from "next/head";
-import Link from "next/link";
 import IntroOverlay from "../components/introOverlay";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -70,33 +69,33 @@ export default function Home() {
         })
         .to(".ball", {
           duration: 1,
-          scale: 25,
-          ease: "power4.out",
+          scale: 30,
+          ease: "power3.out",
           onComplete: animation,
         })
         .from(".after-animation", {
           duration: 0.8,
           opacity: 0,
-          ease: "power4.out",
+          ease: "power3.out",
         })
         .from(".title", {
           duration: 0.6,
           y: 100,
           opacity: 0,
           delay: 0.2,
-          ease: "power4.out",
+          ease: "power3.out",
         })
         .from(".job-title", {
           duration: 0.6,
           y: 100,
           opacity: 0,
-          ease: "power4.out",
+          ease: "power3.out",
         })
         .from(".scroll-indicator", {
           duration: 0.6,
           y: 100,
           opacity: 0,
-          ease: "power4.out",
+          ease: "power3.out",
         });
 
       gsap.from(".project-row", {
@@ -108,7 +107,7 @@ export default function Home() {
         x: "100vw",
         opacity: 0,
         duration: 2,
-        ease: "power4.out",
+        ease: "power3.out",
       });
 
       gsap.to(projects, {
@@ -183,9 +182,7 @@ export default function Home() {
           <h1 className="title">
             I create <span className="playful">playful</span> experiences.
           </h1>
-          <h3 className="job-title">
-            Alexander Grattan / Full Stack Developer
-          </h3>
+          <h3 className="job-title">Alexander Grattan / Web Developer</h3>
           <div className="scroll-indicator" onClick={executeScroll}>
             <p>Projects</p>
             <FontAwesomeIcon icon={faChevronDown} />
