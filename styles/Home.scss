@@ -101,6 +101,8 @@
     @media (max-width: 967px) {
       overflow: auto;
       -webkit-overflow-scrolling: touch;
+      height: 110vh;
+      height: calc(var(--vh, 1vh) * 110);
     }
     .scroll-right {
       font-family: $font;
