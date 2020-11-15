@@ -2,11 +2,11 @@ export const projectsList = [
   {
     name: "grademyaid",
     description:
-      "A website that allows students to grade and compare scores for their college financial aid packages using data from the US Department of Education.\nBuilt for Pitt CSC Hacks, a compitetion sponsored by the University of Pittsburgh's Computer Science Club.",
+      "A website that allows students to grade their college financial aid packages using data from the US Department of Education.\nBuilt for Pitt CSC Hacks, a compitetion sponsored by the University of Pittsburgh's Computer Science Club.",
     image: "/images/www.grademyaid.com_.png",
     link: "https://www.grademyaid.com/",
     page: "https://github.com/GameDog9988/grade-my-aid",
-    tools: ["React", "Framer Motion", "SASS"],
+    tools: ["React", "Framer Motion", "Sass"],
   },
   {
     name: "New York Times Critic's Picks",
@@ -38,7 +38,7 @@ export const projectsList = [
   {
     name: "Tiny Jim's Smokehouse",
     description:
-      "One of my first multi-page fully responsive websites for a ficticious restaurant\nUses the Google Maps API to show the restaurant location.",
+      "One of my first multi-page fully responsive websites for a ficticious restaurant.\nUses the Google Maps API to show the restaurant location.",
     image: "/images/Tiny_Jims_Smokehouse.png",
     link: "https://tinyjimsbbq.netlify.app",
     page: "https://github.com/GameDog9988/Tiny-Jims-Smokehouse",

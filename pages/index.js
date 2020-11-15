@@ -207,7 +207,7 @@ export default function Home() {
                     </ul>
                     <div className="project-btns">
                       <a href={link} target="_blank" rel="noopener noreferrer">
-                        <button className="project-btn">To Site</button>
+                        <button className="project-btn">View Site</button>
                       </a>
                       <a href={page} target="_blank" rel="noopener noreferrer">
                         <button className="project-btn">The Code</button>
