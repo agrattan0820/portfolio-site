@@ -15,6 +15,7 @@ import {
   faChevronDown,
 } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
+import ReactGA from "react-ga";
 
 export default function Home() {
   const [dimensions, setDimensions] = useState();
@@ -29,6 +30,9 @@ export default function Home() {
   const executeScroll = () => projectsRef.current.scrollIntoView();
 
   useEffect(() => {
+    ReactGA.initialize("G-EJ2KVMZM2G");
+    ReactGA.pageview("/");
+
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
 

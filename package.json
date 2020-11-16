@@ -18,6 +18,7 @@
     "next-transpile-modules": "^4.1.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "react-ga": "^3.2.1",
     "sass": "^1.29.0"
   }
 }
