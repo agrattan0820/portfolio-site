@@ -4,7 +4,7 @@
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
   width: 100%;
-  z-index: 8;
+  z-index: 3;
   display: grid;
   place-items: center;
   .ball {

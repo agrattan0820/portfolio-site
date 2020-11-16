@@ -40,12 +40,11 @@ export default function Home() {
     let mediaQuery = window.matchMedia("(min-width: 967px)");
 
     const homeAnimation = (animation) => {
-      tl.to("body", { duration: 0, css: { visibility: "visible" } })
-        .from(".ball", {
-          duration: 2,
-          y: "-100vh",
-          ease: "bounce.out",
-        })
+      tl.from(".ball", {
+        duration: 2,
+        y: "-100vh",
+        ease: "bounce.out",
+      })
         .to(".ball", {
           duration: 1,
           scale: 30,
