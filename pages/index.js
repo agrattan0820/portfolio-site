@@ -31,51 +31,15 @@ export default function Home() {
   useEffect(() => {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
+    ReactGA.initialize("UA-183066430-1");
+    ReactGA.pageview("/");
 
     gsap.registerPlugin(ScrollTrigger);
+    let tl = gsap.timeline();
+    let projects = gsap.utils.toArray(".project-row .project");
+    let mediaQuery = window.matchMedia("(min-width: 967px)");
 
     const homeAnimation = (animation) => {
-      let tl = gsap.timeline();
-
-      let projects = gsap.utils.toArray(".project-row .project");
-
-      let x = window.matchMedia("(min-width: 967px)");
-
-      if (x.matches) {
-        gsap.from(".project-row", {
-          scrollTrigger: {
-            trigger: ".project-container",
-            start: "top bottom",
-            toggleActions: "restart",
-          },
-          x: "100vw",
-          opacity: 0,
-          duration: 2,
-          ease: "power3.out",
-        });
-      }
-
-      if (x.matches) {
-        gsap.to(projects, {
-          xPercent: -100 * (projects.length - 1),
-          ease: "none",
-          scrollTrigger: {
-            trigger: ".project-container",
-            pin: true,
-            start: "top top",
-            scrub: 1,
-            snap: {
-              snapTo: 1 / (projects.length - 1),
-              duration: { min: 0.2, max: 3 },
-              delay: 0,
-            },
-            // Base vertical scrolling on how wide the container is so it feels more natural.
-            end: () =>
-              "+=" + document.querySelector(".project-row").offsetHeight,
-          },
-        });
-      }
-
       tl.to("body", { duration: 0, css: { visibility: "visible" } })
         .from(".ball", {
           duration: 2,
@@ -112,6 +76,41 @@ export default function Home() {
           opacity: 0,
           ease: "power3.out",
         });
+
+      if (mediaQuery.matches) {
+        gsap.from(".project-row", {
+          scrollTrigger: {
+            trigger: ".project-container",
+            start: "top bottom",
+            toggleActions: "restart",
+          },
+          x: "100vw",
+          opacity: 0,
+          duration: 2,
+          ease: "power3.out",
+        });
+      }
+
+      if (mediaQuery.matches) {
+        gsap.to(projects, {
+          xPercent: -100 * (projects.length - 1),
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".project-container",
+            pin: true,
+            start: "top top",
+            scrub: 1,
+            snap: {
+              snapTo: 1 / (projects.length - 1),
+              duration: { min: 0.2, max: 3 },
+              delay: 0,
+            },
+            // Base vertical scrolling on how wide the container is so it feels more natural.
+            end: () =>
+              "+=" + document.querySelector(".project-row").offsetHeight,
+          },
+        });
+      }
     };
 
     homeAnimation(completeAnimation);
