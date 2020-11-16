@@ -163,7 +163,7 @@ export default function Home() {
           <div className="space-between">
             <div className="logo">AG</div>
             <ul className="nav-list">
-              <li>
+              <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
                 <a
                   href="/Resume_Alexander_Grattan.pdf"
                   target="_blank"
@@ -171,8 +171,8 @@ export default function Home() {
                 >
                   Resume
                 </a>
-              </li>
-              <li>
+              </motion.li>
+              <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
                 <a
                   href="https://github.com/GameDog9988"
                   target="_blank"
@@ -180,8 +180,8 @@ export default function Home() {
                 >
                   <FontAwesomeIcon icon={faGithub} size="2x" />
                 </a>
-              </li>
-              <li>
+              </motion.li>
+              <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
                 <a
                   href="https://www.linkedin.com/in/alexander-grattan-11a187149/"
                   target="_blank"
@@ -189,7 +189,7 @@ export default function Home() {
                 >
                   <FontAwesomeIcon icon={faLinkedin} size="2x" />
                 </a>
-              </li>
+              </motion.li>
             </ul>
           </div>
         </nav>
@@ -257,25 +257,27 @@ export default function Home() {
         <footer>
           <h2>Connect with Me</h2>
           <ul className="footer-links">
-            <li>
-              <a
+            <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+              <motion.a
                 href="https://github.com/GameDog9988"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FontAwesomeIcon icon={faGithub} size="2x" />
-              </a>
-            </li>
-            <li>
+              </motion.a>
+            </motion.li>
+            <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
               <a
                 href="https://www.linkedin.com/in/alexander-grattan-11a187149/"
                 target="_blank"
                 rel="noopener noreferrer"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
               >
                 <FontAwesomeIcon icon={faLinkedin} size="2x" />
               </a>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
               <a
                 href="https://twitter.com/agrattan0820"
                 target="_blank"
@@ -283,7 +285,7 @@ export default function Home() {
               >
                 <FontAwesomeIcon icon={faTwitter} size="2x" />
               </a>
-            </li>
+            </motion.li>
           </ul>
         </footer>
       </div>
