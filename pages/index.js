@@ -130,7 +130,7 @@ export default function Home() {
             trigger: ".project-container",
             pin: true,
             start: "top top",
-            scrub: 0.75,
+            scrub: 1,
             snap: {
               snapTo: 1 / (projects.length - 1),
               duration: { min: 0.2, max: 3 },
@@ -220,26 +220,30 @@ export default function Home() {
                         <li key={i}>{item}</li>
                       ))}
                     </ul>
-                    <div className="project-btns">
-                      <a href={link} target="_blank" rel="noopener noreferrer">
-                        <motion.button
-                          className="project-btn"
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.9 }}
-                        >
-                          View Site
+                    <motion.div className="project-btns">
+                      <motion.a
+                        href={link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                      >
+                        <motion.button className="project-btn">
+                          Open Site
                         </motion.button>
-                      </a>
-                      <a href={page} target="_blank" rel="noopener noreferrer">
-                        <motion.button
-                          className="project-btn"
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.9 }}
-                        >
-                          The Code
+                      </motion.a>
+                      <motion.a
+                        href={page}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                      >
+                        <motion.button className="project-btn">
+                          View Code
                         </motion.button>
-                      </a>
-                    </div>
+                      </motion.a>
+                    </motion.div>
                   </div>
                 </div>
               )
