@@ -14,6 +14,7 @@ import {
   faChevronRight,
   faChevronDown,
 } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const [dimensions, setDimensions] = useState();
@@ -101,19 +102,21 @@ export default function Home() {
           ease: "power3.out",
         });
 
-      gsap.from(".project-row", {
-        scrollTrigger: {
-          trigger: ".project-container",
-          start: "top bottom",
-          toggleActions: "restart",
-        },
-        x: "100vw",
-        opacity: 0,
-        duration: 2,
-        ease: "power3.out",
-      });
-
       let x = window.matchMedia("(min-width: 967px)");
+
+      if (x.matches) {
+        gsap.from(".project-row", {
+          scrollTrigger: {
+            trigger: ".project-container",
+            start: "top bottom",
+            toggleActions: "restart",
+          },
+          x: "100vw",
+          opacity: 0,
+          duration: 2,
+          ease: "power3.out",
+        });
+      }
 
       if (x.matches) {
         gsap.to(projects, {
@@ -215,10 +218,22 @@ export default function Home() {
                     </ul>
                     <div className="project-btns">
                       <a href={link} target="_blank" rel="noopener noreferrer">
-                        <button className="project-btn">View Site</button>
+                        <motion.button
+                          className="project-btn"
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                        >
+                          View Site
+                        </motion.button>
                       </a>
                       <a href={page} target="_blank" rel="noopener noreferrer">
-                        <button className="project-btn">The Code</button>
+                        <motion.button
+                          className="project-btn"
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                        >
+                          The Code
+                        </motion.button>
                       </a>
                     </div>
                   </div>
@@ -227,7 +242,7 @@ export default function Home() {
             )}
           </div>
           <div className="scroll-right">
-            <h4>Scroll right for more</h4>
+            <h4>Swipe right for more</h4>
             <FontAwesomeIcon icon={faChevronRight} />
           </div>
         </div>
