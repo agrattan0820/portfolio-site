@@ -18,7 +18,6 @@ import { motion } from "framer-motion";
 import ReactGA from "react-ga";
 
 export default function Home() {
-  const [dimensions, setDimensions] = useState();
   const [animationComplete, setAnimationComplete] = useState(false);
   const projectsRef = useRef(null);
 
@@ -36,75 +35,12 @@ export default function Home() {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
 
-    setDimensions({
-      height: window.innerHeight,
-      width: window.innerWidth,
-    });
-
-    function debounce(fn, ms) {
-      let timer;
-      return () => {
-        clearTimeout(timer);
-        timer = setTimeout(() => {
-          timer = null;
-          fn.apply(this, arguments);
-        }, ms);
-      };
-    }
-
-    const debouncedHandleResize = debounce(function handleResize() {
-      setDimensions({
-        height: window.innerHeight,
-        width: window.innerWidth,
-      });
-      console.log(dimensions);
-    }, 1000);
-
-    window.addEventListener("resize", debouncedHandleResize);
-
     gsap.registerPlugin(ScrollTrigger);
 
     const homeAnimation = (animation) => {
       let tl = gsap.timeline();
 
       let projects = gsap.utils.toArray(".project-row .project");
-
-      tl.to("body", { duration: 0, css: { visibility: "visible" } })
-        .from(".ball", {
-          duration: 2,
-          y: "-100vh",
-          ease: "bounce.out",
-        })
-        .to(".ball", {
-          duration: 1,
-          scale: 30,
-          ease: "power3.out",
-          onComplete: animation,
-        })
-        .from(".after-animation", {
-          duration: 0.8,
-          opacity: 0,
-          ease: "power3.out",
-        })
-        .from(".title", {
-          duration: 0.6,
-          y: 100,
-          opacity: 0,
-          delay: 0.2,
-          ease: "power3.out",
-        })
-        .from(".job-title", {
-          duration: 0.6,
-          y: 100,
-          opacity: 0,
-          ease: "power3.out",
-        })
-        .from(".scroll-indicator", {
-          duration: 0.6,
-          y: 100,
-          opacity: 0,
-          ease: "power3.out",
-        });
 
       let x = window.matchMedia("(min-width: 967px)");
 
@@ -142,13 +78,46 @@ export default function Home() {
           },
         });
       }
+
+      tl.to("body", { duration: 0, css: { visibility: "visible" } })
+        .from(".ball", {
+          duration: 2,
+          y: "-100vh",
+          ease: "bounce.out",
+        })
+        .to(".ball", {
+          duration: 1,
+          scale: 30,
+          ease: "power3.out",
+          onComplete: animation,
+        })
+        .from(".after-animation", {
+          duration: 0.8,
+          opacity: 0,
+          ease: "power3.out",
+        })
+        .from(".title", {
+          duration: 0.6,
+          y: 100,
+          opacity: 0,
+          delay: 0.2,
+          ease: "power3.out",
+        })
+        .from(".job-title", {
+          duration: 0.6,
+          y: 100,
+          opacity: 0,
+          ease: "power3.out",
+        })
+        .from(".scroll-indicator", {
+          duration: 0.6,
+          y: 100,
+          opacity: 0,
+          ease: "power3.out",
+        });
     };
 
     homeAnimation(completeAnimation);
-
-    return () => {
-      window.removeEventListener("resize", debouncedHandleResize);
-    };
   }, []);
 
   return (
