@@ -29,9 +29,6 @@ export default function Home() {
   const executeScroll = () => projectsRef.current.scrollIntoView();
 
   useEffect(() => {
-    ReactGA.initialize("UA-183066430-1");
-    ReactGA.pageview("/");
-
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
 
