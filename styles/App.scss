@@ -11,6 +11,7 @@ html {
   margin: 0;
   background: $black;
   scroll-behavior: smooth;
+  user-select: none;
 }
 
 body {

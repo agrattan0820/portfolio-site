@@ -29,7 +29,7 @@ export const projectsList = [
   {
     name: "Danny's Subs",
     description:
-      "This ficticious restaurant website was my first foray into learning React and using the GreenSock Animation Platform.",
+      "This ficticious restaurant website was my first foray into learning React and using the GreenSock Animation Platform.\nThe photos came from Unsplash, I site that I love using to find high quality photos.",
     image: "/images/Danny_Subs.png",
     link: "https://dannysubs.netlify.app",
     page: "https://github.com/GameDog9988/Restaurant-React",
