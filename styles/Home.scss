@@ -229,6 +229,8 @@
           }
           h4 {
             margin-bottom: 0;
+            transition: all 0.4s cubic-bezier(0.15, 0.75, 0.45, 0.95) 0s;
+            animation: 10s ease 0s infinite alternate none running rainbow;
           }
           p {
             margin: 1rem 0;
@@ -314,6 +316,9 @@
       list-style-type: none;
       li {
         padding: 0 32px;
+        @media (max-width: 700px) {
+          padding: 0 16px;
+        }
         a {
           display: inline-block;
           font-family: $font;

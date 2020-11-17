@@ -9,7 +9,7 @@ export const projectsList = [
     tools: ["React", "Framer Motion", "Sass"],
   },
   {
-    name: "New York Times Critic's Picks",
+    name: "The New York Times Critic's Picks",
     description:
       "A website that showcases movies that The New York Times considers critic's picks using their REST API.\nThe cards can be sorted in multiple ways and each link to the corresponding review on The New York Time's website.",
     image: "/images/NYT_Critic_Picks.png",
