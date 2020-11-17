@@ -111,6 +111,27 @@ export default function Home() {
           },
         });
       }
+
+      let tlFooter = gsap.timeline({
+        scrollTrigger: {
+          trigger: "footer",
+          start: "top center",
+        },
+      });
+
+      tlFooter
+        .from("footer h2", {
+          y: 100,
+          opacity: 0,
+          duration: 0.6,
+          ease: "power3.out",
+        })
+        .from("footer .footer-links", {
+          y: 100,
+          opacity: 0,
+          duration: 0.6,
+          ease: "power3.out",
+        });
     };
 
     homeAnimation(completeAnimation);
