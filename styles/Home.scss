@@ -104,24 +104,6 @@
       overflow: auto;
       -webkit-overflow-scrolling: touch;
     }
-    .scroll-right {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      width: 100%;
-      transform: translateX(-50%);
-      font-family: $font;
-      color: $white;
-      display: none;
-      @media (max-width: 967px) {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      h4 {
-        margin: 0 1rem;
-      }
-    }
     // .arrow-controls {
     //   position: relative;
     //   top: 50%;
@@ -197,7 +179,7 @@
         @media (max-width: 967px) {
           flex-direction: column;
           &:nth-child(1)::after {
-            display: none;
+            content: "Swipe right for next projects \203A";
           }
         }
         .project-info {

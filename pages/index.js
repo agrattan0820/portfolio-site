@@ -38,7 +38,6 @@ export default function Home() {
     gsap.registerPlugin(ScrollTrigger);
     let tl = gsap.timeline();
     let projects = gsap.utils.toArray(".project-row .project");
-    let projectImages = gsap.utils.toArray(".project-row .project img");
     let mediaQuery = window.matchMedia("(min-width: 967px)");
 
     const homeAnimation = (animation) => {
@@ -239,10 +238,6 @@ export default function Home() {
                 </div>
               )
             )}
-          </div>
-          <div className="scroll-right">
-            <h4>Swipe right for more</h4>
-            <FontAwesomeIcon icon={faChevronRight} />
           </div>
           {/* <div className="arrow-controls">
             <div className="left-arrow">
