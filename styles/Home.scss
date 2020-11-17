@@ -33,6 +33,7 @@
           padding: 0 8px;
         }
         a {
+          display: inline-block;
           color: $white;
           text-decoration: none;
           @media (max-width: 976px) {
@@ -154,6 +155,13 @@
         border-radius: 20px;
         justify-content: center;
         align-items: center;
+        &:nth-child(1)::after {
+          content: "Continue scrolling for next projects \203A";
+          font-family: $font;
+          color: $white;
+          position: absolute;
+          bottom: 10%;
+        }
         // &::after {
         //   display: inline-block;
         //   font-style: normal;
@@ -188,6 +196,9 @@
         // }
         @media (max-width: 967px) {
           flex-direction: column;
+          &:nth-child(1)::after {
+            display: none;
+          }
         }
         .project-info {
           font-family: $font;
@@ -210,6 +221,8 @@
           h3 {
             font-size: 2rem;
             margin: 0;
+            transition: all 0.4s cubic-bezier(0.15, 0.75, 0.45, 0.95) 0s;
+            animation: 10s ease 0s infinite alternate none running rainbow;
             @media (max-width: 967px) {
               font-size: 1.4rem;
             }
@@ -302,11 +315,22 @@
       li {
         padding: 0 32px;
         a {
+          display: inline-block;
           font-family: $font;
           color: $white;
           text-decoration: none;
           font-weight: 700;
         }
+      }
+    }
+    .footer-resume {
+      a {
+        display: inline-block;
+        font-family: $font;
+        color: $white;
+        text-decoration: none;
+        font-weight: 700;
+        margin-top: 1rem;
       }
     }
   }
