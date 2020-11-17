@@ -138,7 +138,7 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>Alexander Grattan Portfolio</title>
+        <title>Alexander Grattan / Web Developer</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {animationComplete === false && <IntroOverlay />}
