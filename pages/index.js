@@ -13,6 +13,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronRight,
   faChevronDown,
+  faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import ReactGA from "react-ga";
@@ -40,9 +41,9 @@ export default function Home() {
     let mediaQuery = window.matchMedia("(min-width: 967px)");
 
     const homeAnimation = (animation) => {
-      tl.from(".ball", {
+      tl.to(".ball", {
         duration: 2,
-        y: "-100vh",
+        y: "100vh",
         ease: "bounce.out",
       })
         .to(".ball", {
@@ -101,7 +102,7 @@ export default function Home() {
             scrub: 1,
             snap: {
               snapTo: 1 / (projects.length - 1),
-              duration: { min: 0.2, max: 3 },
+              duration: { min: 0.2, max: 1 },
               delay: 0,
             },
             // Base vertical scrolling on how wide the container is so it feels more natural.
@@ -217,6 +218,14 @@ export default function Home() {
             <h4>Swipe right for more</h4>
             <FontAwesomeIcon icon={faChevronRight} />
           </div>
+          {/* <div className="arrow-controls">
+            <div className="left-arrow">
+              <FontAwesomeIcon icon={faChevronLeft} />
+            </div>
+            <div className="right-arrow">
+              <FontAwesomeIcon icon={faChevronRight} />
+            </div>
+          </div> */}
         </div>
         <footer>
           <h2>Connect with Me</h2>

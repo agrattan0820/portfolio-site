@@ -5,9 +5,11 @@
   height: calc(var(--vh, 1vh) * 100);
   width: 100%;
   z-index: 3;
-  display: grid;
-  place-items: center;
   .ball {
+    position: absolute;
+    top: -50vh;
+    left: 50%;
+    transform: translateX(-50%);
     border-radius: 50%;
     width: 100px;
     height: 100px;
