@@ -103,15 +103,15 @@
     @media (max-width: 967px) {
       overflow: auto;
       -webkit-overflow-scrolling: touch;
-      height: 110vh;
-      height: calc(var(--vh, 1vh) * 110);
     }
     .scroll-right {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 100%;
+      transform: translateX(-50%);
       font-family: $font;
       color: $white;
-      height: 10vh;
-      height: calc(var(--vh, 1vh) * 10);
-      margin: auto;
       display: none;
       @media (max-width: 967px) {
         display: flex;
@@ -119,7 +119,7 @@
         align-items: center;
       }
       h4 {
-        margin: 1rem;
+        margin: 0 1rem;
       }
     }
     // .arrow-controls {
@@ -160,7 +160,7 @@
           font-family: $font;
           color: $white;
           position: absolute;
-          bottom: 10%;
+          bottom: 5%;
         }
         // &::after {
         //   display: inline-block;

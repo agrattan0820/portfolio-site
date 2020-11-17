@@ -38,6 +38,7 @@ export default function Home() {
     gsap.registerPlugin(ScrollTrigger);
     let tl = gsap.timeline();
     let projects = gsap.utils.toArray(".project-row .project");
+    let projectImages = gsap.utils.toArray(".project-row .project img");
     let mediaQuery = window.matchMedia("(min-width: 967px)");
 
     const homeAnimation = (animation) => {
@@ -77,19 +78,17 @@ export default function Home() {
           ease: "power3.out",
         });
 
-      if (mediaQuery.matches) {
-        gsap.from(".project-row", {
-          scrollTrigger: {
-            trigger: ".project-container",
-            start: "top bottom",
-            toggleActions: "restart",
-          },
-          x: "100vw",
-          opacity: 0,
-          duration: 2,
-          ease: "power3.out",
-        });
-      }
+      gsap.from(".project-row", {
+        scrollTrigger: {
+          trigger: ".project-container",
+          start: "top center",
+          end: "top top",
+          scrub: 1,
+        },
+        x: 500,
+        opacity: 0,
+        duration: 2,
+      });
 
       if (mediaQuery.matches) {
         gsap.to(projects, {
@@ -116,6 +115,8 @@ export default function Home() {
         scrollTrigger: {
           trigger: "footer",
           start: "top center",
+          end: "top top",
+          scrub: 1,
         },
       });
 
@@ -124,13 +125,11 @@ export default function Home() {
           y: 100,
           opacity: 0,
           duration: 0.6,
-          ease: "power3.out",
         })
         .from("footer .footer-links", {
           y: 100,
           opacity: 0,
           duration: 0.6,
-          ease: "power3.out",
         });
     };
 
