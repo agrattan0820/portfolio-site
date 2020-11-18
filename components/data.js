@@ -2,7 +2,7 @@ export const projectsList = [
   {
     name: "grademyaid",
     description:
-      "A website that allows students to grade their college financial aid packages using data from the US Department of Education.\nBuilt for Pitt CSC Hacks, a compitetion sponsored by the University of Pittsburgh's Computer Science Club.",
+      "A website that allows students to grade their college financial aid packages using data from the US Department of Education.\nThis was built for Pitt CSC Hacks, a competition sponsored by the University of Pittsburgh's Computer Science Club.",
     image: "/images/www.grademyaid.com_.png",
     link: "https://www.grademyaid.com/",
     page: "https://github.com/GameDog9988/grade-my-aid",
@@ -20,7 +20,7 @@ export const projectsList = [
   {
     name: "Virtual Safari",
     description:
-      "A recreation of Timon and Pumbaa's Virtual Safari, a choose-your-own adventure from The Lion King DVD.\nEdited the choices into individual clips using DaVinci Resolve and used JavaScript to develop the site interaction.",
+      "A recreation of Timon and Pumbaa's Virtual Safari, a choose-your-own adventure from The Lion King DVD.\nI edited the choices into individual clips using DaVinci Resolve and used JavaScript to develop the site interaction.",
     image: "/images/Virtual_Safari_Screenshot.png",
     link: "https://virtualsafari.netlify.app/",
     page: "https://github.com/GameDog9988/Virtual-Safari",
@@ -29,7 +29,7 @@ export const projectsList = [
   {
     name: "Danny's Subs",
     description:
-      "This ficticious restaurant website was my first foray into learning React and using the GreenSock Animation Platform.\nThe photos came from Unsplash, I site that I love using to find high quality photos.",
+      "This ficticious restaurant website was my first foray into learning React and using the GreenSock Animation Platform.\nThe photos came from Unsplash, a site that I love using to find high quality photos.",
     image: "/images/Danny_Subs.png",
     link: "https://dannysubs.netlify.app",
     page: "https://github.com/GameDog9988/Restaurant-React",
