@@ -138,6 +138,12 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charSet="utf-8" />
+        <meta
+          name="description"
+          content="Portfolio for Alexander Grattan, web developer studying Digital Narrative and Interactive Design at the University of Pittsburgh. Skilled with React, JavaScript, Sass, and GSAP."
+        ></meta>
         <title>Alexander Grattan / Web Developer</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
