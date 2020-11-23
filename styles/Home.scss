@@ -202,20 +202,12 @@
           h3 {
             font-size: 2rem;
             margin: 0;
-            &:hover {
-              transition: all 0.4s cubic-bezier(0.15, 0.75, 0.45, 0.95) 0s;
-              animation: 10s ease 0s infinite alternate none running rainbow;
-            }
             @media (max-width: 967px) {
               font-size: 1.4rem;
             }
           }
           h4 {
             margin-bottom: 0;
-            &:hover {
-              transition: all 0.4s cubic-bezier(0.15, 0.75, 0.45, 0.95) 0s;
-              animation: 10s ease 0s infinite alternate none running rainbow;
-            }
           }
           p {
             margin: 1rem 0;
@@ -288,10 +280,6 @@
     h2 {
       color: $white;
       font-size: 4rem;
-      &:hover {
-        transition: all 0.4s cubic-bezier(0.15, 0.75, 0.45, 0.95) 0s;
-        animation: 10s ease 0s infinite alternate none running rainbow;
-      }
       @media (max-width: 967px) {
         font-size: 2.5rem;
       }
