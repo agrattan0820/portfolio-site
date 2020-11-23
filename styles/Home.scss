@@ -55,12 +55,12 @@
     margin: auto;
     color: $white;
     font-family: $font;
-    @media (max-width: 967px) {
-      width: 90%;
-    }
     @media (max-height: 800px) {
       min-height: 75vh;
       padding: 3rem 0;
+    }
+    @media (max-width: 967px) {
+      width: 90%;
     }
     .title {
       font-size: 5rem;
@@ -213,11 +213,11 @@
           h3 {
             font-size: 2rem;
             margin: 0;
-            @media (max-width: 967px) {
-              font-size: 1.4rem;
-            }
             @media (max-height: 800px) {
               font-size: 1.6rem;
+            }
+            @media (max-width: 967px) {
+              font-size: 1.4rem;
             }
           }
           h4 {
@@ -227,11 +227,11 @@
             margin: 1rem 0;
             line-height: 24px;
             font-weight: 300;
-            @media (max-width: 967px) {
+            @media (max-height: 800px) {
               font-size: 0.875rem;
               line-height: 20px;
             }
-            @media (max-height: 800px) {
+            @media (max-width: 967px) {
               font-size: 0.875rem;
               line-height: 20px;
             }
@@ -275,15 +275,15 @@
           height: auto;
           border-radius: 20px;
           margin: 0 32px;
+          @media (max-height: 800px) {
+            width: 500px;
+          }
           @media (max-width: 967px) {
-            width: 80%;
-            margin-bottom: 1rem;
+            width: 350px;
+            margin: 0 0 1rem 0;
           }
           @media (max-width: 700px) {
             width: 200px;
-          }
-          @media (max-height: 800px) {
-            width: 500px;
           }
         }
       }
