@@ -64,6 +64,12 @@ export default function Home() {
           delay: 0.2,
           ease: "power3.out",
         })
+        .from(".peep-image", {
+          duration: 0.6,
+          y: 100,
+          opacity: 0,
+          ease: "power3.out",
+        })
         .from(".job-title", {
           duration: 0.6,
           y: 100,
@@ -190,9 +196,17 @@ export default function Home() {
           </div>
         </nav>
         <main className="main-home">
-          <h1 className="title">
-            I create <span className="playful">playful</span> experiences.
-          </h1>
+          <div className="cta">
+            <h1 className="title">
+              I create <span className="playful">playful</span> experiences.
+            </h1>
+            <img
+              src="/images/My_Peep.png"
+              alt="My Peep"
+              className="peep-image"
+            />
+          </div>
+
           <h3 className="job-title">Alexander Grattan / Web Developer</h3>
           <div className="scroll-indicator" onClick={executeScroll}>
             <p>Projects</p>

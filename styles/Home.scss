@@ -62,16 +62,30 @@
     @media (max-width: 967px) {
       width: 90%;
     }
-    .title {
-      font-size: 5rem;
-      @media (max-width: 967px) {
-        font-size: 2.5rem;
+    .cta {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .title {
+        font-size: 4rem;
+        margin-right: 8rem;
+        @media (max-width: 967px) {
+          font-size: 2rem;
+          margin-right: 1rem;
+        }
+        .playful {
+          transition: all 0.4s cubic-bezier(0.15, 0.75, 0.45, 0.95) 0s;
+          animation: 10s ease 0s infinite alternate none running rainbow;
+        }
       }
-      .playful {
-        transition: all 0.4s cubic-bezier(0.15, 0.75, 0.45, 0.95) 0s;
-        animation: 10s ease 0s infinite alternate none running rainbow;
+      .peep-image {
+        width: 200px;
+        @media (max-width: 967px) {
+          width: 100px;
+        }
       }
     }
+
     .job-title {
       font-size: 1.4rem;
       font-weight: 400;
