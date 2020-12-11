@@ -90,6 +90,7 @@
       }
       .peep-image {
         width: 300px;
+        transform: rotateY(180deg);
         @media (max-height: 800px) {
           width: 200px;
         }
