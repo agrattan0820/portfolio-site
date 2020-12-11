@@ -161,7 +161,7 @@ export default function Home() {
             <ul className="nav-list">
               <li>
                 <motion.a
-                  href="/Resume_Alexander_Grattan.pdf"
+                  href="/Alexander_Grattan_Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1 }}
@@ -273,7 +273,7 @@ export default function Home() {
           <ul className="footer-links">
             <li>
               <motion.a
-                href="/Resume_Alexander_Grattan.pdf"
+                href="/Alexander_Grattan_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1 }}
