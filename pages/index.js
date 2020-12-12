@@ -60,8 +60,8 @@ export default function Home() {
         .from(".title", {
           duration: 0.6,
           y: 100,
-          opacity: 0,
           delay: 0.2,
+          opacity: 0,
           ease: "power3.out",
         })
         .from(".peep-image", {
@@ -198,7 +198,7 @@ export default function Home() {
         <main className="main-home">
           <div className="cta">
             <h1 className="title">
-              I create <span className="playful">playful</span> experiences.
+              I create<span className="playful"> playful </span> experiences.
             </h1>
             <img
               src="/images/My_Peep.png"
@@ -207,7 +207,11 @@ export default function Home() {
             />
           </div>
 
-          <h3 className="job-title">Alexander Grattan / Web Developer</h3>
+          <h3 className="job-title">
+            <span className="text-reveal">
+              Alexander Grattan / Web Developer
+            </span>
+          </h3>
           <div className="scroll-indicator" onClick={executeScroll}>
             <p>Projects</p>
             <FontAwesomeIcon icon={faChevronDown} />
