@@ -281,6 +281,24 @@
         }
       }
     }
+    progress[value] {
+      -webkit-appearance: none;
+      appearance: none;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 15px;
+      border: none;
+    }
+    progress[value]::-webkit-progress-bar {
+      background-color: #eee;
+      border-radius: 2px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+    }
+    progress[value]::-webkit-progress-value {
+      border-radius: 2px;
+      background-color: black;
+    }
   }
 
   footer {

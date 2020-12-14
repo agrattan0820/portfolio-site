@@ -10,17 +10,14 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faChevronRight,
-  faChevronDown,
-  faChevronLeft,
-} from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import ReactGA from "react-ga";
 
 export default function Home() {
   const [animationComplete, setAnimationComplete] = useState(false);
   const projectsRef = useRef(null);
+  const scrollRef = useRef(null);
 
   const completeAnimation = () => {
     setAnimationComplete(true);
@@ -30,11 +27,15 @@ export default function Home() {
   const executeScroll = () => projectsRef.current.scrollIntoView();
 
   useEffect(() => {
+    // Inner Page height for mobile devices
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
+
+    // Google Analytics
     ReactGA.initialize("UA-183066430-1");
     ReactGA.pageview("/");
 
+    // GSAP animation
     gsap.registerPlugin(ScrollTrigger);
     let tl = gsap.timeline();
     let projects = gsap.utils.toArray(".project-row .project");
@@ -114,6 +115,15 @@ export default function Home() {
               "+=" + document.querySelector(".project-row").offsetHeight,
           },
         });
+        gsap.to("progress", {
+          value: 100,
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".project-container",
+            start: "center center",
+            scrub: 0.3,
+          },
+        });
       }
 
       let tlFooter = gsap.timeline({
@@ -142,7 +152,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="container">
+    <div className="container" ref={scrollRef}>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="utf-8" />
@@ -263,15 +273,9 @@ export default function Home() {
               )
             )}
           </div>
-          {/* <div className="arrow-controls">
-            <div className="left-arrow">
-              <FontAwesomeIcon icon={faChevronLeft} />
-            </div>
-            <div className="right-arrow">
-              <FontAwesomeIcon icon={faChevronRight} />
-            </div>
-          </div> */}
+          <progress max="100" value="0"></progress>
         </div>
+
         <footer>
           <h2>Connect with Me</h2>
           <ul className="footer-links">
