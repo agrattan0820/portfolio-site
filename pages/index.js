@@ -230,8 +230,8 @@ export default function Home() {
         <div className="project-container" ref={projectsRef}>
           <div className="project-row">
             {projectsList.map(
-              ({ name, description, image, link, page, tools }) => (
-                <div className="project">
+              ({ name, description, image, link, page, tools, index }) => (
+                <div className="project" key={index}>
                   <img src={image} alt={name} />
                   <div className="project-info">
                     <h3>{name}</h3>
