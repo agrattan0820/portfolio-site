@@ -193,7 +193,7 @@ export default function Home() {
               </li>
               <li>
                 <motion.a
-                  href="https://www.linkedin.com/in/alexander-grattan-11a187149/"
+                  href="https://www.linkedin.com/in/alexander-grattan/"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1 }}
@@ -303,7 +303,7 @@ export default function Home() {
             </li>
             <li>
               <motion.a
-                href="https://www.linkedin.com/in/alexander-grattan-11a187149/"
+                href="https://www.linkedin.com/in/alexander-grattan/"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1 }}
