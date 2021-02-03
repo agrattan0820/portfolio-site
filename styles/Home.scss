@@ -303,11 +303,11 @@
     }
     progress[value]::-webkit-progress-value {
       border-radius: 2px;
-      background-color: black;
+      background-color: $black;
     }
     progress[value]::-moz-progress-bar {
       border-radius: 2px;
-      background-color: black;
+      background-color: $black;
     }
   }
 
