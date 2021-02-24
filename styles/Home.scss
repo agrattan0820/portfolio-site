@@ -145,139 +145,126 @@
       overflow: auto;
       -webkit-overflow-scrolling: touch;
     }
-    .project-row {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 500%;
-      height: 100%;
+
+    .project {
+      position: relative;
+      width: 100%;
+      height: 100vh;
       display: flex;
-      overflow: hidden;
-      flex-wrap: nowrap;
-      @media (max-height: 800px) {
-        min-height: 75vh;
+      border-radius: 20px;
+      justify-content: center;
+      align-items: center;
+      // &:nth-child(1)::after {
+      //   content: "Continue scrolling for next projects \203A";
+      //   font-family: $font;
+      //   color: $white;
+      //   position: absolute;
+      //   bottom: 5%;
+      // }
+      @media (max-width: 967px) {
+        flex-direction: column;
+        // &:nth-child(1)::after {
+        //   content: "Swipe right for next projects \203A";
+        // }
+      }
+      .project-info {
+        font-family: $font;
+        width: 300px;
+        text-align: left;
+        color: $white;
+        margin: 0 32px;
+        @media (max-width: 967px) {
+          width: 275px;
+        }
+        .tools-list {
+          margin-top: 8px;
+          font-family: $font;
+          li {
+            @media (max-width: 967px) {
+              font-size: 0.875rem;
+            }
+            @media (max-height: 750px) {
+              font-size: 0.875rem;
+            }
+          }
+        }
+        h3 {
+          font-size: 2rem;
+          margin: 0;
+          @media (max-height: 800px) {
+            font-size: 1.6rem;
+          }
+          @media (max-width: 967px) {
+            font-size: 1.4rem;
+          }
+        }
+        h4 {
+          margin-bottom: 0;
+        }
+        p {
+          margin: 1rem 0;
+          line-height: 24px;
+          font-weight: 300;
+          @media (max-height: 800px) {
+            font-size: 0.875rem;
+            line-height: 20px;
+          }
+          @media (max-width: 967px) {
+            font-size: 0.875rem;
+            line-height: 20px;
+          }
+        }
+        .project-btns {
+          display: flex;
+          @media (max-width: 967px) {
+            justify-content: center;
+          }
+          .project-btn {
+            cursor: pointer;
+            margin-right: 15px;
+            width: 125px;
+            height: 50px;
+            border-radius: 15px;
+            border: none;
+            outline: none;
+            background: snow;
+            font-weight: 700;
+            font-family: $font;
+            font-size: 1rem;
+            @media (max-width: 967px) {
+              width: 100px;
+              font-size: 0.875rem;
+            }
+          }
+          a {
+            text-decoration: none;
+            color: $white;
+            margin: 0;
+            padding: 0;
+            .project-btn {
+              @extend .project-btn;
+            }
+          }
+        }
       }
 
-      .project {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        display: flex;
+      img {
+        width: 800px;
+        height: auto;
         border-radius: 20px;
-        justify-content: center;
-        align-items: center;
-        &:nth-child(1)::after {
-          content: "Continue scrolling for next projects \203A";
-          font-family: $font;
-          color: $white;
-          position: absolute;
-          bottom: 5%;
+        margin: 0 32px;
+        @media (max-height: 800px) {
+          width: 500px;
+        }
+        @media (max-width: 1300px) {
+          width: 500px;
         }
         @media (max-width: 967px) {
-          flex-direction: column;
-          &:nth-child(1)::after {
-            content: "Swipe right for next projects \203A";
-          }
+          width: 350px;
+          margin: 0 0 1rem 0;
         }
-        .project-info {
-          font-family: $font;
-          width: 300px;
-          text-align: left;
-          color: $white;
-          margin: 0 32px;
-          @media (max-width: 967px) {
-            width: 275px;
-          }
-          .tools-list {
-            margin-top: 8px;
-            font-family: $font;
-            li {
-              @media (max-width: 967px) {
-                font-size: 0.875rem;
-              }
-              @media (max-height: 750px) {
-                font-size: 0.875rem;
-              }
-            }
-          }
-          h3 {
-            font-size: 2rem;
-            margin: 0;
-            @media (max-height: 800px) {
-              font-size: 1.6rem;
-            }
-            @media (max-width: 967px) {
-              font-size: 1.4rem;
-            }
-          }
-          h4 {
-            margin-bottom: 0;
-          }
-          p {
-            margin: 1rem 0;
-            line-height: 24px;
-            font-weight: 300;
-            @media (max-height: 800px) {
-              font-size: 0.875rem;
-              line-height: 20px;
-            }
-            @media (max-width: 967px) {
-              font-size: 0.875rem;
-              line-height: 20px;
-            }
-          }
-          .project-btns {
-            display: flex;
-            @media (max-width: 967px) {
-              justify-content: center;
-            }
-            .project-btn {
-              cursor: pointer;
-              margin-right: 15px;
-              width: 125px;
-              height: 50px;
-              border-radius: 15px;
-              border: none;
-              outline: none;
-              background: snow;
-              font-weight: 700;
-              font-family: $font;
-              font-size: 1rem;
-              @media (max-width: 967px) {
-                width: 100px;
-                font-size: 0.875rem;
-              }
-            }
-            a {
-              text-decoration: none;
-              color: $white;
-              margin: 0;
-              padding: 0;
-              .project-btn {
-                @extend .project-btn;
-              }
-            }
-          }
-        }
-
-        img {
-          width: 800px;
-          height: auto;
-          border-radius: 20px;
-          margin: 0 32px;
-          @media (max-height: 800px) {
-            width: 500px;
-          }
-          @media (max-width: 1300px) {
-            width: 500px;
-          }
-          @media (max-width: 967px) {
-            width: 350px;
-            margin: 0 0 1rem 0;
-          }
-          @media (max-width: 700px) {
-            width: 200px;
-          }
+        @media (max-width: 700px) {
+          width: 200px;
         }
       }
     }
