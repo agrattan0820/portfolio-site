@@ -107,7 +107,7 @@ export default function Home() {
             scrub: 1,
             snap: {
               snapTo: 1 / (projects.length - 1),
-              duration: { min: 0.2, max: 1 },
+              duration: { min: 0.2, max: 0.8 },
               delay: 0,
             },
             // Base vertical scrolling on how wide the container is so it feels more natural.
@@ -235,13 +235,13 @@ export default function Home() {
                   <img src={image} alt={name} />
                   <div className="project-info">
                     <h3>{name}</h3>
-                    {description.split("\n").map((str) => (
-                      <p>{str}</p>
+                    {description.split("\n").map((str, index) => (
+                      <p key={index}>{str}</p>
                     ))}
                     <h4>Tools used:</h4>
                     <ul className="tools-list">
-                      {tools.map((item, i) => (
-                        <li key={i}>{item}</li>
+                      {tools.map((item, index) => (
+                        <li key={index}>{item}</li>
                       ))}
                     </ul>
                     <motion.div className="project-btns">
