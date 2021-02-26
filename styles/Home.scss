@@ -250,21 +250,23 @@
 
       img {
         width: 800px;
-        height: auto;
+        height: 450px;
+        object-fit: cover;
+        object-position: center;
         border-radius: 20px;
         margin: 0 32px;
-        @media (max-height: 800px) {
-          width: 500px;
-        }
         @media (max-width: 1300px) {
           width: 500px;
+          height: 280px;
         }
         @media (max-width: 967px) {
           width: 350px;
+          height: 200px;
           margin: 0 0 1rem 0;
         }
         @media (max-width: 700px) {
-          width: 200px;
+          width: 250px;
+          height: 140px;
         }
       }
     }
