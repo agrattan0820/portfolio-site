@@ -5,7 +5,8 @@ export const projectsList = [
       "Appointed as a club officer for the Pitt Computer Science Club, both to support initiatives and to redesign the club website. The current website can befound here: https://pittcsc.org/. Designed iteratively with Figma and developed with Gatsby, Tailwind CSS, and Framer Motion.",
     image: "/images/Pitt_CSC_Screenshot.png",
     link: "https://pittcsc-crashtestdummy.netlify.app",
-    page: "",
+    project: "pitt-csc",
+    GitHub: "",
     tools: ["Gatsby", "Tailwind CSS", "Sass", "Framer Motion"],
   },
   {
@@ -14,7 +15,8 @@ export const projectsList = [
       "Cooperated with another developer and two pharmacy students to create a website that tracks cannabis strain availability in the Pennsylvania area.Designed in Figma and developed the frontend with React and SCSS. Helped create the REST API and backend with Django Rest Framework.",
     image: "/images/Green_Pages_Screenshot.png",
     link: "https://green-pages-infotender.herokuapp.com/",
-    page: "",
+    project: "green-pages",
+    GitHub: "",
     tools: ["React", "Django", "Sass", "Redux", "Framer Motion"],
   },
   {
@@ -23,7 +25,8 @@ export const projectsList = [
       "A website that allows students to grade their college financial aid packages using data from the US Department of Education.\nThis was built for Pitt CSC Hacks, a competition sponsored by the University of Pittsburgh's Computer Science Club.",
     image: "/images/www.grademyaid.com_.png",
     link: "https://www.grademyaid.com/",
-    page: "https://github.com/GameDog9988/grade-my-aid",
+    project: "grademyaid",
+    GitHub: "https://github.com/GameDog9988/grade-my-aid",
     tools: ["React", "Framer Motion", "Sass"],
   },
   {
@@ -32,7 +35,8 @@ export const projectsList = [
       "A website that showcases movies that The New York Times considers critic's picks using their REST API.\nThe cards can be sorted in multiple ways and each link to the corresponding review on The New York Time's website.",
     image: "/images/NYT_Critic_Picks.png",
     link: "https://nytcriticpicks.netlify.app",
-    page: "https://github.com/GameDog9988/Movie-Review-App",
+    project: "nyt-movie-critics",
+    GitHub: "https://github.com/GameDog9988/Movie-Review-App",
     tools: ["React", "Framer Motion", "The New York Times API"],
   },
   {
@@ -41,7 +45,8 @@ export const projectsList = [
       "A recreation of Timon and Pumbaa's Virtual Safari, a choose-your-own adventure from The Lion King DVD.\nI edited the choices into individual clips using DaVinci Resolve and used JavaScript to develop the site interaction.",
     image: "/images/Virtual_Safari_Screenshot.png",
     link: "https://virtualsafari.netlify.app/",
-    page: "https://github.com/GameDog9988/Virtual-Safari",
+    project: "virtual-safari",
+    GitHub: "https://github.com/GameDog9988/Virtual-Safari",
     tools: ["HTML", "CSS", "JavaScript"],
   },
   // {

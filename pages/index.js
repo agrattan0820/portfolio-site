@@ -13,11 +13,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import ReactGA from "react-ga";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Home() {
   const [animationComplete, setAnimationComplete] = useState(false);
   const projectsRef = useRef(null);
   const scrollRef = useRef(null);
+  const router = useRouter();
+
+  console.log(router);
 
   const completeAnimation = () => {
     setAnimationComplete(true);
@@ -40,6 +45,7 @@ export default function Home() {
     let tl = gsap.timeline();
     let projects = gsap.utils.toArray(".project");
     let mediaQuery = window.matchMedia("(min-width: 967px)");
+    console.log(window.history);
 
     const homeAnimation = (animation) => {
       tl.to(".ball", {
@@ -257,9 +263,20 @@ export default function Home() {
         </main>
         <div className="project-container" ref={projectsRef}>
           {projectsList.map(
-            ({ name, description, image, link, page, tools, index }) => (
+            ({
+              name,
+              description,
+              image,
+              link,
+              project,
+              GitHub,
+              tools,
+              index,
+            }) => (
               <div className="project" key={index}>
-                <img src={image} alt={name} />
+                <Link href={project}>
+                  <motion.img layoutId={project} src={image} alt={name} />
+                </Link>
                 <div className="project-info">
                   <h3>{name}</h3>
                   {description.split("\n").map((str, index) => (
@@ -284,7 +301,7 @@ export default function Home() {
                       </motion.button>
                     </motion.a>
                     <motion.a
-                      href={page}
+                      href={GitHub}
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.1 }}

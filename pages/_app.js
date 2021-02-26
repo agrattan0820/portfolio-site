@@ -1,6 +1,6 @@
 import "../styles/App.scss";
 import { useEffect } from "react";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, AnimateSharedLayout } from "framer-motion";
 import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps }) {
@@ -12,7 +12,9 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <AnimatePresence exitBeforeEnter>
-      <Component {...pageProps} />
+      <AnimateSharedLayout>
+        <Component {...pageProps} />
+      </AnimateSharedLayout>
     </AnimatePresence>
   );
 }
