@@ -16,7 +16,6 @@ export default function Project() {
   projectObject = projectsList.find((el) => el.project === project);
 
   console.log(projectObject);
-  console.log(window.history);
 
   return (
     <div className="container">
@@ -42,7 +41,7 @@ export default function Project() {
       </nav>
       <main className="project-main">
         {projectObject && (
-          <Link href="/">
+          <Link href="/" scroll={false}>
             <motion.img
               layoutId={projectObject.project}
               src={projectObject.image}

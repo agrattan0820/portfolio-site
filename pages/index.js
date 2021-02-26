@@ -45,7 +45,6 @@ export default function Home() {
     let tl = gsap.timeline();
     let projects = gsap.utils.toArray(".project");
     let mediaQuery = window.matchMedia("(min-width: 967px)");
-    console.log(window.history);
 
     const homeAnimation = (animation) => {
       tl.to(".ball", {
