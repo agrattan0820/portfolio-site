@@ -5,7 +5,7 @@ export const projectsList = [
     description:
       "Appointed as a club officer for the Pitt Computer Science Club, both to support initiatives and to redesign the club website. The current website can befound here: https://pittcsc.org/. Designed iteratively with Figma and developed with Gatsby, Tailwind CSS, and Framer Motion.",
     image: "/images/Pitt_CSC_Screenshot.png",
-    link: "https://pittcsc-crashtestdummy.netlify.app",
+    link: "https://pittcsc.org/",
     project: "pitt-csc",
     GitHub: "",
     tools: ["Gatsby", "Tailwind CSS", "Sass", "Framer Motion"],
