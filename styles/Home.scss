@@ -25,6 +25,7 @@
       align-items: center;
     }
     .logo {
+      cursor: pointer;
       font-size: 1.4rem;
       user-select: none;
     }
@@ -189,6 +190,7 @@
           }
         }
         h3 {
+          cursor: pointer;
           font-size: 2rem;
           margin: 0;
           @media (max-height: 800px) {
@@ -221,7 +223,7 @@
           }
           .project-btn {
             cursor: pointer;
-            margin-right: 15px;
+            margin: 0 1rem;
             width: 125px;
             height: 50px;
             border-radius: 15px;
@@ -249,12 +251,19 @@
       }
 
       img {
+        cursor: pointer;
         width: 800px;
         height: 450px;
         object-fit: cover;
         object-position: center;
         border-radius: 20px;
         margin: 0 32px;
+        box-shadow: 0 2.8px 2.2px rgba(211, 211, 211, 0.02),
+          0 6.7px 5.3px rgba(211, 211, 211, 0.028),
+          0 12.5px 10px rgba(211, 211, 211, 0.035),
+          0 22.3px 17.9px rgba(211, 211, 211, 0.042),
+          0 41.8px 33.4px rgba(211, 211, 211, 0.05),
+          0 100px 80px rgba(211, 211, 211, 0.07);
         @media (max-width: 1300px) {
           width: 500px;
           height: 280px;

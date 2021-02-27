@@ -64,26 +64,26 @@ export default function Home() {
           ease: "power3.out",
         })
         .from(".title", {
-          duration: 0.6,
+          duration: 0.5,
           y: 100,
           delay: 0.2,
           opacity: 0,
           ease: "power3.out",
         })
         .from(".peep-image", {
-          duration: 0.6,
+          duration: 0.5,
           y: 100,
           opacity: 0,
           ease: "power3.out",
         })
         .from(".job-title", {
-          duration: 0.6,
+          duration: 0.5,
           y: 100,
           opacity: 0,
           ease: "power3.out",
         })
         .from(".scroll-indicator", {
-          duration: 0.6,
+          duration: 0.5,
           y: 100,
           opacity: 0,
           ease: "power3.out",
@@ -206,7 +206,10 @@ export default function Home() {
       <div className="after-animation">
         <nav className="home-nav">
           <div className="space-between">
-            <div className="logo">AG</div>
+            <Link href="/">
+              <div className="logo">AG</div>
+            </Link>
+
             <ul className="nav-list">
               <li>
                 <motion.a
@@ -283,7 +286,9 @@ export default function Home() {
                   <motion.img src={image} alt={name} />
                 </Link>
                 <div className="project-info">
-                  <h3>{name}</h3>
+                  <Link href={project}>
+                    <h3>{name}</h3>
+                  </Link>
                   {description.split("\n").map((str, index) => (
                     <p key={index}>{str}</p>
                   ))}

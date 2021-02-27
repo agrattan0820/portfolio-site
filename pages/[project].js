@@ -4,6 +4,12 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { projectsList } from "../components/data";
 import { motion } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faChevronLeft,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 export default function Project() {
   const router = useRouter();
@@ -30,16 +36,42 @@ export default function Project() {
       </Head>
       <nav className="project-nav">
         <div className="space-between">
-          <div className="logo">AG</div>
+          <Link href="/">
+            <div className="logo">AG</div>
+          </Link>
           <ul className="nav-list">
             <li>
-              <Link href="/">Home</Link>
+              <motion.a
+                href="/Alexander_Grattan_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                Resume
+              </motion.a>
             </li>
             <li>
-              <Link href="/about">About Me</Link>
+              <motion.a
+                href="https://github.com/GameDog9988"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <FontAwesomeIcon icon={faGithub} size="2x" />
+              </motion.a>
             </li>
             <li>
-              <Link href="/contact">Contact</Link>
+              <motion.a
+                href="https://www.linkedin.com/in/alexander-grattan/"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <FontAwesomeIcon icon={faLinkedin} size="2x" />
+              </motion.a>
             </li>
           </ul>
         </div>
@@ -63,6 +95,43 @@ export default function Project() {
             students and if it is a good deal.
           </p>
         </div>
+
+        <nav className="page-navigation">
+          {projectObject?.id > 1 ? (
+            <Link href={projectsList[projectObject.id - 2].project}>
+              <motion.button
+                className="project-btn"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <FontAwesomeIcon className="prev-arrow" icon={faChevronLeft} />
+                Previous
+              </motion.button>
+            </Link>
+          ) : (
+            <button className="disabled-btn" disabled>
+              <FontAwesomeIcon className="prev-arrow" icon={faChevronLeft} />
+              Previous
+            </button>
+          )}
+          {projectObject?.id < 5 ? (
+            <Link href={projectsList[projectObject.id].project}>
+              <motion.button
+                className="project-btn"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                Next
+                <FontAwesomeIcon className="next-arrow" icon={faChevronRight} />
+              </motion.button>
+            </Link>
+          ) : (
+            <button className="disabled-btn" disabled>
+              Next
+              <FontAwesomeIcon className="next-arrow" icon={faChevronRight} />
+            </button>
+          )}
+        </nav>
       </main>
     </motion.div>
   );

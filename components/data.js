@@ -1,5 +1,6 @@
 export const projectsList = [
   {
+    id: 1,
     name: "Pitt CSC",
     description:
       "Appointed as a club officer for the Pitt Computer Science Club, both to support initiatives and to redesign the club website. The current website can befound here: https://pittcsc.org/. Designed iteratively with Figma and developed with Gatsby, Tailwind CSS, and Framer Motion.",
@@ -10,6 +11,7 @@ export const projectsList = [
     tools: ["Gatsby", "Tailwind CSS", "Sass", "Framer Motion"],
   },
   {
+    id: 2,
     name: "Green Pages",
     description:
       "Cooperated with another developer and two pharmacy students to create a website that tracks cannabis strain availability in the Pennsylvania area.Designed in Figma and developed the frontend with React and SCSS. Helped create the REST API and backend with Django Rest Framework.",
@@ -20,6 +22,7 @@ export const projectsList = [
     tools: ["React", "Django", "Sass", "Redux", "Framer Motion"],
   },
   {
+    id: 3,
     name: "Grademyaid",
     description:
       "A website that allows students to grade their college financial aid packages using data from the US Department of Education.\nThis was built for Pitt CSC Hacks, a competition sponsored by the University of Pittsburgh's Computer Science Club.",
@@ -30,6 +33,7 @@ export const projectsList = [
     tools: ["React", "Framer Motion", "Sass"],
   },
   {
+    id: 4,
     name: "The New York Times Critic's Picks",
     description:
       "A website that showcases movies that The New York Times considers critic's picks using their REST API.\nThe cards can be sorted in multiple ways and each link to the corresponding review on The New York Time's website.",
@@ -40,6 +44,7 @@ export const projectsList = [
     tools: ["React", "Framer Motion", "The New York Times API"],
   },
   {
+    id: 5,
     name: "Virtual Safari",
     description:
       "A recreation of Timon and Pumbaa's Virtual Safari, a choose-your-own adventure from The Lion King DVD.\nI edited the choices into individual clips using DaVinci Resolve and used JavaScript to develop the site interaction.",
