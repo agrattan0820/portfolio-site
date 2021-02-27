@@ -18,7 +18,12 @@ export default function Project() {
   console.log(projectObject);
 
   return (
-    <div className="container">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="container"
+    >
       <Head>
         <title>First Post</title>
         <link rel="icon" href="/favicon.ico" />
@@ -42,11 +47,7 @@ export default function Project() {
       <main className="project-main">
         {projectObject && (
           <Link href="/" scroll={false}>
-            <motion.img
-              layoutId={projectObject.project}
-              src={projectObject.image}
-              alt={projectObject.name}
-            />
+            <motion.img src={projectObject.image} alt={projectObject.name} />
           </Link>
         )}
 
@@ -63,6 +64,6 @@ export default function Project() {
           </p>
         </div>
       </main>
-    </div>
+    </motion.div>
   );
 }

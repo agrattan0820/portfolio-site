@@ -185,7 +185,13 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="container" ref={scrollRef}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="container"
+      ref={scrollRef}
+    >
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="utf-8" />
@@ -274,7 +280,7 @@ export default function Home() {
             }) => (
               <div className="project" key={index}>
                 <Link href={project}>
-                  <motion.img layoutId={project} src={image} alt={name} />
+                  <motion.img src={image} alt={name} />
                 </Link>
                 <div className="project-info">
                   <h3>{name}</h3>
@@ -367,6 +373,6 @@ export default function Home() {
           </ul>
         </footer>
       </div>
-    </div>
+    </motion.div>
   );
 }
