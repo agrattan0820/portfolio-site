@@ -12,7 +12,6 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
-import ReactGA from "react-ga";
 
 export default function Home() {
   const [animationComplete, setAnimationComplete] = useState(false);
@@ -30,10 +29,6 @@ export default function Home() {
     // Inner Page height for mobile devices
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
-
-    // Google Analytics
-    ReactGA.initialize("UA-183066430-1");
-    ReactGA.pageview("/");
 
     // GSAP animation
     gsap.registerPlugin(ScrollTrigger);
