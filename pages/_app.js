@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "../styles/App.scss";
 import { AnimatePresence } from "framer-motion";
 import { hotjar } from "react-hotjar";
