@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronLeft,
   faChevronRight,
+  faArrowLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
@@ -22,6 +23,10 @@ export default function Project() {
   projectObject = projectsList.find((el) => el.project === project);
 
   console.log(projectObject);
+
+  useEffect(() => {
+    document.body.style.overflowY = "scroll";
+  }, []);
 
   return (
     <motion.div
@@ -78,23 +83,29 @@ export default function Project() {
       </nav>
       <main className="project-main">
         {projectObject && (
-          <Link href="/" scroll={false}>
-            <motion.img src={projectObject.image} alt={projectObject.name} />
-          </Link>
+          <motion.img
+            className="main-image"
+            src={projectObject.image}
+            alt={projectObject.name}
+          />
         )}
 
         <div className="text-content">
-          <h2>Guiding students and stuff</h2>
-          <p>
-            Grademyaid came from the notion that there was not an outright
-            website that helped students to choose between schools if financials
-            was a major factor. Options out there included US News, The
-            Princeton Review, and niche.com. What grademyaid does that these
-            resources does not is take the student's financial aid as an input
-            and provide extra insight and context into how it compares to other
-            students and if it is a good deal.
-          </p>
+          <h1>{projectObject?.name}</h1>
+          <p>{projectObject?.description}</p>
         </div>
+        {projectObject?.name && (
+          <div className="figma-comparison">
+            <div className="figma-1">
+              <motion.img src={projectObject.image} alt={projectObject.name} />
+              <h2>Figma Design</h2>
+            </div>
+            <div className="figma-2">
+              <motion.img src={projectObject.image} alt={projectObject.name} />
+              <h2>Live Version</h2>
+            </div>
+          </div>
+        )}
 
         <nav className="page-navigation">
           {projectObject?.id > 1 ? (
@@ -131,6 +142,11 @@ export default function Project() {
               <FontAwesomeIcon className="next-arrow" icon={faChevronRight} />
             </button>
           )}
+          <Link href="/">
+            <div className="project-back">
+              <FontAwesomeIcon icon={faArrowLeft} /> Back Home
+            </div>
+          </Link>
         </nav>
       </main>
     </motion.div>

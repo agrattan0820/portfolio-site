@@ -51,31 +51,81 @@
     }
   }
   .project-main {
+    width: 75%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: $white;
     font-family: $font;
-    margin: 5rem auto;
-    img {
+    margin: 8rem auto 4rem auto;
+    .main-image {
       border-radius: 20px;
-      width: 700px;
+      width: 75%;
+      max-width: 700px;
+      border-radius: 20px;
+      height: 450px;
+      object-fit: cover;
+      object-position: center;
+      @media (max-width: 1300px) {
+        width: 500px;
+        height: 280px;
+      }
+      @media (max-width: 967px) {
+        width: 350px;
+        height: 200px;
+        margin: 0 0 1rem 0;
+      }
+      @media (max-width: 700px) {
+        width: 250px;
+        height: 140px;
+      }
     }
     .text-content {
       display: grid;
       place-items: center;
-      h2 {
+
+      h1 {
         text-align: center;
         font-size: 4rem;
+        @media (max-width: 768px) {
+          font-size: 2.5rem;
+        }
       }
       p {
         line-height: 40px;
-        font-size: 21px;
-        width: 600px;
+        font-size: 1.2rem;
+        width: 75%;
+        max-width: 600px;
+        @media (max-width: 976px) {
+          font-size: 1rem;
+        }
+      }
+    }
+    .figma-comparison {
+      width: 100%;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 2rem;
+      .figma-1 {
+        padding: 1rem;
+        img {
+          width: 75%;
+          border-radius: 20px;
+        }
+      }
+      .figma-2 {
+        padding: 1rem;
+        img {
+          width: 75%;
+          border-radius: 20px;
+        }
       }
     }
     .page-navigation {
+      margin: 2rem 0;
       button {
         cursor: pointer;
         margin: 0 1rem;
@@ -98,6 +148,13 @@
         .next-arrow {
           margin-left: 0.5rem;
         }
+      }
+      .project-back {
+        text-align: center;
+        color: $white;
+        font-family: $font;
+        margin: 2rem auto;
+        cursor: pointer;
       }
     }
   }

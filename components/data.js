@@ -3,22 +3,22 @@ export const projectsList = [
     id: 1,
     name: "Pitt CSC",
     description:
-      "Appointed as a club officer for the Pitt Computer Science Club, both to support initiatives and to redesign the club website. The current website can befound here: https://pittcsc.org/. Designed iteratively with Figma and developed with Gatsby, Tailwind CSS, and Framer Motion.",
+      "Appointed as a club officer for the Pitt Computer Science Club, both to support initiatives and to redesign the club website.",
     image: "/images/Pitt_CSC_Screenshot.png",
     link: "https://pittcsc.org/",
     project: "pitt-csc",
-    GitHub: "",
+    GitHub: "https://github.com/pittcsc/pittcsc-website",
     tools: ["Gatsby", "Tailwind CSS", "Sass", "Framer Motion"],
   },
   {
     id: 2,
     name: "Green Pages",
     description:
-      "Cooperated with another developer and two pharmacy students to create a website that tracks cannabis strain availability in the Pennsylvania area.Designed in Figma and developed the frontend with React and SCSS. Helped create the REST API and backend with Django Rest Framework.",
+      "Cooperated with another developer and two pharmacy students to create a website that tracks cannabis strain availability in the Pennsylvania area. Helped create the REST API and backend with Django Rest Framework.",
     image: "/images/Green_Pages_Screenshot.png",
     link: "https://green-pages-infotender.herokuapp.com/",
     project: "green-pages",
-    GitHub: "",
+    GitHub: "https://github.com/CQS-Software/Green-Pages",
     tools: ["React", "Django", "Sass", "Redux", "Framer Motion"],
   },
   {
