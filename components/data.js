@@ -3,8 +3,12 @@ export const projectsList = [
     id: 1,
     name: "Pitt CSC",
     description:
+      "Redesigned and developed the website for the Pitt Computer Science Club that helps advertise its efforts to support computer science and technology-related initiatives.",
+    longDescription:
       "Appointed as a club officer for the Pitt Computer Science Club, both to support initiatives and to redesign the club website.",
     image: "/images/Pitt_CSC_Screenshot.png",
+    figma: "/images/Pitt_CSC_Figma_Screenshot.png",
+    old: "/images/Original_CSC_Site_Screenshot.png",
     link: "https://pittcsc.org/",
     project: "pitt-csc",
     GitHub: "https://github.com/pittcsc/pittcsc-website",
@@ -16,6 +20,7 @@ export const projectsList = [
     description:
       "Cooperated with another developer and two pharmacy students to create a website that tracks cannabis strain availability in the Pennsylvania area. Helped create the REST API and backend with Django Rest Framework.",
     image: "/images/Green_Pages_Screenshot.png",
+    figma: "/images/Green_Pages_Figma_Screenshot.png",
     link: "https://green-pages-infotender.herokuapp.com/",
     project: "green-pages",
     GitHub: "https://github.com/CQS-Software/Green-Pages",
@@ -27,6 +32,7 @@ export const projectsList = [
     description:
       "A website that allows students to grade their college financial aid packages using data from the US Department of Education.\nThis was built for Pitt CSC Hacks, a competition sponsored by the University of Pittsburgh's Computer Science Club.",
     image: "/images/www.grademyaid.com_.png",
+    figma: "/images/Grademyaid_Figma_Screenshot.png",
     link: "https://www.grademyaid.com/",
     project: "grademyaid",
     GitHub: "https://github.com/GameDog9988/grade-my-aid",

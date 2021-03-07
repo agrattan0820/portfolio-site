@@ -87,7 +87,7 @@
 
       h1 {
         text-align: center;
-        font-size: 4rem;
+        font-size: 6rem;
         @media (max-width: 768px) {
           font-size: 2.5rem;
         }
@@ -104,12 +104,17 @@
     }
     .figma-comparison {
       width: 100%;
-      display: grid;
-      place-items: center;
       text-align: center;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+      // display: grid;
+      // place-items: center;
+      // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      // gap: 2rem;
       margin: 2rem auto;
-      gap: 2rem;
       .figma-1 {
         padding: 1rem;
         img {

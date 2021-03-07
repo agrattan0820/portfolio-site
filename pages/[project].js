@@ -82,27 +82,59 @@ export default function Project() {
         </div>
       </nav>
       <main className="project-main">
-        {projectObject && (
-          <motion.img
-            className="main-image"
-            src={projectObject.image}
-            alt={projectObject.name}
-          />
-        )}
-
         <div className="text-content">
           <h1>{projectObject?.name}</h1>
-          <p>{projectObject?.description}</p>
+          {projectObject?.description.split("\n").map((str, index) => (
+            <p key={index}>{str}</p>
+          ))}
         </div>
-        {projectObject?.name && (
+        {projectObject?.figma && projectObject?.old ? (
+          <div className="figma-comparison">
+            <div className="figma-1">
+              <motion.img
+                src={projectObject.old}
+                alt={`${projectObject.name} Old Site`}
+              />
+              <h2>Old Version</h2>
+            </div>
+            <div className="figma-1">
+              <motion.img
+                src={projectObject.figma}
+                alt={`${projectObject.name} Design Mockup`}
+              />
+              <h2>Design Mockup</h2>
+            </div>
+
+            <div className="figma-2">
+              <motion.img
+                src={projectObject.image}
+                alt={`${projectObject.name} Live Site`}
+              />
+              <h2>Live Version</h2>
+            </div>
+          </div>
+        ) : projectObject?.figma ? (
+          <div className="figma-comparison">
+            <div className="figma-1">
+              <motion.img
+                src={projectObject.figma}
+                alt={`${projectObject.name} Design Mockup`}
+              />
+              <h2>Design Mockup</h2>
+            </div>
+
+            <div className="figma-2">
+              <motion.img
+                src={projectObject.image}
+                alt={`${projectObject.name} Live Site`}
+              />
+              <h2>Live Version</h2>
+            </div>
+          </div>
+        ) : (
           <div className="figma-comparison">
             <div className="figma-1">
               <motion.img src={projectObject.image} alt={projectObject.name} />
-              <h2>Figma Design</h2>
-            </div>
-            <div className="figma-2">
-              <motion.img src={projectObject.image} alt={projectObject.name} />
-              <h2>Live Version</h2>
             </div>
           </div>
         )}
