@@ -126,28 +126,53 @@ export default function Home() {
       //   });
       // }
 
-      projects.forEach((project) => {
-        let tlProject = gsap.timeline({
-          scrollTrigger: {
-            trigger: project,
-            start: "top center",
-            end: "center center",
-            scrub: 1,
-          },
-        });
-        let projectImage = project.querySelector("img");
-        let projectInfo = project.querySelector(".project-info");
-
-        tlProject
-          .from(projectImage, {
-            x: -300,
-            opacity: 0,
-          })
-          .from(projectInfo, {
-            x: 300,
-            opacity: 0,
+      if (mediaQuery.matches) {
+        projects.forEach((project) => {
+          let tlProject = gsap.timeline({
+            scrollTrigger: {
+              trigger: project,
+              start: "top center",
+              end: "center center",
+              scrub: 1,
+            },
           });
-      });
+          let projectImage = project.querySelector("img");
+          let projectInfo = project.querySelector(".project-info");
+
+          tlProject
+            .from(projectImage, {
+              x: -300,
+              opacity: 0,
+            })
+            .from(projectInfo, {
+              x: 300,
+              opacity: 0,
+            });
+        });
+      } else {
+        projects.forEach((project) => {
+          let tlProject = gsap.timeline({
+            scrollTrigger: {
+              trigger: project,
+              start: "top center",
+              end: "center center",
+              scrub: 1,
+            },
+          });
+          let projectImage = project.querySelector("img");
+          let projectInfo = project.querySelector(".project-info");
+
+          tlProject
+            .from(projectImage, {
+              y: 100,
+              opacity: 0,
+            })
+            .from(projectInfo, {
+              y: 100,
+              opacity: 0,
+            });
+        });
+      }
 
       //       .from(project + " .project-info", {
       //   x: 300,

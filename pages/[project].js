@@ -4,6 +4,8 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { projectsList } from "../components/data";
 import { motion } from "framer-motion";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronLeft,
@@ -18,15 +20,47 @@ export default function Project() {
   const { project } = router.query;
   let projectObject;
 
-  console.log(project);
-
   projectObject = projectsList.find((el) => el.project === project);
 
   console.log(projectObject);
 
   useEffect(() => {
     document.body.style.overflowY = "scroll";
-  }, []);
+    gsap.registerPlugin(ScrollTrigger);
+    let gsapProjects1 = gsap.utils.toArray(".gsap-1");
+    console.log(gsapProjects1);
+    let gsapProjects2 = gsap.utils.toArray(".gsap-2");
+
+    gsapProjects1.forEach((image) => {
+      gsap.from(image, {
+        scrollTrigger: {
+          trigger: image,
+        },
+        x: -200,
+        opacity: 0,
+        ease: "power3.out",
+      });
+    });
+    gsapProjects2.forEach((image) => {
+      gsap.from(image, {
+        scrollTrigger: {
+          trigger: image,
+        },
+        x: 200,
+        opacity: 0,
+        ease: "power3.out",
+      });
+    });
+    if (!projectObject?.figma && !projectObject?.old) {
+      gsap.from(".gsap-3", {
+        scrollTrigger: {
+          trigger: ".gsap-3",
+        },
+        y: 100,
+        opacity: 0,
+      });
+    }
+  }, [project]);
 
   return (
     <motion.div
@@ -83,30 +117,35 @@ export default function Project() {
       </nav>
       <main className="project-main">
         <div className="text-content">
-          <h1>{projectObject?.name}</h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+          >
+            {projectObject?.name}
+          </motion.h1>
           {projectObject?.description.split("\n").map((str, index) => (
             <p key={index}>{str}</p>
           ))}
         </div>
         {projectObject?.figma && projectObject?.old ? (
-          <div className="figma-comparison">
-            <div className="figma-1">
-              <motion.img
+          <div className="comparison-container">
+            <div className="image-compare gsap-1">
+              <img
                 src={projectObject.old}
                 alt={`${projectObject.name} Old Site`}
               />
               <h2>Old Version</h2>
             </div>
-            <div className="figma-1">
-              <motion.img
+            <div className="image-compare gsap-2">
+              <img
                 src={projectObject.figma}
                 alt={`${projectObject.name} Design Mockup`}
               />
               <h2>Design Mockup</h2>
             </div>
 
-            <div className="figma-2">
-              <motion.img
+            <div className="image-compare gsap-1">
+              <img
                 src={projectObject.image}
                 alt={`${projectObject.name} Live Site`}
               />
@@ -114,8 +153,8 @@ export default function Project() {
             </div>
           </div>
         ) : projectObject?.figma ? (
-          <div className="figma-comparison">
-            <div className="figma-1">
+          <div className="comparison-container">
+            <div className="image-compare gsap-1">
               <motion.img
                 src={projectObject.figma}
                 alt={`${projectObject.name} Design Mockup`}
@@ -123,7 +162,7 @@ export default function Project() {
               <h2>Design Mockup</h2>
             </div>
 
-            <div className="figma-2">
+            <div className="image-compare gsap-2">
               <motion.img
                 src={projectObject.image}
                 alt={`${projectObject.name} Live Site`}
@@ -132,9 +171,12 @@ export default function Project() {
             </div>
           </div>
         ) : (
-          <div className="figma-comparison">
-            <div className="figma-1">
-              <motion.img src={projectObject.image} alt={projectObject.name} />
+          <div className="comparison-container">
+            <div className="image-compare gsap-3">
+              <motion.img
+                src={projectObject?.image}
+                alt={projectObject?.name}
+              />
             </div>
           </div>
         )}

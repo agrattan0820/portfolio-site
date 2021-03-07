@@ -3,6 +3,7 @@ import "../styles/App.scss";
 import { AnimatePresence } from "framer-motion";
 import { hotjar } from "react-hotjar";
 import ReactGA from "react-ga";
+import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {

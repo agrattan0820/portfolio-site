@@ -102,7 +102,7 @@
         }
       }
     }
-    .figma-comparison {
+    .comparison-container {
       width: 100%;
       text-align: center;
       display: flex;
@@ -115,23 +115,18 @@
       // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       // gap: 2rem;
       margin: 2rem auto;
-      .figma-1 {
+      .image-compare {
         padding: 1rem;
-        img {
-          width: 75%;
-          border-radius: 20px;
-          @media (max-width: 976px) {
-            width: 90%;
-          }
+        margin: 4rem 0;
+        @media (max-width: 976px) {
+          padding: 0;
+          margin: 1rem 0;
         }
-      }
-      .figma-2 {
-        padding: 1rem;
         img {
           width: 75%;
           border-radius: 20px;
           @media (max-width: 976px) {
-            width: 90%;
+            width: 100%;
           }
         }
       }
