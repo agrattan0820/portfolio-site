@@ -26,7 +26,7 @@ export const projectsList = [
     link: "https://green-pages-infotender.herokuapp.com/",
     project: "green-pages",
     GitHub: "https://github.com/CQS-Software/Green-Pages",
-    tools: ["React", "Django", "Sass", "Redux", "Framer Motion"],
+    tools: ["React", "Django", "Sass", "Redux", "Framer Motion", "Heroku"],
   },
   {
     id: 3,
@@ -44,6 +44,17 @@ export const projectsList = [
   },
   {
     id: 4,
+    name: "Resu.me",
+    description:
+      "Steelhacks hackathon winning website that acts as a resume repository for students and employers.\nBuilt the website and app in 24 hours with three other teammates.",
+    image: "/images/resu_me_Screenshot.png",
+    link: "https://shielded-chamber-18134.herokuapp.com/",
+    project: "resu_me",
+    GitHub: "https://github.com/AlexWang18/Steelhacks",
+    tools: ["React", "Express", "Sass", "Heroku"],
+  },
+  {
+    id: 5,
     name: "The New York Times Critic's Picks",
     description:
       "A website that showcases movies that The New York Times considers critic's picks. Uses the newspaper's REST API in order to gather the data.\nThe cards can be sorted in multiple ways and each link to the corresponding review on The New York Time's website.",
@@ -54,7 +65,7 @@ export const projectsList = [
     tools: ["React", "Framer Motion", "The New York Times API"],
   },
   {
-    id: 5,
+    id: 6,
     name: "Virtual Safari",
     description:
       "A recreation of Timon and Pumbaa's Virtual Safari, a choose-your-own adventure from The Lion King DVD.\nI edited the choices into individual clips using the video editor, DaVinci Resolve, and used JavaScript to develop the site interaction.",

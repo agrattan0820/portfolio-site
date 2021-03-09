@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { projectsList } from "../components/data";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -15,6 +15,7 @@ import {
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 export default function Project() {
+  const controls = useAnimation();
   const router = useRouter();
   console.log(router);
   const { project } = router.query;
@@ -24,8 +25,18 @@ export default function Project() {
 
   console.log(projectObject);
 
+  const page = {
+    hidden: {
+      opacity: 0,
+    },
+    pageShow: {
+      opacity: 1,
+    },
+  };
+
   useEffect(() => {
     document.body.style.overflowY = "scroll";
+    controls.start("pageShow");
     gsap.registerPlugin(ScrollTrigger);
     let gsapProjects1 = gsap.utils.toArray(".gsap-1");
     let gsapProjects2 = gsap.utils.toArray(".gsap-2");
@@ -63,8 +74,9 @@ export default function Project() {
 
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      variants={page}
+      initial="hidden"
+      animate={controls}
       exit={{ opacity: 0 }}
       className="container"
     >
