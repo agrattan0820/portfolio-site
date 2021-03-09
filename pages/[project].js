@@ -28,23 +28,22 @@ export default function Project() {
     document.body.style.overflowY = "scroll";
     gsap.registerPlugin(ScrollTrigger);
     let gsapProjects1 = gsap.utils.toArray(".gsap-1");
-    console.log(gsapProjects1);
     let gsapProjects2 = gsap.utils.toArray(".gsap-2");
 
-    gsapProjects1.forEach((image) => {
-      gsap.from(image, {
+    gsapProjects1.forEach((image1) => {
+      gsap.from(image1, {
         scrollTrigger: {
-          trigger: image,
+          trigger: image1,
         },
         x: -200,
         opacity: 0,
         ease: "power3.out",
       });
     });
-    gsapProjects2.forEach((image) => {
-      gsap.from(image, {
+    gsapProjects2.forEach((image2) => {
+      gsap.from(image2, {
         scrollTrigger: {
-          trigger: image,
+          trigger: image2,
         },
         x: 200,
         opacity: 0,
@@ -123,11 +122,15 @@ export default function Project() {
           >
             {projectObject?.name}
           </motion.h1>
-          {projectObject?.description.split("\n").map((str, index) => (
-            <p key={index}>{str}</p>
-          ))}
+          {projectObject?.longDescription
+            ? projectObject?.longDescription
+                .split("\n")
+                .map((str, index) => <p key={index}>{str}</p>)
+            : projectObject?.description
+                .split("\n")
+                .map((str, index) => <p key={index}>{str}</p>)}
         </div>
-        {projectObject?.figma && projectObject?.old ? (
+        {projectObject && projectObject?.figma && projectObject?.old ? (
           <div className="comparison-container">
             <div className="image-compare gsap-1">
               <img
@@ -143,7 +146,6 @@ export default function Project() {
               />
               <h2>Design Mockup</h2>
             </div>
-
             <div className="image-compare gsap-1">
               <img
                 src={projectObject.image}
@@ -155,15 +157,14 @@ export default function Project() {
         ) : projectObject?.figma ? (
           <div className="comparison-container">
             <div className="image-compare gsap-1">
-              <motion.img
+              <img
                 src={projectObject.figma}
                 alt={`${projectObject.name} Design Mockup`}
               />
               <h2>Design Mockup</h2>
             </div>
-
             <div className="image-compare gsap-2">
-              <motion.img
+              <img
                 src={projectObject.image}
                 alt={`${projectObject.name} Live Site`}
               />
@@ -173,10 +174,7 @@ export default function Project() {
         ) : (
           <div className="comparison-container">
             <div className="image-compare gsap-3">
-              <motion.img
-                src={projectObject?.image}
-                alt={projectObject?.name}
-              />
+              <img src={projectObject?.image} alt={projectObject?.name} />
             </div>
           </div>
         )}
