@@ -12,11 +12,16 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Home() {
   const [animationComplete, setAnimationComplete] = useState(false);
   const projectsRef = useRef(null);
   const scrollRef = useRef(null);
+  const router = useRouter();
+
+  console.log(router);
 
   const completeAnimation = () => {
     setAnimationComplete(true);
@@ -33,7 +38,7 @@ export default function Home() {
     // GSAP animation
     gsap.registerPlugin(ScrollTrigger);
     let tl = gsap.timeline();
-    let projects = gsap.utils.toArray(".project-row .project");
+    let projects = gsap.utils.toArray(".project");
     let mediaQuery = window.matchMedia("(min-width: 967px)");
 
     const homeAnimation = (animation) => {
@@ -54,72 +59,125 @@ export default function Home() {
           ease: "power3.out",
         })
         .from(".title", {
-          duration: 0.6,
+          duration: 0.5,
           y: 100,
           delay: 0.2,
           opacity: 0,
           ease: "power3.out",
         })
         .from(".peep-image", {
-          duration: 0.6,
+          duration: 0.5,
           y: 100,
           opacity: 0,
           ease: "power3.out",
         })
         .from(".job-title", {
-          duration: 0.6,
+          duration: 0.5,
           y: 100,
           opacity: 0,
           ease: "power3.out",
         })
         .from(".scroll-indicator", {
-          duration: 0.6,
+          duration: 0.5,
           y: 100,
           opacity: 0,
           ease: "power3.out",
         });
 
-      gsap.from(".project-row", {
-        scrollTrigger: {
-          trigger: ".project-container",
-          start: "top center",
-          end: "top top",
-          scrub: 1,
-        },
-        x: 500,
-        opacity: 0,
-        duration: 2,
-      });
+      // gsap.from(".project-row", {
+      //   scrollTrigger: {
+      //     trigger: ".project-container",
+      //     start: "top center",
+      //     end: "top top",
+      //     scrub: 1,
+      //   },
+      //   x: 500,
+      //   opacity: 0,
+      //   duration: 2,
+      // });
+
+      // if (mediaQuery.matches) {
+      //   gsap.to(projects, {
+      //     xPercent: -100 * (projects.length - 1),
+      //     ease: "none",
+      //     scrollTrigger: {
+      //       trigger: ".project-container",
+      //       pin: true,
+      //       start: "top top",
+      //       scrub: 1,
+      //       snap: {
+      //         snapTo: 1 / (projects.length - 1),
+      //         duration: { min: 0.2, max: 1 },
+      //         delay: 0,
+      //       },
+      //       // Base vertical scrolling on how wide the container is so it feels more natural.
+      //       end: () =>
+      //         "+=" + document.querySelector(".project-row").offsetHeight,
+      //     },
+      //   });
+      //   gsap.to("progress", {
+      //     value: 100,
+      //     ease: "none",
+      //     scrollTrigger: {
+      //       trigger: ".project-container",
+      //       start: "center center",
+      //       scrub: 0.3,
+      //     },
+      //   });
+      // }
 
       if (mediaQuery.matches) {
-        gsap.to(projects, {
-          xPercent: -100 * (projects.length - 1),
-          ease: "none",
-          scrollTrigger: {
-            trigger: ".project-container",
-            pin: true,
-            start: "top top",
-            scrub: 1,
-            snap: {
-              snapTo: 1 / (projects.length - 1),
-              duration: { min: 0.2, max: 0.8 },
-              delay: 0,
+        projects.forEach((project) => {
+          let tlProject = gsap.timeline({
+            scrollTrigger: {
+              trigger: project,
+              start: "top center",
+              end: "center center",
+              scrub: 1,
             },
-            // Base vertical scrolling on how wide the container is so it feels more natural.
-            end: () =>
-              "+=" + document.querySelector(".project-row").offsetHeight,
-          },
+          });
+          let projectImage = project.querySelector("img");
+          let projectInfo = project.querySelector(".project-info");
+
+          tlProject
+            .from(projectImage, {
+              x: -300,
+              opacity: 0,
+            })
+            .from(projectInfo, {
+              x: 300,
+              opacity: 0,
+            });
         });
-        gsap.to("progress", {
-          value: 100,
-          ease: "none",
-          scrollTrigger: {
-            trigger: ".project-container",
-            start: "center center",
-            scrub: 0.3,
-          },
+      } else {
+        projects.forEach((project) => {
+          let tlProject = gsap.timeline({
+            scrollTrigger: {
+              trigger: project,
+              start: "top center",
+              end: "center center",
+              scrub: 1,
+            },
+          });
+          let projectImage = project.querySelector("img");
+          let projectInfo = project.querySelector(".project-info");
+
+          tlProject
+            .from(projectImage, {
+              y: 100,
+              opacity: 0,
+            })
+            .from(projectInfo, {
+              y: 100,
+              opacity: 0,
+            });
         });
       }
+
+      //       .from(project + " .project-info", {
+      //   x: 300,
+      //   opacity: 0,
+      // });
 
       let tlFooter = gsap.timeline({
         scrollTrigger: {
@@ -147,7 +205,13 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="container" ref={scrollRef}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="container"
+      ref={scrollRef}
+    >
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="utf-8" />
@@ -162,7 +226,10 @@ export default function Home() {
       <div className="after-animation">
         <nav className="home-nav">
           <div className="space-between">
-            <div className="logo">AG</div>
+            <Link href="/">
+              <div className="logo">AG</div>
+            </Link>
+
             <ul className="nav-list">
               <li>
                 <motion.a
@@ -223,52 +290,62 @@ export default function Home() {
           </div>
         </main>
         <div className="project-container" ref={projectsRef}>
-          <div className="project-row">
-            {projectsList.map(
-              ({ name, description, image, link, page, tools, index }) => (
-                <div className="project" key={index}>
-                  <img src={image} alt={name} />
-                  <div className="project-info">
+          {projectsList.map(
+            ({
+              name,
+              description,
+              image,
+              link,
+              project,
+              GitHub,
+              tools,
+              index,
+            }) => (
+              <div className="project" key={index}>
+                <Link href={project}>
+                  <motion.img src={image} alt={name} />
+                </Link>
+                <div className="project-info">
+                  <Link href={project}>
                     <h3>{name}</h3>
-                    {description.split("\n").map((str, index) => (
-                      <p key={index}>{str}</p>
+                  </Link>
+                  {description.split("\n").map((str, index) => (
+                    <p key={index}>{str}</p>
+                  ))}
+                  <h4>Tools used:</h4>
+                  <ul className="tools-list">
+                    {tools.map((item, index) => (
+                      <li key={index}>{item}</li>
                     ))}
-                    <h4>Tools used:</h4>
-                    <ul className="tools-list">
-                      {tools.map((item, index) => (
-                        <li key={index}>{item}</li>
-                      ))}
-                    </ul>
-                    <motion.div className="project-btns">
-                      <motion.a
-                        href={link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                      >
-                        <motion.button className="project-btn">
-                          Open Site
-                        </motion.button>
-                      </motion.a>
-                      <motion.a
-                        href={page}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                      >
-                        <motion.button className="project-btn">
-                          View Code
-                        </motion.button>
-                      </motion.a>
-                    </motion.div>
-                  </div>
+                  </ul>
+                  <motion.div className="project-btns">
+                    <motion.a
+                      href={link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                    >
+                      <motion.button className="project-btn">
+                        Open Site
+                      </motion.button>
+                    </motion.a>
+                    <motion.a
+                      href={GitHub}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                    >
+                      <motion.button className="project-btn">
+                        View Code
+                      </motion.button>
+                    </motion.a>
+                  </motion.div>
                 </div>
-              )
-            )}
-          </div>
-          <progress max="100" value="0"></progress>
+              </div>
+            )
+          )}
         </div>
 
         <footer>
@@ -321,6 +398,6 @@ export default function Home() {
           </ul>
         </footer>
       </div>
-    </div>
+    </motion.div>
   );
 }

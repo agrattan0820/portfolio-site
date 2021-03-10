@@ -1,8 +1,8 @@
-import "../styles/App.scss";
 import { useEffect } from "react";
+import "../styles/App.scss";
 import { AnimatePresence } from "framer-motion";
-import ReactGA from "react-ga";
 import { hotjar } from "react-hotjar";
+import ReactGA from "react-ga";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
