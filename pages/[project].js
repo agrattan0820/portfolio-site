@@ -17,13 +17,10 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 export default function Project() {
   const controls = useAnimation();
   const router = useRouter();
-  console.log(router);
   const { project } = router.query;
   let projectObject;
 
   projectObject = projectsList.find((el) => el.project === project);
-
-  console.log(projectObject);
 
   const page = {
     hidden: {
@@ -35,7 +32,7 @@ export default function Project() {
   };
 
   useEffect(() => {
-    document.body.style.overflowY = "scroll";
+    document.body.style.overflowY = "auto";
     controls.start("pageShow");
     gsap.registerPlugin(ScrollTrigger);
     let gsapProjects1 = gsap.utils.toArray(".gsap-1");
@@ -45,6 +42,7 @@ export default function Project() {
       gsap.from(image1, {
         scrollTrigger: {
           trigger: image1,
+          start: "top center",
         },
         x: -200,
         opacity: 0,
@@ -55,6 +53,7 @@ export default function Project() {
       gsap.from(image2, {
         scrollTrigger: {
           trigger: image2,
+          start: "top center",
         },
         x: 200,
         opacity: 0,
@@ -195,7 +194,7 @@ export default function Project() {
           {projectObject?.id > 1 ? (
             <Link href={projectsList[projectObject.id - 2].project}>
               <motion.button
-                className="project-btn"
+                className="previous-btn"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
@@ -204,7 +203,7 @@ export default function Project() {
               </motion.button>
             </Link>
           ) : (
-            <button className="disabled-btn" disabled>
+            <button className="disabled-btn previous-btn" disabled>
               <FontAwesomeIcon className="prev-arrow" icon={faChevronLeft} />
               Previous
             </button>
@@ -212,7 +211,7 @@ export default function Project() {
           {projectObject?.id < 5 ? (
             <Link href={projectsList[projectObject.id].project}>
               <motion.button
-                className="project-btn"
+                className="next-btn"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
@@ -221,17 +220,47 @@ export default function Project() {
               </motion.button>
             </Link>
           ) : (
-            <button className="disabled-btn" disabled>
+            <button className="disabled-btn next-btn" disabled>
               Next
               <FontAwesomeIcon className="next-arrow" icon={faChevronRight} />
             </button>
           )}
-          <Link href="/">
-            <div className="project-back">
-              <FontAwesomeIcon icon={faArrowLeft} /> Back Home
-            </div>
-          </Link>
         </nav>
+        {projectObject && (
+          <div className="bottom-links">
+            <motion.a
+              href={projectObject.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <motion.button
+                className="project-btn"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                Open Site
+              </motion.button>
+            </motion.a>
+            <motion.a
+              href={projectObject.GitHub}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <motion.button
+                className="project-btn"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                View Code
+              </motion.button>
+            </motion.a>
+            <Link href="/">
+              <div className="project-back">
+                <FontAwesomeIcon icon={faArrowLeft} /> Back Home
+              </div>
+            </Link>
+          </div>
+        )}
       </main>
     </motion.div>
   );

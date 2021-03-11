@@ -13,19 +13,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 export default function Home() {
   const [animationComplete, setAnimationComplete] = useState(false);
   const projectsRef = useRef(null);
   const scrollRef = useRef(null);
-  const router = useRouter();
-
-  console.log(router);
 
   const completeAnimation = () => {
     setAnimationComplete(true);
-    document.body.style.overflowY = "scroll";
+    document.body.style.overflowY = "auto";
   };
 
   const executeScroll = () => projectsRef.current.scrollIntoView();
