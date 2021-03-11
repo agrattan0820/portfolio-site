@@ -17,13 +17,10 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 export default function Project() {
   const controls = useAnimation();
   const router = useRouter();
-  console.log(router);
   const { project } = router.query;
   let projectObject;
 
   projectObject = projectsList.find((el) => el.project === project);
-
-  console.log(projectObject);
 
   const page = {
     hidden: {
