@@ -156,18 +156,8 @@
       border-radius: 20px;
       justify-content: center;
       align-items: center;
-      // &:nth-child(1)::after {
-      //   content: "Continue scrolling for next projects \203A";
-      //   font-family: $font;
-      //   color: $white;
-      //   position: absolute;
-      //   bottom: 5%;
-      // }
       @media (max-width: 967px) {
         flex-direction: column;
-        // &:nth-child(1)::after {
-        //   content: "Swipe right for next projects \203A";
-        // }
       }
       .project-info {
         font-family: $font;
@@ -349,6 +339,7 @@
   }
 }
 
+// Rainbow text
 @keyframes rainbow {
   0% {
     color: rgb(240, 77, 255);
