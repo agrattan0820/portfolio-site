@@ -21,7 +21,7 @@ export default function Home() {
 
   const completeAnimation = () => {
     setAnimationComplete(true);
-    document.body.style.overflowY = "auto";
+    document.body.style.overflowY = "scroll";
   };
 
   const executeScroll = () => projectsRef.current.scrollIntoView();

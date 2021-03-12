@@ -132,30 +132,6 @@
       }
     }
     .page-navigation {
-      // margin: 2rem 0;
-      // button {
-      //   cursor: pointer;
-      //   margin: 0 1rem;
-      //   width: 125px;
-      //   height: 50px;
-      //   border-radius: 15px;
-      //   border: none;
-      //   outline: none;
-      //   background: snow;
-      //   font-weight: 700;
-      //   font-family: $font;
-      //   font-size: 1rem;
-      //   @media (max-width: 967px) {
-      //     width: 100px;
-      //     font-size: 0.875rem;
-      //   }
-      //   .prev-arrow {
-      //     margin-right: 0.5rem;
-      //   }
-      //   .next-arrow {
-      //     margin-left: 0.5rem;
-      //   }
-      // }
       button {
         position: fixed;
         top: 50%;
@@ -181,12 +157,18 @@
         left: 5%;
         .prev-arrow {
           margin-right: 0.5rem;
+          @media (max-width: 967px) {
+            margin-right: 0.375rem;
+          }
         }
       }
       .next-btn {
         right: 5%;
         .next-arrow {
           margin-left: 0.5rem;
+          @media (max-width: 967px) {
+            margin-left: 0.375rem;
+          }
         }
       }
     }
