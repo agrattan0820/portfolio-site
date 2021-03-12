@@ -213,7 +213,7 @@ export default function Home() {
         <meta charSet="utf-8" />
         <meta
           name="description"
-          content="Portfolio for Alexander Grattan, web developer studying Digital Narrative and Interactive Design at the University of Pittsburgh. Skilled with React, JavaScript, Sass, and GSAP."
+          content="Portfolio for Alexander Grattan, web developer studying Digital Narrative and Interactive Design at the University of Pittsburgh. Skilled with React, JavaScript, Sass, Django, WordPress, and GSAP."
         ></meta>
         <title>Alexander Grattan / Web Developer</title>
         <link rel="icon" href="/favicon.ico" />
@@ -343,7 +343,6 @@ export default function Home() {
             )
           )}
         </div>
-
         <footer>
           <h2>Connect with Me</h2>
           <ul className="footer-links">
