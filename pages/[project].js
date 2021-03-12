@@ -32,7 +32,7 @@ export default function Project() {
   };
 
   useEffect(() => {
-    document.body.style.overflowY = "auto";
+    document.body.style.overflowY = "scroll";
     controls.start("pageShow");
     gsap.registerPlugin(ScrollTrigger);
     let gsapProjects1 = gsap.utils.toArray(".gsap-1");
