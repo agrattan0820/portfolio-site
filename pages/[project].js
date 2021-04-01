@@ -4,8 +4,8 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { projectsList } from "../components/data";
 import { motion, useAnimation } from "framer-motion";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+// import { gsap } from "gsap";
+// import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronLeft,
@@ -34,41 +34,41 @@ export default function Project() {
   useEffect(() => {
     document.body.style.overflowY = "auto";
     controls.start("pageShow");
-    gsap.registerPlugin(ScrollTrigger);
-    let gsapProjects1 = gsap.utils.toArray(".gsap-1");
-    let gsapProjects2 = gsap.utils.toArray(".gsap-2");
+    // gsap.registerPlugin(ScrollTrigger);
+    // let gsapProjects1 = gsap.utils.toArray(".gsap-1");
+    // let gsapProjects2 = gsap.utils.toArray(".gsap-2");
 
-    gsapProjects1.forEach((image1) => {
-      gsap.from(image1, {
-        scrollTrigger: {
-          trigger: image1,
-          start: "top center",
-        },
-        x: -200,
-        opacity: 0,
-        ease: "power3.out",
-      });
-    });
-    gsapProjects2.forEach((image2) => {
-      gsap.from(image2, {
-        scrollTrigger: {
-          trigger: image2,
-          start: "top center",
-        },
-        x: 200,
-        opacity: 0,
-        ease: "power3.out",
-      });
-    });
-    if (!projectObject?.figma && !projectObject?.old) {
-      gsap.from(".gsap-3", {
-        scrollTrigger: {
-          trigger: ".gsap-3",
-        },
-        y: 100,
-        opacity: 0,
-      });
-    }
+    // gsapProjects1.forEach((image1) => {
+    //   gsap.from(image1, {
+    //     scrollTrigger: {
+    //       trigger: image1,
+    //       start: "top center",
+    //     },
+    //     x: -200,
+    //     opacity: 0,
+    //     ease: "power3.out",
+    //   });
+    // });
+    // gsapProjects2.forEach((image2) => {
+    //   gsap.from(image2, {
+    //     scrollTrigger: {
+    //       trigger: image2,
+    //       start: "top center",
+    //     },
+    //     x: 200,
+    //     opacity: 0,
+    //     ease: "power3.out",
+    //   });
+    // });
+    // if (!projectObject?.figma && !projectObject?.old) {
+    //   gsap.from(".gsap-3", {
+    //     scrollTrigger: {
+    //       trigger: ".gsap-3",
+    //     },
+    //     y: 100,
+    //     opacity: 0,
+    //   });
+    // }
   }, [project]);
 
   return (
@@ -127,12 +127,19 @@ export default function Project() {
       </nav>
       <main className="project-main">
         <div className="text-content">
-          <motion.h1
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
+          <motion.a
+            href={projectObject?.link}
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            {projectObject?.name}
-          </motion.h1>
+            <motion.h1
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+            >
+              {projectObject?.name}
+            </motion.h1>
+          </motion.a>
+
           {projectObject?.longDescription
             ? projectObject?.longDescription
                 .split("\n")
