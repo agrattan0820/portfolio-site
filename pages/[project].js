@@ -80,7 +80,7 @@ export default function Project() {
       className="container"
     >
       <Head>
-        <title>First Post</title>
+        <title>{projectObject?.name}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <nav className="project-nav">
