@@ -14,7 +14,7 @@
           },
           {
             "key" : "Content-Security-Policy",
-            "value" : "default-src 'self' *.hotjar.com *.googleapis.com https://www.google-analytics.com  https://use.fontawesome.com;"
+            "value" : "default-src 'self' wss: *.hotjar.com *.googleapis.com https://www.google-analytics.com *.gstatic.com  *.fontawesome.com; style-src 'self' 'unsafe-inline' *.fontawesome.com;"
           }
         ]
       }
