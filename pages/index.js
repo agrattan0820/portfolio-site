@@ -213,9 +213,9 @@ export default function Home() {
         <meta charSet="utf-8" />
         <meta
           name="description"
-          content="Portfolio for Alexander Grattan, web developer studying Digital Narrative and Interactive Design at the University of Pittsburgh. Skilled with React, JavaScript, Sass, Django, WordPress, and GSAP."
+          content="Portfolio for Alexander Grattan, software developer studying Digital Narrative and Interactive Design at the University of Pittsburgh. Skilled with React, Gatsby, Next.js, JavaScript, TypeScript, Java, Python, TailwindCSS, Sass, Node.js, Django, and GSAP."
         ></meta>
-        <title>Alexander Grattan / Web Developer</title>
+        <title>Alexander Grattan | Software Developer</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {animationComplete === false && <IntroOverlay />}
@@ -277,7 +277,7 @@ export default function Home() {
 
           <h3 className="job-title">
             <span className="text-reveal">
-              Alexander Grattan / Web Developer
+              Alexander Grattan / Software Developer
             </span>
           </h3>
           <div className="scroll-indicator" onClick={executeScroll}>
