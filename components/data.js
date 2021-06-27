@@ -12,21 +12,18 @@ export const projectsList = [
     link: "https://pittcsc.org/",
     project: "pitt-csc",
     GitHub: "https://github.com/pittcsc/pittcsc-website",
-    tools: ["Gatsby", "Tailwind CSS", "Sass", "Framer Motion"],
+    tools: ["Gatsby", "Tailwind CSS", "Notion API", "Framer Motion"],
   },
   {
     id: 2,
-    name: "Green Pages",
+    name: "Resu.me",
     description:
-      "Cooperated with another developer and two pharmacy students to create a website that tracks cannabis strain availability in the Pennsylvania area. Helped create the REST API and backend with Django Rest Framework.",
-    longDescription:
-      "When joining this endeavor, I knew very little about cannabis and the business surrounding it. The extent of my knowledge went as far as knowing Jim Belushi became a huge grower and that's pretty much it.\nI was brought on to work as a front-end developer and to help construct the interface for a website that tracks cannabis strain availability in the Pennsylvania area.\nI knew HTML, CSS, JavaScript, and React at this time but the project required me to learn and understand Django. To make this a nonissue, I went ahead and learned all I could about how MVCs work and how a REST API can be built with Django.\nMy goal for the site's frontend was for it to be pleasing, yet recognizable as far as its theme and function. I ended up learning a whole lot with this project including how the pharmaceutical cannabis industry works, user authentication, the transfer of data from backend to frontend, and much more.",
-    image: "/images/Green_Pages_Screenshot.png",
-    figma: "/images/Green_Pages_Figma_Screenshot.png",
-    link: "https://green-pages-infotender.herokuapp.com/",
-    project: "green-pages",
-    GitHub: "https://github.com/CQS-Software/Green-Pages",
-    tools: ["React", "Django", "Sass", "Redux", "Framer Motion", "Heroku"],
+      "Steelhacks hackathon winning website that acts as a resume repository for students and employers.\nBuilt the website and app in 24 hours with three other teammates.",
+    image: "/images/resu_me_Screenshot.png",
+    link: "https://shielded-chamber-18134.herokuapp.com/",
+    project: "resu_me",
+    GitHub: "https://github.com/AlexWang18/Steelhacks",
+    tools: ["React", "Express", "Sass", "Heroku"],
   },
   {
     id: 3,
@@ -42,16 +39,20 @@ export const projectsList = [
     GitHub: "https://github.com/GameDog9988/grade-my-aid",
     tools: ["React", "Framer Motion", "Sass"],
   },
+
   {
     id: 4,
-    name: "Resu.me",
+    name: "Green Pages",
     description:
-      "Steelhacks hackathon winning website that acts as a resume repository for students and employers.\nBuilt the website and app in 24 hours with three other teammates.",
-    image: "/images/resu_me_Screenshot.png",
-    link: "https://shielded-chamber-18134.herokuapp.com/",
-    project: "resu_me",
-    GitHub: "https://github.com/AlexWang18/Steelhacks",
-    tools: ["React", "Express", "Sass", "Heroku"],
+      "Cooperated with another developer and two pharmacy students to create a website that tracks cannabis strain availability in the Pennsylvania area. Helped create the REST API and backend with Django Rest Framework.",
+    longDescription:
+      "When joining this endeavor, I knew very little about cannabis and the business surrounding it. The extent of my knowledge went as far as knowing Jim Belushi became a huge grower and that's pretty much it.\nI was brought on to work as a front-end developer and to help construct the interface for a website that tracks cannabis strain availability in the Pennsylvania area.\nI knew HTML, CSS, JavaScript, and React at this time but the project required me to learn and understand Django. To make this a nonissue, I went ahead and learned all I could about how MVCs work and how a REST API can be built with Django.\nMy goal for the site's frontend was for it to be pleasing, yet recognizable as far as its theme and function. I ended up learning a whole lot with this project including how the pharmaceutical cannabis industry works, user authentication, the transfer of data from backend to frontend, and much more.",
+    image: "/images/Green_Pages_Screenshot.png",
+    figma: "/images/Green_Pages_Figma_Screenshot.png",
+    link: "https://green-pages-infotender.herokuapp.com/",
+    project: "green-pages",
+    GitHub: "https://github.com/CQS-Software/Green-Pages",
+    tools: ["React", "Django", "Sass", "Redux", "Framer Motion", "Heroku"],
   },
   {
     id: 5,

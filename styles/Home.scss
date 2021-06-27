@@ -83,7 +83,11 @@
         @media (max-height: 800px) {
           font-size: 5rem;
         }
-        @media (max-width: 1300px) {
+        @media (max-width: 1536px) {
+          font-size: 6rem;
+          margin-right: 2rem;
+        }
+        @media (max-width: 1280px) {
           font-size: 5rem;
         }
         @media (max-width: 967px) {
@@ -101,7 +105,7 @@
         @media (max-height: 800px) {
           width: 200px;
         }
-        @media (max-width: 1300px) {
+        @media (max-width: 1280px) {
           width: 200px;
         }
         @media (max-width: 967px) {
@@ -113,6 +117,9 @@
     .job-title {
       font-size: 1.4rem;
       font-weight: 400;
+      @media (max-width: 1536px) {
+        font-size: 1.2rem;
+      }
       @media (max-width: 967px) {
         font-size: 0.9rem;
       }
@@ -255,7 +262,7 @@
           0 22.3px 17.9px rgba(211, 211, 211, 0.042),
           0 41.8px 33.4px rgba(211, 211, 211, 0.05),
           0 100px 80px rgba(211, 211, 211, 0.07);
-        @media (max-width: 1300px) {
+        @media (max-width: 1280px) {
           width: 500px;
           height: 280px;
         }
