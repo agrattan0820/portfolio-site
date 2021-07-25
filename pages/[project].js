@@ -215,7 +215,7 @@ export default function Project() {
               Previous
             </button>
           )}
-          {projectObject?.id < 6 ? (
+          {projectObject?.id < 7 ? (
             <Link href={projectsList[projectObject.id].project}>
               <motion.button
                 className="next-btn"

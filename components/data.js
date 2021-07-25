@@ -1,6 +1,18 @@
 export const projectsList = [
   {
     id: 1,
+    name: "Autos2050",
+    description:
+      "Developed the website for an automotive industry convention that hosts various webinars, podcasts, and presentations.",
+    longDescription:
+      "Before coming on as an intern at the digital design agency Actual Size, the company hired me to complete contract work and create a website for Autos2050, an automotive industry convention.\nI was treading into new territory with this project, collaborating with a professional designer, working for and tailoring a website for a client, and I loved the whole experience.\nThe client was coming from managing a WordPress site, so part of the challenge was trying to create a site that was modern and fast (WordPress sites tend to be slow) but also familiar and usable for the client. Our team implemented Sanity for its simplicity and its powerful GraphQL API. The website now serves and handles the posting of a variety of events, podcasts, and webinars.",
+    image: "/images/Autos2050_Screenshot.jpg",
+    link: "https://autos2050.com/",
+    project: "autos2050",
+    tools: ["Gatsby", "Tailwind CSS", "Sanity.io", "Framer Motion"],
+  },
+  {
+    id: 2,
     name: "Pitt CSC",
     description:
       "Redesigned and developed the website for the Pitt Computer Science Club that helps advertise its efforts to support computer science and technology-related initiatives.",
@@ -15,7 +27,7 @@ export const projectsList = [
     tools: ["Gatsby", "Tailwind CSS", "Notion API", "Framer Motion"],
   },
   {
-    id: 2,
+    id: 3,
     name: "Resu.me",
     description:
       "Steelhacks hackathon winning website that acts as a resume repository for students and employers.\nBuilt the website and app in 24 hours with three other teammates.",
@@ -26,7 +38,7 @@ export const projectsList = [
     tools: ["React", "Express", "Sass", "Heroku"],
   },
   {
-    id: 3,
+    id: 4,
     name: "Grademyaid",
     description:
       "A website that allows students to grade their college financial aid packages using data from the US Department of Education.\nThis was built for Pitt CSC Hacks, a competition sponsored by the University of Pittsburgh's Computer Science Club.",
@@ -41,7 +53,7 @@ export const projectsList = [
   },
 
   {
-    id: 4,
+    id: 5,
     name: "Green Pages",
     description:
       "Cooperated with another developer and two pharmacy students to create a website that tracks cannabis strain availability in the Pennsylvania area. Helped create the REST API and backend with Django Rest Framework.",
@@ -55,7 +67,7 @@ export const projectsList = [
     tools: ["React", "Django", "Sass", "Redux", "Framer Motion", "Heroku"],
   },
   {
-    id: 5,
+    id: 6,
     name: "The New York Times Critic's Picks",
     description:
       "A website that showcases movies that The New York Times considers critic's picks. Uses the newspaper's REST API in order to gather the data.\nThe cards can be sorted in multiple ways and each link to the corresponding review on The New York Time's website.",
@@ -66,7 +78,7 @@ export const projectsList = [
     tools: ["React", "Framer Motion", "The New York Times API"],
   },
   {
-    id: 6,
+    id: 7,
     name: "Virtual Safari",
     description:
       "A recreation of Timon and Pumbaa's Virtual Safari, a choose-your-own adventure from The Lion King DVD.\nI edited the choices into individual clips using the video editor, DaVinci Resolve, and used JavaScript to develop the site interaction.",
