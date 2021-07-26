@@ -94,8 +94,8 @@ export default function Project() {
                 href="/Alexander_Grattan_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 Resume
               </motion.a>
@@ -105,8 +105,8 @@ export default function Project() {
                 href="https://github.com/GameDog9988"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <FontAwesomeIcon icon={faGithub} size="2x" />
               </motion.a>
@@ -116,8 +116,8 @@ export default function Project() {
                 href="https://www.linkedin.com/in/alexander-grattan/"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <FontAwesomeIcon icon={faLinkedin} size="2x" />
               </motion.a>
@@ -202,8 +202,8 @@ export default function Project() {
             <Link href={projectsList[projectObject.id - 2].project}>
               <motion.button
                 className="previous-btn"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <FontAwesomeIcon className="prev-arrow" icon={faChevronLeft} />
                 Previous
@@ -219,8 +219,8 @@ export default function Project() {
             <Link href={projectsList[projectObject.id].project}>
               <motion.button
                 className="next-btn"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 Next
                 <FontAwesomeIcon className="next-arrow" icon={faChevronRight} />
@@ -255,8 +255,8 @@ export default function Project() {
             >
               <motion.button
                 className="project-btn"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 View Code
               </motion.button>

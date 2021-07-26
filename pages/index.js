@@ -10,7 +10,10 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChevronDown,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -243,8 +246,8 @@ export default function Home() {
                   href="https://github.com/GameDog9988"
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   <FontAwesomeIcon icon={faGithub} size="2x" />
                 </motion.a>
@@ -254,8 +257,8 @@ export default function Home() {
                   href="https://www.linkedin.com/in/alexander-grattan/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   <FontAwesomeIcon icon={faLinkedin} size="2x" />
                 </motion.a>
@@ -299,7 +302,11 @@ export default function Home() {
             }) => (
               <div className="project" key={index}>
                 <Link href={project}>
-                  <motion.img src={image} alt={name} />
+                  <motion.img
+                    className="project-image"
+                    src={image}
+                    alt={name}
+                  />
                 </Link>
                 <div className="project-info">
                   <Link href={project}>
@@ -308,6 +315,11 @@ export default function Home() {
                   {description.split("\n").map((str, index) => (
                     <p key={index}>{str}</p>
                   ))}
+                  <Link href={project}>
+                    <button className="project-read-more">
+                      Read More <FontAwesomeIcon icon={faChevronRight} />
+                    </button>
+                  </Link>
                   <h4>Tools used:</h4>
                   <ul className="tools-list">
                     {tools.map((item, index) => (
@@ -319,8 +331,8 @@ export default function Home() {
                       href={link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
                     >
                       <motion.button className="project-btn">
                         Open Site
@@ -330,8 +342,8 @@ export default function Home() {
                       href={GitHub}
                       target="_blank"
                       rel="noopener noreferrer"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
                     >
                       <motion.button className="project-btn">
                         View Code
@@ -362,8 +374,8 @@ export default function Home() {
                 href="https://github.com/GameDog9988"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <FontAwesomeIcon icon={faGithub} size="2x" />
               </motion.a>
@@ -384,8 +396,8 @@ export default function Home() {
                 href="https://twitter.com/agrattan0820"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <FontAwesomeIcon icon={faTwitter} size="2x" />
               </motion.a>

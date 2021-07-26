@@ -191,6 +191,10 @@
           cursor: pointer;
           font-size: 2rem;
           margin: 0;
+          &:hover {
+            transition: all 0.4s cubic-bezier(0.15, 0.75, 0.45, 0.95) 0s;
+            animation: 10s ease 0s infinite alternate none running rainbow;
+          }
           @media (max-height: 800px) {
             font-size: 1.6rem;
           }
@@ -199,10 +203,11 @@
           }
         }
         h4 {
+          font-size: 1.25rem;
           margin-bottom: 0;
         }
         p {
-          margin: 1rem 0;
+          margin: 1rem 0 0.5rem 0;
           line-height: 24px;
           font-weight: 300;
           @media (max-height: 800px) {
@@ -214,41 +219,56 @@
             line-height: 20px;
           }
         }
+        .project-read-more {
+          background: none;
+          outline: none;
+          border: none;
+          color: white;
+          font-weight: bold;
+          margin: 0;
+          padding: 0;
+          cursor: pointer;
+          svg {
+            transition: transform 0.3s ease;
+          }
+          &:hover {
+            svg {
+              transform: translateX(2px);
+            }
+          }
+        }
         .project-btns {
           display: flex;
           @media (max-width: 967px) {
             justify-content: center;
           }
-          .project-btn {
-            cursor: pointer;
-            margin: 0 1rem;
-            width: 125px;
-            height: 50px;
-            border-radius: 15px;
-            border: none;
-            outline: none;
-            background: snow;
-            font-weight: 700;
-            font-family: $font;
-            font-size: 1rem;
-            @media (max-width: 967px) {
-              width: 100px;
-              font-size: 0.875rem;
-            }
-          }
           a {
             text-decoration: none;
             color: $white;
-            margin: 0;
+            margin: 0 1rem;
             padding: 0;
+            display: block;
             .project-btn {
-              @extend .project-btn;
+              cursor: pointer;
+              width: 125px;
+              height: 50px;
+              border-radius: 15px;
+              border: none;
+              outline: none;
+              background: snow;
+              font-weight: 700;
+              font-family: $font;
+              font-size: 1rem;
+              @media (max-width: 967px) {
+                width: 100px;
+                font-size: 0.875rem;
+              }
             }
           }
         }
       }
-
-      img {
+      .project-image {
+        display: block;
         cursor: pointer;
         width: 800px;
         height: 450px;
@@ -256,12 +276,21 @@
         object-position: center;
         border-radius: 20px;
         margin: 0 32px;
+        transition: box-shadow 0.3s ease;
         box-shadow: 0 2.8px 2.2px rgba(211, 211, 211, 0.02),
           0 6.7px 5.3px rgba(211, 211, 211, 0.028),
           0 12.5px 10px rgba(211, 211, 211, 0.035),
           0 22.3px 17.9px rgba(211, 211, 211, 0.042),
           0 41.8px 33.4px rgba(211, 211, 211, 0.05),
           0 100px 80px rgba(211, 211, 211, 0.07);
+        &:hover {
+          box-shadow: 0 2.8px 2.2px rgba(256, 256, 256, 0.02),
+            0 6.7px 5.3px rgba(256, 256, 256, 0.028),
+            0 12.5px 10px rgba(256, 256, 256, 0.035),
+            0 22.3px 17.9px rgba(256, 256, 256, 0.042),
+            0 41.8px 33.4px rgba(256, 256, 256, 0.05),
+            0 100px 80px rgba(256, 256, 256, 0.07);
+        }
         @media (max-width: 1280px) {
           width: 500px;
           height: 280px;
