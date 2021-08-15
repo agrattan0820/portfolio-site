@@ -293,6 +293,7 @@ export default function Home() {
             ({
               name,
               description,
+              longDescription,
               image,
               link,
               project,
@@ -315,11 +316,16 @@ export default function Home() {
                   {description.split("\n").map((str, index) => (
                     <p key={index}>{str}</p>
                   ))}
-                  <Link href={project}>
-                    <button className="project-read-more">
-                      Read More <FontAwesomeIcon icon={faChevronRight} />
-                    </button>
-                  </Link>
+                  {longDescription && (
+                    <Link href={project}>
+                      <button className="project-read-more">
+                        <span>Read More</span>{" "}
+                        <div className="read-more-arrow">
+                          <FontAwesomeIcon icon={faChevronRight} />
+                        </div>
+                      </button>
+                    </Link>
+                  )}
                   <h4>Tools used:</h4>
                   <ul className="tools-list">
                     {tools.map((item, index) => (
