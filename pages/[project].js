@@ -18,8 +18,7 @@ export default function Project() {
   const controls = useAnimation();
   const router = useRouter();
   const { project } = router.query;
-  let projectObject;
-
+  let projectObject = {};
   projectObject = projectsList.find((el) => el.project === project);
 
   const page = {
@@ -215,7 +214,7 @@ export default function Project() {
               Previous
             </button>
           )}
-          {projectObject?.id < 7 ? (
+          {projectObject?.id < projectsList.length ? (
             <Link href={projectsList[projectObject.id].project}>
               <motion.button
                 className="next-btn"
