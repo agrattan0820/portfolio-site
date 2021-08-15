@@ -220,16 +220,22 @@
           }
         }
         .project-read-more {
+          display: flex;
+          align-items: center;
           background: none;
           outline: none;
           border: none;
           color: white;
+          font-family: $font;
           font-weight: bold;
           margin: 0;
           padding: 0;
           cursor: pointer;
           svg {
             transition: transform 0.3s ease;
+            display: block;
+            margin-top: 0.1rem;
+            margin-left: 0.25rem;
           }
           &:hover {
             svg {
