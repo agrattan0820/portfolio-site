@@ -83,48 +83,6 @@ export default function Home() {
           ease: "power3.out",
         });
 
-      // gsap.from(".project-row", {
-      //   scrollTrigger: {
-      //     trigger: ".project-container",
-      //     start: "top center",
-      //     end: "top top",
-      //     scrub: 1,
-      //   },
-      //   x: 500,
-      //   opacity: 0,
-      //   duration: 2,
-      // });
-
-      // if (mediaQuery.matches) {
-      //   gsap.to(projects, {
-      //     xPercent: -100 * (projects.length - 1),
-      //     ease: "none",
-      //     scrollTrigger: {
-      //       trigger: ".project-container",
-      //       pin: true,
-      //       start: "top top",
-      //       scrub: 1,
-      //       snap: {
-      //         snapTo: 1 / (projects.length - 1),
-      //         duration: { min: 0.2, max: 1 },
-      //         delay: 0,
-      //       },
-      //       // Base vertical scrolling on how wide the container is so it feels more natural.
-      //       end: () =>
-      //         "+=" + document.querySelector(".project-row").offsetHeight,
-      //     },
-      //   });
-      //   gsap.to("progress", {
-      //     value: 100,
-      //     ease: "none",
-      //     scrollTrigger: {
-      //       trigger: ".project-container",
-      //       start: "center center",
-      //       scrub: 0.3,
-      //     },
-      //   });
-      // }
-
       if (mediaQuery.matches) {
         projects.forEach((project) => {
           let tlProject = gsap.timeline({
@@ -172,11 +130,6 @@ export default function Home() {
             });
         });
       }
-
-      //       .from(project + " .project-info", {
-      //   x: 300,
-      //   opacity: 0,
-      // });
 
       let tlFooter = gsap.timeline({
         scrollTrigger: {
@@ -232,7 +185,7 @@ export default function Home() {
             <ul className="nav-list">
               <li>
                 <motion.a
-                  href="/Alexander_Grattan_Resume.pdf"
+                  href="https://drive.google.com/file/d/1PgvpHThs5XjTwGZgib9ZTVLa8QbhulWp/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1 }}
@@ -366,7 +319,7 @@ export default function Home() {
           <ul className="footer-links">
             <li>
               <motion.a
-                href="/Alexander_Grattan_Resume.pdf"
+                href="https://drive.google.com/file/d/1PgvpHThs5XjTwGZgib9ZTVLa8QbhulWp/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1 }}
