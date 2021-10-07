@@ -203,6 +203,7 @@ export default function Home() {
                   whileTap={{ scale: 0.95 }}
                 >
                   <FontAwesomeIcon icon={faGithub} size="2x" />
+                  <span className="header-hidden-text">GitHub</span>
                 </motion.a>
               </li>
               <li>
@@ -214,6 +215,7 @@ export default function Home() {
                   whileTap={{ scale: 0.95 }}
                 >
                   <FontAwesomeIcon icon={faLinkedin} size="2x" />
+                  <span className="header-hidden-text">LinkedIn</span>
                 </motion.a>
               </li>
             </ul>
@@ -236,10 +238,10 @@ export default function Home() {
               Alexander Grattan / Software Developer
             </span>
           </h3>
-          <div className="scroll-indicator" onClick={executeScroll}>
-            <p>Projects</p>
+          <button className="scroll-indicator" onClick={executeScroll}>
+            <span>Projects</span>
             <FontAwesomeIcon icon={faChevronDown} />
-          </div>
+          </button>
         </main>
         <div className="project-container" ref={projectsRef}>
           {projectsList.map(
@@ -337,6 +339,7 @@ export default function Home() {
                 whileTap={{ scale: 0.95 }}
               >
                 <FontAwesomeIcon icon={faGithub} size="2x" />
+                <span className="footer-hidden-text">GitHub</span>
               </motion.a>
             </li>
             <li>
@@ -348,6 +351,7 @@ export default function Home() {
                 whileTap={{ scale: 0.9 }}
               >
                 <FontAwesomeIcon icon={faLinkedin} size="2x" />
+                <span className="footer-hidden-text">GitHub</span>
               </motion.a>
             </li>
             <li>
@@ -359,6 +363,7 @@ export default function Home() {
                 whileTap={{ scale: 0.95 }}
               >
                 <FontAwesomeIcon icon={faTwitter} size="2x" />
+                <span className="footer-hidden-text">Twitter</span>
               </motion.a>
             </li>
           </ul>

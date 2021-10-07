@@ -71,6 +71,7 @@ export default function Project() {
                 whileTap={{ scale: 0.95 }}
               >
                 <FontAwesomeIcon icon={faGithub} size="2x" />
+                <span className="header-hidden-text">GitHub</span>
               </motion.a>
             </li>
             <li>
@@ -82,6 +83,7 @@ export default function Project() {
                 whileTap={{ scale: 0.95 }}
               >
                 <FontAwesomeIcon icon={faLinkedin} size="2x" />
+                <span className="header-hidden-text">LinkedIn</span>
               </motion.a>
             </li>
           </ul>
