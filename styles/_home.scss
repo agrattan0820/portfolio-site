@@ -269,18 +269,19 @@
         }
         .project-btns {
           display: flex;
+          gap: 1rem;
           @media (max-width: 967px) {
             justify-content: center;
           }
           a {
             text-decoration: none;
             color: $white;
-            margin: 0 1rem;
             padding: 0;
             display: block;
+            width: 100%;
             .project-btn {
               cursor: pointer;
-              width: 125px;
+              width: 100%;
               height: 50px;
               border-radius: 15px;
               border: none;

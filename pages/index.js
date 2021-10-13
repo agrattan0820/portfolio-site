@@ -299,17 +299,19 @@ export default function Home() {
                         Open Site
                       </motion.button>
                     </motion.a>
-                    <motion.a
-                      href={GitHub}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <motion.button className="project-btn">
-                        View Code
-                      </motion.button>
-                    </motion.a>
+                    {GitHub && (
+                      <motion.a
+                        href={GitHub}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <motion.button className="project-btn">
+                          View Code
+                        </motion.button>
+                      </motion.a>
+                    )}
                   </motion.div>
                 </div>
               </div>
