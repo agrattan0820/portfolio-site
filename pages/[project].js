@@ -58,6 +58,7 @@ export default function Project() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                title="Download Alexander's Resume"
               >
                 Resume
               </motion.a>
@@ -69,6 +70,7 @@ export default function Project() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                title="Go to Alexander's GitHub"
               >
                 <FontAwesomeIcon icon={faGithub} size="2x" />
                 <span className="header-hidden-text">GitHub</span>
@@ -81,6 +83,7 @@ export default function Project() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                title="Connect with Alexander on LinkedIn"
               >
                 <FontAwesomeIcon icon={faLinkedin} size="2x" />
                 <span className="header-hidden-text">LinkedIn</span>
@@ -168,6 +171,7 @@ export default function Project() {
                 className="previous-btn"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                title="Previous Project"
               >
                 <FontAwesomeIcon className="prev-arrow" icon={faChevronLeft} />
                 Previous
@@ -185,6 +189,7 @@ export default function Project() {
                 className="next-btn"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                title="Next Project"
               >
                 Next
                 <FontAwesomeIcon className="next-arrow" icon={faChevronRight} />
@@ -208,6 +213,7 @@ export default function Project() {
                 className="project-btn"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
+                title={`Open site of ${projectObject.name}`}
               >
                 Open Site
               </motion.button>
@@ -221,6 +227,7 @@ export default function Project() {
                 className="project-btn"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                title={`View Code for ${projectObject.name}`}
               >
                 View Code
               </motion.button>

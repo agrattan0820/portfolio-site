@@ -190,6 +190,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
+                  title="Download Alexander's Resume"
                 >
                   Resume
                 </motion.a>
@@ -201,6 +202,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  title="Go to Alexander's GitHub"
                 >
                   <FontAwesomeIcon icon={faGithub} size="2x" />
                   <span className="header-hidden-text">GitHub</span>
@@ -213,6 +215,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  title="Connect with Alexander on LinkedIn"
                 >
                   <FontAwesomeIcon icon={faLinkedin} size="2x" />
                   <span className="header-hidden-text">LinkedIn</span>
@@ -294,6 +297,7 @@ export default function Home() {
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
+                      title={`Open site of ${name}`}
                     >
                       <motion.button className="project-btn">
                         Open Site
@@ -306,6 +310,7 @@ export default function Home() {
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
+                        title={`View Code for ${name}`}
                       >
                         <motion.button className="project-btn">
                           View Code
@@ -328,6 +333,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
+                title="Download Alexander's Resume"
               >
                 Resume
               </motion.a>
@@ -339,6 +345,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                title="Go to Alexander's GitHub"
               >
                 <FontAwesomeIcon icon={faGithub} size="2x" />
                 <span className="footer-hidden-text">GitHub</span>
@@ -351,6 +358,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
+                title="Connect with Alexander on LinkedIn"
               >
                 <FontAwesomeIcon icon={faLinkedin} size="2x" />
                 <span className="footer-hidden-text">GitHub</span>
@@ -363,6 +371,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                title="Follow Alexander on Twitter"
               >
                 <FontAwesomeIcon icon={faTwitter} size="2x" />
                 <span className="footer-hidden-text">Twitter</span>
