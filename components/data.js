@@ -6,7 +6,7 @@ export const projectsList = [
       "Browser extension that helps developers and accessibility engineers inspect a website's buttons and determine if they follow HTML standards and Web Content Accessibility Guidelines (WCAG).",
     image: "/images/Belly_Button_Design.jpg",
     link: "http://getbellybutton.com/",
-    GitHub: "https://github.com/GameDog9988/IcoAlt",
+    GitHub: "https://github.com/GameDog9988/belly-button",
     project: "belly-button",
     tools: ["HTML", "CSS", "JavaScript", "Chrome API"],
   },
