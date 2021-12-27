@@ -274,7 +274,7 @@
           }
           a {
             text-decoration: none;
-            color: $white;
+            color: $black;
             padding: 0;
             display: block;
             width: 100%;
@@ -285,6 +285,7 @@
               border-radius: 15px;
               border: none;
               outline: none;
+              color: $black;
               background: snow;
               font-weight: 700;
               font-family: $font;
