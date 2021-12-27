@@ -253,6 +253,7 @@ export default function Home() {
               description,
               longDescription,
               image,
+              mobileImage,
               link,
               project,
               GitHub,
@@ -261,11 +262,14 @@ export default function Home() {
             }) => (
               <div className="project" key={index}>
                 <Link href={project}>
-                  <motion.img
-                    className="project-image"
-                    src={image}
-                    alt={name}
-                  />
+                  <picture>
+                    <source srcset={image} media="(min-width: 1280px)" />
+                    <img
+                      className="project-image"
+                      src={mobileImage}
+                      alt={name}
+                    />
+                  </picture>
                 </Link>
                 <div className="project-info">
                   <Link href={project}>

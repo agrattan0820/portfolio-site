@@ -5,6 +5,7 @@ export const projectsList = [
     description:
       "Browser extension that helps developers and accessibility engineers inspect a website's buttons and determine if they follow HTML standards and Web Content Accessibility Guidelines (WCAG).",
     image: "/images/Belly_Button_Design.jpg",
+    mobileImage: "/images/Belly_Button_Design_Small.jpg",
     link: "http://getbellybutton.com/",
     GitHub: "https://github.com/GameDog9988/belly-button",
     project: "belly-button",
@@ -15,6 +16,7 @@ export const projectsList = [
     name: "Allegory of the Cave",
     description: "Audiovisual experience with an interactive 3D sun.",
     image: "/images/Allegory_Cave_Screenshot.jpg",
+    mobileImage: "/images/Allegory_Cave_Screenshot_Small.jpg",
     link: "https://allegory-of-the-cave.netlify.app/",
     GitHub: "https://github.com/GameDog9988/allegory-of-the-cave",
     project: "allegory-cave",
@@ -26,6 +28,7 @@ export const projectsList = [
     description:
       "Website for a congressman entering the 2022 Pennsylvania Senate Race.",
     image: "/images/Conor_Lamb_Screenshot.jpg",
+    mobileImage: "/images/Conor_Lamb_Screenshot_Small.jpg",
     link: "https://conorlamb.com/",
     project: "conor-lamb",
     tools: [
@@ -43,6 +46,7 @@ export const projectsList = [
     longDescription:
       "I was appointed as a club officer for the Pitt Computer Science Club, both to support initiatives and to redesign the club website.\nBesides upgrading the technology from an outdated Jekyll site to a modern Gatsby site, I wanted the design to represent the student spirit of Pitt Computer Science Club.\nI iterated with different designs, gaining feedback from members on how the club should be advertised.\nSome new things I experimented with for this project were svg animations and SEO analysis using Google Search Console, Google Analytics, and Hotjar.",
     image: "/images/Pitt_CSC_Screenshot.png",
+    mobileImage: "/images/Pitt_CSC_Screenshot_Small.png",
     figma: "/images/Pitt_CSC_Figma_Screenshot.png",
     old: "/images/Original_CSC_Site_Screenshot.png",
     link: "https://pittcsc.org/",
@@ -56,6 +60,7 @@ export const projectsList = [
     description:
       "Steelhacks hackathon winning website that acts as a resume repository for students and employers.\nBuilt the website and app in 24 hours with three other teammates.",
     image: "/images/resu_me_Screenshot.png",
+    mobileImage: "/images/resu_me_Screenshot_Small.png",
     link: "https://shielded-chamber-18134.herokuapp.com/",
     project: "resu_me",
     GitHub: "https://github.com/AlexWang18/Steelhacks",
@@ -66,7 +71,8 @@ export const projectsList = [
     name: "Grademyaid",
     description:
       "Application that allows students to grade their college financial aid packages using data from the US Department of Education.\nThis was built for Pitt CSC Hacks, a competition sponsored by the University of Pittsburgh's Computer Science Club.",
-    image: "/images/www.grademyaid.com_.png",
+    image: "/images/GradeMyAid.png",
+    mobileImage: "/images/GradeMyAid_Small.png",
     longDescription:
       "This was built for Pitt CSC Hacks, a competition sponsored by the University of Pittsburgh's Computer Science Club and was my first time participating in a coding competition. Going into this experience I was quite nervous.\nI stuck to my guns and went with an idea that I had the past summer which was a website that helps students analyze their financial aid package based on information about the school, similar to how Niche.com grades colleges and universities.\nI ended up finding a partner who didn't know much about web development, but was willing to work with me in developing this idea.\nThis was my first foray into handling large amounts of data and trying to contextualize it for a user. If I were to fix one thing about the site, it would be effectively distinguishing the grades between each other so that a user's result is crystal clear.",
     figma: "/images/Grademyaid_Figma_Screenshot.png",
@@ -84,6 +90,7 @@ export const projectsList = [
     longDescription:
       "When joining this endeavor, I knew very little about cannabis and the business surrounding it. The extent of my knowledge went as far as knowing Jim Belushi became a huge grower and that's pretty much it.\nI was brought on to work as a front-end developer and to help construct the interface for a website that tracks cannabis strain availability in the Pennsylvania area.\nI knew HTML, CSS, JavaScript, and React at this time but the project required me to learn and understand Django. To make this a nonissue, I went ahead and learned all I could about how MVCs work and how a REST API can be built with Django.\nMy goal for the site's frontend was for it to be pleasing, yet recognizable as far as its theme and function. I ended up learning a whole lot with this project including how the pharmaceutical cannabis industry works, user authentication, the transfer of data from backend to frontend, and much more.",
     image: "/images/Green_Pages_Screenshot.png",
+    mobileImage: "/images/Green_Pages_Screenshot_Small.png",
     figma: "/images/Green_Pages_Figma_Screenshot.png",
     link: "https://green-pages-infotender.herokuapp.com/",
     project: "green-pages",
@@ -96,6 +103,7 @@ export const projectsList = [
     description:
       "A website that showcases movies that The New York Times considers critic's picks. Uses the newspaper's REST API in order to gather the data.\nThe cards can be sorted in multiple ways and each link to the corresponding review on The New York Time's website.",
     image: "/images/NYT_Critic_Picks.png",
+    mobileImage: "/images/NYT_Critic_Picks_Small.png",
     link: "https://nytcriticpicks.netlify.app",
     project: "nyt-movie-critics",
     GitHub: "https://github.com/GameDog9988/Movie-Review-App",
@@ -107,6 +115,7 @@ export const projectsList = [
     description:
       "A recreation of Timon and Pumbaa's Virtual Safari, a choose-your-own adventure from The Lion King DVD.\nI edited the choices into individual clips using the video editor, DaVinci Resolve, and used JavaScript to develop the site interaction.",
     image: "/images/Virtual_Safari_Screenshot.png",
+    mobileImage: "/images/Virtual_Safari_Screenshot_Small.png",
     link: "https://virtualsafari.netlify.app/",
     project: "virtual-safari",
     GitHub: "https://github.com/GameDog9988/Virtual-Safari",
