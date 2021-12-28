@@ -273,7 +273,7 @@ export default function Home() {
                 </Link>
                 <div className="project-info">
                   <Link href={project}>
-                    <h3>{name}</h3>
+                    <h2>{name}</h2>
                   </Link>
                   {description.split("\n").map((str, index) => (
                     <p key={index}>{str}</p>
@@ -288,7 +288,7 @@ export default function Home() {
                       </button>
                     </Link>
                   )}
-                  <h4>Tools used:</h4>
+                  <h3>Tools used:</h3>
                   <ul className="tools-list">
                     {tools.map((item, index) => (
                       <li key={index}>{item}</li>
