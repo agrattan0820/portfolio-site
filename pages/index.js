@@ -263,7 +263,7 @@ export default function Home() {
               <div className="project" key={index}>
                 <Link href={project}>
                   <picture>
-                    <source srcset={image} media="(min-width: 1280px)" />
+                    <source srcSet={image} media="(min-width: 1280px)" />
                     <img
                       className="project-image"
                       src={mobileImage}
