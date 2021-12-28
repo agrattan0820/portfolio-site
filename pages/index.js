@@ -236,11 +236,11 @@ export default function Home() {
             />
           </div>
 
-          <h3 className="job-title">
+          <p className="job-title">
             <span className="text-reveal">
               Alexander Grattan / Software Developer
             </span>
-          </h3>
+          </p>
           <button className="scroll-indicator" onClick={executeScroll}>
             <span>Projects</span>
             <FontAwesomeIcon icon={faChevronDown} />
