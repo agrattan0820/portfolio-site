@@ -9,7 +9,7 @@ export const projectsList = [
     link: "https://pollockisshit.netlify.app/",
     GitHub: "https://github.com/GameDog9988/Pollock-is-Poop",
     project: "belly-button",
-    tools: ["Next.js", "Tailwind", "p5.js"],
+    tools: ["Next.js", "Tailwind CSS", "p5.js"],
   },
   {
     id: 1,
@@ -63,7 +63,7 @@ export const projectsList = [
     link: "https://shielded-chamber-18134.herokuapp.com/",
     project: "resu_me",
     GitHub: "https://github.com/AlexWang18/Steelhacks",
-    tools: ["React", "Express", "Sass", "Heroku"],
+    tools: ["React", "Express", "Scss", "Heroku"],
   },
   {
     id: 5,
@@ -78,7 +78,7 @@ export const projectsList = [
     link: "https://www.grademyaid.com/",
     project: "grademyaid",
     GitHub: "https://github.com/GameDog9988/grade-my-aid",
-    tools: ["React", "Framer Motion", "Sass"],
+    tools: ["React", "Framer Motion", "Scss"],
   },
 
   {
@@ -94,7 +94,7 @@ export const projectsList = [
     link: "https://green-pages-infotender.herokuapp.com/",
     project: "green-pages",
     GitHub: "https://github.com/CQS-Software/Green-Pages",
-    tools: ["React", "Django", "Sass", "Redux", "Framer Motion", "Heroku"],
+    tools: ["React", "Django", "Scss", "Redux", "Framer Motion", "Heroku"],
   },
   {
     id: 7,
