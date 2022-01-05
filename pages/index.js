@@ -169,8 +169,16 @@ export default function Home() {
         <meta charSet="utf-8" />
         <meta
           name="description"
-          content="Portfolio for Alexander Grattan, software developer studying Digital Narrative and Interactive Design at the University of Pittsburgh. Skilled with React, Gatsby, Next.js, JavaScript, TypeScript, Java, Python, TailwindCSS, Sass, Node.js, Django, and GSAP."
+          content="Website for Alexander Grattan, a software developer studying Digital Narrative and Interactive Design at the University of Pittsburgh. Skilled with React, Gatsby, Next.js, JavaScript, TypeScript, Java, Python, TailwindCSS, Sass, Node.js, Django, and GSAP."
         ></meta>
+        <meta property="og:url" content="https://agrattan.com/" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:site_name"
+          content="Alexander Grattan | Software Developer"
+        />
+        <meta property="og:locale" content="en" />
+        <meta property="og:image" content="/agrattan_OG.png" />
         <title>Alexander Grattan | Software Developer</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
