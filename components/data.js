@@ -1,6 +1,18 @@
 export const projectsList = [
   {
     id: 1,
+    name: "Pollock Is Shit",
+    description:
+      "Web app that manipulates image data to create a Pollock-like painting (because literally anyone could've been Pollock).",
+    image: "/images/Pollock_Is_Shit_Screenshot.png",
+    mobileImage: "/images/Pollock_is_Shit_OG.png",
+    link: "https://pollockisshit.netlify.app/",
+    GitHub: "https://github.com/GameDog9988/Pollock-is-Poop",
+    project: "belly-button",
+    tools: ["Next.js", "Tailwind", "p5.js"],
+  },
+  {
+    id: 1,
     name: "Belly Button Chrome Extension",
     description:
       "Browser extension that helps developers and accessibility engineers inspect a website's buttons and determine if they follow HTML standards and Web Content Accessibility Guidelines (WCAG).",
