@@ -14,7 +14,10 @@ export const projectsList = [
   {
     id: 2,
     name: "Allegory of the Cave",
-    description: "Audiovisual experience with an interactive 3D sun.",
+    description:
+      "An experiment where I created an audiovisual experience with an interactive 3D sun. Created for the University of Pittsburgh's ENGCMP 1130 class.",
+    longDescription:
+      "One of my assignments for the University of Pittsburgh class, Projects in Digital Composition (ENGCMP 1130), was to create a piece of content that characterizes or responds to Plato's Allegory of the Cave.\nThree.js is a JavaScript library I had experimented with in the past but I had failed to make anything significant with it. For this project I wanted to push myself to understand using 3D on the web and how it can create engaging experiences.",
     image: "/images/Allegory_Cave_Screenshot.jpg",
     mobileImage: "/images/Allegory_Cave_Screenshot_Small.jpg",
     link: "https://allegory-of-the-cave.netlify.app/",
@@ -27,12 +30,15 @@ export const projectsList = [
     name: "Conor Lamb for Senate",
     description:
       "Website for a congressman entering the 2022 Pennsylvania Senate Race.",
+    longDescription:
+      "During my software engineering internship at the Pittsburgh digital design agency Actual Size, I worked on various different websites for an unique array of clients. One of the projects I led development of was the site for congressman Conor Lamb.\nOne of our main focus points for the site was accessibility. Besides testing the site with a screen reader, I ensured the site was usable for both english and spanish speakers by determining the user's localization and making all of the text on the site dynamic.",
     image: "/images/Conor_Lamb_Screenshot.jpg",
     mobileImage: "/images/Conor_Lamb_Screenshot_Small.jpg",
     link: "https://conorlamb.com/",
     project: "conor-lamb",
     tools: [
       "Gatsby",
+      "Contentful",
       "Twin.Macro/Tailwind",
       "Locomotive Scroll",
       "Framer Motion",
