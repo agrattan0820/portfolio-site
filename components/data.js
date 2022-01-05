@@ -27,25 +27,6 @@ export const projectsList = [
   },
   {
     id: 3,
-    name: "Conor Lamb for Senate",
-    description:
-      "Website for a congressman entering the 2022 Pennsylvania Senate Race.",
-    longDescription:
-      "During my software engineering internship at the Pittsburgh digital design agency Actual Size, I worked on various different websites for an unique array of clients. One of the projects I led development of was the site for congressman Conor Lamb.\nOne of our main focus points for the site was accessibility. Besides testing the site with a screen reader, I ensured the site was usable for both english and spanish speakers by determining the user's localization and making all of the text on the site dynamic.",
-    image: "/images/Conor_Lamb_Screenshot.jpg",
-    mobileImage: "/images/Conor_Lamb_Screenshot_Small.jpg",
-    link: "https://conorlamb.com/",
-    project: "conor-lamb",
-    tools: [
-      "Gatsby",
-      "Contentful",
-      "Twin.Macro/Tailwind",
-      "Locomotive Scroll",
-      "Framer Motion",
-    ],
-  },
-  {
-    id: 4,
     name: "Pitt CSC",
     description:
       "Redesigned and developed the website for the Pitt Computer Science Club that helps advertise its efforts to support computer science and technology-related initiatives.",
@@ -61,7 +42,7 @@ export const projectsList = [
     tools: ["Gatsby", "Tailwind CSS", "Notion API", "Framer Motion"],
   },
   {
-    id: 5,
+    id: 4,
     name: "Resu.me",
     description:
       "Steelhacks hackathon winning website that acts as a resume repository for students and employers.\nBuilt the website and app in 24 hours with three other teammates.",
@@ -73,7 +54,7 @@ export const projectsList = [
     tools: ["React", "Express", "Sass", "Heroku"],
   },
   {
-    id: 6,
+    id: 5,
     name: "Grademyaid",
     description:
       "Application that allows students to grade their college financial aid packages using data from the US Department of Education.\nThis was built for Pitt CSC Hacks, a competition sponsored by the University of Pittsburgh's Computer Science Club.",
@@ -89,7 +70,7 @@ export const projectsList = [
   },
 
   {
-    id: 7,
+    id: 6,
     name: "Green Pages",
     description:
       "Cooperated with another developer and two pharmacy students to create a website that tracks cannabis strain availability in the Pennsylvania area. Helped create the REST API and backend with Django Rest Framework.",
@@ -104,7 +85,7 @@ export const projectsList = [
     tools: ["React", "Django", "Sass", "Redux", "Framer Motion", "Heroku"],
   },
   {
-    id: 8,
+    id: 7,
     name: "The New York Times Critic's Picks",
     description:
       "A website that showcases movies that The New York Times considers critic's picks. Uses the newspaper's REST API in order to gather the data.\nThe cards can be sorted in multiple ways and each link to the corresponding review on The New York Time's website.",
