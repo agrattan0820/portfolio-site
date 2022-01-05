@@ -190,10 +190,6 @@ export default function Home({ project }) {
         ></meta>
         <meta property="og:url" content="https://agrattan.com/" />
         <meta property="og:type" content="website" />
-        <meta
-          property="og:site_name"
-          content="Alexander Grattan | Software Developer"
-        />
         <meta property="og:locale" content="en" />
         <meta property="og:image" content="/agrattan_OG.png" />
         <title>Alexander Grattan | Software Developer</title>

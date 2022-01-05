@@ -34,6 +34,21 @@ export default function Project({ projectObject }) {
   return (
     <motion.div exit={{ opacity: 0 }} className="container">
       <Head>
+        <meta
+          name="description"
+          content={`${projectObject.description}`}
+        ></meta>
+        <meta
+          property="og:url"
+          content={`https://agrattan.com/${projectObject.project}`}
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:site_name"
+          content="Alexander Grattan | Software Developer"
+        />
+        <meta property="og:locale" content="en" />
+        <meta property="og:image" content="/agrattan_OG.png" />
         <title>{projectObject?.name} | Alexander Grattan</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
