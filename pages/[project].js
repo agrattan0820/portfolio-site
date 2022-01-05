@@ -12,12 +12,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
-export default function Project() {
+export default function Project({ projectObject }) {
   const controls = useAnimation();
-  const router = useRouter();
-  const { project } = router.query;
-  let projectObject = {};
-  projectObject = projectsList.find((el) => el.project === project);
 
   const page = {
     hidden: {
@@ -29,20 +25,16 @@ export default function Project() {
   };
 
   useEffect(() => {
+    controls.stop("pageShow");
+    controls.set("hidden");
     document.body.style.overflowY = "auto";
     controls.start("pageShow");
-  }, [project]);
+  }, [projectObject]);
 
   return (
-    <motion.div
-      variants={page}
-      initial="hidden"
-      animate={controls}
-      exit={{ opacity: 0 }}
-      className="container"
-    >
+    <motion.div exit={{ opacity: 0 }} className="container">
       <Head>
-        <title>{projectObject?.name}</title>
+        <title>{projectObject?.name} | Alexander Grattan</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <nav className="project-nav">
@@ -92,7 +84,13 @@ export default function Project() {
           </ul>
         </div>
       </nav>
-      <main className="project-main">
+      <motion.main
+        initial="hidden"
+        animate={controls}
+        exit={{ opacity: 0 }}
+        variants={page}
+        className="project-main"
+      >
         <div className="text-content">
           <motion.a
             href={projectObject?.link}
@@ -239,7 +237,20 @@ export default function Project() {
             </Link>
           </div>
         )}
-      </main>
+      </motion.main>
     </motion.div>
   );
+}
+
+export async function getServerSideProps(context) {
+  const { project } = context.query;
+
+  let projectObject = {};
+  projectObject = projectsList.find((el) => el.project === project);
+
+  return {
+    props: {
+      projectObject,
+    }, // will be passed to the page component as props
+  };
 }
