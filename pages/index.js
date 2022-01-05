@@ -17,10 +17,9 @@ import {
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-export default function Home() {
+export default function Home({ project }) {
   const [animationComplete, setAnimationComplete] = useState(false);
   const projectsRef = useRef(null);
-  const scrollRef = useRef(null);
 
   const completeAnimation = () => {
     setAnimationComplete(true);
@@ -28,6 +27,20 @@ export default function Home() {
   };
 
   const executeScroll = () => projectsRef.current.scrollIntoView();
+
+  const scrollToProject = () => {
+    if (typeof window !== "undefined") {
+      if (project) {
+        // Use the hash to find the first element with that id
+        const element = document.getElementById(project);
+
+        if (element) {
+          // Smooth scroll to that elment
+          element.scrollIntoView();
+        }
+      }
+    }
+  };
 
   useEffect(() => {
     // Inner Page height for mobile devices
@@ -41,47 +54,52 @@ export default function Home() {
     let mediaQuery = window.matchMedia("(min-width: 967px)");
 
     const homeAnimation = (animation) => {
-      tl.to(".ball", {
-        duration: 2,
-        y: "100vh",
-        ease: "bounce.out",
-      })
-        .to(".ball", {
-          duration: 1,
-          scale: 30,
-          ease: "power3.out",
-          onComplete: animation,
+      if (!project) {
+        tl.to(".ball", {
+          duration: 2,
+          y: "100vh",
+          ease: "bounce.out",
         })
-        .from(".after-animation", {
-          duration: 0.8,
-          opacity: 0,
-          ease: "power3.out",
-        })
-        .from(".title", {
-          duration: 0.5,
-          y: 100,
-          delay: 0.2,
-          opacity: 0,
-          ease: "power3.out",
-        })
-        .from(".peep-image", {
-          duration: 0.5,
-          y: 100,
-          opacity: 0,
-          ease: "power3.out",
-        })
-        .from(".job-title", {
-          duration: 0.5,
-          y: 100,
-          opacity: 0,
-          ease: "power3.out",
-        })
-        .from(".scroll-indicator", {
-          duration: 0.5,
-          y: 100,
-          opacity: 0,
-          ease: "power3.out",
-        });
+          .to(".ball", {
+            duration: 1,
+            scale: 30,
+            ease: "power3.out",
+            onComplete: animation,
+          })
+          .from(".after-animation", {
+            duration: 0.8,
+            opacity: 0,
+            ease: "power3.out",
+          })
+          .from(".title", {
+            duration: 0.5,
+            y: 100,
+            delay: 0.2,
+            opacity: 0,
+            ease: "power3.out",
+          })
+          .from(".peep-image", {
+            duration: 0.5,
+            y: 100,
+            opacity: 0,
+            ease: "power3.out",
+          })
+          .from(".job-title", {
+            duration: 0.5,
+            y: 100,
+            opacity: 0,
+            ease: "power3.out",
+          })
+          .from(".scroll-indicator", {
+            duration: 0.5,
+            y: 100,
+            opacity: 0,
+            ease: "power3.out",
+          });
+      } else {
+        completeAnimation();
+        scrollToProject();
+      }
 
       if (mediaQuery.matches) {
         projects.forEach((project) => {
@@ -162,7 +180,6 @@ export default function Home() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       className="container"
-      ref={scrollRef}
     >
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -271,7 +288,7 @@ export default function Home() {
               tools,
               index,
             }) => (
-              <div className="project" key={index}>
+              <div className="project" key={index} id={project}>
                 <Link href={project}>
                   <picture>
                     <source srcSet={image} media="(min-width: 1280px)" />
@@ -397,4 +414,16 @@ export default function Home() {
       </div>
     </motion.div>
   );
+}
+
+export async function getServerSideProps(context) {
+  const { query } = context;
+
+  const project = query?.project ?? false;
+
+  return {
+    props: {
+      project,
+    }, // will be passed to the page component as props
+  };
 }

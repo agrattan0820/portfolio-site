@@ -40,7 +40,7 @@ export default function Project({ projectObject }) {
       <header>
         <nav className="project-nav">
           <div className="space-between">
-            <Link href="/">
+            <Link href={`/?project=${projectObject.project}`}>
               <div className="logo">AG</div>
             </Link>
             <ul className="nav-list">
