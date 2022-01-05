@@ -194,13 +194,19 @@
     }
     .bottom-links {
       .project-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: $black;
+        padding: 0;
         cursor: pointer;
-        margin: 0 1rem;
-        width: 125px;
+        width: 100%;
         height: 50px;
         border-radius: 15px;
         border: none;
         outline: none;
+        color: $black;
         background: snow;
         font-weight: 700;
         font-family: $font;

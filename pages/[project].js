@@ -219,34 +219,33 @@ export default function Project({ projectObject }) {
         </nav>
         {projectObject && (
           <div className="bottom-links">
-            <motion.a
-              href={projectObject.link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <motion.button
+            {projectObject.link && (
+              <motion.a
+                href={projectObject.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="project-btn"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 title={`Open site of ${projectObject.name}`}
               >
                 Open Site
-              </motion.button>
-            </motion.a>
-            <motion.a
-              href={projectObject.GitHub}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <motion.button
+              </motion.a>
+            )}
+            {projectObject.GitHub && (
+              <motion.a
+                href={projectObject.GitHub}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="project-btn"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 title={`View Code for ${projectObject.name}`}
               >
                 View Code
-              </motion.button>
-            </motion.a>
+              </motion.a>
+            )}
+
             <Link href="/">
               <div className="project-back">
                 <FontAwesomeIcon icon={faArrowLeft} /> Back Home

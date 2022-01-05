@@ -326,10 +326,9 @@ export default function Home({ project }) {
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       title={`Open site of ${name}`}
+                      className="project-btn"
                     >
-                      <motion.button className="project-btn">
-                        Open Site
-                      </motion.button>
+                      Open Site
                     </motion.a>
                     {GitHub && (
                       <motion.a
@@ -339,10 +338,9 @@ export default function Home({ project }) {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         title={`View Code for ${name}`}
+                        className="project-btn"
                       >
-                        <motion.button className="project-btn">
-                          View Code
-                        </motion.button>
+                        View Code
                       </motion.a>
                     )}
                   </motion.div>

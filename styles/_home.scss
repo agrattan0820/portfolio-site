@@ -272,28 +272,27 @@
           @media (max-width: 967px) {
             justify-content: center;
           }
-          a {
+          .project-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-decoration: none;
             color: $black;
             padding: 0;
-            display: block;
+            cursor: pointer;
             width: 100%;
-            .project-btn {
-              cursor: pointer;
-              width: 100%;
-              height: 50px;
-              border-radius: 15px;
-              border: none;
-              outline: none;
-              color: $black;
-              background: snow;
-              font-weight: 700;
-              font-family: $font;
-              font-size: 1rem;
-              @media (max-width: 967px) {
-                width: 100px;
-                font-size: 0.875rem;
-              }
+            height: 50px;
+            border-radius: 15px;
+            border: none;
+            outline: none;
+            color: $black;
+            background: snow;
+            font-weight: 700;
+            font-family: $font;
+            font-size: 1rem;
+            @media (max-width: 967px) {
+              width: 100px;
+              font-size: 0.875rem;
             }
           }
         }
