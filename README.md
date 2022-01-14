@@ -30,7 +30,7 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-## Liscense
+## License
 [MIT](https://opensource.org/licenses/MIT)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
