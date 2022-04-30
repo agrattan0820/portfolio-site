@@ -282,9 +282,9 @@ export default function Home({ project }) {
               project,
               GitHub,
               tools,
-              index,
+              i,
             }) => (
-              <div className="project" key={index} id={project}>
+              <div className="project" key={i} id={project}>
                 <Link href={project}>
                   <picture>
                     <source srcSet={image} media="(min-width: 1280px)" />
