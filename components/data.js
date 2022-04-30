@@ -1,5 +1,18 @@
 export const projectsList = [
   {
+    id: 1,
+    name: "Secret Pittsburgh",
+    description:
+      "Website for the Secret Pittsburgh class at the University of Pittsburgh (ENGLIT 1412) dedicated to uncovering hidden spaces and unusual places in the city of Pittsburgh.",
+    image: "/images/secret_pittsburgh.png",
+    mobileImage: "/images/secret_pittsburgh_small.png",
+    link: "https://secretpittsburgh.org/",
+    GitHub: "https://github.com/GameDog9988/secret-pittsburgh",
+    project: "secret-pittsburgh",
+    tools: ["React/Gatsby", "Tailwind CSS", "Drupal"],
+  },
+  {
+    id: 2,
     name: "Pollock Is Shit",
     description:
       "Web app that manipulates image data to create a Pollock-like painting (because literally anyone could've been Pollock).",
@@ -8,9 +21,10 @@ export const projectsList = [
     link: "https://pollockisshit.netlify.app/",
     GitHub: "https://github.com/GameDog9988/Pollock-is-Poop",
     project: "pollock-is-shit",
-    tools: ["Next.js", "Tailwind CSS", "p5.js"],
+    tools: ["React/Next.js", "Tailwind CSS", "p5.js"],
   },
   {
+    id: 3,
     name: "Belly Button Chrome Extension",
     description:
       "Browser extension that helps developers and accessibility engineers inspect a website's buttons and determine if they follow HTML standards and Web Content Accessibility Guidelines (WCAG).",
@@ -22,6 +36,7 @@ export const projectsList = [
     tools: ["HTML", "CSS", "JavaScript", "Chrome API"],
   },
   {
+    id: 4,
     name: "Allegory of the Cave",
     description:
       "An experiment where I created an audiovisual experience with an interactive 3D sun. Created for the University of Pittsburgh's ENGCMP 1130 class.",
@@ -35,6 +50,7 @@ export const projectsList = [
     tools: ["HTML", "CSS", "JavaScript", "Three.js"],
   },
   {
+    id: 5,
     name: "Pitt CSC",
     description:
       "Redesigned and developed the website for the Pitt Computer Science Club that helps advertise its efforts to support computer science and technology-related initiatives.",
@@ -47,9 +63,10 @@ export const projectsList = [
     link: "https://pittcsc.org/",
     project: "pitt-csc",
     GitHub: "https://github.com/pittcsc/pittcsc-website",
-    tools: ["Gatsby", "Tailwind CSS", "Notion API", "Framer Motion"],
+    tools: ["React/Gatsby", "Tailwind CSS", "Notion API", "Framer Motion"],
   },
   {
+    id: 6,
     name: "Resu.me",
     description:
       "Steelhacks hackathon winning website that acts as a resume repository for students and employers.\nBuilt the website and app in 24 hours with three other teammates.",
@@ -61,6 +78,7 @@ export const projectsList = [
     tools: ["React", "Express", "Scss", "Heroku"],
   },
   {
+    id: 7,
     name: "Grademyaid",
     description:
       "Application that allows students to grade their college financial aid packages using data from the US Department of Education.\nThis was built for Pitt CSC Hacks, a competition sponsored by the University of Pittsburgh's Computer Science Club.",
@@ -76,6 +94,7 @@ export const projectsList = [
   },
 
   {
+    id: 8,
     name: "Green Pages",
     description:
       "Cooperated with another developer and two pharmacy students to create a website that tracks cannabis strain availability in the Pennsylvania area. Helped create the REST API and backend with Django Rest Framework.",
@@ -90,6 +109,7 @@ export const projectsList = [
     tools: ["React", "Django", "Scss", "Redux", "Framer Motion", "Heroku"],
   },
   {
+    id: 9,
     name: "The New York Times Critic's Picks",
     description:
       "A website that showcases movies that The New York Times considers critic's picks. Uses the newspaper's REST API in order to gather the data.\nThe cards can be sorted in multiple ways and each link to the corresponding review on The New York Time's website.",
@@ -101,6 +121,7 @@ export const projectsList = [
     tools: ["React", "Framer Motion", "The New York Times API"],
   },
   {
+    id: 10,
     name: "Virtual Safari",
     description:
       "A recreation of Timon and Pumbaa's Virtual Safari, a choose-your-own adventure from The Lion King DVD.\nI edited the choices into individual clips using the video editor, DaVinci Resolve, and used JavaScript to develop the site interaction.",
