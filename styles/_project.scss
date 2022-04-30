@@ -193,6 +193,11 @@
       }
     }
     .bottom-links {
+      .project-links {
+        display: grid;
+        place-items: center;
+        grid-auto-flow: column;
+        gap: 1rem;
       .project-btn {
         display: flex;
         justify-content: center;
@@ -211,11 +216,14 @@
         font-weight: 700;
         font-family: $font;
         font-size: 1rem;
+      
         @media (max-width: 967px) {
           width: 100px;
           font-size: 0.875rem;
         }
       }
+      }
+
       .project-back {
         text-align: center;
         color: $white;
