@@ -1,15 +1,15 @@
 export const projectsList = [
   {
     id: 1,
-    name: "Secret Pittsburgh",
+    name: "Big Burgh Redesign",
     description:
-      "Website for the Secret Pittsburgh class at the University of Pittsburgh (ENGLIT 1412) dedicated to uncovering hidden spaces and unusual places in the city of Pittsburgh.",
-    image: "/images/secret_pittsburgh.png",
-    mobileImage: "/images/secret_pittsburgh_small.png",
-    link: "https://secretpittsburgh.org/",
-    GitHub: "https://github.com/GameDog9988/secret-pittsburgh",
-    project: "secret-pittsburgh",
-    tools: ["React/Gatsby", "Tailwind CSS", "Drupal"],
+      "A new design and construction of the Big Burgh app (not an official redesign) used to help Pittsburgh natives find resources such as food and shelter.",
+    image: "/images/Big_Burgh_screenshot.jpg",
+    mobileImage: "/images/Big_Burgh_screenshot.jpg",
+    link: "https://github.com/GameDog9988/big-burgh",
+    GitHub: "https://github.com/GameDog9988/big-burgh",
+    project: "big-burgh",
+    tools: ["React Native/Expo", "TypeScript", "Styled Components"],
   },
   {
     id: 2,
@@ -25,6 +25,18 @@ export const projectsList = [
   },
   {
     id: 3,
+    name: "Secret Pittsburgh",
+    description:
+      "Website for the Secret Pittsburgh class at the University of Pittsburgh (ENGLIT 1412) dedicated to uncovering hidden spaces and unusual places in the city of Pittsburgh.",
+    image: "/images/secret_pittsburgh.png",
+    mobileImage: "/images/secret_pittsburgh_small.png",
+    link: "https://secretpittsburgh.org/",
+    GitHub: "https://github.com/GameDog9988/secret-pittsburgh",
+    project: "secret-pittsburgh",
+    tools: ["React/Gatsby", "Tailwind CSS", "Drupal"],
+  },
+  {
+    id: 4,
     name: "Belly Button Chrome Extension",
     description:
       "Browser extension that helps developers and accessibility engineers inspect a website's buttons and determine if they follow HTML standards and Web Content Accessibility Guidelines (WCAG).",
@@ -36,7 +48,7 @@ export const projectsList = [
     tools: ["HTML", "CSS", "JavaScript", "Chrome API"],
   },
   {
-    id: 4,
+    id: 5,
     name: "Allegory of the Cave",
     description:
       "An experiment where I created an audiovisual experience with an interactive 3D sun. Created for the University of Pittsburgh's ENGCMP 1130 class.",
@@ -50,7 +62,7 @@ export const projectsList = [
     tools: ["HTML", "CSS", "JavaScript", "Three.js"],
   },
   {
-    id: 5,
+    id: 6,
     name: "Pitt CSC",
     description:
       "Redesigned and developed the website for the Pitt Computer Science Club that helps advertise its efforts to support computer science and technology-related initiatives.",
@@ -66,7 +78,7 @@ export const projectsList = [
     tools: ["React/Gatsby", "Tailwind CSS", "Notion API", "Framer Motion"],
   },
   {
-    id: 6,
+    id: 7,
     name: "Resu.me",
     description:
       "Steelhacks hackathon winning website that acts as a resume repository for students and employers.\nBuilt the website and app in 24 hours with three other teammates.",
@@ -78,7 +90,7 @@ export const projectsList = [
     tools: ["React", "Express", "Scss", "Heroku"],
   },
   {
-    id: 7,
+    id: 8,
     name: "Grademyaid",
     description:
       "Application that allows students to grade their college financial aid packages using data from the US Department of Education.\nThis was built for Pitt CSC Hacks, a competition sponsored by the University of Pittsburgh's Computer Science Club.",
@@ -91,22 +103,6 @@ export const projectsList = [
     project: "grademyaid",
     GitHub: "https://github.com/GameDog9988/grade-my-aid",
     tools: ["React", "Framer Motion", "Scss"],
-  },
-
-  {
-    id: 8,
-    name: "Green Pages",
-    description:
-      "Cooperated with another developer and two pharmacy students to create a website that tracks cannabis strain availability in the Pennsylvania area. Helped create the REST API and backend with Django Rest Framework.",
-    longDescription:
-      "When joining this endeavor, I knew very little about cannabis and the business surrounding it. The extent of my knowledge went as far as knowing Jim Belushi became a huge grower and that's pretty much it.\nI was brought on to work as a front-end developer and to help construct the interface for a website that tracks cannabis strain availability in the Pennsylvania area.\nI knew HTML, CSS, JavaScript, and React at this time but the project required me to learn and understand Django. To make this a nonissue, I went ahead and learned all I could about how MVCs work and how a REST API can be built with Django.\nMy goal for the site's frontend was for it to be pleasing, yet recognizable as far as its theme and function. I ended up learning a whole lot with this project including how the pharmaceutical cannabis industry works, user authentication, the transfer of data from backend to frontend, and much more.",
-    image: "/images/Green_Pages_Screenshot.png",
-    mobileImage: "/images/Green_Pages_Screenshot_Small.png",
-    figma: "/images/Green_Pages_Figma_Screenshot.png",
-    link: "https://green-pages-infotender.herokuapp.com/",
-    project: "green-pages",
-    GitHub: "https://github.com/CQS-Software/Green-Pages",
-    tools: ["React", "Django", "Scss", "Redux", "Framer Motion", "Heroku"],
   },
   {
     id: 9,
