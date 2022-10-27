@@ -4,8 +4,8 @@ export const projectsList = [
     name: "Big Burgh Redesign",
     description:
       "A new design and construction of the Big Burgh app (not an official redesign) used to help Pittsburgh natives find resources such as food and shelter.",
-    image: "/images/Big_Burgh_screenshot.jpg",
-    mobileImage: "/images/Big_Burgh_screenshot.jpg",
+    image: "/images/Big_Burgh_Screenshot.jpg",
+    mobileImage: "/images/Big_Burgh_Screenshot.jpg",
     link: "https://github.com/GameDog9988/big-burgh",
     GitHub: "https://github.com/GameDog9988/big-burgh",
     project: "big-burgh",
