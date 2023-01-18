@@ -282,8 +282,7 @@ export default function Home({ project }) {
               project,
               GitHub,
               tools,
-              i,
-            }) => (
+            }, i) => (
               <div className="project" key={i} id={project}>
                 <Link href={project}>
                   <picture>
