@@ -2,14 +2,11 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { projectsList } from "./data";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faChevronLeft,
-  faChevronRight,
   faArrowLeft,
 } from "@fortawesome/free-solid-svg-icons";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 function BottomLinks() {
   const router = useRouter();
@@ -17,7 +14,6 @@ function BottomLinks() {
   let projectObject;
   projectObject = projectsList.find((el) => el.project === project);
 
-  console.log(projectObject);
   return (
     <div className="bottom-links">
       <motion.a
