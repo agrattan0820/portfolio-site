@@ -50,7 +50,7 @@ export default function Home({ project }) {
     // GSAP animation
     gsap.registerPlugin(ScrollTrigger);
     let tl = gsap.timeline();
-    let projects = gsap.utils.toArray(".project");
+    let projects: Element[] = gsap.utils.toArray(".project");
     let mediaQuery = window.matchMedia("(min-width: 967px)");
 
     const homeAnimation = (animation) => {

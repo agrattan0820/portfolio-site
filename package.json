@@ -23,5 +23,10 @@
     "react-ga": "^3.2.1",
     "react-hotjar": "^2.2.1",
     "sass": "^1.29.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "@types/react": "^18.0.26",
+    "typescript": "^4.9.4"
   }
 }
