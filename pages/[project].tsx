@@ -25,7 +25,7 @@ export default function Project({ projectObject }) {
   };
 
   useEffect(() => {
-    controls.stop("pageShow");
+    controls.stop();
     controls.set("hidden");
     document.body.style.overflowY = "auto";
     controls.start("pageShow");

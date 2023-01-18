@@ -1,10 +1,11 @@
-import { useEffect } from "react";
 import "../styles/App.scss";
+import { useEffect } from "react";
+import { AppProps } from 'next/app'
 import { AnimatePresence } from "framer-motion";
 import { hotjar } from "react-hotjar";
 import ReactGA from "react-ga";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     // Google Analytics
     ReactGA.initialize("UA-183066430-1");
@@ -16,7 +17,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <AnimatePresence exitBeforeEnter>
-      <Component {...pageProps} />
+        <Component {...pageProps} />
     </AnimatePresence>
   );
 }

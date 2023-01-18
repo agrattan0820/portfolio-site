@@ -1,18 +1,8 @@
 import "../styles/App.scss";
 import Head from "next/head";
 import Link from "next/link";
-import { useEffect } from "react";
-import { useRouter } from "next/router";
-import { projectsList } from "../components/data";
-import { motion, useAnimation } from "framer-motion";
-// import { gsap } from "gsap";
-// import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faChevronLeft,
-  faChevronRight,
-  faArrowLeft,
-} from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 export default function Project({ children, pageTitle, description }) {
