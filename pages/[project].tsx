@@ -1,7 +1,7 @@
+import { useEffect } from "react";
+import { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
-import { useEffect } from "react";
-import { useRouter } from "next/router";
 import { motion, useAnimation } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -10,12 +10,13 @@ import {
   faArrowLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { GetServerSideProps, NextPage } from "next";
+
+import SEO from "../components/seo";
 import { projectsList } from "../utils/project-data";
 
 type ProjectPageProps = {
-  projectData: typeof projectsList[number]
-}
+  projectData: typeof projectsList[number];
+};
 
 const Project: NextPage<ProjectPageProps> = ({ projectData }) => {
   const controls = useAnimation();
@@ -38,25 +39,11 @@ const Project: NextPage<ProjectPageProps> = ({ projectData }) => {
 
   return (
     <motion.div exit={{ opacity: 0 }} className="container">
-      <Head>
-        <meta
-          name="description"
-          content={`${projectData.description}`}
-        ></meta>
-        <meta
-          property="og:url"
-          content={`https://agrattan.com/${projectData.project}`}
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:site_name"
-          content="Alexander Grattan | Software Developer"
-        />
-        <meta property="og:locale" content="en" />
-        <meta property="og:image" content="/agrattan_OG.png" />
-        <title>{projectData?.name} | Alexander Grattan</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <SEO
+        title={`${projectData?.name} | Alexander Grattan`}
+        url={`https://agrattan.com/${projectData.project}`}
+        description={projectData.description}
+      />
       <header>
         <nav className="project-nav">
           <div className="space-between">
@@ -138,10 +125,7 @@ const Project: NextPage<ProjectPageProps> = ({ projectData }) => {
         {projectData && projectData?.figma && projectData?.old ? (
           <div className="comparison-container">
             <div className="image-compare gsap-1">
-              <img
-                src={projectData.old}
-                alt={`${projectData.name} Old Site`}
-              />
+              <img src={projectData.old} alt={`${projectData.name} Old Site`} />
               <h2>Old Version</h2>
             </div>
             <div className="image-compare gsap-2">
@@ -263,20 +247,19 @@ const Project: NextPage<ProjectPageProps> = ({ projectData }) => {
       </motion.main>
     </motion.div>
   );
-}
+};
 
 export default Project;
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { project } = context.query;
 
-
   const projectData = projectsList.find((el) => el.project === project);
 
   if (!projectData) {
     return {
-      notFound: true
-    }
+      notFound: true,
+    };
   }
 
   return {
@@ -284,4 +267,4 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       projectData,
     }, // will be passed to the page component as props
   };
-}
+};

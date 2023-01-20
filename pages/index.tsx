@@ -18,10 +18,11 @@ import {
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { projectsList } from "../utils/project-data";
+import SEO from "../components/seo";
 
 type HomepageProps = {
   project: string | false;
-}
+};
 
 const Homepage: NextPage<HomepageProps> = ({ project }) => {
   const [animationComplete, setAnimationComplete] = useState(false);
@@ -187,20 +188,10 @@ const Homepage: NextPage<HomepageProps> = ({ project }) => {
       exit={{ opacity: 0 }}
       className="container"
     >
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta charSet="utf-8" />
-        <meta
-          name="description"
-          content="Website for Alexander Grattan, a software developer studying Digital Narrative and Interactive Design at the University of Pittsburgh. Skilled with React, Gatsby, Next.js, JavaScript, TypeScript, Java, Python, TailwindCSS, Sass, Node.js, Django, and GSAP."
-        ></meta>
-        <meta property="og:url" content="https://agrattan.com/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:locale" content="en" />
-        <meta property="og:image" content="/agrattan_OG.png" />
-        <title>Alexander Grattan | Software Developer</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <SEO
+        title="Alexander Grattan | Pittsburgh Software Developer"
+        url="https://agrattan.com/"
+      />
       {animationComplete === false && <IntroOverlay />}
       <div className="after-animation">
         <header>
@@ -278,17 +269,20 @@ const Homepage: NextPage<HomepageProps> = ({ project }) => {
         </main>
         <div className="project-container" ref={projectsRef}>
           {projectsList.map(
-            ({
-              name,
-              description,
-              longDescription,
-              image,
-              mobileImage,
-              link,
-              project,
-              GitHub,
-              tools,
-            }, i) => (
+            (
+              {
+                name,
+                description,
+                longDescription,
+                image,
+                mobileImage,
+                link,
+                project,
+                GitHub,
+                tools,
+              },
+              i
+            ) => (
               <div className="project" key={i} id={project}>
                 <Link href={project}>
                   <picture>
@@ -413,7 +407,7 @@ const Homepage: NextPage<HomepageProps> = ({ project }) => {
       </div>
     </motion.div>
   );
-}
+};
 
 export default Homepage;
 
@@ -427,4 +421,4 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       project,
     },
   };
-}
+};
