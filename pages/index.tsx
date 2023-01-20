@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 
 import Head from "next/head";
+import { GetServerSideProps, NextPage } from "next";
 import IntroOverlay from "../components/introOverlay";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -18,7 +19,11 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { projectsList } from "../utils/project-data";
 
-export default function Home({ project }) {
+type HomepageProps = {
+  project: string | false;
+}
+
+const Homepage: NextPage<HomepageProps> = ({ project }) => {
   const [animationComplete, setAnimationComplete] = useState(false);
   const projectsRef = useRef(null);
 
@@ -410,7 +415,9 @@ export default function Home({ project }) {
   );
 }
 
-export async function getServerSideProps(context) {
+export default Homepage;
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const { query } = context;
 
   const project = query?.project ?? false;
@@ -418,6 +425,6 @@ export async function getServerSideProps(context) {
   return {
     props: {
       project,
-    }, // will be passed to the page component as props
+    },
   };
 }
