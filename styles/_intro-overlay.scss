@@ -1,7 +1,7 @@
 .intro-overlay {
   background: $white;
   position: fixed;
-  height: 100vh;
+  height: 100vh; // fallback height definition
   height: calc(var(--vh, 1vh) * 100);
   width: 100%;
   z-index: 3;

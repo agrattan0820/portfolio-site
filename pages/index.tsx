@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
-import { projectsList } from "../components/data";
-import Head from "next/head";
-import IntroOverlay from "../components/introOverlay";
+
+import { GetServerSideProps, NextPage } from "next";
+import IntroOverlay from "../components/intro-overlay";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import {
@@ -16,8 +16,15 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { projectsList } from "../utils/project-data";
+import SEO from "../components/seo";
+import Header from "../components/header";
 
-export default function Home({ project }) {
+type HomepageProps = {
+  project: string | false;
+};
+
+const Homepage: NextPage<HomepageProps> = ({ project }) => {
   const [animationComplete, setAnimationComplete] = useState(false);
   const projectsRef = useRef(null);
 
@@ -53,7 +60,7 @@ export default function Home({ project }) {
     let projects: Element[] = gsap.utils.toArray(".project");
     let mediaQuery = window.matchMedia("(min-width: 967px)");
 
-    const homeAnimation = (animation) => {
+    const homeAnimation = (onCompleteAnimation: () => void) => {
       if (!project) {
         tl.to(".ball", {
           duration: 2,
@@ -64,7 +71,7 @@ export default function Home({ project }) {
             duration: 1,
             scale: 30,
             ease: "power3.out",
-            onComplete: animation,
+            onComplete: onCompleteAnimation,
           })
           .from(".after-animation", {
             duration: 0.8,
@@ -97,7 +104,7 @@ export default function Home({ project }) {
             ease: "power3.out",
           });
       } else {
-        completeAnimation();
+        onCompleteAnimation();
         scrollToProject();
       }
 
@@ -181,73 +188,13 @@ export default function Home({ project }) {
       exit={{ opacity: 0 }}
       className="container"
     >
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta charSet="utf-8" />
-        <meta
-          name="description"
-          content="Website for Alexander Grattan, a software developer studying Digital Narrative and Interactive Design at the University of Pittsburgh. Skilled with React, Gatsby, Next.js, JavaScript, TypeScript, Java, Python, TailwindCSS, Sass, Node.js, Django, and GSAP."
-        ></meta>
-        <meta property="og:url" content="https://agrattan.com/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:locale" content="en" />
-        <meta property="og:image" content="/agrattan_OG.png" />
-        <title>Alexander Grattan | Software Developer</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <SEO
+        title="Alexander Grattan | Pittsburgh Software Developer"
+        url="https://agrattan.com/"
+      />
       {animationComplete === false && <IntroOverlay />}
       <div className="after-animation">
-        <header>
-          <nav className="home-nav">
-            <div className="space-between">
-              <Link href="/">
-                <div className="logo">AG</div>
-              </Link>
-
-              <ul className="nav-list">
-                <li>
-                  <motion.a
-                    href="https://drive.google.com/file/d/1PgvpHThs5XjTwGZgib9ZTVLa8QbhulWp/view?usp=sharing"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    title="Download Alexander's Resume"
-                  >
-                    Resume
-                  </motion.a>
-                </li>
-                <li>
-                  <motion.a
-                    href="https://github.com/agrattan0820"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    title="Go to Alexander's GitHub"
-                  >
-                    <FontAwesomeIcon icon={faGithub} size="2x" />
-                    <span className="header-hidden-text">GitHub</span>
-                  </motion.a>
-                </li>
-                <li>
-                  <motion.a
-                    href="https://www.linkedin.com/in/alexander-grattan/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    title="Connect with Alexander on LinkedIn"
-                  >
-                    <FontAwesomeIcon icon={faLinkedin} size="2x" />
-                    <span className="header-hidden-text">LinkedIn</span>
-                  </motion.a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </header>
-
+        <Header logoLink="/" />
         <main className="main-home">
           <div className="cta">
             <h1 className="title">
@@ -272,17 +219,20 @@ export default function Home({ project }) {
         </main>
         <div className="project-container" ref={projectsRef}>
           {projectsList.map(
-            ({
-              name,
-              description,
-              longDescription,
-              image,
-              mobileImage,
-              link,
-              project,
-              GitHub,
-              tools,
-            }, i) => (
+            (
+              {
+                name,
+                description,
+                longDescription,
+                image,
+                mobileImage,
+                link,
+                project,
+                GitHub,
+                tools,
+              },
+              i
+            ) => (
               <div className="project" key={i} id={project}>
                 <Link href={project}>
                   <picture>
@@ -407,9 +357,11 @@ export default function Home({ project }) {
       </div>
     </motion.div>
   );
-}
+};
 
-export async function getServerSideProps(context) {
+export default Homepage;
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const { query } = context;
 
   const project = query?.project ?? false;
@@ -417,6 +369,6 @@ export async function getServerSideProps(context) {
   return {
     props: {
       project,
-    }, // will be passed to the page component as props
+    },
   };
-}
+};
