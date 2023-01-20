@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { GetServerSideProps, NextPage } from "next";
-import Head from "next/head";
 import Link from "next/link";
 import { motion, useAnimation } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,10 +8,10 @@ import {
   faChevronRight,
   faArrowLeft,
 } from "@fortawesome/free-solid-svg-icons";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 import SEO from "../components/seo";
 import { projectsList } from "../utils/project-data";
+import Header from "../components/header";
 
 type ProjectPageProps = {
   projectData: typeof projectsList[number];
@@ -44,55 +43,7 @@ const Project: NextPage<ProjectPageProps> = ({ projectData }) => {
         url={`https://agrattan.com/${projectData.project}`}
         description={projectData.description}
       />
-      <header>
-        <nav className="project-nav">
-          <div className="space-between">
-            <Link href={`/?project=${projectData.project}`}>
-              <div className="logo">AG</div>
-            </Link>
-            <ul className="nav-list">
-              <li>
-                <motion.a
-                  href="https://drive.google.com/file/d/1PgvpHThs5XjTwGZgib9ZTVLa8QbhulWp/view?usp=sharing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  title="Download Alexander's Resume"
-                >
-                  Resume
-                </motion.a>
-              </li>
-              <li>
-                <motion.a
-                  href="https://github.com/agrattan0820"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  title="Go to Alexander's GitHub"
-                >
-                  <FontAwesomeIcon icon={faGithub} size="2x" />
-                  <span className="header-hidden-text">GitHub</span>
-                </motion.a>
-              </li>
-              <li>
-                <motion.a
-                  href="https://www.linkedin.com/in/alexander-grattan/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  title="Connect with Alexander on LinkedIn"
-                >
-                  <FontAwesomeIcon icon={faLinkedin} size="2x" />
-                  <span className="header-hidden-text">LinkedIn</span>
-                </motion.a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </header>
+      <Header logoLink={`/?project=${projectData.project}`} />
       <motion.main
         initial="hidden"
         animate={controls}
