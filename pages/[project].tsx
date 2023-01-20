@@ -2,7 +2,6 @@ import Head from "next/head";
 import Link from "next/link";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import { projectsList } from "../components/data";
 import { motion, useAnimation } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -11,8 +10,14 @@ import {
   faArrowLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { GetServerSideProps, NextPage } from "next";
+import { projectsList } from "../utils/project-data";
 
-export default function Project({ projectObject }) {
+type ProjectPageProps = {
+  projectData: typeof projectsList[number]
+}
+
+const Project: NextPage<ProjectPageProps> = ({ projectData }) => {
   const controls = useAnimation();
 
   const page = {
@@ -29,18 +34,18 @@ export default function Project({ projectObject }) {
     controls.set("hidden");
     document.body.style.overflowY = "auto";
     controls.start("pageShow");
-  }, [projectObject]);
+  }, [projectData]);
 
   return (
     <motion.div exit={{ opacity: 0 }} className="container">
       <Head>
         <meta
           name="description"
-          content={`${projectObject.description}`}
+          content={`${projectData.description}`}
         ></meta>
         <meta
           property="og:url"
-          content={`https://agrattan.com/${projectObject.project}`}
+          content={`https://agrattan.com/${projectData.project}`}
         />
         <meta property="og:type" content="website" />
         <meta
@@ -49,13 +54,13 @@ export default function Project({ projectObject }) {
         />
         <meta property="og:locale" content="en" />
         <meta property="og:image" content="/agrattan_OG.png" />
-        <title>{projectObject?.name} | Alexander Grattan</title>
+        <title>{projectData?.name} | Alexander Grattan</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header>
         <nav className="project-nav">
           <div className="space-between">
-            <Link href={`/?project=${projectObject.project}`}>
+            <Link href={`/?project=${projectData.project}`}>
               <div className="logo">AG</div>
             </Link>
             <ul className="nav-list">
@@ -110,7 +115,7 @@ export default function Project({ projectObject }) {
       >
         <div className="text-content">
           <motion.a
-            href={projectObject?.link}
+            href={projectData?.link}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -118,55 +123,55 @@ export default function Project({ projectObject }) {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
             >
-              {projectObject?.name}
+              {projectData?.name}
             </motion.h1>
           </motion.a>
 
-          {projectObject?.longDescription
-            ? projectObject?.longDescription
+          {projectData?.longDescription
+            ? projectData?.longDescription
                 .split("\n")
                 .map((str, index) => <p key={index}>{str}</p>)
-            : projectObject?.description
+            : projectData?.description
                 .split("\n")
                 .map((str, index) => <p key={index}>{str}</p>)}
         </div>
-        {projectObject && projectObject?.figma && projectObject?.old ? (
+        {projectData && projectData?.figma && projectData?.old ? (
           <div className="comparison-container">
             <div className="image-compare gsap-1">
               <img
-                src={projectObject.old}
-                alt={`${projectObject.name} Old Site`}
+                src={projectData.old}
+                alt={`${projectData.name} Old Site`}
               />
               <h2>Old Version</h2>
             </div>
             <div className="image-compare gsap-2">
               <img
-                src={projectObject.figma}
-                alt={`${projectObject.name} Design Mockup`}
+                src={projectData.figma}
+                alt={`${projectData.name} Design Mockup`}
               />
               <h2>Design Mockup</h2>
             </div>
             <div className="image-compare gsap-1">
               <img
-                src={projectObject.image}
-                alt={`${projectObject.name} Live Site`}
+                src={projectData.image}
+                alt={`${projectData.name} Live Site`}
               />
               <h2>Live Version</h2>
             </div>
           </div>
-        ) : projectObject?.figma ? (
+        ) : projectData?.figma ? (
           <div className="comparison-container">
             <div className="image-compare gsap-1">
               <img
-                src={projectObject.figma}
-                alt={`${projectObject.name} Design Mockup`}
+                src={projectData.figma}
+                alt={`${projectData.name} Design Mockup`}
               />
               <h2>Design Mockup</h2>
             </div>
             <div className="image-compare gsap-2">
               <img
-                src={projectObject.image}
-                alt={`${projectObject.name} Live Site`}
+                src={projectData.image}
+                alt={`${projectData.name} Live Site`}
               />
               <h2>Live Version</h2>
             </div>
@@ -174,14 +179,14 @@ export default function Project({ projectObject }) {
         ) : (
           <div className="comparison-container">
             <div className="image-compare gsap-3">
-              <img src={projectObject?.image} alt={projectObject?.name} />
+              <img src={projectData?.image} alt={projectData?.name} />
             </div>
           </div>
         )}
 
         <nav className="page-navigation">
-          {projectObject?.id > 1 ? (
-            <Link href={projectsList[projectObject.id - 2].project}>
+          {projectData?.id > 1 ? (
+            <Link href={projectsList[projectData.id - 2].project}>
               <motion.button
                 className="previous-btn"
                 whileHover={{ scale: 1.05 }}
@@ -198,8 +203,8 @@ export default function Project({ projectObject }) {
               Previous
             </button>
           )}
-          {projectObject?.id < projectsList.length ? (
-            <Link href={projectsList[projectObject.id].project}>
+          {projectData?.id < projectsList.length ? (
+            <Link href={projectsList[projectData.id].project}>
               <motion.button
                 className="next-btn"
                 whileHover={{ scale: 1.05 }}
@@ -217,31 +222,31 @@ export default function Project({ projectObject }) {
             </button>
           )}
         </nav>
-        {projectObject && (
+        {projectData && (
           <div className="bottom-links">
             <div className="project-links">
-              {projectObject.link && (
+              {projectData.link && (
                 <motion.a
-                  href={projectObject.link}
+                  href={projectData.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="project-btn"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  title={`Open site of ${projectObject.name}`}
+                  title={`Open site of ${projectData.name}`}
                 >
                   Open Site
                 </motion.a>
               )}
-              {projectObject.GitHub && (
+              {projectData.GitHub && (
                 <motion.a
-                  href={projectObject.GitHub}
+                  href={projectData.GitHub}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="project-btn"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  title={`View Code for ${projectObject.name}`}
+                  title={`View Code for ${projectData.name}`}
                 >
                   View Code
                 </motion.a>
@@ -260,15 +265,23 @@ export default function Project({ projectObject }) {
   );
 }
 
-export async function getServerSideProps(context) {
+export default Project;
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const { project } = context.query;
 
-  let projectObject = {};
-  projectObject = projectsList.find((el) => el.project === project);
+
+  const projectData = projectsList.find((el) => el.project === project);
+
+  if (!projectData) {
+    return {
+      notFound: true
+    }
+  }
 
   return {
     props: {
-      projectObject,
+      projectData,
     }, // will be passed to the page component as props
   };
 }

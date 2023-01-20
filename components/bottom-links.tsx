@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import { projectsList } from "./data";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowLeft,
 } from "@fortawesome/free-solid-svg-icons";
+import { projectsList } from "../utils/project-data";
 
 function BottomLinks() {
   const router = useRouter();

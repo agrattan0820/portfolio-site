@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { projectsList } from "../components/data";
+
 import Head from "next/head";
 import IntroOverlay from "../components/introOverlay";
 import { gsap } from "gsap";
@@ -16,6 +16,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { projectsList } from "../utils/project-data";
 
 export default function Home({ project }) {
   const [animationComplete, setAnimationComplete] = useState(false);
