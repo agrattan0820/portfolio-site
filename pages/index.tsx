@@ -60,7 +60,7 @@ const Homepage: NextPage<HomepageProps> = ({ project }) => {
     let projects: Element[] = gsap.utils.toArray(".project");
     let mediaQuery = window.matchMedia("(min-width: 967px)");
 
-    const homeAnimation = (animation) => {
+    const homeAnimation = (onCompleteAnimation: () => void) => {
       if (!project) {
         tl.to(".ball", {
           duration: 2,
@@ -71,7 +71,7 @@ const Homepage: NextPage<HomepageProps> = ({ project }) => {
             duration: 1,
             scale: 30,
             ease: "power3.out",
-            onComplete: animation,
+            onComplete: onCompleteAnimation,
           })
           .from(".after-animation", {
             duration: 0.8,
@@ -104,7 +104,7 @@ const Homepage: NextPage<HomepageProps> = ({ project }) => {
             ease: "power3.out",
           });
       } else {
-        completeAnimation();
+        onCompleteAnimation();
         scrollToProject();
       }
 
@@ -194,7 +194,7 @@ const Homepage: NextPage<HomepageProps> = ({ project }) => {
       />
       {animationComplete === false && <IntroOverlay />}
       <div className="after-animation">
-      <Header logoLink="/" />
+        <Header logoLink="/" />
         <main className="main-home">
           <div className="cta">
             <h1 className="title">
