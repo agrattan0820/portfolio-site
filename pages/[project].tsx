@@ -133,7 +133,7 @@ const Project: NextPage<ProjectPageProps> = ({ projectData }) => {
               </motion.button>
             </Link>
           ) : (
-            <button className="disabled-btn previous-btn" disabled>
+            <button className="previous-btn" disabled>
               <FontAwesomeIcon className="prev-arrow" icon={faChevronLeft} />
               Previous
             </button>
@@ -151,7 +151,7 @@ const Project: NextPage<ProjectPageProps> = ({ projectData }) => {
               </motion.button>
             </Link>
           ) : (
-            <button className="disabled-btn next-btn" disabled>
+            <button className="next-btn" disabled>
               Next
               <FontAwesomeIcon className="next-arrow" icon={faChevronRight} />
             </button>

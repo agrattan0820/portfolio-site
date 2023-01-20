@@ -175,6 +175,10 @@
       }
       .previous-btn {
         left: 5%;
+
+        &:disabled {
+          filter: brightness(0.5);
+        }
         .prev-arrow {
           margin-right: 0.5rem;
           @media (max-width: 967px) {
@@ -184,6 +188,11 @@
       }
       .next-btn {
         right: 5%;
+
+        &:disabled {
+          filter: brightness(0.5);
+        }
+
         .next-arrow {
           margin-left: 0.5rem;
           @media (max-width: 967px) {
@@ -198,30 +207,30 @@
         place-items: center;
         grid-auto-flow: column;
         gap: 1rem;
-      .project-btn {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-        color: $black;
-        padding: 0;
-        cursor: pointer;
-        width: 150px;
-        height: 50px;
-        border-radius: 15px;
-        border: none;
-        outline: none;
-        color: $black;
-        background: snow;
-        font-weight: 700;
-        font-family: $font;
-        font-size: 1rem;
-      
-        @media (max-width: 967px) {
-          width: 100px;
-          font-size: 0.875rem;
+        .project-btn {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-decoration: none;
+          color: $black;
+          padding: 0;
+          cursor: pointer;
+          width: 150px;
+          height: 50px;
+          border-radius: 15px;
+          border: none;
+          outline: none;
+          color: $black;
+          background: snow;
+          font-weight: 700;
+          font-family: $font;
+          font-size: 1rem;
+
+          @media (max-width: 967px) {
+            width: 100px;
+            font-size: 0.875rem;
+          }
         }
-      }
       }
 
       .project-back {
