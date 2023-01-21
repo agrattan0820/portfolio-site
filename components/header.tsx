@@ -4,13 +4,13 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 type HeaderProps = {
- logoLink: string;
-}
+  logoLink: string;
+};
 
-const Header = ({logoLink}: HeaderProps) => {
+const Header = ({ logoLink }: HeaderProps) => {
   return (
     <header>
-      <nav className="home-nav">
+      <nav className="nav">
         <div className="space-between">
           <Link href={logoLink}>
             <div className="logo">AG</div>

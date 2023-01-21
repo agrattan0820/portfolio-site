@@ -88,7 +88,7 @@ const Homepage: NextPage<HomepageProps> = ({ project }) => {
             </span>
           </p>
           <button className="scroll-indicator" onClick={executeScroll}>
-            <span>Projects</span>
+            <span>Some Projects</span>
             <FontAwesomeIcon icon={faChevronDown} />
           </button>
         </main>
