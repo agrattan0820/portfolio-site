@@ -118,7 +118,6 @@ const Project: NextPage<ProjectPageProps> = ({ projectData }) => {
             </div>
           </div>
         )}
-
         <nav className="page-navigation">
           {projectData?.id > 1 ? (
             <Link href={projectsList[projectData.id - 2].project}>
