@@ -102,14 +102,14 @@ const Homepage: NextPage<HomepageProps> = ({ project }) => {
                 image,
                 mobileImage,
                 link,
-                project,
-                GitHub,
+                slug,
+                code,
                 tools,
               },
               i
             ) => (
-              <div className="project" key={i} id={project}>
-                <Link href={project}>
+              <div className="project" key={i} id={slug}>
+                <Link href={slug}>
                   <picture>
                     <source srcSet={image} media="(min-width: 1280px)" />
                     <img
@@ -120,14 +120,14 @@ const Homepage: NextPage<HomepageProps> = ({ project }) => {
                   </picture>
                 </Link>
                 <div className="project-info">
-                  <Link href={project}>
+                  <Link href={slug}>
                     <h2>{name}</h2>
                   </Link>
                   {description.split("\n").map((str, index) => (
                     <p key={index}>{str}</p>
                   ))}
                   {longDescription && (
-                    <Link href={project}>
+                    <Link href={slug}>
                       <button className="project-read-more">
                         <span>Read More</span>{" "}
                         <div className="read-more-arrow">
@@ -143,20 +143,22 @@ const Homepage: NextPage<HomepageProps> = ({ project }) => {
                     ))}
                   </ul>
                   <motion.div className="project-btns">
-                    <motion.a
-                      href={link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      title={`Open site of ${name}`}
-                      className="project-btn"
-                    >
-                      Open Site
-                    </motion.a>
-                    {GitHub && (
+                    {link && (
                       <motion.a
-                        href={GitHub}
+                        href={link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        title={`Open site of ${name}`}
+                        className="project-btn"
+                      >
+                        Open Site
+                      </motion.a>
+                    )}
+                    {code && (
+                      <motion.a
+                        href={code}
                         target="_blank"
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.05 }}

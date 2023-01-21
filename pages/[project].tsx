@@ -10,11 +10,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import SEO from "../components/seo";
-import { projectsList } from "../utils/project-data";
+import { projectsList, ProjectType } from "../utils/project-data";
 import Header from "../components/header";
 
 type ProjectPageProps = {
-  projectData: typeof projectsList[number];
+  projectData: ProjectType;
 };
 
 const Project: NextPage<ProjectPageProps> = ({ projectData }) => {
@@ -40,10 +40,10 @@ const Project: NextPage<ProjectPageProps> = ({ projectData }) => {
     <motion.div exit={{ opacity: 0 }} className="container">
       <SEO
         title={`${projectData?.name} | Alexander Grattan`}
-        url={`https://agrattan.com/${projectData.project}`}
+        url={`https://agrattan.com/${projectData.slug}`}
         description={projectData.description}
       />
-      <Header logoLink={`/?project=${projectData.project}`} />
+      <Header logoLink={`/?project=${projectData.slug}`} />
       <motion.main
         initial="hidden"
         animate={controls}
@@ -120,7 +120,7 @@ const Project: NextPage<ProjectPageProps> = ({ projectData }) => {
         )}
         <nav className="page-navigation">
           {projectData?.id > 1 ? (
-            <Link href={projectsList[projectData.id - 2].project}>
+            <Link href={projectsList[projectData.id - 2].slug}>
               <motion.button
                 className="previous-btn"
                 whileHover={{ scale: 1.05 }}
@@ -138,7 +138,7 @@ const Project: NextPage<ProjectPageProps> = ({ projectData }) => {
             </button>
           )}
           {projectData?.id < projectsList.length ? (
-            <Link href={projectsList[projectData.id].project}>
+            <Link href={projectsList[projectData.id].slug}>
               <motion.button
                 className="next-btn"
                 whileHover={{ scale: 1.05 }}
@@ -172,9 +172,9 @@ const Project: NextPage<ProjectPageProps> = ({ projectData }) => {
                   Open Site
                 </motion.a>
               )}
-              {projectData.GitHub && (
+              {projectData.code && (
                 <motion.a
-                  href={projectData.GitHub}
+                  href={projectData.code}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="project-btn"
@@ -204,7 +204,7 @@ export default Project;
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { project } = context.query;
 
-  const projectData = projectsList.find((el) => el.project === project);
+  const projectData = projectsList.find((el) => el.slug === project);
 
   if (!projectData) {
     return {

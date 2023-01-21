@@ -1,68 +1,55 @@
-export const projectsList = [
+export type ProjectType = {
+  id: number;
+  name: string;
+  description: string;
+  longDescription?: string;
+  image: string;
+  mobileImage?: string;
+  figma?: string;
+  old?: string;
+  code: string;
+  link?: string;
+  slug: string;
+  tools: string[];
+};
+
+export const projectsList: ProjectType[] = [
   {
     id: 1,
     name: "Big Burgh Redesign",
     description:
       "A new design and construction of the Big Burgh app (not an official redesign) used to help Pittsburgh natives find resources such as food and shelter.",
-    image: "/images/Big_Burgh_Screenshot.jpg",
-    mobileImage: "/images/Big_Burgh_Screenshot.jpg",
-    link: "https://github.com/agrattan0820/big-burgh",
-    GitHub: "https://github.com/agrattan0820/big-burgh",
-    project: "big-burgh",
+    image: "/images/big-burgh.png",
+    code: "https://github.com/agrattan0820/big-burgh",
+    slug: "big-burgh",
     tools: ["React Native/Expo", "TypeScript", "Styled Components"],
   },
   {
     id: 2,
-    name: "Pollock Is Shit",
-    description:
-      "Web app that manipulates image data to create a Pollock-like painting (because literally anyone could've been Pollock).",
-    image: "/images/Pollock_Is_Shit_Screenshot.png",
-    mobileImage: "/images/Pollock_is_Shit_OG.png",
-    link: "https://pollockisshit.netlify.app/",
-    GitHub: "https://github.com/agrattan0820/Pollock-is-Poop",
-    project: "pollock-is-shit",
-    tools: ["React/Next.js", "Tailwind CSS", "p5.js"],
-  },
-  {
-    id: 3,
     name: "Secret Pittsburgh",
     description:
       "Website for the Secret Pittsburgh class at the University of Pittsburgh (ENGLIT 1412) dedicated to uncovering hidden spaces and unusual places in the city of Pittsburgh.",
     image: "/images/secret_pittsburgh.png",
     mobileImage: "/images/secret_pittsburgh_small.png",
     link: "https://secretpittsburgh.org/",
-    GitHub: "https://github.com/agrattan0820/secret-pittsburgh",
-    project: "secret-pittsburgh",
-    tools: ["React/Gatsby", "Tailwind CSS", "Drupal"],
+    code: "https://github.com/agrattan0820/secret-pittsburgh",
+    slug: "secret-pittsburgh",
+    tools: ["React/Gatsby", "Tailwind CSS"],
+  },
+  {
+    id: 3,
+    name: "Pollock Is Shit",
+    description:
+      "Web app that manipulates image data to create a Pollock-like painting (because literally anyone could've been Pollock).",
+    image: "/images/Pollock_Is_Shit_Screenshot.png",
+    mobileImage: "/images/Pollock_is_Shit_OG.png",
+    link: "https://pollockisshit.netlify.app/",
+    code: "https://github.com/agrattan0820/Pollock-is-Poop",
+    slug: "pollock-is-shit",
+    tools: ["React/Next.js", "Tailwind CSS", "p5.js"],
   },
   {
     id: 4,
-    name: "Belly Button Chrome Extension",
-    description:
-      "Browser extension that helps developers and accessibility engineers inspect a website's buttons and determine if they follow HTML standards and Web Content Accessibility Guidelines (WCAG).",
-    image: "/images/Belly_Button_Design.jpg",
-    mobileImage: "/images/Belly_Button_Design_Small.jpg",
-    link: "http://getbellybutton.com/",
-    GitHub: "https://github.com/agrattan0820/belly-button",
-    project: "belly-button",
-    tools: ["HTML", "CSS", "JavaScript", "Chrome API"],
-  },
-  {
-    id: 5,
-    name: "Allegory of the Cave",
-    description:
-      "An experiment where I created an audiovisual experience with an interactive 3D sun. Created for the University of Pittsburgh's ENGCMP 1130 class.",
-    longDescription:
-      "One of my assignments for the University of Pittsburgh class, Projects in Digital Composition (ENGCMP 1130), was to create a piece of content that characterizes or responds to Plato's Allegory of the Cave.\nThree.js is a JavaScript library I had experimented with in the past but I had failed to make anything significant with it. For this project I wanted to push myself to understand using 3D on the web and how it can create engaging experiences.",
-    image: "/images/Allegory_Cave_Screenshot.jpg",
-    mobileImage: "/images/Allegory_Cave_Screenshot_Small.jpg",
-    link: "https://allegory-of-the-cave.netlify.app/",
-    GitHub: "https://github.com/agrattan0820/allegory-of-the-cave",
-    project: "allegory-cave",
-    tools: ["HTML", "CSS", "JavaScript", "Three.js"],
-  },
-  {
-    id: 6,
     name: "Pitt CSC",
     description:
       "Redesigned and developed the website for the Pitt Computer Science Club that helps advertise its efforts to support computer science and technology-related initiatives.",
@@ -73,24 +60,12 @@ export const projectsList = [
     figma: "/images/Pitt_CSC_Figma_Screenshot.png",
     old: "/images/Original_CSC_Site_Screenshot.png",
     link: "https://pittcsc.org/",
-    project: "pitt-csc",
-    GitHub: "https://github.com/pittcsc/pittcsc-website",
+    slug: "pitt-csc",
+    code: "https://github.com/pittcsc/pittcsc-website",
     tools: ["React/Gatsby", "Tailwind CSS", "Notion API", "Framer Motion"],
   },
   {
-    id: 7,
-    name: "Resu.me",
-    description:
-      "Steelhacks hackathon winning website that acts as a resume repository for students and employers.\nBuilt the website and app in 24 hours with three other teammates.",
-    image: "/images/resu_me_Screenshot.png",
-    mobileImage: "/images/resu_me_Screenshot_Small.png",
-    link: "https://shielded-chamber-18134.herokuapp.com/",
-    project: "resu_me",
-    GitHub: "https://github.com/AlexWang18/Steelhacks",
-    tools: ["React", "Express", "Scss", "Heroku"],
-  },
-  {
-    id: 8,
+    id: 5,
     name: "Grademyaid",
     description:
       "Application that allows students to grade their college financial aid packages using data from the US Department of Education.\nThis was built for Pitt CSC Hacks, a competition sponsored by the University of Pittsburgh's Computer Science Club.",
@@ -100,32 +75,56 @@ export const projectsList = [
       "This was built for Pitt CSC Hacks, a competition sponsored by the University of Pittsburgh's Computer Science Club and was my first time participating in a coding competition. Going into this experience I was quite nervous.\nI stuck to my guns and went with an idea that I had the past summer which was a website that helps students analyze their financial aid package based on information about the school, similar to how Niche.com grades colleges and universities.\nI ended up finding a partner who didn't know much about web development, but was willing to work with me in developing this idea.\nThis was my first foray into handling large amounts of data and trying to contextualize it for a user. If I were to fix one thing about the site, it would be effectively distinguishing the grades between each other so that a user's result is crystal clear.",
     figma: "/images/Grademyaid_Figma_Screenshot.png",
     link: "https://www.grademyaid.com/",
-    project: "grademyaid",
-    GitHub: "https://github.com/agrattan0820/grade-my-aid",
+    slug: "grademyaid",
+    code: "https://github.com/agrattan0820/grade-my-aid",
     tools: ["React", "Framer Motion", "Scss"],
   },
   {
-    id: 9,
-    name: "The New York Times Critic's Picks",
+    id: 6,
+    name: "Grosseries",
     description:
-      "A website that showcases movies that The New York Times considers critic's picks. Uses the newspaper's REST API in order to gather the data.\nThe cards can be sorted in multiple ways and each link to the corresponding review on The New York Time's website.",
-    image: "/images/NYT_Critic_Picks.png",
-    mobileImage: "/images/NYT_Critic_Picks_Small.png",
-    link: "https://nytcriticpicks.netlify.app",
-    project: "nyt-movie-critics",
-    GitHub: "https://github.com/agrattan0820/Movie-Review-App",
-    tools: ["React", "Framer Motion", "The New York Times API"],
+      "A mobile app that helps individuals to track expiration dates and the inventory of their food, a group project for the University of Pittsburgh's CS1635 created with Flutter.",
+    image: "/images/grosseries.png",
+    code: "https://github.com/agrattan0820/cs1635-flutter-project",
+    slug: "grosseries",
+    tools: ["Flutter"],
   },
   {
-    id: 10,
+    id: 7,
+    name: "Belly Button Chrome Extension",
+    description:
+      "Browser extension that helps developers and accessibility engineers inspect a website's buttons and determine if they follow HTML standards and Web Content Accessibility Guidelines (WCAG).",
+    image: "/images/Belly_Button_Design.jpg",
+    mobileImage: "/images/Belly_Button_Design_Small.jpg",
+    link: "http://getbellybutton.com/",
+    code: "https://github.com/agrattan0820/belly-button",
+    slug: "belly-button",
+    tools: ["HTML", "CSS", "JavaScript", "Chrome API"],
+  },
+  {
+    id: 8,
+    name: "Allegory of the Cave",
+    description:
+      "An experiment where I created an audiovisual experience with an interactive 3D sun. Created for the University of Pittsburgh's ENGCMP 1130 class.",
+    longDescription:
+      "One of my assignments for the University of Pittsburgh class, Projects in Digital Composition (ENGCMP 1130), was to create a piece of content that characterizes or responds to Plato's Allegory of the Cave.\nThree.js is a JavaScript library I had experimented with in the past but I had failed to make anything significant with it. For this project I wanted to push myself to understand using 3D on the web and how it can create engaging experiences.",
+    image: "/images/Allegory_Cave_Screenshot.jpg",
+    mobileImage: "/images/Allegory_Cave_Screenshot_Small.jpg",
+    link: "https://allegory-of-the-cave.netlify.app/",
+    code: "https://github.com/agrattan0820/allegory-of-the-cave",
+    slug: "allegory-cave",
+    tools: ["HTML", "CSS", "JavaScript", "Three.js"],
+  },
+  {
+    id: 9,
     name: "Virtual Safari",
     description:
       "A recreation of Timon and Pumbaa's Virtual Safari, a choose-your-own adventure from The Lion King DVD.\nI edited the choices into individual clips using the video editor, DaVinci Resolve, and used JavaScript to develop the site interaction.",
     image: "/images/Virtual_Safari_Screenshot.png",
     mobileImage: "/images/Virtual_Safari_Screenshot_Small.png",
     link: "https://virtualsafari.netlify.app/",
-    project: "virtual-safari",
-    GitHub: "https://github.com/agrattan0820/Virtual-Safari",
+    slug: "virtual-safari",
+    code: "https://github.com/agrattan0820/Virtual-Safari",
     tools: ["HTML", "CSS", "JavaScript"],
   },
 ];
