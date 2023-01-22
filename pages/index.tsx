@@ -1,25 +1,23 @@
-import { useEffect, useState, useRef } from "react";
+import { useRef, useState } from "react";
 
-import { GetServerSideProps, NextPage } from "next";
-import IntroOverlay from "../components/intro-overlay";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import {
   faGithub,
   faLinkedin,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronDown,
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
+import { GetServerSideProps, NextPage } from "next";
 import Link from "next/link";
-import { projectsList } from "../utils/project-data";
-import SEO from "../components/seo";
 import Header from "../components/header";
+import IntroOverlay from "../components/intro-overlay";
+import SEO from "../components/seo";
 import { useBallAnimation } from "../utils/hooks/use-ball-animation";
+import { projectsList } from "../utils/project-data";
 
 type HomepageProps = {
   project: string | false;

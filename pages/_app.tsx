@@ -1,10 +1,10 @@
 import "../styles/App.scss";
-import { useEffect } from "react";
-import { AppProps } from 'next/app'
+import { AppProps } from "next/app";
 import { useRouter } from "next/router";
-import { AnimatePresence } from "framer-motion";
-import { hotjar } from "react-hotjar";
+import { useEffect } from "react";
 import ReactGA from "react-ga";
+import { hotjar } from "react-hotjar";
+import { AnimatePresence } from "framer-motion";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -18,11 +18,11 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     ReactGA.pageview(router.asPath);
-  }, [router.asPath])
+  }, [router.asPath]);
 
   return (
     <AnimatePresence exitBeforeEnter>
-        <Component {...pageProps} />
+      <Component {...pageProps} />
     </AnimatePresence>
   );
 }

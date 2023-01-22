@@ -1,17 +1,17 @@
-import { useEffect } from "react";
-import { GetServerSideProps, NextPage } from "next";
-import Link from "next/link";
-import { motion, useAnimation } from "framer-motion";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faArrowLeft,
   faChevronLeft,
   faChevronRight,
-  faArrowLeft,
 } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { motion, useAnimation } from "framer-motion";
+import { GetServerSideProps, NextPage } from "next";
+import Link from "next/link";
+import { useEffect } from "react";
 
+import Header from "../components/header";
 import SEO from "../components/seo";
 import { projectsList, ProjectType } from "../utils/project-data";
-import Header from "../components/header";
 
 type ProjectPageProps = {
   projectData: ProjectType;
