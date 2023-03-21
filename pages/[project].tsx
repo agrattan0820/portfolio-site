@@ -5,7 +5,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion, useAnimation } from "framer-motion";
-import { GetServerSideProps, NextPage } from "next";
+import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Link from "next/link";
 import { useEffect } from "react";
 
@@ -201,10 +201,25 @@ const Project: NextPage<ProjectPageProps> = ({ projectData }) => {
 
 export default Project;
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { project } = context.query;
+export const getStaticPaths: GetStaticPaths = async (context) => {
+  const projectPaths = projectsList.map((item) => {
+    return {
+      params: {
+        project: item.slug,
+      },
+    };
+  });
 
-  const projectData = projectsList.find((el) => el.slug === project);
+  return {
+    paths: projectPaths,
+    fallback: false,
+  };
+};
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  const projectSlug = context.params.project;
+
+  const projectData = projectsList.find((el) => el.slug === projectSlug);
 
   if (!projectData) {
     return {
@@ -215,6 +230,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   return {
     props: {
       projectData,
-    }, // will be passed to the page component as props
+    },
   };
 };
