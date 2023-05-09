@@ -16,6 +16,19 @@ export type ProjectType = {
 export const projectsList: ProjectType[] = [
   {
     id: 1,
+    name: "Grademyaid",
+    description:
+      "Website that allows students to grade their college financial aid packages using data from the US Department of Education.\nThis is a full redesign of one of my previous web applications built for a University of Pittsburgh hackathon.",
+    image: "/images/grademyaid.png",
+    longDescription:
+      "This was originally built for Pitt CSC Hacks, a competition sponsored by the University of Pittsburgh's Computer Science Club and was my first time participating in a coding competition. Going into the experience I was quite nervous.\nI stuck to my guns and went with an idea that I had the past summer which was a website that helps students analyze their financial aid package based on information about the school, similar to how Niche.com grades colleges and universities. Two years later I had the opportunity to rebuild the application from the ground up using new technologies I've picked up from internships and school including TypeScript, Next.js, PostgreSQL, and Supabase.",
+    link: "https://www.grademyaid.com/",
+    slug: "grademyaid",
+    code: "https://github.com/agrattan0820/grademyaid",
+    tools: ["React/Next.js", "TypeScript", "PostgreSQL", "Supabase"],
+  },
+  {
+    id: 2,
     name: "Big Burgh Redesign",
     description:
       "A new design and construction of the Big Burgh app (not an official redesign) used to help Pittsburgh natives find resources such as food and shelter.",
@@ -25,7 +38,7 @@ export const projectsList: ProjectType[] = [
     tools: ["React Native/Expo", "TypeScript", "Styled Components"],
   },
   {
-    id: 2,
+    id: 3,
     name: "Secret Pittsburgh",
     description:
       "Website for the Secret Pittsburgh class at the University of Pittsburgh (ENGLIT 1412) dedicated to uncovering hidden spaces and unusual places in the city of Pittsburgh.",
@@ -37,7 +50,7 @@ export const projectsList: ProjectType[] = [
     tools: ["React/Gatsby", "Tailwind CSS"],
   },
   {
-    id: 3,
+    id: 4,
     name: "Pollock Is Shit",
     description:
       "Web app that manipulates image data to create a Pollock-like painting (because literally anyone could've been Pollock).",
@@ -49,7 +62,7 @@ export const projectsList: ProjectType[] = [
     tools: ["React/Next.js", "Tailwind CSS", "p5.js"],
   },
   {
-    id: 4,
+    id: 5,
     name: "Pitt CSC",
     description:
       "Redesigned and developed the website for the Pitt Computer Science Club that helps advertise its efforts to support computer science and technology-related initiatives.",
@@ -65,22 +78,22 @@ export const projectsList: ProjectType[] = [
     tools: ["React/Gatsby", "Tailwind CSS", "Notion API", "Framer Motion"],
   },
   {
-    id: 5,
-    name: "Grademyaid",
+    id: 6,
+    name: "Grademyaid (Legacy)",
     description:
       "Application that allows students to grade their college financial aid packages using data from the US Department of Education.\nThis was built for Pitt CSC Hacks, a competition sponsored by the University of Pittsburgh's Computer Science Club.",
-    image: "/images/GradeMyAid.png",
-    mobileImage: "/images/GradeMyAid_Small.png",
+    image: "/images/GradeMyAid-legacy.png",
+    mobileImage: "/images/GradeMyAid_Small-legacy.png",
     longDescription:
-      "This was built for Pitt CSC Hacks, a competition sponsored by the University of Pittsburgh's Computer Science Club and was my first time participating in a coding competition. Going into this experience I was quite nervous.\nI stuck to my guns and went with an idea that I had the past summer which was a website that helps students analyze their financial aid package based on information about the school, similar to how Niche.com grades colleges and universities.\nI ended up finding a partner who didn't know much about web development, but was willing to work with me in developing this idea.\nThis was my first foray into handling large amounts of data and trying to contextualize it for a user. If I were to fix one thing about the site, it would be effectively distinguishing the grades between each other so that a user's result is crystal clear.",
+      "This was built for Pitt CSC Hacks, a competition sponsored by the University of Pittsburgh's Computer Science Club and was my first time participating in a coding competition. Going into the experience I was quite nervous.\nI stuck to my guns and went with an idea that I had the past summer which was a website that helps students analyze their financial aid package based on information about the school, similar to how Niche.com grades colleges and universities.\nI ended up finding a partner who didn't know much about web development, but was willing to work with me in developing this idea.\nThis was my first foray into handling large amounts of data and trying to contextualize it for a user. If I were to fix one thing about the site, it would be effectively distinguishing the grades between each other so that a user's result is crystal clear.",
     figma: "/images/Grademyaid_Figma_Screenshot.png",
-    link: "https://www.grademyaid.com/",
-    slug: "grademyaid",
-    code: "https://github.com/agrattan0820/grade-my-aid",
+    link: "https://grademyaid.netlify.app/",
+    slug: "grademyaid-legacy",
+    code: "https://github.com/agrattan0820/grade-my-aid-old",
     tools: ["React", "Framer Motion", "Scss"],
   },
   {
-    id: 6,
+    id: 7,
     name: "Grosseries",
     description:
       "A mobile app that helps individuals to track expiration dates and the inventory of their food, a group project for the University of Pittsburgh's CS1635 created with Flutter.",
@@ -90,7 +103,7 @@ export const projectsList: ProjectType[] = [
     tools: ["Flutter"],
   },
   {
-    id: 7,
+    id: 8,
     name: "Belly Button Chrome Extension",
     description:
       "Browser extension that helps developers and accessibility engineers inspect a website's buttons and determine if they follow HTML standards and Web Content Accessibility Guidelines (WCAG).",
@@ -102,7 +115,7 @@ export const projectsList: ProjectType[] = [
     tools: ["HTML", "CSS", "JavaScript", "Chrome API"],
   },
   {
-    id: 8,
+    id: 9,
     name: "Allegory of the Cave",
     description:
       "An experiment where I created an audiovisual experience with an interactive 3D sun. Created for the University of Pittsburgh's ENGCMP 1130 class.",
@@ -116,7 +129,7 @@ export const projectsList: ProjectType[] = [
     tools: ["HTML", "CSS", "JavaScript", "Three.js"],
   },
   {
-    id: 9,
+    id: 10,
     name: "Virtual Safari",
     description:
       "A recreation of Timon and Pumbaa's Virtual Safari, a choose-your-own adventure from The Lion King DVD.\nI edited the choices into individual clips using the video editor, DaVinci Resolve, and used JavaScript to develop the site interaction.",
