@@ -85,10 +85,12 @@ const Homepage: NextPage<HomepageProps> = ({ project }) => {
               Alexander Grattan / Software Developer
             </span>
           </p>
-          <button className="scroll-indicator" onClick={executeScroll}>
-            <span>Some Projects</span>
-            <FontAwesomeIcon icon={faChevronDown} />
-          </button>
+          <div className="scroll-indicator-container">
+            <button className="scroll-indicator" onClick={executeScroll}>
+              <span>Some Projects</span>
+              <FontAwesomeIcon icon={faChevronDown} />
+            </button>
+          </div>
         </main>
         <div className="project-container" ref={projectsRef}>
           {projectsList.map(
