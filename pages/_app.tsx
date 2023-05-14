@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [router.asPath]);
 
   return (
-    <AnimatePresence exitBeforeEnter>
+    <AnimatePresence>
       <Component {...pageProps} />
     </AnimatePresence>
   );
