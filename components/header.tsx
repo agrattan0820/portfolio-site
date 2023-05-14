@@ -36,7 +36,6 @@ const Header = ({ logoLink }: HeaderProps) => {
                 whileTap={{ scale: 0.95 }}
                 title="Go to Alexander's GitHub"
               >
-                {/* <FontAwesomeIcon icon={faGithub} size="2x" /> */}
                 <FaGithub />
                 <span className="header-hidden-text">GitHub</span>
               </motion.a>
@@ -50,7 +49,6 @@ const Header = ({ logoLink }: HeaderProps) => {
                 whileTap={{ scale: 0.95 }}
                 title="Connect with Alexander on LinkedIn"
               >
-                {/* <FontAwesomeIcon icon={faLinkedin} size="2x" /> */}
                 <FaLinkedin />
                 <span className="header-hidden-text">LinkedIn</span>
               </motion.a>
