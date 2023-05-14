@@ -1,6 +1,4 @@
 import {
-  GetStaticPaths,
-  GetStaticProps,
   GetStaticPropsContext,
   GetStaticPathsContext,
   InferGetStaticPropsType,
