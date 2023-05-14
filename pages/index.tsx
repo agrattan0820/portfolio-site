@@ -1,23 +1,23 @@
 import { useRef, useState } from "react";
-
-import {
-  faGithub,
-  faLinkedin,
-  faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
-import {
-  faChevronDown,
-  faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { motion } from "framer-motion";
 import { GetServerSideProps, NextPage } from "next";
 import Link from "next/link";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaTwitter,
+  FaChevronDown,
+  FaChevronRight,
+} from "react-icons/fa";
+import { motion } from "framer-motion";
+import MyPeep from "../images/My_Peep.png";
+
 import Header from "../components/header";
 import IntroOverlay from "../components/intro-overlay";
 import SEO from "../components/seo";
 import { useBallAnimation } from "../utils/hooks/use-ball-animation";
 import { projectsList } from "../utils/project-data";
+import Image from "next/image";
+import ProjectListing from "../components/project-listing";
 
 type HomepageProps = {
   project: string | false;
@@ -73,13 +73,8 @@ const Homepage: NextPage<HomepageProps> = ({ project }) => {
             <h1 className="title">
               I create<span className="playful"> playful </span> experiences.
             </h1>
-            <img
-              src="/images/My_Peep.png"
-              alt="My Peep"
-              className="peep-image"
-            />
+            <Image src={MyPeep} alt="Alexander's Peep" className="peep-image" />
           </div>
-
           <p className="job-title">
             <span className="text-reveal">
               Alexander Grattan / Software Developer
@@ -88,92 +83,14 @@ const Homepage: NextPage<HomepageProps> = ({ project }) => {
           <div className="scroll-indicator-container">
             <button className="scroll-indicator" onClick={executeScroll}>
               <span>Some Projects</span>
-              <FontAwesomeIcon icon={faChevronDown} />
+              <FaChevronDown />
             </button>
           </div>
         </main>
         <div className="project-container" ref={projectsRef}>
-          {projectsList.map(
-            (
-              {
-                name,
-                description,
-                longDescription,
-                image,
-                mobileImage,
-                link,
-                slug,
-                code,
-                tools,
-              },
-              i
-            ) => (
-              <div className="project" key={i} id={slug}>
-                <Link href={slug}>
-                  <picture>
-                    <source srcSet={image} media="(min-width: 1280px)" />
-                    <img
-                      className="project-image"
-                      src={mobileImage}
-                      alt={name}
-                    />
-                  </picture>
-                </Link>
-                <div className="project-info">
-                  <Link href={slug}>
-                    <h2>{name}</h2>
-                  </Link>
-                  {description.split("\n").map((str, index) => (
-                    <p key={index}>{str}</p>
-                  ))}
-                  {longDescription && (
-                    <Link href={slug}>
-                      <button className="project-read-more">
-                        <span>Read More</span>{" "}
-                        <div className="read-more-arrow">
-                          <FontAwesomeIcon icon={faChevronRight} />
-                        </div>
-                      </button>
-                    </Link>
-                  )}
-                  <h3>Tools used:</h3>
-                  <ul className="tools-list">
-                    {tools.map((item, index) => (
-                      <li key={index}>{item}</li>
-                    ))}
-                  </ul>
-                  <motion.div className="project-btns">
-                    {link && (
-                      <motion.a
-                        href={link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        title={`Open site of ${name}`}
-                        className="project-btn"
-                      >
-                        Open Site
-                      </motion.a>
-                    )}
-                    {code && (
-                      <motion.a
-                        href={code}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        title={`View Code for ${name}`}
-                        className="project-btn"
-                      >
-                        View Code
-                      </motion.a>
-                    )}
-                  </motion.div>
-                </div>
-              </div>
-            )
-          )}
+          {projectsList.map((project, i) => (
+            <ProjectListing key={i} project={project} />
+          ))}
         </div>
         <footer>
           <h2>Connect with Me</h2>
@@ -199,7 +116,7 @@ const Homepage: NextPage<HomepageProps> = ({ project }) => {
                 whileTap={{ scale: 0.95 }}
                 title="Go to Alexander's GitHub"
               >
-                <FontAwesomeIcon icon={faGithub} size="2x" />
+                <FaGithub />
                 <span className="footer-hidden-text">GitHub</span>
               </motion.a>
             </li>
@@ -212,8 +129,8 @@ const Homepage: NextPage<HomepageProps> = ({ project }) => {
                 whileTap={{ scale: 0.9 }}
                 title="Connect with Alexander on LinkedIn"
               >
-                <FontAwesomeIcon icon={faLinkedin} size="2x" />
-                <span className="footer-hidden-text">GitHub</span>
+                <FaLinkedin />
+                <span className="footer-hidden-text">LinkedIn</span>
               </motion.a>
             </li>
             <li>
@@ -225,7 +142,7 @@ const Homepage: NextPage<HomepageProps> = ({ project }) => {
                 whileTap={{ scale: 0.95 }}
                 title="Follow Alexander on Twitter"
               >
-                <FontAwesomeIcon icon={faTwitter} size="2x" />
+                <FaTwitter />
                 <span className="footer-hidden-text">Twitter</span>
               </motion.a>
             </li>

@@ -76,6 +76,7 @@
         }
         img {
           width: 75%;
+          height: min-content;
           border-radius: 20px;
           @media (max-width: 976px) {
             width: 100%;
@@ -98,6 +99,9 @@
         font-weight: 700;
         font-family: $font;
         font-size: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         @media (max-width: 967px) {
           top: unset;
           bottom: 5%;
@@ -167,9 +171,22 @@
       .project-back {
         text-align: center;
         color: $white;
+        text-decoration: none;
         font-family: $font;
         margin: 2rem auto;
         cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        svg {
+          margin-right: 4px;
+          transition: transform 0.3s ease;
+        }
+        &:hover {
+          svg {
+            transform: translateX(-2px);
+          }
+        }
       }
     }
   }

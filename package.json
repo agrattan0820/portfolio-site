@@ -5,22 +5,20 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.32",
-    "@fortawesome/free-brands-svg-icons": "^5.15.1",
-    "@fortawesome/free-solid-svg-icons": "^5.15.1",
-    "@fortawesome/react-fontawesome": "^0.1.12",
-    "framer-motion": "^2.9.4",
-    "gsap": "^3.5.1",
-    "next": "10.0.1",
-    "next-transpile-modules": "^4.1.0",
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
+    "eslint-config-next": "^13.4.2",
+    "framer-motion": "^10.12.10",
+    "gsap": "^3.11.5",
+    "next": "^13.4.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-ga": "^3.2.1",
     "react-hotjar": "^2.2.1",
-    "sass": "^1.29.0"
+    "react-icons": "^4.8.0",
+    "sass": "^1.62.1"
   },
   "devDependencies": {
     "@types/node": "^16.13.0",
