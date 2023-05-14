@@ -1,6 +1,13 @@
 import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
-import { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import {
+  GetStaticPaths,
+  GetStaticPathsContext,
+  GetStaticProps,
+  GetStaticPropsContext,
+  InferGetStaticPropsType,
+  NextPage,
+} from "next";
 import Link from "next/link";
 import { FaArrowLeft, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
@@ -9,11 +16,9 @@ import SEO from "../components/seo";
 import { projectsList, ProjectType } from "../utils/project-data";
 import Image from "next/image";
 
-type ProjectPageProps = {
-  projectData: ProjectType;
-};
-
-const Project: NextPage<ProjectPageProps> = ({ projectData }) => {
+const Project: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
+  projectData,
+}) => {
   const controls = useAnimation();
 
   const page = {
@@ -201,7 +206,7 @@ const Project: NextPage<ProjectPageProps> = ({ projectData }) => {
 
 export default Project;
 
-export const getStaticPaths: GetStaticPaths = async (context) => {
+export const getStaticPaths = async (context: GetStaticPathsContext) => {
   const projectPaths = projectsList.map((item) => {
     return {
       params: {
@@ -216,7 +221,7 @@ export const getStaticPaths: GetStaticPaths = async (context) => {
   };
 };
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps = async (context: GetStaticPropsContext) => {
   const projectSlug = context.params.project;
 
   const projectData = projectsList.find((el) => el.slug === projectSlug);
