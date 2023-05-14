@@ -24,10 +24,15 @@
       justify-content: space-between;
       align-items: center;
     }
-    .logo {
-      cursor: pointer;
-      font-size: 1.4rem;
-      user-select: none;
+    a {
+      text-decoration: none;
+      color: $white;
+      .logo {
+        cursor: pointer;
+        font-size: 1.4rem;
+        text-decoration: none;
+        user-select: none;
+      }
     }
     .nav-list {
       margin: 0;
@@ -37,6 +42,9 @@
       justify-content: center;
       align-items: center;
       li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         padding: 0 16px;
         @media (max-width: 976px) {
           padding: 0 8px;
@@ -50,6 +58,11 @@
           @media (max-width: 976px) {
             font-size: 0.875rem;
           }
+
+          svg {
+            font-size: 1.75rem;
+          }
+
           .header-hidden-text {
             // visible-hidden class from A11y-101
             clip: rect(1px, 1px, 1px, 1px);
@@ -215,19 +228,23 @@
             }
           }
         }
-        h2 {
-          cursor: pointer;
-          font-size: 2rem;
-          margin: 0;
-          &:hover {
-            transition: all 0.4s cubic-bezier(0.15, 0.75, 0.45, 0.95) 0s;
-            animation: 10s ease 0s infinite alternate none running rainbow;
-          }
-          @media (max-height: 800px) {
-            font-size: 1.6rem;
-          }
-          @media (max-width: 967px) {
-            font-size: 1.4rem;
+        a {
+          color: $white;
+          text-decoration: none;
+          h2 {
+            cursor: pointer;
+            font-size: 2rem;
+            margin: 0;
+            &:hover {
+              transition: all 0.4s cubic-bezier(0.15, 0.75, 0.45, 0.95) 0s;
+              animation: 10s ease 0s infinite alternate none running rainbow;
+            }
+            @media (max-height: 800px) {
+              font-size: 1.6rem;
+            }
+            @media (max-width: 967px) {
+              font-size: 1.4rem;
+            }
           }
         }
         h3 {

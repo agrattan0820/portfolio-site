@@ -1,18 +1,15 @@
 import { useRef, useState } from "react";
-
-import {
-  faGithub,
-  faLinkedin,
-  faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
-import {
-  faChevronDown,
-  faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { motion } from "framer-motion";
 import { GetServerSideProps, NextPage } from "next";
 import Link from "next/link";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaTwitter,
+  FaChevronDown,
+  FaChevronRight,
+} from "react-icons/fa";
+import { motion } from "framer-motion";
+
 import Header from "../components/header";
 import IntroOverlay from "../components/intro-overlay";
 import SEO from "../components/seo";
@@ -88,7 +85,8 @@ const Homepage: NextPage<HomepageProps> = ({ project }) => {
           <div className="scroll-indicator-container">
             <button className="scroll-indicator" onClick={executeScroll}>
               <span>Some Projects</span>
-              <FontAwesomeIcon icon={faChevronDown} />
+              <FaChevronDown />
+              {/* <FontAwesomeIcon icon={faChevronDown} /> */}
             </button>
           </div>
         </main>
@@ -131,7 +129,8 @@ const Homepage: NextPage<HomepageProps> = ({ project }) => {
                       <button className="project-read-more">
                         <span>Read More</span>{" "}
                         <div className="read-more-arrow">
-                          <FontAwesomeIcon icon={faChevronRight} />
+                          {/* <FontAwesomeIcon icon={faChevronRight} /> */}
+                          <FaChevronRight />
                         </div>
                       </button>
                     </Link>
@@ -199,7 +198,8 @@ const Homepage: NextPage<HomepageProps> = ({ project }) => {
                 whileTap={{ scale: 0.95 }}
                 title="Go to Alexander's GitHub"
               >
-                <FontAwesomeIcon icon={faGithub} size="2x" />
+                {/* <FontAwesomeIcon icon={faGithub} size="2x" /> */}
+                <FaGithub />
                 <span className="footer-hidden-text">GitHub</span>
               </motion.a>
             </li>
@@ -212,8 +212,9 @@ const Homepage: NextPage<HomepageProps> = ({ project }) => {
                 whileTap={{ scale: 0.9 }}
                 title="Connect with Alexander on LinkedIn"
               >
-                <FontAwesomeIcon icon={faLinkedin} size="2x" />
-                <span className="footer-hidden-text">GitHub</span>
+                {/* <FontAwesomeIcon icon={faLinkedin} size="2x" /> */}
+                <FaLinkedin />
+                <span className="footer-hidden-text">LinkedIn</span>
               </motion.a>
             </li>
             <li>
@@ -225,7 +226,8 @@ const Homepage: NextPage<HomepageProps> = ({ project }) => {
                 whileTap={{ scale: 0.95 }}
                 title="Follow Alexander on Twitter"
               >
-                <FontAwesomeIcon icon={faTwitter} size="2x" />
+                {/* <FontAwesomeIcon icon={faTwitter} size="2x" /> */}
+                <FaTwitter />
                 <span className="footer-hidden-text">Twitter</span>
               </motion.a>
             </li>

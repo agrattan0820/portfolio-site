@@ -1,13 +1,8 @@
-import {
-  faArrowLeft,
-  faChevronLeft,
-  faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Link from "next/link";
-import { useEffect } from "react";
+import { FaArrowLeft, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 import Header from "../components/header";
 import SEO from "../components/seo";
@@ -127,13 +122,13 @@ const Project: NextPage<ProjectPageProps> = ({ projectData }) => {
                 whileTap={{ scale: 0.95 }}
                 title="Previous Project"
               >
-                <FontAwesomeIcon className="prev-arrow" icon={faChevronLeft} />
+                <FaChevronLeft className="prev-arrow" />
                 Previous
               </motion.button>
             </Link>
           ) : (
             <button className="previous-btn" disabled>
-              <FontAwesomeIcon className="prev-arrow" icon={faChevronLeft} />
+              <FaChevronLeft className="prev-arrow" />
               Previous
             </button>
           )}
@@ -146,13 +141,13 @@ const Project: NextPage<ProjectPageProps> = ({ projectData }) => {
                 title="Next Project"
               >
                 Next
-                <FontAwesomeIcon className="next-arrow" icon={faChevronRight} />
+                <FaChevronRight className="next-arrow" />
               </motion.button>
             </Link>
           ) : (
             <button className="next-btn" disabled>
               Next
-              <FontAwesomeIcon className="next-arrow" icon={faChevronRight} />
+              <FaChevronRight className="next-arrow" />
             </button>
           )}
         </nav>
@@ -187,10 +182,8 @@ const Project: NextPage<ProjectPageProps> = ({ projectData }) => {
               )}
             </div>
 
-            <Link href="/">
-              <div className="project-back">
-                <FontAwesomeIcon icon={faArrowLeft} /> Back Home
-              </div>
+            <Link href="/" className="project-back">
+              <FaArrowLeft /> Back Home
             </Link>
           </div>
         )}
