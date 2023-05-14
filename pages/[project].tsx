@@ -72,22 +72,25 @@ const Project: NextPage<ProjectPageProps> = ({ projectData }) => {
         {projectData && projectData?.figma && projectData?.old ? (
           <div className="comparison-container">
             <div className="image-compare gsap-1">
-              <Image
-                src={projectData.old}
+              {/* Using regular `img` tag because next/image would show 
+              previous project image when navigating */}
+              <img
+                src={projectData.old.src}
                 alt={`${projectData.name} Old Site`}
               />
+
               <h2>Old Version</h2>
             </div>
             <div className="image-compare gsap-2">
-              <Image
-                src={projectData.figma}
+              <img
+                src={projectData.figma.src}
                 alt={`${projectData.name} Design Mockup`}
               />
               <h2>Design Mockup</h2>
             </div>
             <div className="image-compare gsap-1">
-              <Image
-                src={projectData.image}
+              <img
+                src={projectData.image.src}
                 alt={`${projectData.name} Live Site`}
               />
               <h2>Live Version</h2>
@@ -96,15 +99,15 @@ const Project: NextPage<ProjectPageProps> = ({ projectData }) => {
         ) : projectData?.figma ? (
           <div className="comparison-container">
             <div className="image-compare gsap-1">
-              <Image
-                src={projectData.figma}
+              <img
+                src={projectData.figma.src}
                 alt={`${projectData.name} Design Mockup`}
               />
               <h2>Design Mockup</h2>
             </div>
             <div className="image-compare gsap-2">
-              <Image
-                src={projectData.image}
+              <img
+                src={projectData.image.src}
                 alt={`${projectData.name} Live Site`}
               />
               <h2>Live Version</h2>
@@ -113,8 +116,8 @@ const Project: NextPage<ProjectPageProps> = ({ projectData }) => {
         ) : (
           <div className="comparison-container">
             <div className="image-compare gsap-3">
-              <Image
-                src={projectData.image}
+              <img
+                src={projectData.image.src}
                 alt={`${projectData.name} Live Site`}
               />
             </div>
