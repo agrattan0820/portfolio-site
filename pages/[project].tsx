@@ -7,6 +7,7 @@ import { FaArrowLeft, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Header from "../components/header";
 import SEO from "../components/seo";
 import { projectsList, ProjectType } from "../utils/project-data";
+import Image from "next/image";
 
 type ProjectPageProps = {
   projectData: ProjectType;
@@ -71,18 +72,21 @@ const Project: NextPage<ProjectPageProps> = ({ projectData }) => {
         {projectData && projectData?.figma && projectData?.old ? (
           <div className="comparison-container">
             <div className="image-compare gsap-1">
-              <img src={projectData.old} alt={`${projectData.name} Old Site`} />
+              <Image
+                src={projectData.old}
+                alt={`${projectData.name} Old Site`}
+              />
               <h2>Old Version</h2>
             </div>
             <div className="image-compare gsap-2">
-              <img
+              <Image
                 src={projectData.figma}
                 alt={`${projectData.name} Design Mockup`}
               />
               <h2>Design Mockup</h2>
             </div>
             <div className="image-compare gsap-1">
-              <img
+              <Image
                 src={projectData.image}
                 alt={`${projectData.name} Live Site`}
               />
@@ -92,14 +96,14 @@ const Project: NextPage<ProjectPageProps> = ({ projectData }) => {
         ) : projectData?.figma ? (
           <div className="comparison-container">
             <div className="image-compare gsap-1">
-              <img
+              <Image
                 src={projectData.figma}
                 alt={`${projectData.name} Design Mockup`}
               />
               <h2>Design Mockup</h2>
             </div>
             <div className="image-compare gsap-2">
-              <img
+              <Image
                 src={projectData.image}
                 alt={`${projectData.name} Live Site`}
               />
@@ -109,7 +113,10 @@ const Project: NextPage<ProjectPageProps> = ({ projectData }) => {
         ) : (
           <div className="comparison-container">
             <div className="image-compare gsap-3">
-              <img src={projectData?.image} alt={projectData?.name} />
+              <Image
+                src={projectData.image}
+                alt={`${projectData.name} Live Site`}
+              />
             </div>
           </div>
         )}

@@ -76,6 +76,7 @@
         }
         img {
           width: 75%;
+          height: min-content;
           border-radius: 20px;
           @media (max-width: 976px) {
             width: 100%;
