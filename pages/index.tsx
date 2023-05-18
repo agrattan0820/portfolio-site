@@ -64,7 +64,11 @@ export default function Homepage({
             <h1 className="title">
               I create<span className="playful"> playful </span> experiences.
             </h1>
-            <Image src={MyPeep} alt="Alexander's Peep" className="peep-image" />
+            <img
+              src={MyPeep.src}
+              alt="Alexander's Peep"
+              className="peep-image"
+            />
           </div>
           <p className="job-title">
             <span className="text-reveal">
