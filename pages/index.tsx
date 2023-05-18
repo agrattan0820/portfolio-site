@@ -1,13 +1,6 @@
 import { useRef, useState } from "react";
-import { GetServerSideProps, NextPage } from "next";
-import Link from "next/link";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaTwitter,
-  FaChevronDown,
-  FaChevronRight,
-} from "react-icons/fa";
+import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
+import { FaGithub, FaLinkedin, FaTwitter, FaChevronDown } from "react-icons/fa";
 import { motion } from "framer-motion";
 import MyPeep from "../images/My_Peep.png";
 
@@ -19,11 +12,9 @@ import { projectsList } from "../utils/project-data";
 import Image from "next/image";
 import ProjectListing from "../components/project-listing";
 
-type HomepageProps = {
-  project: string | false;
-};
-
-const Homepage: NextPage<HomepageProps> = ({ project }) => {
+export default function Homepage({
+  project,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const [animationComplete, setAnimationComplete] = useState(false);
   const projectsRef = useRef(null);
 
@@ -73,7 +64,11 @@ const Homepage: NextPage<HomepageProps> = ({ project }) => {
             <h1 className="title">
               I create<span className="playful"> playful </span> experiences.
             </h1>
-            <Image src={MyPeep} alt="Alexander's Peep" className="peep-image" />
+            <img
+              src={MyPeep.src}
+              alt="Alexander's Peep"
+              className="peep-image"
+            />
           </div>
           <p className="job-title">
             <span className="text-reveal">
@@ -151,14 +146,14 @@ const Homepage: NextPage<HomepageProps> = ({ project }) => {
       </div>
     </motion.div>
   );
-};
+}
 
-export default Homepage;
-
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getServerSideProps = async (
+  context: GetServerSidePropsContext
+) => {
   const { query } = context;
 
-  const project = query?.project ?? false;
+  const project = (query?.project as string) ?? "";
 
   return {
     props: {

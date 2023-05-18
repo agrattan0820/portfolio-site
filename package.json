@@ -11,6 +11,7 @@
   "dependencies": {
     "eslint-config-next": "^13.4.2",
     "framer-motion": "^10.12.10",
+    "gray-matter": "^4.0.3",
     "gsap": "^3.11.5",
     "next": "^13.4.2",
     "react": "^18.2.0",
@@ -18,6 +19,8 @@
     "react-ga": "^3.2.1",
     "react-hotjar": "^2.2.1",
     "react-icons": "^4.8.0",
+    "remark": "^14.0.2",
+    "remark-html": "^15.0.2",
     "sass": "^1.62.1"
   },
   "devDependencies": {
