@@ -1,0 +1,24 @@
+.container {
+  color: $white;
+  font-family: $font;
+  .post-main {
+    width: 90%;
+    margin: 8rem auto 6rem auto;
+    @media (min-width: 768px) {
+      width: 75%;
+    }
+
+    .post-title {
+      font-size: 3rem;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      @media (min-width: 1280px) {
+        font-size: 4rem;
+      }
+    }
+
+    .post-date {
+      margin-bottom: 5rem;
+    }
+  }
+}
