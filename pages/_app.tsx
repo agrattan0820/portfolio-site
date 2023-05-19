@@ -1,4 +1,4 @@
-import "../styles/app-copy.scss";
+import "../styles/app.scss";
 import { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
