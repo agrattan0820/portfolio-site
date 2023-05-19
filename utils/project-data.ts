@@ -1,6 +1,5 @@
 import { StaticImageData } from "next/image";
 
-import GradeMyAid from "../images/grademyaid.png";
 import BigBurgh from "../images/big-burgh.png";
 import SecretPittsburgh from "../images/secret_pittsburgh.png";
 import SecretPittsburghMobile from "../images/secret_pittsburgh_small.png";
@@ -10,9 +9,9 @@ import PittCSC from "../images/Pitt_CSC_Screenshot.png";
 import PittCSCMobile from "../images/Pitt_CSC_Screenshot_Small.png";
 import PittCSCFigma from "../images/Pitt_CSC_Figma_Screenshot.png";
 import PittCSCOld from "../images/Original_CSC_Site_Screenshot.png";
-import GradeMyAidLegacy from "../images/GradeMyAid-legacy.png";
-import GradeMyAidLegacyMobile from "../images/GradeMyAid_Small-legacy.png";
-import GradeMyAidLegacyFigma from "../images/Grademyaid_Figma_Screenshot.png";
+import GradeMyAid from "../images/GradeMyAid.png";
+import GradeMyAidMobile from "../images/GradeMyAid_Small.png";
+import GradeMyAidFigma from "../images/Grademyaid_Figma_Screenshot.png";
 import Grosseries from "../images/grosseries.png";
 import BellyButton from "../images/Belly_Button_Design.jpg";
 import BellyButtonMobile from "../images/Belly_Button_Design_Small.jpg";
@@ -22,7 +21,6 @@ import VirtualSafari from "../images/Virtual_Safari_Screenshot.png";
 import VirtualSafariMobile from "../images/Virtual_Safari_Screenshot_Small.png";
 
 export type ProjectType = {
-  id: number;
   name: string;
   description: string;
   longDescription?: string;
@@ -38,20 +36,6 @@ export type ProjectType = {
 
 export const projectsList: ProjectType[] = [
   {
-    id: 1,
-    name: "Grademyaid",
-    description:
-      "Website that allows students to grade their college financial aid packages using data from the US Department of Education.\nThis is a full redesign of one of my previous web applications built for a University of Pittsburgh hackathon.",
-    image: GradeMyAid,
-    longDescription:
-      "This was originally built for Pitt CSC Hacks, a competition sponsored by the University of Pittsburgh's Computer Science Club and was my first time participating in a coding competition. Going into the experience I was quite nervous.\nI stuck to my guns and went with an idea that I had the past summer which was a website that helps students analyze their financial aid package based on information about the school, similar to how Niche.com grades colleges and universities. Two years later I had the opportunity to rebuild the application from the ground up using new technologies I've picked up from internships and school including TypeScript, Next.js, PostgreSQL, and Supabase.",
-    link: "https://www.grademyaid.com/",
-    slug: "grademyaid",
-    code: "https://github.com/agrattan0820/grademyaid",
-    tools: ["React/Next.js", "TypeScript", "PostgreSQL", "Supabase"],
-  },
-  {
-    id: 2,
     name: "Big Burgh Redesign",
     description:
       "A new design and construction of the Big Burgh app (not an official redesign) used to help Pittsburgh natives find resources such as food and shelter.",
@@ -61,7 +45,6 @@ export const projectsList: ProjectType[] = [
     tools: ["React Native/Expo", "TypeScript", "Styled Components"],
   },
   {
-    id: 3,
     name: "Secret Pittsburgh",
     description:
       "Website for the Secret Pittsburgh class at the University of Pittsburgh (ENGLIT 1412) dedicated to uncovering hidden spaces and unusual places in the city of Pittsburgh.",
@@ -73,19 +56,6 @@ export const projectsList: ProjectType[] = [
     tools: ["React/Gatsby", "Tailwind CSS"],
   },
   {
-    id: 4,
-    name: "Pollock Is Shit",
-    description:
-      "Web app that manipulates image data to create a Pollock-like painting (because literally anyone could've been Pollock).",
-    image: PollockIsShit,
-    mobileImage: PollockIsShitMobile,
-    link: "https://pollockisshit.netlify.app/",
-    code: "https://github.com/agrattan0820/Pollock-is-Poop",
-    slug: "pollock-is-shit",
-    tools: ["React/Next.js", "Tailwind CSS", "p5.js"],
-  },
-  {
-    id: 5,
     name: "Pitt CSC",
     description:
       "Redesigned and developed the website for the Pitt Computer Science Club that helps advertise its efforts to support computer science and technology-related initiatives.",
@@ -101,32 +71,40 @@ export const projectsList: ProjectType[] = [
     tools: ["React/Gatsby", "Tailwind CSS", "Notion API", "Framer Motion"],
   },
   {
-    id: 6,
-    name: "Grademyaid (Legacy)",
+    name: "Grademyaid",
     description:
       "Application that allows students to grade their college financial aid packages using data from the US Department of Education.\nThis was built for Pitt CSC Hacks, a competition sponsored by the University of Pittsburgh's Computer Science Club.",
-    image: GradeMyAidLegacy,
-    mobileImage: GradeMyAidLegacyMobile,
+    image: GradeMyAid,
+    mobileImage: GradeMyAidMobile,
     longDescription:
       "This was built for Pitt CSC Hacks, a competition sponsored by the University of Pittsburgh's Computer Science Club and was my first time participating in a coding competition. Going into the experience I was quite nervous.\nI stuck to my guns and went with an idea that I had the past summer which was a website that helps students analyze their financial aid package based on information about the school, similar to how Niche.com grades colleges and universities.\nI ended up finding a partner who didn't know much about web development, but was willing to work with me in developing this idea.\nThis was my first foray into handling large amounts of data and trying to contextualize it for a user. If I were to fix one thing about the site, it would be effectively distinguishing the grades between each other so that a user's result is crystal clear.",
-    figma: GradeMyAidLegacyFigma,
+    figma: GradeMyAidFigma,
     link: "https://grademyaid.netlify.app/",
-    slug: "grademyaid-legacy",
-    code: "https://github.com/agrattan0820/grade-my-aid-old",
+    slug: "grademyaid",
+    code: "https://github.com/agrattan0820/grade-my-aid",
     tools: ["React", "Framer Motion", "Scss"],
   },
   {
-    id: 7,
     name: "Grosseries",
     description:
-      "A mobile app that helps individuals to track expiration dates and the inventory of their food, a group project for the University of Pittsburgh's CS1635 created with Flutter.",
+      "A mobile app that helps individuals to track expiration dates and the inventory of their food, a group project for the University of Pittsburgh's CS1635 created with the app development framework, Flutter.",
     image: Grosseries,
     code: "https://github.com/agrattan0820/cs1635-flutter-project",
     slug: "grosseries",
     tools: ["Flutter"],
   },
   {
-    id: 8,
+    name: "Pollock Is Sh!t",
+    description:
+      "Web app that manipulates image data to create a Pollock-like painting (because literally anyone could've been Pollock).",
+    image: PollockIsShit,
+    mobileImage: PollockIsShitMobile,
+    link: "https://pollockisshit.netlify.app/",
+    code: "https://github.com/agrattan0820/Pollock-is-Poop",
+    slug: "pollock-is-sh!t",
+    tools: ["React/Next.js", "Tailwind CSS", "p5.js"],
+  },
+  {
     name: "Belly Button Chrome Extension",
     description:
       "Browser extension that helps developers and accessibility engineers inspect a website's buttons and determine if they follow HTML standards and Web Content Accessibility Guidelines (WCAG).",
@@ -138,7 +116,6 @@ export const projectsList: ProjectType[] = [
     tools: ["HTML", "CSS", "JavaScript", "Chrome API"],
   },
   {
-    id: 9,
     name: "Allegory of the Cave",
     description:
       "An experiment where I created an audiovisual experience with an interactive 3D sun. Created for the University of Pittsburgh's ENGCMP 1130 class.",
@@ -152,7 +129,6 @@ export const projectsList: ProjectType[] = [
     tools: ["HTML", "CSS", "JavaScript", "Three.js"],
   },
   {
-    id: 10,
     name: "Virtual Safari",
     description:
       "A recreation of Timon and Pumbaa's Virtual Safari, a choose-your-own adventure from The Lion King DVD.\nI edited the choices into individual clips using the video editor, DaVinci Resolve, and used JavaScript to develop the site interaction.",
