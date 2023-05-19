@@ -1,6 +1,5 @@
 import { StaticImageData } from "next/image";
 
-import GradeMyAid from "../images/grademyaid.png";
 import BigBurgh from "../images/big-burgh.png";
 import SecretPittsburgh from "../images/secret_pittsburgh.png";
 import SecretPittsburghMobile from "../images/secret_pittsburgh_small.png";
@@ -10,9 +9,9 @@ import PittCSC from "../images/Pitt_CSC_Screenshot.png";
 import PittCSCMobile from "../images/Pitt_CSC_Screenshot_Small.png";
 import PittCSCFigma from "../images/Pitt_CSC_Figma_Screenshot.png";
 import PittCSCOld from "../images/Original_CSC_Site_Screenshot.png";
-import GradeMyAidLegacy from "../images/GradeMyAid-legacy.png";
-import GradeMyAidLegacyMobile from "../images/GradeMyAid_Small-legacy.png";
-import GradeMyAidLegacyFigma from "../images/Grademyaid_Figma_Screenshot.png";
+import GradeMyAid from "../images/GradeMyAid.png";
+import GradeMyAidMobile from "../images/GradeMyAid_Small.png";
+import GradeMyAidFigma from "../images/Grademyaid_Figma_Screenshot.png";
 import Grosseries from "../images/grosseries.png";
 import BellyButton from "../images/Belly_Button_Design.jpg";
 import BellyButtonMobile from "../images/Belly_Button_Design_Small.jpg";
@@ -37,18 +36,6 @@ export type ProjectType = {
 
 export const projectsList: ProjectType[] = [
   {
-    name: "Grademyaid",
-    description:
-      "Website that allows students to grade their college financial aid packages using data from the US Department of Education.\nThis is a full redesign of one of my previous web applications built for a University of Pittsburgh hackathon.",
-    image: GradeMyAid,
-    longDescription:
-      "This was originally built for Pitt CSC Hacks, a competition sponsored by the University of Pittsburgh's Computer Science Club and was my first time participating in a coding competition. Going into the experience I was quite nervous.\nI stuck to my guns and went with an idea that I had the past summer which was a website that helps students analyze their financial aid package based on information about the school, similar to how Niche.com grades colleges and universities. Two years later I had the opportunity to rebuild the application from the ground up using new technologies I've picked up from internships and school including TypeScript, Next.js, PostgreSQL, and Supabase.",
-    link: "https://www.grademyaid.com/",
-    slug: "grademyaid",
-    code: "https://github.com/agrattan0820/grademyaid",
-    tools: ["React/Next.js", "TypeScript", "PostgreSQL", "Supabase"],
-  },
-  {
     name: "Big Burgh Redesign",
     description:
       "A new design and construction of the Big Burgh app (not an official redesign) used to help Pittsburgh natives find resources such as food and shelter.",
@@ -69,17 +56,6 @@ export const projectsList: ProjectType[] = [
     tools: ["React/Gatsby", "Tailwind CSS"],
   },
   {
-    name: "Pollock Is Shit",
-    description:
-      "Web app that manipulates image data to create a Pollock-like painting (because literally anyone could've been Pollock).",
-    image: PollockIsShit,
-    mobileImage: PollockIsShitMobile,
-    link: "https://pollockisshit.netlify.app/",
-    code: "https://github.com/agrattan0820/Pollock-is-Poop",
-    slug: "pollock-is-shit",
-    tools: ["React/Next.js", "Tailwind CSS", "p5.js"],
-  },
-  {
     name: "Pitt CSC",
     description:
       "Redesigned and developed the website for the Pitt Computer Science Club that helps advertise its efforts to support computer science and technology-related initiatives.",
@@ -95,18 +71,29 @@ export const projectsList: ProjectType[] = [
     tools: ["React/Gatsby", "Tailwind CSS", "Notion API", "Framer Motion"],
   },
   {
-    name: "Grademyaid (Legacy)",
+    name: "Grademyaid",
     description:
       "Application that allows students to grade their college financial aid packages using data from the US Department of Education.\nThis was built for Pitt CSC Hacks, a competition sponsored by the University of Pittsburgh's Computer Science Club.",
-    image: GradeMyAidLegacy,
-    mobileImage: GradeMyAidLegacyMobile,
+    image: GradeMyAid,
+    mobileImage: GradeMyAidMobile,
     longDescription:
       "This was built for Pitt CSC Hacks, a competition sponsored by the University of Pittsburgh's Computer Science Club and was my first time participating in a coding competition. Going into the experience I was quite nervous.\nI stuck to my guns and went with an idea that I had the past summer which was a website that helps students analyze their financial aid package based on information about the school, similar to how Niche.com grades colleges and universities.\nI ended up finding a partner who didn't know much about web development, but was willing to work with me in developing this idea.\nThis was my first foray into handling large amounts of data and trying to contextualize it for a user. If I were to fix one thing about the site, it would be effectively distinguishing the grades between each other so that a user's result is crystal clear.",
-    figma: GradeMyAidLegacyFigma,
+    figma: GradeMyAidFigma,
     link: "https://grademyaid.netlify.app/",
-    slug: "grademyaid-legacy",
-    code: "https://github.com/agrattan0820/grade-my-aid-old",
+    slug: "grademyaid",
+    code: "https://github.com/agrattan0820/grade-my-aid",
     tools: ["React", "Framer Motion", "Scss"],
+  },
+  {
+    name: "Pollock Is Shit",
+    description:
+      "Web app that manipulates image data to create a Pollock-like painting (because literally anyone could've been Pollock).",
+    image: PollockIsShit,
+    mobileImage: PollockIsShitMobile,
+    link: "https://pollockisshit.netlify.app/",
+    code: "https://github.com/agrattan0820/Pollock-is-Poop",
+    slug: "pollock-is-shit",
+    tools: ["React/Next.js", "Tailwind CSS", "p5.js"],
   },
   {
     name: "Grosseries",
