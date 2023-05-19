@@ -22,7 +22,6 @@ import VirtualSafari from "../images/Virtual_Safari_Screenshot.png";
 import VirtualSafariMobile from "../images/Virtual_Safari_Screenshot_Small.png";
 
 export type ProjectType = {
-  id: number;
   name: string;
   description: string;
   longDescription?: string;
@@ -38,7 +37,6 @@ export type ProjectType = {
 
 export const projectsList: ProjectType[] = [
   {
-    id: 1,
     name: "Grademyaid",
     description:
       "Website that allows students to grade their college financial aid packages using data from the US Department of Education.\nThis is a full redesign of one of my previous web applications built for a University of Pittsburgh hackathon.",
@@ -51,7 +49,6 @@ export const projectsList: ProjectType[] = [
     tools: ["React/Next.js", "TypeScript", "PostgreSQL", "Supabase"],
   },
   {
-    id: 2,
     name: "Big Burgh Redesign",
     description:
       "A new design and construction of the Big Burgh app (not an official redesign) used to help Pittsburgh natives find resources such as food and shelter.",
@@ -61,7 +58,6 @@ export const projectsList: ProjectType[] = [
     tools: ["React Native/Expo", "TypeScript", "Styled Components"],
   },
   {
-    id: 3,
     name: "Secret Pittsburgh",
     description:
       "Website for the Secret Pittsburgh class at the University of Pittsburgh (ENGLIT 1412) dedicated to uncovering hidden spaces and unusual places in the city of Pittsburgh.",
@@ -73,7 +69,6 @@ export const projectsList: ProjectType[] = [
     tools: ["React/Gatsby", "Tailwind CSS"],
   },
   {
-    id: 4,
     name: "Pollock Is Shit",
     description:
       "Web app that manipulates image data to create a Pollock-like painting (because literally anyone could've been Pollock).",
@@ -85,7 +80,6 @@ export const projectsList: ProjectType[] = [
     tools: ["React/Next.js", "Tailwind CSS", "p5.js"],
   },
   {
-    id: 5,
     name: "Pitt CSC",
     description:
       "Redesigned and developed the website for the Pitt Computer Science Club that helps advertise its efforts to support computer science and technology-related initiatives.",
@@ -101,7 +95,6 @@ export const projectsList: ProjectType[] = [
     tools: ["React/Gatsby", "Tailwind CSS", "Notion API", "Framer Motion"],
   },
   {
-    id: 6,
     name: "Grademyaid (Legacy)",
     description:
       "Application that allows students to grade their college financial aid packages using data from the US Department of Education.\nThis was built for Pitt CSC Hacks, a competition sponsored by the University of Pittsburgh's Computer Science Club.",
@@ -116,7 +109,6 @@ export const projectsList: ProjectType[] = [
     tools: ["React", "Framer Motion", "Scss"],
   },
   {
-    id: 7,
     name: "Grosseries",
     description:
       "A mobile app that helps individuals to track expiration dates and the inventory of their food, a group project for the University of Pittsburgh's CS1635 created with Flutter.",
@@ -126,7 +118,6 @@ export const projectsList: ProjectType[] = [
     tools: ["Flutter"],
   },
   {
-    id: 8,
     name: "Belly Button Chrome Extension",
     description:
       "Browser extension that helps developers and accessibility engineers inspect a website's buttons and determine if they follow HTML standards and Web Content Accessibility Guidelines (WCAG).",
@@ -138,7 +129,6 @@ export const projectsList: ProjectType[] = [
     tools: ["HTML", "CSS", "JavaScript", "Chrome API"],
   },
   {
-    id: 9,
     name: "Allegory of the Cave",
     description:
       "An experiment where I created an audiovisual experience with an interactive 3D sun. Created for the University of Pittsburgh's ENGCMP 1130 class.",
@@ -152,7 +142,6 @@ export const projectsList: ProjectType[] = [
     tools: ["HTML", "CSS", "JavaScript", "Three.js"],
   },
   {
-    id: 10,
     name: "Virtual Safari",
     description:
       "A recreation of Timon and Pumbaa's Virtual Safari, a choose-your-own adventure from The Lion King DVD.\nI edited the choices into individual clips using the video editor, DaVinci Resolve, and used JavaScript to develop the site interaction.",

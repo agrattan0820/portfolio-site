@@ -17,6 +17,7 @@ import { projectsList, ProjectType } from "../utils/project-data";
 import Image from "next/image";
 
 const Project: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
+  index,
   projectData,
 }) => {
   const controls = useAnimation();
@@ -129,8 +130,8 @@ const Project: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           </div>
         )}
         <nav className="page-navigation">
-          {projectData?.id > 1 ? (
-            <Link href={projectsList[projectData.id - 2].slug}>
+          {index > 0 ? (
+            <Link href={projectsList[index - 1].slug}>
               <motion.button
                 className="previous-btn"
                 whileHover={{ scale: 1.05 }}
@@ -147,8 +148,8 @@ const Project: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
               Previous
             </button>
           )}
-          {projectData?.id < projectsList.length ? (
-            <Link href={projectsList[projectData.id].slug}>
+          {index < projectsList.length - 1 ? (
+            <Link href={projectsList[index + 1].slug}>
               <motion.button
                 className="next-btn"
                 whileHover={{ scale: 1.05 }}
@@ -227,9 +228,9 @@ export const getStaticPaths = async (context: GetStaticPathsContext) => {
 export const getStaticProps = async (context: GetStaticPropsContext) => {
   const projectSlug = context.params.project;
 
-  const projectData = projectsList.find((el) => el.slug === projectSlug);
+  const index = projectsList.findIndex((el) => el.slug === projectSlug);
 
-  if (!projectData) {
+  if (index === -1) {
     return {
       notFound: true,
     };
@@ -237,7 +238,8 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
 
   return {
     props: {
-      projectData,
+      index,
+      projectData: projectsList[index],
     },
   };
 };
