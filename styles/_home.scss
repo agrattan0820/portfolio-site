@@ -233,10 +233,15 @@
           width: 300px;
         }
         .tools-list {
+          columns: 2;
           padding-left: 1.5rem;
           line-height: 20px;
           margin-top: 8px;
+          margin-bottom: 16px;
           font-family: $font;
+          @media (min-width: 768px) {
+            margin-bottom: 24px;
+          }
           li {
             font-size: 0.875rem;
             @media (max-height: 750px) {
@@ -250,7 +255,7 @@
           text-decoration: none;
           h2 {
             cursor: pointer;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             margin: 0;
             &:hover {
               transition: all 0.4s cubic-bezier(0.15, 0.75, 0.45, 0.95) 0s;
@@ -265,8 +270,12 @@
           }
         }
         h3 {
-          font-size: 1.25rem;
+          font-size: 1rem;
+          margin-top: 24px;
           margin-bottom: 0;
+          @media (min-width: 768px) {
+            font-size: 1.25rem;
+          }
         }
         p {
           margin: 1rem 0 0.5rem 0;
