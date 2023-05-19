@@ -25,7 +25,7 @@ You can start editing the page by modifying `pages/index.tsx`. The page auto-upd
 - Next.js
 - GSAP
 - Framer Motion
-- Sass
+- Scss
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
