@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "eslint": "^8.40.0",
     "eslint-config-next": "^13.4.2",
     "framer-motion": "^10.12.10",
     "gray-matter": "^4.0.3",
