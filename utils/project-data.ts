@@ -85,24 +85,24 @@ export const projectsList: ProjectType[] = [
     tools: ["React", "Framer Motion", "Scss"],
   },
   {
-    name: "Pollock Is Shit",
+    name: "Grosseries",
+    description:
+      "A mobile app that helps individuals to track expiration dates and the inventory of their food, a group project for the University of Pittsburgh's CS1635 created with the app development framework, Flutter.",
+    image: Grosseries,
+    code: "https://github.com/agrattan0820/cs1635-flutter-project",
+    slug: "grosseries",
+    tools: ["Flutter"],
+  },
+  {
+    name: "Pollock Is Sh!t",
     description:
       "Web app that manipulates image data to create a Pollock-like painting (because literally anyone could've been Pollock).",
     image: PollockIsShit,
     mobileImage: PollockIsShitMobile,
     link: "https://pollockisshit.netlify.app/",
     code: "https://github.com/agrattan0820/Pollock-is-Poop",
-    slug: "pollock-is-shit",
+    slug: "pollock-is-sh!t",
     tools: ["React/Next.js", "Tailwind CSS", "p5.js"],
-  },
-  {
-    name: "Grosseries",
-    description:
-      "A mobile app that helps individuals to track expiration dates and the inventory of their food, a group project for the University of Pittsburgh's CS1635 created with Flutter.",
-    image: Grosseries,
-    code: "https://github.com/agrattan0820/cs1635-flutter-project",
-    slug: "grosseries",
-    tools: ["Flutter"],
   },
   {
     name: "Belly Button Chrome Extension",
