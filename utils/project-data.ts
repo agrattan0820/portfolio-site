@@ -1,5 +1,6 @@
 import { StaticImageData } from "next/image";
 
+import ArtificialUnintelligence from "../images/Artificial_Unintelligence.png";
 import BigBurgh from "../images/big-burgh.png";
 import SecretPittsburgh from "../images/secret_pittsburgh.png";
 import SecretPittsburghMobile from "../images/secret_pittsburgh_small.png";
@@ -35,6 +36,26 @@ export type ProjectType = {
 };
 
 export const projectsList: ProjectType[] = [
+  {
+    name: "Artificial Unintelligence",
+    description:
+      "Online multiplayer game where players compete against each other to create the funniest AI-generated images.",
+    image: ArtificialUnintelligence,
+    link: "https://un-ai.vercel.app/",
+    code: "https://github.com/agrattan0820/artificial-unintelligence",
+    slug: "artificial-unintelligence",
+    tools: ["React/Next.js", "TypeScript", "Express.js", "Socket.io"],
+  },
+  // {
+  //   name: "Food Phantoms",
+  //   description:
+  //     "Web app to find if a restaurant on Doordash or Uber Eats is a ghost kitchen or a virtual kitchen where the food served comes out of an unexpected establishment.",
+  //   image: ArtificialUnintelligence,
+  //   link: "https://food-phantoms.deno.dev/",
+  //   code: "https://github.com/agrattan0820/food-phantoms-frontend",
+  //   slug: "food-phantoms",
+  //   tools: ["Preact/Fresh", "TypeScript", "Deno", "Golang"],
+  // },
   {
     name: "Big Burgh Redesign",
     description:
