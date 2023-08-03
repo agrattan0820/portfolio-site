@@ -1,6 +1,7 @@
 import { StaticImageData } from "next/image";
 
 import ArtificialUnintelligence from "../images/Artificial_Unintelligence.png";
+import FoodPhantoms from "../images/Food_Phantoms.png";
 import BigBurgh from "../images/big-burgh.png";
 import SecretPittsburgh from "../images/secret_pittsburgh.png";
 import SecretPittsburghMobile from "../images/secret_pittsburgh_small.png";
@@ -46,16 +47,16 @@ export const projectsList: ProjectType[] = [
     slug: "artificial-unintelligence",
     tools: ["React/Next.js", "TypeScript", "Express.js", "Socket.io"],
   },
-  // {
-  //   name: "Food Phantoms",
-  //   description:
-  //     "Web app to find if a restaurant on Doordash or Uber Eats is a ghost kitchen or a virtual kitchen where the food served comes out of an unexpected establishment.",
-  //   image: ArtificialUnintelligence,
-  //   link: "https://food-phantoms.deno.dev/",
-  //   code: "https://github.com/agrattan0820/food-phantoms-frontend",
-  //   slug: "food-phantoms",
-  //   tools: ["Preact/Fresh", "TypeScript", "Deno", "Golang"],
-  // },
+  {
+    name: "Food Phantoms",
+    description:
+      "Web app to find if a restaurant on Doordash or Uber Eats is a ghost kitchen or a virtual kitchen where the food served originates from an unexpected establishment.",
+    image: FoodPhantoms,
+    link: "https://food-phantoms.deno.dev/",
+    code: "https://github.com/agrattan0820/food-phantoms-frontend",
+    slug: "food-phantoms",
+    tools: ["Preact/Fresh", "TypeScript", "Deno", "Golang"],
+  },
   {
     name: "Big Burgh Redesign",
     description:
