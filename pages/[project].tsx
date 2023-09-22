@@ -1,9 +1,7 @@
 import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import {
-  GetStaticPaths,
   GetStaticPathsContext,
-  GetStaticProps,
   GetStaticPropsContext,
   InferGetStaticPropsType,
   NextPage,
@@ -13,8 +11,7 @@ import { FaArrowLeft, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 import Header from "../components/header";
 import SEO from "../components/seo";
-import { projectsList, ProjectType } from "../utils/project-data";
-import Image from "next/image";
+import { projectsList } from "../utils/project-data";
 
 const Project: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   index,
@@ -36,6 +33,7 @@ const Project: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
     controls.set("hidden");
     document.body.style.overflowY = "auto";
     controls.start("pageShow");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [projectData]);
 
   return (
