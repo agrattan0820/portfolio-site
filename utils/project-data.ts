@@ -42,7 +42,7 @@ export const projectsList: ProjectType[] = [
     description:
       "Online multiplayer game where players compete against each other to create the funniest AI-generated images.",
     image: ArtificialUnintelligence,
-    link: "https://un-ai.vercel.app/",
+    link: "https://www.artificialunintelligence.gg",
     code: "https://github.com/agrattan0820/artificial-unintelligence",
     slug: "artificial-unintelligence",
     tools: ["React/Next.js", "TypeScript", "Express.js", "Socket.io"],
