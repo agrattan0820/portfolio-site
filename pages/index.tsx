@@ -52,7 +52,7 @@ export default function Homepage({
       className="container"
     >
       <SEO
-        title="Alexander Grattan | Pittsburgh Software Developer"
+        title="Alexander Grattan | Software Developer Based in Pittsburgh"
         url="https://agrattan.com/"
       />
       {animationComplete === false && <IntroOverlay />}

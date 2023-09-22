@@ -3,8 +3,11 @@ import {
   GetStaticPathsContext,
   InferGetStaticPropsType,
 } from "next";
-import { remark } from "remark";
-import html from "remark-html";
+import rehypeSanitize from "rehype-sanitize";
+import rehypeStringify from "rehype-stringify";
+import remarkParse from "remark-parse";
+import remarkRehype from "remark-rehype";
+import { unified } from "unified";
 import matter from "gray-matter";
 import fs from "fs";
 import path from "path";
@@ -76,8 +79,11 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
   const matterResult = matter(fileContents);
 
   // Use remark to convert markdown into HTML string
-  const processedContent = await remark()
-    .use(html)
+  const processedContent = await unified()
+    .use(remarkParse)
+    .use(remarkRehype)
+    .use(rehypeSanitize)
+    .use(rehypeStringify)
     .process(matterResult.content);
   const contentHtml = processedContent.toString();
 
