@@ -9,7 +9,6 @@ import IntroOverlay from "../components/intro-overlay";
 import SEO from "../components/seo";
 import { useBallAnimation } from "../utils/hooks/use-ball-animation";
 import { projectsList } from "../utils/project-data";
-import Image from "next/image";
 import ProjectListing from "../components/project-listing";
 
 export default function Homepage({
