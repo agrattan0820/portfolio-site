@@ -114,9 +114,11 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+
       .title {
         font-size: 2rem;
         margin-right: 1rem;
+
         @media (min-width: 768px) {
           font-size: 4rem;
           justify-content: center;
@@ -132,9 +134,7 @@
           font-size: 8rem;
           margin-right: 8rem;
         }
-        @media (max-height: 800px) {
-          font-size: 5rem;
-        }
+
         .playful {
           transition: all 0.4s cubic-bezier(0.15, 0.75, 0.45, 0.95) 0s;
           animation: 10s ease 0s infinite alternate none running rainbow;
@@ -147,9 +147,6 @@
         }
         @media (min-width: 1280px) {
           width: 300px;
-        }
-        @media (max-height: 800px) {
-          width: 200px;
         }
       }
     }
