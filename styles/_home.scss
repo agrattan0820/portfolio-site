@@ -1,5 +1,5 @@
 .container {
-  min-height: 100vh;
+  min-height: 100dvh;
   width: 100%;
   margin: 0 auto;
   overflow: hidden;
@@ -93,8 +93,7 @@
   }
   .main-home {
     position: relative;
-    min-height: 100vh; // fallback height definition
-    min-height: calc(var(--vh, 1vh) * 100);
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -202,7 +201,7 @@
   }
   .project-container {
     position: relative;
-    min-height: 100vh;
+    min-height: 100dvh;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
     @media (min-width: 768px) {
@@ -422,8 +421,7 @@
   }
 
   footer {
-    height: 100vh; // fallback height definition
-    height: calc(var(--vh, 1vh) * 100);
+    min-height: 100dvh;
     display: flex;
     justify-content: center;
     align-items: center;
