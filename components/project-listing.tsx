@@ -3,7 +3,6 @@ import { FaChevronRight } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 import { ProjectType } from "../utils/project-data";
-import Image from "next/image";
 
 type ProjectListingProps = {
   project: ProjectType;

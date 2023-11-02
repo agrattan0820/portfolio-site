@@ -3,25 +3,23 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 type UseBallAnimationProps = {
-  project: string | false;
+  enabled: boolean;
   onComplete: () => void;
-  scrollTo: () => void;
 };
 
 export const useBallAnimation = ({
-  project,
+  enabled,
   onComplete,
-  scrollTo,
 }: UseBallAnimationProps) => {
   useEffect(() => {
     // GSAP animation
     gsap.registerPlugin(ScrollTrigger);
-    let tl = gsap.timeline();
-    let projects: Element[] = gsap.utils.toArray(".project");
-    let mediaQuery = window.matchMedia("(min-width: 967px)");
+    const tl = gsap.timeline();
+    const projects: Element[] = gsap.utils.toArray(".project");
+    const mediaQuery = window.matchMedia("(min-width: 967px)");
 
     const homeAnimation = () => {
-      if (!project) {
+      if (enabled) {
         tl.to(".ball", {
           duration: 2,
           y: "100vh",
@@ -65,12 +63,11 @@ export const useBallAnimation = ({
           });
       } else {
         onComplete();
-        scrollTo();
       }
 
       if (mediaQuery.matches) {
         projects.forEach((project) => {
-          let tlProject = gsap.timeline({
+          const tlProject = gsap.timeline({
             scrollTrigger: {
               trigger: project,
               start: "top center",
@@ -78,8 +75,8 @@ export const useBallAnimation = ({
               scrub: 1,
             },
           });
-          let projectImage = project.querySelector("img");
-          let projectInfo = project.querySelector(".project-info");
+          const projectImage = project.querySelector("img");
+          const projectInfo = project.querySelector(".project-info");
 
           tlProject
             .from(projectImage, {
@@ -93,7 +90,7 @@ export const useBallAnimation = ({
         });
       } else {
         projects.forEach((project) => {
-          let tlProject = gsap.timeline({
+          const tlProject = gsap.timeline({
             scrollTrigger: {
               trigger: project,
               start: "top center",
@@ -101,8 +98,8 @@ export const useBallAnimation = ({
               scrub: 1,
             },
           });
-          let projectImage = project.querySelector("img");
-          let projectInfo = project.querySelector(".project-info");
+          const projectImage = project.querySelector("img");
+          const projectInfo = project.querySelector(".project-info");
 
           tlProject
             .from(projectImage, {
@@ -116,7 +113,7 @@ export const useBallAnimation = ({
         });
       }
 
-      let tlFooter = gsap.timeline({
+      const tlFooter = gsap.timeline({
         scrollTrigger: {
           trigger: "footer",
           start: "top center",

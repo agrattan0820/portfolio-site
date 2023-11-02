@@ -1,11 +1,5 @@
-import { useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
-import {
-  GetStaticPathsContext,
-  GetStaticPropsContext,
-  InferGetStaticPropsType,
-  NextPage,
-} from "next";
+import { motion } from "framer-motion";
+import { GetStaticPropsContext, InferGetStaticPropsType, NextPage } from "next";
 import Link from "next/link";
 import { FaArrowLeft, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
@@ -17,38 +11,22 @@ const Project: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   index,
   projectData,
 }) => {
-  const controls = useAnimation();
-
-  const page = {
-    hidden: {
-      opacity: 0,
-    },
-    pageShow: {
-      opacity: 1,
-    },
-  };
-
-  useEffect(() => {
-    controls.stop();
-    controls.set("hidden");
-    document.body.style.overflowY = "auto";
-    controls.start("pageShow");
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [projectData]);
-
   return (
-    <motion.div exit={{ opacity: 0 }} className="container">
+    <motion.div
+      key={projectData.slug}
+      exit={{ opacity: 0 }}
+      className="container"
+    >
       <SEO
         title={`${projectData?.name} | Alexander Grattan`}
         url={`https://agrattan.com/${projectData.slug}`}
         description={projectData.description}
       />
-      <Header logoLink={`/?project=${projectData.slug}`} />
+      <Header logoLink={`/#${projectData.slug}`} />
       <motion.main
-        initial="hidden"
-        animate={controls}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        variants={page}
         className="project-main"
       >
         <div className="text-content">
@@ -68,10 +46,10 @@ const Project: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           {projectData?.longDescription
             ? projectData?.longDescription
                 .split("\n")
-                .map((str, index) => <p key={index}>{str}</p>)
+                .map((str, i) => <p key={i}>{str}</p>)
             : projectData?.description
                 .split("\n")
-                .map((str, index) => <p key={index}>{str}</p>)}
+                .map((str, i) => <p key={i}>{str}</p>)}
         </div>
         {projectData && projectData?.figma && projectData?.old ? (
           <div className="comparison-container">
@@ -196,7 +174,11 @@ const Project: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
               )}
             </div>
 
-            <Link href="/" className="project-back">
+            <Link
+              href={`/#${projectData.slug}`}
+              scroll={false}
+              className="project-back"
+            >
               <FaArrowLeft /> Back Home
             </Link>
           </div>
@@ -208,7 +190,7 @@ const Project: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 
 export default Project;
 
-export const getStaticPaths = async (context: GetStaticPathsContext) => {
+export const getStaticPaths = async () => {
   const projectPaths = projectsList.map((item) => {
     return {
       params: {

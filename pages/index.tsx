@@ -1,7 +1,7 @@
-import { useRef, useState } from "react";
-import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
+import { useState } from "react";
 import { FaGithub, FaLinkedin, FaTwitter, FaChevronDown } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 import MyPeep from "../images/My_Peep.png";
 
 import Header from "../components/header";
@@ -11,41 +11,21 @@ import { useBallAnimation } from "../utils/hooks/use-ball-animation";
 import { projectsList } from "../utils/project-data";
 import ProjectListing from "../components/project-listing";
 
-export default function Homepage({
-  project,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+export default function Homepage() {
   const [animationComplete, setAnimationComplete] = useState(false);
-  const projectsRef = useRef(null);
-
-  const completeAnimation = () => {
-    setAnimationComplete(true);
-    document.body.style.overflowY = "auto";
-  };
-
-  const executeScroll = () => projectsRef.current.scrollIntoView();
-
-  const scrollToProject = () => {
-    if (typeof window !== "undefined") {
-      if (project) {
-        // Use the hash to find the first element with that id
-        const element = document.getElementById(project);
-
-        if (element) {
-          // Smooth scroll to that elment
-          element.scrollIntoView();
-        }
-      }
-    }
-  };
+  const router = useRouter();
 
   useBallAnimation({
-    project,
-    onComplete: completeAnimation,
-    scrollTo: scrollToProject,
+    enabled: router.asPath === "/",
+    onComplete: () => {
+      setAnimationComplete(true);
+      document.body.style.overflowY = "auto";
+    },
   });
 
   return (
     <motion.div
+      key="homepage"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -75,15 +55,15 @@ export default function Homepage({
             </span>
           </p>
           <div className="scroll-indicator-container">
-            <button className="scroll-indicator" onClick={executeScroll}>
+            <a className="scroll-indicator" href="#projects">
               <span>Some Projects</span>
               <FaChevronDown />
-            </button>
+            </a>
           </div>
         </main>
-        <div className="project-container" ref={projectsRef}>
-          {projectsList.map((project, i) => (
-            <ProjectListing key={i} project={project} />
+        <div className="project-container" id="projects">
+          {projectsList.map((project) => (
+            <ProjectListing key={project.slug} project={project} />
           ))}
         </div>
         <footer>
@@ -146,17 +126,3 @@ export default function Homepage({
     </motion.div>
   );
 }
-
-export const getServerSideProps = async (
-  context: GetServerSidePropsContext
-) => {
-  const { query } = context;
-
-  const project = (query?.project as string) ?? "";
-
-  return {
-    props: {
-      project,
-    },
-  };
-};

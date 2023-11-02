@@ -1,8 +1,4 @@
-import {
-  GetStaticPropsContext,
-  GetStaticPathsContext,
-  InferGetStaticPropsType,
-} from "next";
+import { GetStaticPropsContext } from "next";
 import rehypeSanitize from "rehype-sanitize";
 import rehypeStringify from "rehype-stringify";
 import remarkParse from "remark-parse";
@@ -48,7 +44,7 @@ export default function Post(props: PostPageProps) {
   );
 }
 
-export const getStaticPaths = async (context: GetStaticPathsContext) => {
+export const getStaticPaths = async () => {
   const fileNames = fs.readdirSync(postsDirectory);
 
   const paths = fileNames.map((fileName) => {
