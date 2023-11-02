@@ -307,6 +307,8 @@
               margin-left: 0.25rem;
             }
             &:hover {
+              transition: all 0.4s cubic-bezier(0.15, 0.75, 0.45, 0.95) 0s;
+              animation: 10s ease 0s infinite alternate none running rainbow;
               svg {
                 transform: translateX(2px);
               }
