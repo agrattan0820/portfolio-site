@@ -41,13 +41,11 @@ const ProjectListing = ({ project }: ProjectListingProps) => {
             <p key={index}>{str}</p>
           ))}
           {longDescription && (
-            <Link href={slug}>
-              <button className="project-read-more">
-                <span>Read More</span>{" "}
-                <div className="read-more-arrow">
-                  <FaChevronRight />
-                </div>
-              </button>
+            <Link href={slug} className="project-read-more">
+              <span>Read More</span>{" "}
+              <span className="read-more-arrow">
+                <FaChevronRight />
+              </span>
             </Link>
           )}
           <h3>Tools used:</h3>
