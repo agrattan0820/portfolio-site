@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { FaGithub, FaLinkedin, FaTwitter, FaChevronDown } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
@@ -14,8 +14,10 @@ import ProjectListing from "../components/project-listing";
 export default function Homepage() {
   const [animationComplete, setAnimationComplete] = useState(false);
   const router = useRouter();
+  const ballRoot = useRef<HTMLDivElement>(null);
 
   useBallAnimation({
+    root: ballRoot,
     enabled: router.asPath === "/",
     onComplete: () => {
       setAnimationComplete(true);
@@ -30,6 +32,7 @@ export default function Homepage() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       className="container"
+      ref={ballRoot}
     >
       <SEO
         title="Alexander Grattan | Software Developer Based in Pittsburgh"
