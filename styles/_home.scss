@@ -156,10 +156,7 @@
         max-width: 100px;
         object-fit: contain;
         @media (min-width: 768px) {
-          max-width: 200px;
-        }
-        @media (min-width: 1280px) {
-          max-width: 300px;
+          max-width: 100%;
         }
       }
     }
