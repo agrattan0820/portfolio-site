@@ -2,6 +2,8 @@ import { useRef, useState } from "react";
 import { FaGithub, FaLinkedin, FaTwitter, FaChevronDown } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
+import Image from "next/image";
+
 // import fs from "fs";
 // import path from "path";
 // import type { GetStaticPropsContext } from "next";
@@ -51,10 +53,11 @@ export default function Homepage() {
             <h1 className="title">
               I create<span className="playful"> playful </span> experiences.
             </h1>
-            <img
-              src={MyPeep.src}
+            <Image
+              src={MyPeep}
               alt="Alexander's Peep"
               className="peep-image"
+              priority
             />
           </div>
           <p className="job-title">

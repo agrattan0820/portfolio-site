@@ -152,12 +152,14 @@
         }
       }
       .peep-image {
-        width: 100px;
+        width: 100%;
+        max-width: 100px;
+        object-fit: contain;
         @media (min-width: 768px) {
-          width: 200px;
+          max-width: 200px;
         }
         @media (min-width: 1280px) {
-          width: 300px;
+          max-width: 300px;
         }
       }
     }
