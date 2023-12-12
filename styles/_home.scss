@@ -183,10 +183,6 @@
       }
 
       .scroll-indicator {
-        cursor: pointer;
-        background: none;
-        outline: none;
-        border: none;
         color: $white;
         display: flex;
         flex-direction: column;
@@ -195,14 +191,23 @@
         font-size: 0.875rem;
         font-weight: 700;
         font-family: $font;
-        span {
-          margin: 0.5rem 0;
-        }
-        &:focus {
-          outline: none;
-        }
+        text-decoration: none;
         @media (min-width: 768px) {
           font-size: 1rem;
+        }
+        &:hover svg {
+          transform: translateY(4px);
+        }
+        &:focus svg {
+          transform: translateY(4px);
+        }
+
+        span {
+          margin: 0.25rem 0;
+        }
+
+        svg {
+          transition: 300ms transform ease;
         }
       }
     }
