@@ -20,6 +20,7 @@ export const useBallAnimation = ({
     mm.add(
       {
         isDesktop: `(min-width: ${breakPoint}px)`,
+        isMobile: `(max-width: ${breakPoint - 1}px)`,
         reduceMotion: "(prefers-reduced-motion: reduce)",
       },
       (context) => {
@@ -39,7 +40,7 @@ export const useBallAnimation = ({
               .to(".ball", {
                 duration: reduceMotion ? 0 : 1,
                 delay: 0.3,
-                scale: 30,
+                scale: isDesktop ? 20 : 30,
                 ease: "power3.out",
                 onComplete: onComplete,
               })
