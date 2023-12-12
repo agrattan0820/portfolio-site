@@ -34,12 +34,9 @@
     .text-content {
       display: grid;
       place-items: center;
-      a {
-        text-decoration: none;
-        color: white;
-      }
 
       h1 {
+        color: white;
         text-align: center;
         font-size: 2.5rem;
         @media (min-width: 768px) {
@@ -103,11 +100,22 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        transition: 150ms transform ease;
+        will-change: transform;
         @media (min-width: 768px) {
           top: 50%;
           bottom: unset;
           width: 125px;
           font-size: 1rem;
+        }
+        &:hover {
+          transform: scale(1.1);
+        }
+        &:focus {
+          transform: scale(1.1);
+        }
+        &:active {
+          transform: scale(0.9);
         }
       }
       .previous-btn {
@@ -166,9 +174,19 @@
           font-weight: 700;
           font-family: $font;
           font-size: 0.875rem;
-
+          transition: 150ms transform ease;
+          will-change: transform;
           @media (min-width: 768px) {
             font-size: 1rem;
+          }
+          &:hover {
+            transform: scale(1.05);
+          }
+          &:focus {
+            transform: scale(1.05);
+          }
+          &:active {
+            transform: scale(0.9);
           }
         }
       }
@@ -188,6 +206,11 @@
           transition: transform 0.3s ease;
         }
         &:hover {
+          svg {
+            transform: translateX(-2px);
+          }
+        }
+        &:focus {
           svg {
             transform: translateX(-2px);
           }

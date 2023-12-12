@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { FaChevronRight } from "react-icons/fa";
-import { motion } from "framer-motion";
 
 import { ProjectType } from "../utils/project-data";
 
@@ -53,34 +52,30 @@ const ProjectListing = ({ project }: ProjectListingProps) => {
               <li key={index}>{item}</li>
             ))}
           </ul>
-          <motion.div className="project-btns">
+          <div className="project-btns">
             {link && (
-              <motion.a
+              <a
                 href={link}
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
                 title={`Open site of ${name}`}
                 className="project-btn"
               >
                 Open Site
-              </motion.a>
+              </a>
             )}
             {code && (
-              <motion.a
+              <a
                 href={code}
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
                 title={`View Code for ${name}`}
                 className="project-btn"
               >
                 View Code
-              </motion.a>
+              </a>
             )}
-          </motion.div>
+          </div>
         </div>
       </div>
     </div>

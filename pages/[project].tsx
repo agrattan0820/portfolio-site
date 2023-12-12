@@ -30,18 +30,12 @@ const Project: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         className="project-main"
       >
         <div className="text-content">
-          <motion.a
-            href={projectData?.link}
-            target="_blank"
-            rel="noopener noreferrer"
+          <motion.h1
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
           >
-            <motion.h1
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-            >
-              {projectData?.name}
-            </motion.h1>
-          </motion.a>
+            {projectData?.name}
+          </motion.h1>
 
           {projectData?.longDescription
             ? projectData?.longDescription
@@ -108,15 +102,10 @@ const Project: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         <nav className="page-navigation">
           {index > 0 ? (
             <Link href={projectsList[index - 1].slug}>
-              <motion.button
-                className="previous-btn"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                title="Previous Project"
-              >
+              <button className="previous-btn" title="Previous Project">
                 <FaChevronLeft className="prev-arrow" />
                 Previous
-              </motion.button>
+              </button>
             </Link>
           ) : (
             <button className="previous-btn" disabled>
@@ -126,15 +115,10 @@ const Project: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           )}
           {index < projectsList.length - 1 ? (
             <Link href={projectsList[index + 1].slug}>
-              <motion.button
-                className="next-btn"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                title="Next Project"
-              >
+              <button className="next-btn" title="Next Project">
                 Next
                 <FaChevronRight className="next-arrow" />
-              </motion.button>
+              </button>
             </Link>
           ) : (
             <button className="next-btn" disabled>
@@ -147,30 +131,26 @@ const Project: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           <div className="bottom-links">
             <div className="project-links">
               {projectData.link && (
-                <motion.a
+                <a
                   href={projectData.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="project-btn"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
                   title={`Open site of ${projectData.name}`}
                 >
                   Open Site
-                </motion.a>
+                </a>
               )}
               {projectData.code && (
-                <motion.a
+                <a
                   href={projectData.code}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="project-btn"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
                   title={`View Code for ${projectData.name}`}
                 >
                   View Code
-                </motion.a>
+                </a>
               )}
             </div>
 

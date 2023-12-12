@@ -2,7 +2,9 @@ import { useRef, useState } from "react";
 import { FaGithub, FaLinkedin, FaTwitter, FaChevronDown } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
-import MyPeep from "../images/My_Peep.png";
+// import fs from "fs";
+// import path from "path";
+// import type { GetStaticPropsContext } from "next";
 
 import Header from "../components/header";
 import IntroOverlay from "../components/intro-overlay";
@@ -10,6 +12,9 @@ import SEO from "../components/seo";
 import { useBallAnimation } from "../utils/hooks/use-ball-animation";
 import { projectsList } from "../utils/project-data";
 import ProjectListing from "../components/project-listing";
+import MyPeep from "../images/My_Peep.png";
+
+// const postsDirectory = path.join(process.cwd(), "posts");
 
 export default function Homepage() {
   const [animationComplete, setAnimationComplete] = useState(false);
@@ -73,55 +78,47 @@ export default function Homepage() {
           <h2>Connect with Me</h2>
           <ul className="footer-links">
             <li>
-              <motion.a
+              <a
                 href="https://drive.google.com/file/d/1PgvpHThs5XjTwGZgib9ZTVLa8QbhulWp/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
                 title="Download Alexander's Resume"
               >
                 Resume
-              </motion.a>
+              </a>
             </li>
             <li>
-              <motion.a
+              <a
                 href="https://github.com/agrattan0820"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
                 title="Go to Alexander's GitHub"
               >
                 <FaGithub />
                 <span className="footer-hidden-text">GitHub</span>
-              </motion.a>
+              </a>
             </li>
             <li>
-              <motion.a
+              <a
                 href="https://www.linkedin.com/in/alexander-grattan/"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
                 title="Connect with Alexander on LinkedIn"
               >
                 <FaLinkedin />
                 <span className="footer-hidden-text">LinkedIn</span>
-              </motion.a>
+              </a>
             </li>
             <li>
-              <motion.a
+              <a
                 href="https://twitter.com/agrattan0820"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
                 title="Follow Alexander on Twitter"
               >
                 <FaTwitter />
                 <span className="footer-hidden-text">Twitter</span>
-              </motion.a>
+              </a>
             </li>
           </ul>
         </footer>
@@ -129,3 +126,11 @@ export default function Homepage() {
     </motion.div>
   );
 }
+
+// export const getStaticProps = async (context: GetStaticPropsContext) => {
+//   const fileNames = fs.readdirSync(postsDirectory);
+
+//   const
+
+//     const fileContents = fs.readFileSync(fullPath, "utf8");
+// }

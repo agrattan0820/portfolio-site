@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 type HeaderProps = {
@@ -16,42 +15,36 @@ const Header = ({ logoLink }: HeaderProps) => {
           </Link>
           <ul className="nav-list">
             <li>
-              <motion.a
+              <a
                 href="https://drive.google.com/file/d/1PgvpHThs5XjTwGZgib9ZTVLa8QbhulWp/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
                 title="Download Alexander's Resume"
               >
                 Resume
-              </motion.a>
+              </a>
             </li>
             <li>
-              <motion.a
+              <a
                 href="https://github.com/agrattan0820"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
                 title="Go to Alexander's GitHub"
               >
                 <FaGithub />
                 <span className="header-hidden-text">GitHub</span>
-              </motion.a>
+              </a>
             </li>
             <li>
-              <motion.a
+              <a
                 href="https://www.linkedin.com/in/alexander-grattan/"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
                 title="Connect with Alexander on LinkedIn"
               >
                 <FaLinkedin />
                 <span className="header-hidden-text">LinkedIn</span>
-              </motion.a>
+              </a>
             </li>
           </ul>
         </div>

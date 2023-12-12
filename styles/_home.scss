@@ -63,8 +63,19 @@
           text-decoration: none;
           font-weight: 700;
           font-size: 0.875rem;
+          transition: 150ms transform ease;
+          will-change: transform;
           @media (min-width: 768px) {
             font-size: 1rem;
+          }
+          &:hover {
+            transform: scale(1.1);
+          }
+          &:focus {
+            transform: scale(1.1);
+          }
+          &:active {
+            transform: scale(0.9);
           }
 
           svg {
@@ -327,7 +338,6 @@
               align-items: center;
               text-decoration: none;
               padding: 0;
-              cursor: pointer;
               width: 100%;
               height: 50px;
               border-radius: 15px;
@@ -338,8 +348,19 @@
               font-weight: 700;
               font-family: $font;
               font-size: 0.875rem;
+              transition: 150ms transform ease;
+              will-change: transform;
               @media (min-width: 768px) {
                 font-size: 1rem;
+              }
+              &:hover {
+                transform: scale(1.1);
+              }
+              &:focus {
+                transform: scale(1.1);
+              }
+              &:active {
+                transform: scale(0.9);
               }
             }
           }
@@ -367,6 +388,14 @@
               0 41.8px 33.4px rgba(211, 211, 211, 0.05),
               0 100px 80px rgba(211, 211, 211, 0.07);
             &:hover {
+              box-shadow: 0 2.8px 2.2px rgba(256, 256, 256, 0.02),
+                0 6.7px 5.3px rgba(256, 256, 256, 0.028),
+                0 12.5px 10px rgba(256, 256, 256, 0.035),
+                0 22.3px 17.9px rgba(256, 256, 256, 0.042),
+                0 41.8px 33.4px rgba(256, 256, 256, 0.05),
+                0 100px 80px rgba(256, 256, 256, 0.07);
+            }
+            &:focus {
               box-shadow: 0 2.8px 2.2px rgba(256, 256, 256, 0.02),
                 0 6.7px 5.3px rgba(256, 256, 256, 0.028),
                 0 12.5px 10px rgba(256, 256, 256, 0.035),
@@ -452,8 +481,19 @@
           text-decoration: none;
           font-weight: 700;
           font-size: 1rem;
+          transition: 150ms transform ease;
+          will-change: transform;
           @media (min-width: 768px) {
             font-size: 1.5rem;
+          }
+          &:hover {
+            transform: scale(1.1);
+          }
+          &:focus {
+            transform: scale(1.1);
+          }
+          &:active {
+            transform: scale(0.9);
           }
 
           svg {
