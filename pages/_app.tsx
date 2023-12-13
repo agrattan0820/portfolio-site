@@ -13,7 +13,7 @@ const raleway = Raleway({
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <AnimatePresence mode="wait">
-      <div className={raleway.className}>
+      <div className={raleway.variable}>
         <Component {...pageProps} />
       </div>
       <Analytics />

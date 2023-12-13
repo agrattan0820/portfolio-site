@@ -14,7 +14,7 @@ import SEO from "../components/seo";
 import { useBallAnimation } from "../utils/hooks/use-ball-animation";
 import { projectsList } from "../utils/project-data";
 import ProjectListing from "../components/project-listing";
-import MyPeep from "../images/My_Peep.png";
+import AlexanderGrattan from "../images/alexander-grattan.jpeg";
 
 // const postsDirectory = path.join(process.cwd(), "posts");
 
@@ -54,8 +54,8 @@ export default function Homepage() {
               I create<span className="playful"> playful </span> experiences.
             </h1>
             <Image
-              src={MyPeep}
-              alt="Alexander's Peep"
+              src={AlexanderGrattan}
+              alt="Portrait of Alexander Grattan"
               className="peep-image"
               priority
             />
