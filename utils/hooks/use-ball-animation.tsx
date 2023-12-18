@@ -56,7 +56,7 @@ export const useBallAnimation = ({
                 opacity: 0,
                 ease: "power3.out",
               })
-              .from(".peep-image", {
+              .from(".portrait-container", {
                 duration: reduceMotion ? 0 : 0.5,
                 y: 100,
                 opacity: 0,

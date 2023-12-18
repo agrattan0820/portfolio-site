@@ -37,6 +37,8 @@
 
       h1 {
         color: white;
+        font-weight: bold;
+        margin-bottom: 1rem;
         text-align: center;
         font-size: 2.5rem;
         @media (min-width: 768px) {
@@ -49,6 +51,7 @@
       p {
         line-height: 40px;
         font-size: 1rem;
+        margin: 1rem 0;
         width: 100%;
         max-width: 600px;
         @media (min-width: 768px) {
@@ -61,16 +64,17 @@
       text-align: center;
       display: flex;
       justify-content: center;
+      margin: 1rem;
       gap: 1rem;
       align-items: center;
       flex-wrap: wrap;
-      margin: 2rem auto;
+      @media (min-width: 768px) {
+        gap: 2rem;
+      }
       .image-compare {
         padding: 0;
-        margin: 1rem 0;
         @media (min-width: 768px) {
           padding: 1rem;
-          margin: 4rem 0;
         }
         img {
           width: 100%;
@@ -79,6 +83,12 @@
           @media (min-width: 768px) {
             width: 75%;
           }
+        }
+
+        h2 {
+          margin-top: 1rem;
+          font-weight: bold;
+          font-size: 1.25rem;
         }
       }
     }

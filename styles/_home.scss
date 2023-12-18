@@ -126,13 +126,16 @@
       justify-content: space-between;
       align-items: start;
       flex-direction: column-reverse;
-      gap: 2rem;
+      gap: 4rem;
       @media (min-width: 640px) {
         flex-direction: row;
+        align-items: center;
+        gap: 2rem;
       }
 
       .title {
         font-size: 2rem;
+        font-weight: bold;
         margin-right: 1rem;
 
         @media (min-width: 640px) {
@@ -159,29 +162,32 @@
           animation: 10s ease 0s infinite alternate none running rainbow;
         }
       }
-      .peep-image {
-        position: relative;
+      .portrait-container {
         width: 100%;
         max-width: 300px;
-        object-fit: contain;
-        height: 100%;
-        border-radius: 32px;
-        box-shadow: 24px 24px white;
-        filter: grayscale(100%) contrast(110%);
-        clip-path: circle(100%);
-        transition-duration: 0.3s;
-        transition-timing-function: ease;
-        transition-property: box-shadow, clip-path, filter;
         @media (min-width: 640px) {
           max-width: 200px;
         }
         @media (min-width: 1280px) {
           max-width: 300px;
         }
-        &:hover {
+        &:hover .portrait {
           box-shadow: 0px 0px white;
           clip-path: circle(50%);
           filter: none;
+        }
+        .portrait {
+          position: relative;
+          width: 100%;
+          object-fit: contain;
+          height: 100%;
+          border-radius: 32px;
+          box-shadow: 24px 24px white;
+          filter: grayscale(100%) contrast(110%);
+          clip-path: circle(100%);
+          transition-duration: 0.3s;
+          transition-timing-function: ease;
+          transition-property: box-shadow, clip-path, filter;
         }
       }
     }
@@ -189,6 +195,7 @@
     .job-title {
       font-size: 0.9rem;
       font-weight: 400;
+      margin-top: 1rem;
       @media (min-width: 768px) {
         font-size: 1.2rem;
       }
@@ -213,7 +220,7 @@
         justify-content: center;
         align-items: center;
         font-size: 0.875rem;
-        font-weight: 700;
+        font-weight: bold;
         font-family: $font;
         text-decoration: none;
         @media (min-width: 768px) {
@@ -270,14 +277,15 @@
             width: 300px;
           }
           .tools-list {
+            list-style-type: disc;
             columns: 2;
             padding-left: 1.5rem;
             line-height: 20px;
-            margin-top: 8px;
-            margin-bottom: 16px;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
             font-family: $font;
             @media (min-width: 768px) {
-              margin-bottom: 24px;
+              margin-bottom: 1.5rem;
             }
             li {
               font-size: 0.875rem;
@@ -293,6 +301,7 @@
             h2 {
               cursor: pointer;
               font-size: 1.5rem;
+              font-weight: bold;
               margin: 0;
               &:hover {
                 transition: all 0.4s cubic-bezier(0.15, 0.75, 0.45, 0.95) 0s;
@@ -308,8 +317,8 @@
           }
           h3 {
             font-size: 1rem;
-            margin-top: 24px;
-            margin-bottom: 0;
+            margin-top: 1.5rem;
+            font-weight: bold;
             @media (min-width: 768px) {
               font-size: 1.25rem;
             }
@@ -489,6 +498,8 @@
     h2 {
       color: $white;
       font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 2rem;
       @media (min-width: 768px) {
         font-size: 4rem;
       }
