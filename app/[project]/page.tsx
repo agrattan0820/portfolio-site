@@ -49,7 +49,7 @@ export default function Project({ params }: { params: { project: string } }) {
 
   return (
     <div className="container">
-      <Header logoLink={`/#${projectData.slug}`} />
+      <Header logoLink={`/?back=true#${projectData.slug}`} />
       <main className="project-main">
         <div className="text-content">
           <h1>{projectData?.name}</h1>
