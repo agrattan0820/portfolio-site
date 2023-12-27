@@ -1,51 +1,16 @@
-import { useRef, useState } from "react";
-import { FaGithub, FaLinkedin, FaTwitter, FaChevronDown } from "react-icons/fa";
-import { motion } from "framer-motion";
-import { useRouter } from "next/router";
 import Image from "next/image";
-
-// import fs from "fs";
-// import path from "path";
-// import type { GetStaticPropsContext } from "next";
+import { FaGithub, FaLinkedin, FaTwitter, FaChevronDown } from "react-icons/fa";
 
 import Header from "../components/header";
 import IntroOverlay from "../components/intro-overlay";
-import SEO from "../components/seo";
-import { useBallAnimation } from "../utils/hooks/use-ball-animation";
 import { projectsList } from "../utils/project-data";
 import ProjectListing from "../components/project-listing";
 import AlexanderGrattan from "../images/alexander-grattan.jpeg";
 
-// const postsDirectory = path.join(process.cwd(), "posts");
-
 export default function Homepage() {
-  const [animationComplete, setAnimationComplete] = useState(false);
-  const router = useRouter();
-  const ballRoot = useRef<HTMLDivElement>(null);
-
-  useBallAnimation({
-    root: ballRoot,
-    enabled: router.asPath === "/",
-    onComplete: () => {
-      setAnimationComplete(true);
-      document.body.style.overflowY = "auto";
-    },
-  });
-
   return (
-    <motion.div
-      key="homepage"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="container"
-      ref={ballRoot}
-    >
-      <SEO
-        title="Alexander Grattan | Software Developer Based in Pittsburgh"
-        url="https://agrattan.com/"
-      />
-      {animationComplete === false && <IntroOverlay />}
+    <div className="container">
+      <IntroOverlay />
       <div className="after-animation">
         <Header logoLink="/" />
         <main className="main-home">
@@ -128,7 +93,7 @@ export default function Homepage() {
           </ul>
         </footer>
       </div>
-    </motion.div>
+    </div>
   );
 }
 

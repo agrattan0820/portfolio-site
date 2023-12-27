@@ -1,41 +1,58 @@
-import { motion } from "framer-motion";
-import { GetStaticPropsContext, InferGetStaticPropsType, NextPage } from "next";
 import Link from "next/link";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { FaArrowLeft, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-import Header from "../components/header";
-import SEO from "../components/seo";
-import { projectsList } from "../utils/project-data";
+import Header from "../../components/header";
+import { projectsList } from "../../utils/project-data";
 
-const Project: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
-  index,
-  projectData,
-}) => {
+export function generateMetadata({
+  params,
+}: {
+  params: { project: string };
+}): Metadata {
+  const projectSlug = params.project;
+
+  const index = projectsList.findIndex((el) => el.slug === projectSlug);
+
+  const projectData = projectsList[index];
+
+  return {
+    title:
+      index !== -1
+        ? `${projectData?.name} | Alexander Grattan`
+        : "Project | Alexander Grattan",
+    description: index !== -1 ? projectData?.description : undefined,
+  };
+}
+
+export function generateStaticParams() {
+  const projectPaths = projectsList.map(({ slug }) => {
+    return {
+      project: slug,
+    };
+  });
+
+  return projectPaths;
+}
+
+export default function Project({ params }: { params: { project: string } }) {
+  const projectSlug = params.project;
+
+  const index = projectsList.findIndex((el) => el.slug === projectSlug);
+
+  if (index === -1) {
+    return notFound();
+  }
+
+  const projectData = projectsList[index];
+
   return (
-    <motion.div
-      key={projectData.slug}
-      exit={{ opacity: 0 }}
-      className="container"
-    >
-      <SEO
-        title={`${projectData?.name} | Alexander Grattan`}
-        url={`https://agrattan.com/${projectData.slug}`}
-        description={projectData.description}
-      />
+    <div className="container">
       <Header logoLink={`/#${projectData.slug}`} />
-      <motion.main
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        className="project-main"
-      >
+      <main className="project-main">
         <div className="text-content">
-          <motion.h1
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
-            {projectData?.name}
-          </motion.h1>
+          <h1>{projectData?.name}</h1>
 
           {projectData?.longDescription
             ? projectData?.longDescription
@@ -163,43 +180,7 @@ const Project: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
             </Link>
           </div>
         )}
-      </motion.main>
-    </motion.div>
+      </main>
+    </div>
   );
-};
-
-export default Project;
-
-export const getStaticPaths = async () => {
-  const projectPaths = projectsList.map((item) => {
-    return {
-      params: {
-        project: item.slug,
-      },
-    };
-  });
-
-  return {
-    paths: projectPaths,
-    fallback: false,
-  };
-};
-
-export const getStaticProps = async (context: GetStaticPropsContext) => {
-  const projectSlug = context.params.project;
-
-  const index = projectsList.findIndex((el) => el.slug === projectSlug);
-
-  if (index === -1) {
-    return {
-      notFound: true,
-    };
-  }
-
-  return {
-    props: {
-      index,
-      projectData: projectsList[index],
-    },
-  };
-};
+}

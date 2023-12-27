@@ -62,7 +62,7 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async (context: GetStaticPropsContext) => {
-  const slug = context.params.slug;
+  const slug = context?.params?.slug;
   const fullPath = path.join(postsDirectory, `${slug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
