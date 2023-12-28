@@ -1,14 +1,20 @@
-.container {
+@import "./variables.module.scss";
+
+.postContainer {
   color: $white;
   font-family: $font;
-  .post-main {
+  min-height: 100dvh;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  .postMain {
     width: 90%;
     margin: 8rem auto 6rem auto;
     @media (min-width: 768px) {
       width: 75%;
     }
 
-    .post-title {
+    .postTitle {
       font-size: 3rem;
       font-weight: bold;
       margin-top: 0;
@@ -18,11 +24,11 @@
       }
     }
 
-    .post-date {
+    .postDate {
       margin-bottom: 5rem;
     }
 
-    .text-content {
+    .textContent {
       display: grid;
       place-items: center;
       p {

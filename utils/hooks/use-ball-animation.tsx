@@ -31,43 +31,43 @@ export const useBallAnimation = ({
 
           const homeAnimation = () => {
             if (enabled) {
-              tl.to(".ball", {
+              tl.to("#ball", {
                 duration: reduceMotion ? 0 : 2,
                 y: "100vh",
                 ease: "bounce.out",
               })
-                .to(".ball", {
+                .to("#ball", {
                   duration: reduceMotion ? 0 : 1,
                   delay: 0.15,
                   scale: isDesktop ? 20 : 30,
                   ease: "power3.out",
                   onComplete: onComplete,
                 })
-                .from(".after-animation", {
+                .from("#afterAnimation", {
                   duration: reduceMotion ? 0 : 0.8,
                   opacity: 0,
                   ease: "power3.out",
                 })
-                .from(".title", {
+                .from("#title", {
                   duration: reduceMotion ? 0 : 0.5,
                   y: 100,
                   delay: 0.2,
                   opacity: 0,
                   ease: "power3.out",
                 })
-                .from(".portrait-container", {
+                .from("#portraitContainer", {
                   duration: reduceMotion ? 0 : 0.5,
                   y: 100,
                   opacity: 0,
                   ease: "power3.out",
                 })
-                .from(".job-title", {
+                .from("#jobTitle", {
                   duration: reduceMotion ? 0 : 0.5,
                   y: 100,
                   opacity: 0,
                   ease: "power3.out",
                 })
-                .from(".blog-preview-container", {
+                .from("#blogPreviewContainer", {
                   duration: reduceMotion ? 0 : 0.5,
                   y: 100,
                   opacity: 0,
@@ -89,7 +89,7 @@ export const useBallAnimation = ({
                     },
                   });
                   const projectImage = project.querySelector("img");
-                  const projectInfo = project.querySelector(".project-info");
+                  const projectInfo = project.querySelector("#projectInfo");
 
                   tlProject
                     .from(projectImage, {
@@ -112,7 +112,7 @@ export const useBallAnimation = ({
                     },
                   });
                   const projectImage = project.querySelector("img");
-                  const projectInfo = project.querySelector(".project-info");
+                  const projectInfo = project.querySelector("#projectInfo");
 
                   tlProject
                     .from(projectImage, {
@@ -141,7 +141,7 @@ export const useBallAnimation = ({
                   opacity: 0,
                   duration: 0.6,
                 })
-                .from("footer .footer-links", {
+                .from("footer #footerLinks", {
                   y: 100,
                   opacity: 0,
                   duration: 0.6,

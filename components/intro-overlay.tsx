@@ -4,6 +4,8 @@ import { useSearchParams } from "next/navigation";
 import { useBallAnimation } from "../utils/hooks/use-ball-animation";
 import { useState } from "react";
 
+import styles from "../styles/intro-overlay.module.scss";
+
 function IntroOverlay() {
   const [animationComplete, setAnimationComplete] = useState(false);
   const searchParams = useSearchParams();
@@ -22,8 +24,8 @@ function IntroOverlay() {
   }
 
   return (
-    <div className="intro-overlay">
-      <div className="ball"></div>
+    <div className={styles.introOverlay}>
+      <div id="ball" className={styles.ball}></div>
     </div>
   );
 }

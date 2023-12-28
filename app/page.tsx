@@ -7,6 +7,9 @@ import {
 } from "react-icons/fa";
 import Link from "next/link";
 
+import styles from "../styles/home.module.scss";
+import commonStyles from "../styles/common.module.scss";
+
 import Header from "../components/header";
 import IntroOverlay from "../components/intro-overlay";
 import { projectsList } from "../utils/project-data";
@@ -29,31 +32,33 @@ const blogPosts: { title: string; slug: string; description: string }[] = [
 
 export default function Homepage() {
   return (
-    <div className="container">
+    <div className={styles.homeContainer}>
       <IntroOverlay />
-      <div className="after-animation">
+      <div id="afterAnimation">
         <Header logoLink="/" />
-        <main className="main-home">
-          <div className="cta">
-            <h1 className="title">
-              I create<span className="playful"> playful </span> experiences.
+        <main className={styles.hero}>
+          <div className={styles.cta}>
+            <h1 id="title" className={styles.title}>
+              I create<span className={styles.playful}> playful </span>{" "}
+              experiences.
             </h1>
-            <div className="portrait-container">
+            <div id="portraitContainer" className={styles.portraitContainer}>
               <Image
                 src={AlexanderGrattan}
                 alt="Portrait of Alexander Grattan"
-                className="portrait"
+                className={styles.portrait}
                 priority
               />
             </div>
           </div>
-          <p className="job-title">
-            <span className="text-reveal">
-              Alexander Grattan / Software Developer
-            </span>
+          <p id="jobTitle" className={styles.jobTitle}>
+            Alexander Grattan / Software Developer
           </p>
         </main>
-        <section className="blog-preview-container">
+        <section
+          id="blogPreviewContainer"
+          className={styles.blogPreviewContainer}
+        >
           <h2>My Blog</h2>
           <ul>
             {blogPosts.map((post, i) => (
@@ -71,8 +76,8 @@ export default function Homepage() {
             </Link>
           </div> */}
         </section>
-        <section className="project-container" id="projects">
-          <div className="project-title-container">
+        <section className={styles.projectContainer} id="projects">
+          <div className={styles.projectTitleContainer}>
             <h2>My Projects</h2>
           </div>
 
@@ -82,7 +87,7 @@ export default function Homepage() {
         </section>
         <footer>
           <h2>Connect with Me</h2>
-          <ul className="footer-links">
+          <ul id="footerLinks" className={styles.footerLinks}>
             <li>
               <a
                 href="https://drive.google.com/file/d/1PgvpHThs5XjTwGZgib9ZTVLa8QbhulWp/view?usp=sharing"
@@ -101,7 +106,7 @@ export default function Homepage() {
                 title="Go to Alexander's GitHub"
               >
                 <FaGithub />
-                <span className="footer-hidden-text">GitHub</span>
+                <span className={commonStyles.hiddenText}>GitHub</span>
               </a>
             </li>
             <li>
@@ -112,7 +117,7 @@ export default function Homepage() {
                 title="Connect with Alexander on LinkedIn"
               >
                 <FaLinkedin />
-                <span className="footer-hidden-text">LinkedIn</span>
+                <span className={commonStyles.hiddenText}>LinkedIn</span>
               </a>
             </li>
             <li>
@@ -123,7 +128,7 @@ export default function Homepage() {
                 title="Follow Alexander on Twitter"
               >
                 <FaTwitter />
-                <span className="footer-hidden-text">Twitter</span>
+                <span className={commonStyles.hiddenText}>Twitter</span>
               </a>
             </li>
           </ul>

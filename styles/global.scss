@@ -1,9 +1,4 @@
-@import "./variables";
 @import "./reset";
-@import "./home";
-@import "./intro-overlay";
-@import "./project";
-@import "./post";
 
 body,
 html {
@@ -19,7 +14,7 @@ html {
 
 body {
   overflow-y: hidden; // No scrolling during intro animation
-  background: $black;
+  background: #121212;
 }
 
 * {

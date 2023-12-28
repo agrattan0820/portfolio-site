@@ -3,6 +3,8 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { FaArrowLeft, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
+import styles from "../../styles/project.module.scss";
+
 import Header from "../../components/header";
 import { projectsList } from "../../utils/project-data";
 
@@ -48,10 +50,10 @@ export default function Project({ params }: { params: { project: string } }) {
   const projectData = projectsList[index];
 
   return (
-    <div className="container">
-      <Header logoLink={`/?back=true#${projectData.slug}`} />
-      <main className="project-main">
-        <div className="text-content">
+    <div className={styles.projectContainer}>
+      <Header logoLink="/?back=true" />
+      <main className={styles.projectMain}>
+        <div className={styles.textContent}>
           <h1>{projectData?.name}</h1>
 
           {projectData?.longDescription
@@ -63,8 +65,8 @@ export default function Project({ params }: { params: { project: string } }) {
                 .map((str, i) => <p key={i}>{str}</p>)}
         </div>
         {projectData && projectData?.figma && projectData?.old ? (
-          <div className="comparison-container">
-            <div className="image-compare gsap-1">
+          <div className={styles.comparisonContainer}>
+            <div className={styles.imageCompare}>
               {/* Using regular `img` tag because next/image would show 
               previous project image when navigating */}
               <img
@@ -74,14 +76,14 @@ export default function Project({ params }: { params: { project: string } }) {
 
               <h2>Old Version</h2>
             </div>
-            <div className="image-compare gsap-2">
+            <div className={styles.imageCompare}>
               <img
                 src={projectData.figma.src}
                 alt={`${projectData.name} Design Mockup`}
               />
               <h2>Design Mockup</h2>
             </div>
-            <div className="image-compare gsap-1">
+            <div className={styles.imageCompare}>
               <img
                 src={projectData.image.src}
                 alt={`${projectData.name} Live Site`}
@@ -90,15 +92,15 @@ export default function Project({ params }: { params: { project: string } }) {
             </div>
           </div>
         ) : projectData?.figma ? (
-          <div className="comparison-container">
-            <div className="image-compare gsap-1">
+          <div className={styles.comparisonContainer}>
+            <div className={styles.imageCompare}>
               <img
                 src={projectData.figma.src}
                 alt={`${projectData.name} Design Mockup`}
               />
               <h2>Design Mockup</h2>
             </div>
-            <div className="image-compare gsap-2">
+            <div className={styles.imageCompare}>
               <img
                 src={projectData.image.src}
                 alt={`${projectData.name} Live Site`}
@@ -107,8 +109,8 @@ export default function Project({ params }: { params: { project: string } }) {
             </div>
           </div>
         ) : (
-          <div className="comparison-container">
-            <div className="image-compare gsap-3">
+          <div className={styles.comparisonContainer}>
+            <div className={styles.imageCompare}>
               <img
                 src={projectData.image.src}
                 alt={`${projectData.name} Live Site`}
@@ -116,43 +118,43 @@ export default function Project({ params }: { params: { project: string } }) {
             </div>
           </div>
         )}
-        <nav className="page-navigation">
+        <nav className={styles.pageNavigation}>
           {index > 0 ? (
-            <Link href={projectsList[index - 1].slug}>
-              <button className="previous-btn" title="Previous Project">
-                <FaChevronLeft className="prev-arrow" />
+            <Link href={projectsList[index - 1].slug} passHref legacyBehavior>
+              <button className={styles.previousBtn} title="Previous Project">
+                <FaChevronLeft className={styles.prevArrow} />
                 Previous
               </button>
             </Link>
           ) : (
-            <button className="previous-btn" disabled>
-              <FaChevronLeft className="prev-arrow" />
+            <button className={styles.previousBtn} disabled>
+              <FaChevronLeft className={styles.prevArrow} />
               Previous
             </button>
           )}
           {index < projectsList.length - 1 ? (
             <Link href={projectsList[index + 1].slug}>
-              <button className="next-btn" title="Next Project">
+              <button className={styles.nextBtn} title="Next Project">
                 Next
-                <FaChevronRight className="next-arrow" />
+                <FaChevronRight className={styles.nextArrow} />
               </button>
             </Link>
           ) : (
-            <button className="next-btn" disabled>
+            <button className={styles.nextBtn} disabled>
               Next
-              <FaChevronRight className="next-arrow" />
+              <FaChevronRight className={styles.nextArrow} />
             </button>
           )}
         </nav>
         {projectData && (
-          <div className="bottom-links">
-            <div className="project-links">
+          <div className={styles.bottomLinks}>
+            <div className={styles.projectLinks}>
               {projectData.link && (
                 <a
                   href={projectData.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="project-btn"
+                  className={styles.projectBtn}
                   title={`Open site of ${projectData.name}`}
                 >
                   Open Site
@@ -163,7 +165,7 @@ export default function Project({ params }: { params: { project: string } }) {
                   href={projectData.code}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="project-btn"
+                  className={styles.projectBtn}
                   title={`View Code for ${projectData.name}`}
                 >
                   View Code
@@ -172,9 +174,8 @@ export default function Project({ params }: { params: { project: string } }) {
             </div>
 
             <Link
-              href={`/#${projectData.slug}`}
-              scroll={false}
-              className="project-back"
+              href={`/?back=true#${projectData.slug}`}
+              className={styles.projectBack}
             >
               <FaArrowLeft /> Back Home
             </Link>

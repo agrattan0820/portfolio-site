@@ -1,4 +1,4 @@
-import "../styles/app.scss";
+import "../styles/global.scss";
 import { Analytics } from "@vercel/analytics/react";
 import { Metadata } from "next";
 import { Raleway } from "next/font/google";
