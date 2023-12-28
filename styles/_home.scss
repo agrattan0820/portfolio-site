@@ -240,6 +240,14 @@
           border: 2px solid white;
           border-radius: 1rem;
           padding: 1rem;
+          transition-property: background-color, color;
+          transition-duration: 0.3s;
+          transition-timing-function: ease;
+
+          &:hover {
+            background-color: white;
+            color: $black;
+          }
 
           &:hover h3 {
             text-decoration: underline;

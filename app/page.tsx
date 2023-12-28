@@ -3,7 +3,7 @@ import {
   FaGithub,
   FaLinkedin,
   FaTwitter,
-  FaChevronRight,
+  // FaChevronRight,
 } from "react-icons/fa";
 import Link from "next/link";
 
@@ -65,11 +65,11 @@ export default function Homepage() {
               </li>
             ))}
           </ul>
-          <div className="view-all-container">
+          {/* <div className="view-all-container">
             <Link href="/blog">
               View All <FaChevronRight />
             </Link>
-          </div>
+          </div> */}
         </section>
         <section className="project-container" id="projects">
           <div className="project-title-container">
