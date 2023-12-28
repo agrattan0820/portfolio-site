@@ -128,6 +128,7 @@
       align-items: start;
       flex-direction: column-reverse;
       gap: 4rem;
+      margin-bottom: 1.25rem;
       @media (min-width: 640px) {
         flex-direction: row;
         align-items: center;
@@ -137,7 +138,6 @@
         font-size: 2rem;
         font-weight: bold;
         margin-right: 1rem;
-
         @media (min-width: 640px) {
           font-size: 3rem;
           justify-content: center;
@@ -184,8 +184,8 @@
           width: 100%;
           object-fit: contain;
           height: 100%;
-          border-radius: 32px;
-          box-shadow: 24px 24px white;
+          border-radius: 2rem;
+          box-shadow: 1.5rem 1.5rem white;
           filter: grayscale(100%) contrast(110%);
           clip-path: circle(100%);
           transition-duration: 0.3s;
@@ -198,7 +198,6 @@
     .job-title {
       font-size: 0.9rem;
       font-weight: 400;
-      margin-top: 1rem;
       @media (min-width: 768px) {
         font-size: 1.2rem;
       }
@@ -206,62 +205,88 @@
         font-size: 1.4rem;
       }
     }
-    .scroll-indicator-container {
-      position: absolute;
-      top: 90%;
-      left: 50%;
-      transform: translate(-50%, -90%);
-      @media (min-width: 768px) {
-        top: 95%;
-        transform: translate(-50%, -95%);
+  }
+  .blog-preview-container {
+    position: relative;
+    width: 90%;
+    max-width: 1536px;
+    margin: -8rem auto 8rem;
+    z-index: 10;
+    @media (min-width: 768px) {
+      width: 75%;
+    }
+
+    h2 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 2.5rem;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: start;
+      gap: 1rem;
+      margin-bottom: 2rem;
+
+      li {
+        display: block;
+
+        a {
+          color: white;
+          display: block;
+          text-decoration: none;
+          border: 2px solid white;
+          border-radius: 1rem;
+          padding: 1rem;
+
+          &:hover h3 {
+            text-decoration: underline;
+          }
+
+          h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+          }
+        }
       }
+    }
 
-      .scroll-indicator {
-        color: $white;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        font-size: 0.875rem;
-        font-weight: bold;
-        font-family: $font;
+    .view-all-container {
+      a {
+        color: white;
         text-decoration: none;
-        @media (min-width: 768px) {
-          font-size: 1rem;
-        }
-        &:hover svg {
-          transform: translateY(4px);
-        }
-        &:focus svg {
-          transform: translateY(4px);
-        }
-
-        span {
-          margin: 0.25rem 0;
-        }
-
-        svg {
-          transition: 300ms transform ease;
-        }
       }
     }
   }
   .project-container {
     position: relative;
-    min-height: 100dvh;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-    @media (min-width: 768px) {
-      overflow: unset;
-      -webkit-overflow-scrolling: unset;
+
+    .project-title-container {
+      width: 90%;
+      max-width: 1536px;
+      margin: 0 auto;
+      color: $white;
+      font-family: $font;
+      @media (min-width: 768px) {
+        width: 75%;
+      }
+    }
+
+    h2 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 2.5rem;
     }
 
     .project {
-      overflow: hidden;
       position: relative;
       width: 100%;
-      height: 100vh;
-      .project-container {
+      height: 50vh;
+      .project-item-container {
+        overflow-x: clip;
         display: flex;
         justify-content: center;
         align-items: center;

@@ -15,6 +15,9 @@ const Header = ({ logoLink }: HeaderProps) => {
           </Link>
           <ul className="nav-list">
             <li>
+              <Link href="/blog">Blog</Link>
+            </li>
+            <li>
               <a
                 href="https://drive.google.com/file/d/1PgvpHThs5XjTwGZgib9ZTVLa8QbhulWp/view?usp=sharing"
                 target="_blank"

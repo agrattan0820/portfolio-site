@@ -8,7 +8,9 @@ export default function PostLayout({
   return (
     <div className="container">
       <Header logoLink={`/?back=true`} />
-      <main className="post-main">{children}</main>
+      <main className="post-main">
+        <div className="text-content">{children}</div>
+      </main>
     </div>
   );
 }

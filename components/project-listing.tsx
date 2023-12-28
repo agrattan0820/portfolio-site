@@ -22,7 +22,7 @@ const ProjectListing = ({ project }: ProjectListingProps) => {
 
   return (
     <div className="project" id={slug}>
-      <div className="project-container">
+      <div className="project-item-container">
         <Link href={slug}>
           <picture>
             {mobileImage && (
