@@ -14,3 +14,37 @@
     width: auto;
   }
 }
+
+.playful {
+  transition: all 0.4s cubic-bezier(0.15, 0.75, 0.45, 0.95) 0s;
+  animation: 10s ease 0s infinite alternate none running rainbow;
+}
+
+.playfulHover {
+  transition: all 0.4s cubic-bezier(0.15, 0.75, 0.45, 0.95) 0s;
+  &:hover {
+    animation: 10s ease 0s infinite alternate none running rainbow;
+  }
+  &:focus {
+    animation: 10s ease 0s infinite alternate none running rainbow;
+  }
+}
+
+// Rainbow text
+@keyframes rainbow {
+  0% {
+    color: rgb(240, 77, 255);
+  }
+  25% {
+    color: rgb(255, 77, 77);
+  }
+  50% {
+    color: rgb(255, 197, 77);
+  }
+  75% {
+    color: rgb(106, 237, 118);
+  }
+  100% {
+    color: rgb(0, 153, 255);
+  }
+}

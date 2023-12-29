@@ -1,12 +1,6 @@
 import Image from "next/image";
-import {
-  FaChevronDown,
-  FaGithub,
-  FaLinkedin,
-  FaTwitter,
-  // FaChevronRight,
-} from "react-icons/fa";
-// import Link from "next/link";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import Link from "next/link";
 
 import styles from "../styles/home.module.scss";
 import commonStyles from "../styles/common.module.scss";
@@ -17,19 +11,13 @@ import { projectsList } from "../utils/project-data";
 import ProjectListing from "../components/project-listing";
 import AlexanderGrattan from "../images/alexander-grattan.jpeg";
 
-// const blogPosts: { title: string; slug: string; description: string }[] = [
-//   {
-//     title: "Hello World",
-//     slug: "hello-world",
-//     description: "An intro blog post by Alexander Grattan",
-//   },
-//   {
-//     title:
-//       "Woah this is a crazy long title, I wonder how your CSS is gonna handle this buddy boy???",
-//     slug: "really-long",
-//     description: "An intro blog post by Alexander Grattan",
-//   },
-// ];
+const blogPosts: { title: string; slug: string; date: string }[] = [
+  {
+    title: "Falling Out of Love with Twin Macro",
+    slug: "falling-out-of-love-with-twin-macro",
+    date: "December 29, 2023",
+  },
+];
 
 export default function Homepage() {
   return (
@@ -37,25 +25,26 @@ export default function Homepage() {
       <IntroOverlay />
       <div id="afterAnimation">
         <Header logoLink="/" />
-        <main className={styles.hero}>
-          <div className={styles.cta}>
-            <h1 id="title" className={styles.title}>
-              I create<span className={styles.playful}> playful </span>{" "}
-              experiences.
-            </h1>
-            <div id="portraitContainer" className={styles.portraitContainer}>
-              <Image
-                src={AlexanderGrattan}
-                alt="Portrait of Alexander Grattan"
-                className={styles.portrait}
-                priority
-              />
+        <main>
+          <section className={styles.hero}>
+            <div className={styles.cta}>
+              <h1 id="title" className={styles.title}>
+                I create<span className={commonStyles.playful}> playful </span>{" "}
+                experiences.
+              </h1>
+              <div id="portraitContainer" className={styles.portraitContainer}>
+                <Image
+                  src={AlexanderGrattan}
+                  alt="Portrait of Alexander Grattan"
+                  className={styles.portrait}
+                  priority
+                />
+              </div>
             </div>
-          </div>
-          <p id="jobTitle" className={styles.jobTitle}>
-            Alexander Grattan / Software Developer
-          </p>
-          <div
+            <p id="jobTitle" className={styles.jobTitle}>
+              Alexander Grattan / Software Developer
+            </p>
+            {/* <div
             id="scrollIndicatorContainer"
             className={styles.scrollIndicatorContainer}
           >
@@ -63,35 +52,36 @@ export default function Homepage() {
               <span>Some Projects</span>
               <FaChevronDown />
             </a>
-          </div>
-        </main>
-        {/* <section
-          id="blogPreviewContainer"
-          className={styles.blogPreviewContainer}
-        >
-          <h2>My Blog</h2>
-          <ul>
-            {blogPosts.map((post, i) => (
-              <li key={i}>
-                <Link href={`/blog/post/${post.slug}`}>
-                  <h3>{post.title}</h3>
-                  <p>{post.description}</p>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </section> */}
-        <section className={styles.projectContainer} id="projects">
-          <div className={styles.projectTitleContainer}>
-            <h2>My Projects</h2>
-          </div>
+          </div> */}
+          </section>
+          <section
+            id="blogPreviewContainer"
+            className={styles.blogPreviewContainer}
+          >
+            <h2>My Blog</h2>
+            <ul>
+              {blogPosts.map((post, i) => (
+                <li key={i}>
+                  <Link href={`/blog/post/${post.slug}`}>
+                    <h3>{post.title}</h3>
+                    <p>{post.date}</p>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+          <section className={styles.projectContainer} id="projects">
+            <div className={styles.projectTitleContainer}>
+              <h2>My Projects</h2>
+            </div>
 
-          <div className={styles.projectListingsContainer}>
-            {projectsList.map((project) => (
-              <ProjectListing key={project.slug} project={project} />
-            ))}
-          </div>
-        </section>
+            <div className={styles.projectListingsContainer}>
+              {projectsList.map((project) => (
+                <ProjectListing key={project.slug} project={project} />
+              ))}
+            </div>
+          </section>
+        </main>
         <footer>
           <h2>Connect with Me</h2>
           <ul id="footerLinks" className={styles.footerLinks}>
@@ -144,11 +134,3 @@ export default function Homepage() {
     </div>
   );
 }
-
-// export const getStaticProps = async (context: GetStaticPropsContext) => {
-//   const fileNames = fs.readdirSync(postsDirectory);
-
-//   const
-
-//     const fileContents = fs.readFileSync(fullPath, "utf8");
-// }

@@ -9,20 +9,21 @@
   font-family: $font;
   .hero {
     position: relative;
-    min-height: 100dvh;
+    // min-height: 100dvh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     width: 90%;
     max-width: 1536px;
-    margin: 0 auto;
+    margin: 4rem auto;
     @media (min-width: 768px) {
       width: 75%;
+      margin: 8rem auto;
     }
     @media (max-height: 800px) {
       min-height: 75vh;
-      padding: 3rem 0;
+      margin: 3rem 0;
     }
     .cta {
       width: 100%;
@@ -58,11 +59,6 @@
         @media (min-width: 1536px) {
           font-size: 8rem;
           margin-right: 8rem;
-        }
-
-        .playful {
-          transition: all 0.4s cubic-bezier(0.15, 0.75, 0.45, 0.95) 0s;
-          animation: 10s ease 0s infinite alternate none running rainbow;
         }
       }
       .portraitContainer {
@@ -152,12 +148,12 @@
   .blogPreviewContainer {
     position: relative;
     width: 90%;
-    margin: -4rem auto 8rem;
+    margin: 4rem auto;
     max-width: 1536px;
     z-index: 10;
     @media (min-width: 768px) {
       width: 75%;
-      margin: -8rem auto 8rem;
+      margin: 8rem auto;
     }
 
     h2 {
@@ -319,24 +315,5 @@
         }
       }
     }
-  }
-}
-
-// Rainbow text
-@keyframes rainbow {
-  0% {
-    color: rgb(240, 77, 255);
-  }
-  25% {
-    color: rgb(255, 77, 77);
-  }
-  50% {
-    color: rgb(255, 197, 77);
-  }
-  75% {
-    color: rgb(106, 237, 118);
-  }
-  100% {
-    color: rgb(0, 153, 255);
   }
 }

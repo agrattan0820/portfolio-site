@@ -1,8 +1,19 @@
+import Image, { ImageProps } from "next/image";
 import type { MDXComponents } from "mdx/types";
+
+import commonStyles from "./styles/common.module.scss";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     ...components,
-    h1: ({ children }) => <h1 className="post-title">{children}</h1>,
+    a: ({ children, ...props }) => (
+      <a {...props} className={commonStyles.playfulHover}>
+        {children}
+      </a>
+    ),
+    Image: (props) => (
+      <Image {...(props as ImageProps)} alt={props.alt ?? ""} />
+    ),
+    img: (props) => <Image {...(props as ImageProps)} alt={props.alt ?? ""} />,
   };
 }

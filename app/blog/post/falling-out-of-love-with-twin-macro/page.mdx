@@ -1,0 +1,50 @@
+import TwinMacroCode from "../../../../images/twin-macro-code.png";
+
+export const metadata = {
+  title: "Falling Out of Love with Twin Macro",
+  author: "Alexander Grattan",
+};
+
+# Falling Out of Love with Twin Macro
+
+I love Tailwind, and I also love CSS-in-JS. [Twin Macro](https://github.com/ben-rogerson/twin.macro), an open-source library that combines the two, was a match made in heaven for my day-to-day work for a long time. However, the keyword in the last sentence is "was," let's look to see why that is.
+
+The growing reason I'm starting to appreciate Web Components and what motivates me to want to try them out is the fact that no extensive build-step is required, they just work.
+
+On the other end of the spectrum though, a tool such as Twin Macro requires the usage of Babel, an alteration to the Webpack config, and typescript declaration files to wrangle together a usable experience. Once you get it up and running it feels great to use, especially alongside its [fantasic VSCode extension](https://github.com/lightyen/vscode-Tailwind-twin).
+
+## Twin Macro is great (in theory)
+
+Many of the complaints developers have about vanilla Tailwind and its "ugly" HTML, are solved by Twin Macro's flexibility and various organization techniques.
+
+With Twin Macro, we can create a wrapper div like this with all of the benefits of the VSCode extension's syntax highlighting:
+
+<Image
+  src={TwinMacroCode}
+  alt="Code in VSCode of a Twin Macro styled div element"
+/>
+
+For components and design systems, we can easily create maps for various attributes such as button sizes:
+
+```ts
+export const buttonSizes = {
+  xs: tw`min-w-[77px] py-0.5 px-[18px] text-xs`,
+  sm: tw`min-w-[89px] py-1 px-5 text-sm`,
+  md: tw`min-w-[113px] py-2 px-8 text-sm`,
+  lg: tw`min-w-[163px] py-3.5 px-[50px] text-lg`,
+};
+```
+
+We can also do cool things within our defined class names that regular Tailwind cannot such as creating variant groups with parentheses:
+
+```tsx
+const interactionStyles = () => (
+  <div tw="hover:(text-black underline) focus:(text-blue-500 underline)" />
+);
+```
+
+However, as most frameworks such as Next.js move away from Babel and focus their efforts on removing client-side javascript (Twin Macro requires the usage of Next.js client components), it becomes harder and harder to upgrade or start a new project that uses Twin Macro since it is so tightly woven into the build process. Also, If a future Next.js version were to remove its backward compatibility with Babel, a project with Twin Macro would be unable to upgrade to that version.
+
+## It shall be missed
+
+Railway wrote [an amazing article](https://blog.railway.app/p/twin-macro-tailwind-migration) that I would highly suggest reading on why they've migrated their codebase from Twin Macro to vanilla Tailwind, including improvements to build times and cold starts. Though I'll miss some of the features and flexibility of Twin Macro, the reliability and support behind vanilla Tailwind is reason enough for me to also make the switch.
