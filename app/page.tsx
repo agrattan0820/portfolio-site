@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
 
 import styles from "../styles/home.module.scss";
@@ -115,17 +115,6 @@ export default function Homepage() {
               >
                 <FaLinkedin />
                 <span className={commonStyles.hiddenText}>LinkedIn</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://twitter.com/agrattan0820"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Follow Alexander on Twitter"
-              >
-                <FaTwitter />
-                <span className={commonStyles.hiddenText}>Twitter</span>
               </a>
             </li>
           </ul>
