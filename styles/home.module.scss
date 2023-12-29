@@ -108,6 +108,46 @@
         font-size: 1.4rem;
       }
     }
+
+    .scrollIndicatorContainer {
+      position: absolute;
+      top: 90%;
+      left: 50%;
+      transform: translate(-50%, -90%);
+      @media (min-width: 768px) {
+        top: 95%;
+        transform: translate(-50%, -95%);
+      }
+
+      .scrollIndicator {
+        color: $white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.875rem;
+        font-weight: bold;
+        font-family: $font;
+        text-decoration: none;
+        @media (min-width: 768px) {
+          font-size: 1rem;
+        }
+        &:hover svg {
+          transform: translateY(4px);
+        }
+        &:focus svg {
+          transform: translateY(4px);
+        }
+
+        span {
+          margin: 0.25rem 0;
+        }
+
+        svg {
+          transition: 300ms transform ease;
+        }
+      }
+    }
   }
   .blogPreviewContainer {
     position: relative;

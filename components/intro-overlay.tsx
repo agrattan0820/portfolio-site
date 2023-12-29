@@ -6,7 +6,7 @@ import { useState } from "react";
 
 import styles from "../styles/intro-overlay.module.scss";
 
-function IntroOverlay() {
+export default function IntroOverlay() {
   const [animationComplete, setAnimationComplete] = useState(false);
   const searchParams = useSearchParams();
   const back = searchParams?.get("back");
@@ -29,5 +29,3 @@ function IntroOverlay() {
     </div>
   );
 }
-
-export default IntroOverlay;

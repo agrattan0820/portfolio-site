@@ -8,7 +8,7 @@ type HeaderProps = {
   logoLink: string;
 };
 
-const Header = ({ logoLink }: HeaderProps) => {
+export default function Header({ logoLink }: HeaderProps) {
   return (
     <header>
       <nav className={styles.nav}>
@@ -17,9 +17,6 @@ const Header = ({ logoLink }: HeaderProps) => {
             AG
           </Link>
           <ul className={styles.navList}>
-            {/* <li>
-              <Link href="/blog">Blog</Link>
-            </li> */}
             <li>
               <a
                 href="https://drive.google.com/file/d/1PgvpHThs5XjTwGZgib9ZTVLa8QbhulWp/view?usp=sharing"
@@ -57,6 +54,4 @@ const Header = ({ logoLink }: HeaderProps) => {
       </nav>
     </header>
   );
-};
-
-export default Header;
+}

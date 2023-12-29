@@ -1,11 +1,12 @@
 import Image from "next/image";
 import {
+  FaChevronDown,
   FaGithub,
   FaLinkedin,
   FaTwitter,
   // FaChevronRight,
 } from "react-icons/fa";
-import Link from "next/link";
+// import Link from "next/link";
 
 import styles from "../styles/home.module.scss";
 import commonStyles from "../styles/common.module.scss";
@@ -16,19 +17,19 @@ import { projectsList } from "../utils/project-data";
 import ProjectListing from "../components/project-listing";
 import AlexanderGrattan from "../images/alexander-grattan.jpeg";
 
-const blogPosts: { title: string; slug: string; description: string }[] = [
-  {
-    title: "Hello World",
-    slug: "hello-world",
-    description: "An intro blog post by Alexander Grattan",
-  },
-  {
-    title:
-      "Woah this is a crazy long title, I wonder how your CSS is gonna handle this buddy boy???",
-    slug: "really-long",
-    description: "An intro blog post by Alexander Grattan",
-  },
-];
+// const blogPosts: { title: string; slug: string; description: string }[] = [
+//   {
+//     title: "Hello World",
+//     slug: "hello-world",
+//     description: "An intro blog post by Alexander Grattan",
+//   },
+//   {
+//     title:
+//       "Woah this is a crazy long title, I wonder how your CSS is gonna handle this buddy boy???",
+//     slug: "really-long",
+//     description: "An intro blog post by Alexander Grattan",
+//   },
+// ];
 
 export default function Homepage() {
   return (
@@ -54,8 +55,17 @@ export default function Homepage() {
           <p id="jobTitle" className={styles.jobTitle}>
             Alexander Grattan / Software Developer
           </p>
+          <div
+            id="scrollIndicatorContainer"
+            className={styles.scrollIndicatorContainer}
+          >
+            <a className={styles.scrollIndicator} href="#projects">
+              <span>Some Projects</span>
+              <FaChevronDown />
+            </a>
+          </div>
         </main>
-        <section
+        {/* <section
           id="blogPreviewContainer"
           className={styles.blogPreviewContainer}
         >
@@ -70,12 +80,7 @@ export default function Homepage() {
               </li>
             ))}
           </ul>
-          {/* <div className="view-all-container">
-            <Link href="/blog">
-              View All <FaChevronRight />
-            </Link>
-          </div> */}
-        </section>
+        </section> */}
         <section className={styles.projectContainer} id="projects">
           <div className={styles.projectTitleContainer}>
             <h2>My Projects</h2>

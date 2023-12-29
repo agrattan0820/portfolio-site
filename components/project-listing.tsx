@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { FaChevronRight } from "react-icons/fa";
 
 import styles from "../styles/project-listing.module.scss";
@@ -9,7 +8,7 @@ type ProjectListingProps = {
   project: ProjectType;
 };
 
-const ProjectListing = ({ project }: ProjectListingProps) => {
+export default function ProjectListing({ project }: ProjectListingProps) {
   const {
     slug,
     image,
@@ -25,28 +24,38 @@ const ProjectListing = ({ project }: ProjectListingProps) => {
   return (
     <div className={`project ${styles.projectListing}`} id={slug}>
       <div className={styles.projectItemContainer}>
-        <Link href={slug}>
+        <a
+          href={link ?? code}
+          title={link ? `Open site of ${name}` : `View Code for ${name}`}
+        >
           <picture>
             {mobileImage && (
               <source srcSet={mobileImage.src} media="(max-width:967px)" />
             )}
             <img src={image.src} alt={name} className={styles.projectImage} />
           </picture>
-        </Link>
+        </a>
         <div id="projectInfo" className={styles.projectInfo}>
-          <Link href={slug}>
+          <a
+            href={link ?? code}
+            title={link ? `Open site of ${name}` : `View Code for ${name}`}
+          >
             <h2>{name}</h2>
-          </Link>
+          </a>
           {description.split("\n").map((str, index) => (
             <p key={index}>{str}</p>
           ))}
           {longDescription && (
-            <Link href={slug} className={styles.projectReadMore}>
+            <a
+              href={link ?? code}
+              className={styles.projectReadMore}
+              title={link ? `Open site of ${name}` : `View Code for ${name}`}
+            >
               <span>Read More</span>{" "}
               <span>
                 <FaChevronRight />
               </span>
-            </Link>
+            </a>
           )}
           <h3>Tools used:</h3>
           <ul className={styles.toolsList}>
@@ -58,8 +67,6 @@ const ProjectListing = ({ project }: ProjectListingProps) => {
             {link && (
               <a
                 href={link}
-                target="_blank"
-                rel="noopener noreferrer"
                 title={`Open site of ${name}`}
                 className={styles.projectBtn}
               >
@@ -69,8 +76,6 @@ const ProjectListing = ({ project }: ProjectListingProps) => {
             {code && (
               <a
                 href={code}
-                target="_blank"
-                rel="noopener noreferrer"
                 title={`View Code for ${name}`}
                 className={styles.projectBtn}
               >
@@ -82,6 +87,4 @@ const ProjectListing = ({ project }: ProjectListingProps) => {
       </div>
     </div>
   );
-};
-
-export default ProjectListing;
+}
