@@ -1,0 +1,46 @@
+@import "./variables.module.scss";
+
+.postContainer {
+  color: $white;
+  font-family: $font;
+  min-height: 100dvh;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  .postMain {
+    width: 90%;
+    margin: 8rem auto 6rem auto;
+    @media (min-width: 768px) {
+      width: 75%;
+    }
+
+    .postTitle {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      @media (min-width: 1280px) {
+        font-size: 4rem;
+      }
+    }
+
+    .postDate {
+      margin-bottom: 5rem;
+    }
+
+    .textContent {
+      display: grid;
+      place-items: center;
+      p {
+        line-height: 40px;
+        font-size: 1rem;
+        margin: 1rem 0;
+        width: 100%;
+        max-width: 600px;
+        @media (min-width: 768px) {
+          font-size: 1.375rem;
+        }
+      }
+    }
+  }
+}

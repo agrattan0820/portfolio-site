@@ -1,19 +1,22 @@
 import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
+import styles from "../styles/header.module.scss";
+import commonStyles from "../styles/common.module.scss";
+
 type HeaderProps = {
   logoLink: string;
 };
 
-const Header = ({ logoLink }: HeaderProps) => {
+export default function Header({ logoLink }: HeaderProps) {
   return (
     <header>
-      <nav className="nav">
-        <div className="space-between">
-          <Link href={logoLink}>
-            <div className="logo">AG</div>
+      <nav className={styles.nav}>
+        <div className={styles.spaceBetween}>
+          <Link href={logoLink} className={styles.logo}>
+            AG
           </Link>
-          <ul className="nav-list">
+          <ul className={styles.navList}>
             <li>
               <a
                 href="https://drive.google.com/file/d/1PgvpHThs5XjTwGZgib9ZTVLa8QbhulWp/view?usp=sharing"
@@ -32,7 +35,7 @@ const Header = ({ logoLink }: HeaderProps) => {
                 title="Go to Alexander's GitHub"
               >
                 <FaGithub />
-                <span className="header-hidden-text">GitHub</span>
+                <span className={commonStyles.hiddenText}>GitHub</span>
               </a>
             </li>
             <li>
@@ -43,7 +46,7 @@ const Header = ({ logoLink }: HeaderProps) => {
                 title="Connect with Alexander on LinkedIn"
               >
                 <FaLinkedin />
-                <span className="header-hidden-text">LinkedIn</span>
+                <span className={commonStyles.hiddenText}>LinkedIn</span>
               </a>
             </li>
           </ul>
@@ -51,6 +54,4 @@ const Header = ({ logoLink }: HeaderProps) => {
       </nav>
     </header>
   );
-};
-
-export default Header;
+}

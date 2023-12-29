@@ -1,5 +1,6 @@
-import Link from "next/link";
 import { FaChevronRight } from "react-icons/fa";
+
+import styles from "../styles/project-listing.module.scss";
 
 import { ProjectType } from "../utils/project-data";
 
@@ -7,7 +8,7 @@ type ProjectListingProps = {
   project: ProjectType;
 };
 
-const ProjectListing = ({ project }: ProjectListingProps) => {
+export default function ProjectListing({ project }: ProjectListingProps) {
   const {
     slug,
     image,
@@ -21,45 +22,53 @@ const ProjectListing = ({ project }: ProjectListingProps) => {
   } = project;
 
   return (
-    <div className="project" id={slug}>
-      <div className="project-container">
-        <Link href={slug}>
+    <div className={`project ${styles.projectListing}`} id={slug}>
+      <div className={styles.projectItemContainer}>
+        <a
+          href={link ?? code}
+          title={link ? `Open site of ${name}` : `View Code for ${name}`}
+        >
           <picture>
             {mobileImage && (
               <source srcSet={mobileImage.src} media="(max-width:967px)" />
             )}
-            <img src={image.src} alt={name} className="project-image" />
+            <img src={image.src} alt={name} className={styles.projectImage} />
           </picture>
-        </Link>
-        <div className="project-info">
-          <Link href={slug}>
+        </a>
+        <div id="projectInfo" className={styles.projectInfo}>
+          <a
+            href={link ?? code}
+            title={link ? `Open site of ${name}` : `View Code for ${name}`}
+          >
             <h2>{name}</h2>
-          </Link>
+          </a>
           {description.split("\n").map((str, index) => (
             <p key={index}>{str}</p>
           ))}
           {longDescription && (
-            <Link href={slug} className="project-read-more">
+            <a
+              href={link ?? code}
+              className={styles.projectReadMore}
+              title={link ? `Open site of ${name}` : `View Code for ${name}`}
+            >
               <span>Read More</span>{" "}
-              <span className="read-more-arrow">
+              <span>
                 <FaChevronRight />
               </span>
-            </Link>
+            </a>
           )}
           <h3>Tools used:</h3>
-          <ul className="tools-list">
+          <ul className={styles.toolsList}>
             {tools.map((item, index) => (
               <li key={index}>{item}</li>
             ))}
           </ul>
-          <div className="project-btns">
+          <div className={styles.projectBtns}>
             {link && (
               <a
                 href={link}
-                target="_blank"
-                rel="noopener noreferrer"
                 title={`Open site of ${name}`}
-                className="project-btn"
+                className={styles.projectBtn}
               >
                 Open Site
               </a>
@@ -67,10 +76,8 @@ const ProjectListing = ({ project }: ProjectListingProps) => {
             {code && (
               <a
                 href={code}
-                target="_blank"
-                rel="noopener noreferrer"
                 title={`View Code for ${name}`}
-                className="project-btn"
+                className={styles.projectBtn}
               >
                 View Code
               </a>
@@ -80,6 +87,4 @@ const ProjectListing = ({ project }: ProjectListingProps) => {
       </div>
     </div>
   );
-};
-
-export default ProjectListing;
+}
