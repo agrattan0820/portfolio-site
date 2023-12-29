@@ -67,7 +67,7 @@ export const useBallAnimation = ({
                   opacity: 0,
                   ease: "power3.out",
                 })
-                .from("#scrollIndicatorContainer", {
+                .from("#blogPreviewContainer", {
                   duration: reduceMotion ? 0 : 0.5,
                   y: 100,
                   opacity: 0,
