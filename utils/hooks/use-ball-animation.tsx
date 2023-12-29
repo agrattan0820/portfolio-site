@@ -39,7 +39,7 @@ export const useBallAnimation = ({
                 .to("#ball", {
                   duration: reduceMotion ? 0 : 1,
                   delay: 0.15,
-                  scale: isDesktop ? 20 : 30,
+                  scale: isDesktop ? 25 : 30,
                   ease: "power3.out",
                   onComplete: onComplete,
                 })
@@ -83,7 +83,7 @@ export const useBallAnimation = ({
                   const tlProject = gsap.timeline({
                     scrollTrigger: {
                       trigger: project,
-                      start: "top center",
+                      start: "top bottom",
                       end: "center center",
                       scrub: 1,
                     },

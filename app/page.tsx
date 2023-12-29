@@ -81,9 +81,11 @@ export default function Homepage() {
             <h2>My Projects</h2>
           </div>
 
-          {projectsList.map((project) => (
-            <ProjectListing key={project.slug} project={project} />
-          ))}
+          <div className={styles.projectListingsContainer}>
+            {projectsList.map((project) => (
+              <ProjectListing key={project.slug} project={project} />
+            ))}
+          </div>
         </section>
         <footer>
           <h2>Connect with Me</h2>

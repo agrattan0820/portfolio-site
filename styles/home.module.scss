@@ -112,17 +112,23 @@
   .blogPreviewContainer {
     position: relative;
     width: 90%;
+    margin: -4rem auto 8rem;
     max-width: 1536px;
-    margin: -8rem auto 8rem;
     z-index: 10;
     @media (min-width: 768px) {
       width: 75%;
+      margin: -8rem auto 8rem;
     }
 
     h2 {
-      font-size: 3rem;
+      font-size: 1.5rem;
       font-weight: bold;
-      margin-bottom: 2.5rem;
+      margin-bottom: 1.5rem;
+
+      @media (min-width: 768px) {
+        font-size: 3rem;
+        margin-bottom: 2.5rem;
+      }
     }
 
     ul {
@@ -157,9 +163,21 @@
           }
 
           h3 {
-            font-size: 1.25rem;
+            font-size: 1rem;
             margin-bottom: 0.5rem;
             font-weight: bold;
+
+            @media (min-width: 768px) {
+              font-size: 1.25rem;
+            }
+          }
+
+          p {
+            font-size: 0.875rem;
+
+            @media (min-width: 768px) {
+              font-size: 1rem;
+            }
           }
         }
       }
@@ -187,9 +205,18 @@
     }
 
     h2 {
-      font-size: 3rem;
+      font-size: 1.5rem;
       font-weight: bold;
       margin-bottom: 2.5rem;
+
+      @media (min-width: 768px) {
+        font-size: 3rem;
+      }
+    }
+
+    .projectListingsContainer {
+      display: grid;
+      gap: 8rem;
     }
   }
 
