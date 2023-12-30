@@ -1,14 +1,11 @@
 @import "./variables.module.scss";
 
 .nav {
-  // position: absolute;
-  // top: 0;
-  // left: 50%;
-  // transform: translateX(-50%);
   display: flex;
   align-items: center;
   height: 10vh;
   width: 90%;
+  max-width: 1536px;
   margin: 0 auto;
   font-family: $font;
   color: $white;

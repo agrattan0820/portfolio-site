@@ -20,8 +20,6 @@ export default function Header({ logoLink }: HeaderProps) {
             <li>
               <a
                 href="https://drive.google.com/file/d/1PgvpHThs5XjTwGZgib9ZTVLa8QbhulWp/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
                 title="Download Alexander's Resume"
               >
                 Resume
@@ -30,8 +28,6 @@ export default function Header({ logoLink }: HeaderProps) {
             <li>
               <a
                 href="https://github.com/agrattan0820"
-                target="_blank"
-                rel="noopener noreferrer"
                 title="Go to Alexander's GitHub"
               >
                 <FaGithub />
@@ -41,8 +37,6 @@ export default function Header({ logoLink }: HeaderProps) {
             <li>
               <a
                 href="https://www.linkedin.com/in/alexander-grattan/"
-                target="_blank"
-                rel="noopener noreferrer"
                 title="Connect with Alexander on LinkedIn"
               >
                 <FaLinkedin />

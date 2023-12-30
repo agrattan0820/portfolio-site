@@ -29,7 +29,8 @@ export default function Homepage() {
           <section className={styles.hero}>
             <div className={styles.cta}>
               <h1 id="title" className={styles.title}>
-                I create<span className={commonStyles.playful}> playful </span>{" "}
+                I create
+                <span className={commonStyles.playful}> playful </span>{" "}
                 experiences.
               </h1>
               <div id="portraitContainer" className={styles.portraitContainer}>
@@ -44,16 +45,22 @@ export default function Homepage() {
             <p id="jobTitle" className={styles.jobTitle}>
               Alexander Grattan / Software Developer
             </p>
-            {/* <div
-            id="scrollIndicatorContainer"
-            className={styles.scrollIndicatorContainer}
-          >
-            <a className={styles.scrollIndicator} href="#projects">
-              <span>Some Projects</span>
-              <FaChevronDown />
-            </a>
-          </div> */}
           </section>
+          {/* <section
+            id="blogPreviewContainer"
+            className={styles.blogPreviewContainer}
+          >
+            <h2>About Me</h2>
+            <p>
+              Hi there! My name is Alexander Grattan and I&apos;m a software
+              developer at Actual Size, a branding and digital design agency,
+              and a University of Pittsburgh graduate. <br />
+              <br /> My current skills primarily focus around web development,
+              but I also enjoy experimenting with app development, creative
+              coding, data visualization, Human-Computer Interaction (HCI), and
+              UX.
+            </p>
+          </section> */}
           <section
             id="blogPreviewContainer"
             className={styles.blogPreviewContainer}
