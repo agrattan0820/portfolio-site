@@ -9,21 +9,19 @@
   font-family: $font;
   .hero {
     position: relative;
-    // min-height: 100dvh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     width: 90%;
     max-width: 1536px;
-    margin: 4rem auto;
+    margin: 3rem auto;
     @media (min-width: 768px) {
       width: 75%;
       margin: 8rem auto;
     }
     @media (max-height: 800px) {
-      min-height: 75vh;
-      margin: 3rem 0;
+      margin: 3rem auto;
     }
     .cta {
       width: 100%;
@@ -63,7 +61,7 @@
       }
       .portraitContainer {
         width: 100%;
-        max-width: 300px;
+        max-width: 200px;
         @media (min-width: 640px) {
           max-width: 200px;
         }
