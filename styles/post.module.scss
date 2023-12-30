@@ -4,8 +4,6 @@
   color: $white;
   font-family: $font;
   min-height: 100dvh;
-  width: 100%;
-  margin: 0 auto;
   .postMain {
     width: 90%;
     margin: 4rem auto 8rem;
@@ -14,7 +12,10 @@
     }
 
     .textContent {
-      display: grid;
+      display: flex;
+      justify-content: start;
+      align-items: start;
+      flex-direction: column;
       gap: 0.5rem;
 
       h1 {
