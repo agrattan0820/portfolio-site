@@ -66,21 +66,18 @@
         }
       }
 
-      figure {
+      pre {
+        max-width: 65ch;
         overflow-x: auto;
         width: 100%;
-        pre {
-          max-width: 65ch;
-          width: 100%;
-          border-radius: 8px;
-          padding: 1rem;
-          code {
-            font-family: monospace;
-            font-size: 0.75rem;
-            line-height: 1.25;
-            @media (min-width: 768px) {
-              font-size: 0.875rem;
-            }
+        border-radius: 8px;
+        padding: 1rem;
+        code {
+          font-family: monospace;
+          font-size: 0.75rem;
+          line-height: 1.25;
+          @media (min-width: 768px) {
+            font-size: 0.875rem;
           }
         }
       }
