@@ -17,6 +17,7 @@
       align-items: start;
       flex-direction: column;
       gap: 0.5rem;
+      overflow-x: clip;
 
       h1 {
         font-size: 2rem;
@@ -67,9 +68,12 @@
 
       pre {
         max-width: 65ch;
+        overflow-x: auto;
+        width: 100%;
         border-radius: 8px;
         padding: 1rem;
         code {
+          overflow-x: auto;
           font-family: monospace;
           font-size: 0.875rem;
           line-height: 1.25;
