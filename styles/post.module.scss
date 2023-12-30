@@ -73,6 +73,7 @@
         border-radius: 8px;
         padding: 1rem;
         code {
+          overflow-x: auto;
           font-family: monospace;
           font-size: 0.75rem;
           line-height: 1.25;
