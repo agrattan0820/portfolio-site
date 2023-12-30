@@ -15,7 +15,6 @@ export default function IntroOverlay() {
     enabled: back !== "true",
     onComplete: () => {
       setAnimationComplete(true);
-      document.body.style.overflowY = "auto";
     },
   });
 

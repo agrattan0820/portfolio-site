@@ -2,6 +2,7 @@ import "../styles/global.scss";
 import { Analytics } from "@vercel/analytics/react";
 import { Metadata } from "next";
 import { Raleway } from "next/font/google";
+import SmoothScroll from "../components/smooth-scroll";
 
 export const metadata: Metadata = {
   title: "Alexander Grattan",
@@ -22,7 +23,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={raleway.variable}>{children}</body>
+      <body className={raleway.variable}>
+        <SmoothScroll>{children}</SmoothScroll>
+      </body>
       <Analytics />
     </html>
   );
