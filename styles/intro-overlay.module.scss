@@ -1,4 +1,6 @@
-.intro-overlay {
+@import "./variables.module.scss";
+
+.introOverlay {
   background: $white;
   position: fixed;
   min-height: 100dvh;

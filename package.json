@@ -9,24 +9,26 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@gsap/react": "^2.0.2",
+    "@mdx-js/loader": "^3.0.0",
+    "@mdx-js/react": "^3.0.0",
+    "@next/mdx": "^14.0.4",
+    "@studio-freight/react-lenis": "^0.0.39",
     "@vercel/analytics": "^1.1.1",
     "eslint": "^8.56.0",
     "eslint-config-next": "^14.0.4",
     "framer-motion": "^10.16.16",
-    "gray-matter": "^4.0.3",
     "gsap": "^3.12.4",
     "next": "^14.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.12.0",
-    "rehype-sanitize": "^6.0.0",
-    "rehype-stringify": "^10.0.0",
-    "remark-parse": "^11.0.0",
-    "remark-rehype": "^11.0.0",
+    "rehype-pretty-code": "^0.12.3",
     "sass": "^1.69.5",
-    "unified": "^11.0.4"
+    "shikiji": "^0.9.0"
   },
   "devDependencies": {
+    "@types/mdx": "^2.0.10",
     "@types/node": "^20.10.5",
     "@types/react": "^18.2.45",
     "@typescript-eslint/eslint-plugin": "^6.16.0",

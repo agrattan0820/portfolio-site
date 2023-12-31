@@ -1,0 +1,19 @@
+@import "./reset";
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #121212;
+}
+
+* {
+  &::selection {
+    color: black;
+    background-color: white;
+  }
+}
