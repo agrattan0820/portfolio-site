@@ -13,6 +13,11 @@ import AlexanderGrattan from "../images/alexander-grattan.jpeg";
 
 const blogPosts: { title: string; slug: string; date: string }[] = [
   {
+    title: "Why I Don't Want to Work Remotely While I'm Young",
+    slug: "no-remote-while-young",
+    date: "December 31, 2023",
+  },
+  {
     title: "Falling Out of Love with Twin Macro",
     slug: "falling-out-of-love-with-twin-macro",
     date: "December 29, 2023",
