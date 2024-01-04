@@ -20,7 +20,7 @@ const blogPosts: { title: string; slug: string; date: string }[] = [
   {
     title: "Falling Out of Love with Twin Macro",
     slug: "falling-out-of-love-with-twin-macro",
-    date: "December 29, 2023",
+    date: "January 3, 2024",
   },
 ];
 
