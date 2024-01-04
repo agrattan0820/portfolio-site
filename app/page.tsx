@@ -13,7 +13,7 @@ import AlexanderGrattan from "../images/alexander-grattan.jpeg";
 
 const blogPosts: { title: string; slug: string; date: string }[] = [
   {
-    title: "Why I Don't Want to Work Remotely While I'm Young",
+    title: "Why I Don't Want to Work Remotely as a Young Person",
     slug: "no-remote-while-young",
     date: "December 31, 2023",
   },
