@@ -15,12 +15,12 @@ const blogPosts: { title: string; slug: string; date: string }[] = [
   {
     title: "Why I Don't Want to Work Remotely as a Young Person",
     slug: "no-remote-while-young",
-    date: "December 31, 2023",
+    date: " January 3, 2024",
   },
   {
     title: "Falling Out of Love with Twin Macro",
     slug: "falling-out-of-love-with-twin-macro",
-    date: "January 3, 2024",
+    date: "December 29, 2023",
   },
 ];
 
