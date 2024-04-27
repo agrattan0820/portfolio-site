@@ -10,8 +10,14 @@ import IntroOverlay from "../components/intro-overlay";
 import { projectsList } from "../utils/project-data";
 import ProjectListing from "../components/project-listing";
 import AlexanderGrattan from "../images/alexander-grattan.jpeg";
+import { Suspense } from "react";
 
 const blogPosts: { title: string; slug: string; date: string }[] = [
+  {
+    title: "Please Do an Accessibility Audit of Your Site",
+    slug: "please-do-accessibility-audit",
+    date: " April 27, 2024",
+  },
   {
     title: "Why I Don't Want to Work Remotely Early in My Career",
     slug: "no-remote-early-in-my-career",
@@ -27,7 +33,9 @@ const blogPosts: { title: string; slug: string; date: string }[] = [
 export default function Homepage() {
   return (
     <div className={styles.homeContainer}>
-      <IntroOverlay />
+      <Suspense>
+        <IntroOverlay />
+      </Suspense>
       <div id="afterAnimation">
         <Header logoLink="/" />
         <main>
