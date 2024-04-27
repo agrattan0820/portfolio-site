@@ -1,0 +1,70 @@
+import DunningKruger from "../../../../images/dunning-kruger-accessibility.png";
+import WAVEEvaluationTool from "../../../../images/WAVE-evaluation-tool.png";
+
+export const metadata = {
+  title: "Please Do an Accessibility Audit of Your Website",
+  author: "Alexander Grattan",
+};
+
+# Please Do an Accessibility Audit of Your Website
+
+For one of my current projects, the client hired an outside team of associates dedicated to accessibility to come in and review one of their web applications. They found _a lot_ of issues (270 to be exact).
+
+Seeing this and working through these tasks made me realize the breadth and depth of the world of web accessbility. I was having fun freewheeling in the height of my accessibility Dunning Kruger phase, blind to the pit in which I would fall head-first into.
+
+<figure>
+  <Image
+    src={DunningKruger}
+    alt="A line graph of the Dunning-Kruger effect in regards to web accessibility. Alexander's Confidence is the title of the y axis and Alexander's Competence is the title of the x axis. There is an arrow pointing to a trough within the graph with text attached to it that reads 'Here I am' along with a smiley face, representing Alexander's lack confidence regarding accessibility following his discoveries into how deep the topic goes."
+  />
+  <figcaption>
+    Writing this article from the trough of accessibility disillusionment.
+  </figcaption>
+</figure>
+
+If you're like me and experiencing the existential crisis looking at the WCAG and available aria-\* options on HTML elements, don't be afraid. I'll walk through three actions you can take to prevent the simplest of accessibiltity errors.
+
+## 1. Check Your Images For Correct Alt Text
+
+This goes without saying, but ensuring your site's images have correct alt text should be of utmost importance because of their need by screen readers. However, this can sometimes be challenging when the website's content is controlled by an external party unfamiliar with accessibility standards and screen readers (_cough cough_ CMS's _cough cough_). As developers, the onus is on us to teach and guide others outside of our field to understand the requirement of alt text on the web. If we don't do it, no one else will.
+
+Actually crafting alt text is an intricate process that depends heavily on the image's content. A good start is to simply imagine how you would attempt to describe the image in words to a friend doing something in another room who is asking about what you're looking at. To learn more about the workflow you should take, refer to [World Wide Web Consortium's (W3C) alt decision tree](https://www.w3.org/WAI/tutorials/images/decision-tree/) and [Harvard University's post on describing images for screen readers](https://accessibility.huit.harvard.edu/describe-content-images).
+
+## 2. Run Your Operating System's Screen Reader
+
+Speaking of screen readers, it helps to run one yourself! Why not take the guesswork out of the equation and see exactly how a user who might use a screen reader would interact with your website. Do all of your links read out properly? Is the site's content encountered in a logical order? Do your focus styles for interactive elements appear properly and are accessible by the screen reader? All of these questions and more can be answered by simply turning on your operating system's screen reader.
+
+Below is a list that matches your operating system to the screen reader you will want to use as well as some articles associated with getting started:
+
+- MacOS - [VoiceOver](https://support.apple.com/guide/voiceover/welcome/mac)
+  - [Getting Started Testing with VoiceOver from Harvard](https://accessibility.huit.harvard.edu/voiceover)
+  - [The University of Melbourne's Guide to Testing Web Pages with VoiceOver](https://www.unimelb.edu.au/accessibility/tools/testing-web-pages-with-voiceover)
+- Windows - [Narrator](https://support.microsoft.com/en-us/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1)
+  - [Windows Narrator For Use in Accessibility Testing from Accessibility.com](https://www.accessibility.com/blog/windows-narrator-for-use-in-accessibility-testing)
+- Linux - [Orca](https://help.gnome.org/users/orca/stable)
+  - [Getting Started with Orca from The A11y Project](https://www.a11yproject.com/posts/getting-started-with-orca)
+
+## 3. Use the WAVE Browser Extension
+
+After going through your site with a screen reader, an easy way to find any other lingering accessibility errors is to install and run the [WAVE Evaluation Tool browser extension](https://wave.webaim.org) by the team at [WebAIM](https://webaim.org). This extension returns helpful results such as where your site has color contrast issues, if your site has proper links, and if it includes correct HTML semantics. There exists an extension for the Chrome, Firefox, and Edge web browsers (sorry Safari).
+
+<figure>
+  <Image
+    src={WAVEEvaluationTool}
+    alt="The WAVE Evaluation tool browser extension running on the article you are currently reading as it was being WritableStreamDefaultController. Woah!"
+  />
+  <figcaption>
+    Me running the browser extension on the article you're currently reading,
+    woah!
+  </figcaption>
+</figure>
+
+## My Favorite Resources
+
+Interested in checking out other sites and delving more into the topic of accessibility? Check out these awesome organizations and people:
+
+- [The A11y Project](https://www.a11yproject.com)
+- [Adrian Roselli](https://adrianroselli.com)
+- [Sarah L. Fossheim](https://fossheim.io)
+- [Sara Soueidan](https://www.sarasoueidan.com)
+- ["What are accessibility overlays?" by Heydon Pickering](https://youtu.be/uNM8FR3yzWg?si=onhOxBwdXnWrgJus)

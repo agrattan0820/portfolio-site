@@ -14,8 +14,8 @@ import { Suspense } from "react";
 
 const blogPosts: { title: string; slug: string; date: string }[] = [
   {
-    title: "Please Do an Accessibility Audit of Your Site",
-    slug: "please-do-accessibility-audit",
+    title: "Please Do an Accessibility Audit of Your Website",
+    slug: "please-do-an-accessibility-audit",
     date: " April 27, 2024",
   },
   {
@@ -41,11 +41,12 @@ export default function Homepage() {
         <main>
           <section className={styles.hero}>
             <div className={styles.cta}>
-              <h1 id="title" className={styles.title}>
+              <h1 className={commonStyles.hiddenText}>Alexander Grattan</h1>
+              <h2 id="title" className={styles.title}>
                 I create
                 <span className={commonStyles.playful}> playful </span>{" "}
                 experiences.
-              </h1>
+              </h2>
               <div id="portraitContainer" className={styles.portraitContainer}>
                 <Image
                   src={AlexanderGrattan}
