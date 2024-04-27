@@ -1,16 +1,17 @@
-import Image from "next/image";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
+import Image from "next/image";
+import { Suspense } from "react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 import styles from "../styles/home.module.scss";
 import commonStyles from "../styles/common.module.scss";
+import introOverlayStyles from "../styles/intro-overlay.module.scss";
 
 import Header from "../components/header";
 import IntroOverlay from "../components/intro-overlay";
 import { projectsList } from "../utils/project-data";
 import ProjectListing from "../components/project-listing";
 import AlexanderGrattan from "../images/alexander-grattan.jpeg";
-import { Suspense } from "react";
 
 const blogPosts: { title: string; slug: string; date: string }[] = [
   {
@@ -33,7 +34,9 @@ const blogPosts: { title: string; slug: string; date: string }[] = [
 export default function Homepage() {
   return (
     <div className={styles.homeContainer}>
-      <Suspense>
+      <Suspense
+        fallback={<div className={introOverlayStyles.introOverlay}></div>}
+      >
         <IntroOverlay />
       </Suspense>
       <div id="afterAnimation">
