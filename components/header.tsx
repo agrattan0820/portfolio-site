@@ -13,8 +13,11 @@ export default function Header({ logoLink }: HeaderProps) {
     <header>
       <nav className={styles.nav}>
         <div className={styles.spaceBetween}>
-          <Link href={logoLink} className={styles.logo}>
-            AG
+          <Link href={logoLink} className={styles.logo} rel="home">
+            <span aria-hidden="true">AG</span>
+            <span className={commonStyles.hiddenText}>
+              Alexander Grattan - Homepage
+            </span>
           </Link>
           <ul className={styles.navList}>
             <li>
