@@ -71,11 +71,6 @@
         @media (min-width: 1536px) {
           max-width: 400px;
         }
-        &:hover .portrait {
-          box-shadow: 0px 0px white;
-          clip-path: circle(50%);
-          filter: none;
-        }
         .portrait {
           position: relative;
           width: 100%;
@@ -89,6 +84,16 @@
           transition-timing-function: ease;
           transition-property: box-shadow, clip-path, filter;
         }
+
+        @media (prefers-reduced-motion: no-preference) {
+          &:hover .portrait {
+            box-shadow: 0px 0px white;
+            clip-path: circle(50%);
+            filter: none;
+            animation: bounceImage 600ms cubic-bezier(0.33, 1, 0.68, 1) infinite
+              alternate;
+          }
+        }
       }
     }
 
@@ -101,46 +106,6 @@
       }
       @media (min-width: 1536px) {
         font-size: 1.4rem;
-      }
-    }
-
-    .scrollIndicatorContainer {
-      position: absolute;
-      top: 90%;
-      left: 50%;
-      transform: translate(-50%, -90%);
-      @media (min-width: 768px) {
-        top: 95%;
-        transform: translate(-50%, -95%);
-      }
-
-      .scrollIndicator {
-        color: $white;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        font-size: 0.875rem;
-        font-weight: bold;
-        font-family: $font;
-        text-decoration: none;
-        @media (min-width: 768px) {
-          font-size: 1rem;
-        }
-        &:hover svg {
-          transform: translateY(4px);
-        }
-        &:focus svg {
-          transform: translateY(4px);
-        }
-
-        span {
-          margin: 0.25rem 0;
-        }
-
-        svg {
-          transition: 300ms transform ease;
-        }
       }
     }
   }
@@ -188,12 +153,14 @@
           transition-duration: 0.3s;
           transition-timing-function: ease;
 
-          &:hover {
+          &:hover,
+          &:focus {
             background-color: white;
             color: $black;
           }
 
-          &:hover h3 {
+          &:hover h3,
+          &:focus h3 {
             text-decoration: underline;
           }
 
@@ -325,5 +292,15 @@
         }
       }
     }
+  }
+}
+
+@keyframes bounceImage {
+  from {
+    transform: translateY(0px) rotateX(20deg);
+  }
+
+  to {
+    transform: translateY(-50px) rotateX(0deg);
   }
 }

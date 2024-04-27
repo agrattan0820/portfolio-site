@@ -38,7 +38,7 @@ export const useBallAnimation = ({
               })
                 .to("#ball", {
                   duration: reduceMotion ? 0 : 1,
-                  delay: 0.15,
+                  delay: 0.2,
                   scale: isDesktop ? 25 : 30,
                   ease: "power3.out",
                   onComplete: onComplete,
