@@ -1,3 +1,5 @@
+import { getImageProps } from "next/image";
+
 import styles from "../styles/project-listing.module.scss";
 import commonStyles from "../styles/common.module.scss";
 
@@ -11,6 +13,13 @@ export default function ProjectListing({ project }: ProjectListingProps) {
   const { slug, image, mobileImage, name, description, link, code, tools } =
     project;
 
+  const {
+    props: { srcSet: mobileSrc },
+  } = getImageProps({ alt: name, src: mobileImage ?? "" });
+  const {
+    props: { src: imageSrc, ...rest },
+  } = getImageProps({ alt: name, src: image });
+
   return (
     <div className={`project ${styles.projectListing}`} id={slug}>
       <div className={styles.projectItemContainer}>
@@ -19,10 +28,10 @@ export default function ProjectListing({ project }: ProjectListingProps) {
           title={link ? `Open site of ${name}` : `View Code for ${name}`}
         >
           <picture>
-            {mobileImage && (
-              <source srcSet={mobileImage.src} media="(max-width:967px)" />
+            {mobileSrc && (
+              <source srcSet={mobileSrc} media="(max-width:967px)" />
             )}
-            <img src={image.src} alt={name} className={styles.projectImage} />
+            <img {...rest} src={imageSrc} className={styles.projectImage} />
           </picture>
         </a>
         <div id="projectInfo" className={styles.projectInfo}>
