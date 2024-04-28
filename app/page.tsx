@@ -11,7 +11,7 @@ import Header from "../components/header";
 import IntroOverlay from "../components/intro-overlay";
 import { projectsList } from "../utils/project-data";
 import ProjectListing from "../components/project-listing";
-import AlexanderGrattan from "../images/alexander-grattan.jpeg";
+import AlexanderGrattan from "../images/alexander-grattan.jpg";
 
 const blogPosts: { title: string; slug: string; date: string }[] = [
   {
