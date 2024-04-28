@@ -82,15 +82,17 @@
         line-height: 1.625;
       }
 
+      code {
+        font-family: monospace;
+        font-size: 0.75rem;
+        line-height: 1.25;
+        @media (min-width: 768px) {
+          font-size: 0.875rem;
+        }
+      }
+
       pre {
         code {
-          font-family: monospace;
-          font-size: 0.75rem;
-          line-height: 1.25;
-          @media (min-width: 768px) {
-            font-size: 0.875rem;
-          }
-
           span {
             font-size: 0.75rem;
             @media (min-width: 768px) {

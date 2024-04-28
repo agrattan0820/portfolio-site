@@ -15,7 +15,7 @@ Seeing this and working through these tasks made me realize the breadth and dept
 <figure>
   <Image
     src={DunningKruger}
-    alt="A line graph of the Dunning-Kruger effect in regards to web accessibility. Alexander's Confidence is the title of the y axis and Alexander's Competence is the title of the x axis. There is an arrow pointing to a trough within the graph with text attached to it that reads 'Here I am' along with a smiley face, representing Alexander's lack confidence regarding accessibility following his discoveries into how deep the topic goes."
+    alt="A line graph of the Dunning-Kruger effect in regards to web accessibility. Alexander's Confidence is the title of the y axis and Alexander's Competence is the title of the x axis. There is an arrow pointing to a trough within the graph with text attached to it that reads 'Here I am,' representing Alexander's lack confidence regarding accessibility following his discoveries into how deep the topic goes."
   />
   <figcaption>
     Writing this article from the trough of accessibility disillusionment.
@@ -26,9 +26,11 @@ If you're like me and experiencing the existential crisis looking at the WCAG an
 
 ## 1. Check Your Images For Correct Alt Text
 
-This goes without saying, but ensuring your site's images have correct alt text should be of utmost importance because of their need by screen readers. However, this can sometimes be challenging when the website's content is controlled by an external party unfamiliar with accessibility standards and screen readers (_cough cough_ content management system admins _cough cough_). As developers, the onus is on us to teach and guide others outside of our field to understand the requirement of alt text on the web. If we don't do it, no one else will.
+This goes without saying, but ensuring your site's images have correct alt text should be of utmost importance. Without alt text for an image, screen readers fail to describe the image's properties to your users, there is no fallback for when your image fails to load, and search engines can't properly index your site and its content.
 
-Actually crafting alt text is an intricate process that depends heavily on the image's content. A good start is to simply imagine how you would attempt to describe the image in words to a friend doing something in another room who is asking about what you're looking at. To learn more about the workflow you should take, refer to [World Wide Web Consortium's (W3C) alt decision tree](https://www.w3.org/WAI/tutorials/images/decision-tree/) and [Harvard University's post on describing images for screen readers](https://accessibility.huit.harvard.edu/describe-content-images).
+Adding alt text is as simple as adding an extra string attribute to your `img` elements, but this can sometimes be challenging when the website's content is controlled by an external party unfamiliar with accessibility standards and screen readers. As developers, the onus is on us to teach and guide others outside of our field to understand the requirement of alt text on the web. If we don't do it, no one else will.
+
+Crafting alt text is a surprisingly intricate process that depends heavily on the image's content. A good start is to simply imagine a friend in another room asking, "Hey, whatcha looking at?" and how you would attempt to describe the image in words to them. To learn more about the workflow you should take, refer to [World Wide Web Consortium's (W3C) alt decision tree](https://www.w3.org/WAI/tutorials/images/decision-tree/) and [Harvard University's post on describing images for screen readers](https://accessibility.huit.harvard.edu/describe-content-images).
 
 ## 2. Run Your Operating System's Screen Reader
 
