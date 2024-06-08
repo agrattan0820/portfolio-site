@@ -15,6 +15,11 @@ import AlexanderGrattan from "../images/alexander-grattan.jpg";
 
 const blogPosts: { title: string; slug: string; date: string }[] = [
   {
+    title: "I Just Read User Friendly by Cliff Kuang and Robert Fabricant",
+    slug: "just-read-user-friendly",
+    date: " June 8, 2024",
+  },
+  {
     title: "Please Do an Accessibility Audit of Your Website",
     slug: "please-do-an-accessibility-audit",
     date: " April 27, 2024",
