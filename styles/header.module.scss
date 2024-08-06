@@ -34,6 +34,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 1rem;
     li {
       display: flex;
       justify-content: center;
@@ -50,25 +51,24 @@
       }
 
       a {
-        display: inline-block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
         font-family: $font;
         color: $white;
         text-decoration: none;
         font-weight: 700;
         font-size: 0.875rem;
-        transition: 150ms transform ease;
-        will-change: transform;
+        text-underline-offset: 0.25rem;
         @media (min-width: 768px) {
           font-size: 1rem;
         }
         &:hover {
-          transform: scale(1.1);
+          text-decoration: underline;
         }
         &:focus {
-          transform: scale(1.1);
-        }
-        &:active {
-          transform: scale(0.9);
+          text-decoration: underline;
         }
 
         svg {

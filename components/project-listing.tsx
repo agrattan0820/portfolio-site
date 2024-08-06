@@ -10,7 +10,7 @@ type ProjectListingProps = {
 };
 
 export default function ProjectListing({ project }: ProjectListingProps) {
-  const { slug, image, mobileImage, name, description, link, code, tools } =
+  const { slug, image, mobileImage, name, description, link, code, type } =
     project;
 
   const {
@@ -44,12 +44,7 @@ export default function ProjectListing({ project }: ProjectListingProps) {
           {description.split("\n").map((str, index) => (
             <p key={index}>{str}</p>
           ))}
-          <h3>Tools used:</h3>
-          <ul className={styles.toolsList}>
-            {tools.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
+          <p>{type}</p>
           <div className={styles.projectBtns}>
             {link && (
               <a
