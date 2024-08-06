@@ -68,21 +68,18 @@ export default function Homepage() {
               Alexander Grattan / Software Developer
             </p>
           </section>
-          {/* <section
-            id="blogPreviewContainer"
-            className={styles.blogPreviewContainer}
-          >
+          <section id="aboutContainer" className={styles.aboutContainer}>
             <h2>About Me</h2>
             <p>
               Hi there! My name is Alexander Grattan and I&apos;m a software
-              developer at Actual Size, a branding and digital design agency,
-              and a University of Pittsburgh graduate. <br />
-              <br /> My current skills primarily focus around web development,
-              but I also enjoy experimenting with app development, creative
-              coding, data visualization, Human-Computer Interaction (HCI), and
-              UX.
+              developer at Actual Size, a branding and digital design agency
+              located in Pittsburgh, PA. <br />
+              <br /> My current software development skills primarily focus
+              around web development, but I also enjoy experimenting with app
+              development, creative coding, data visualization, Human-Computer
+              Interaction (HCI), and UX.
             </p>
-          </section> */}
+          </section>
           <section
             id="blogPreviewContainer"
             className={styles.blogPreviewContainer}
@@ -116,23 +113,13 @@ export default function Homepage() {
           <ul id="footerLinks" className={styles.footerLinks}>
             <li>
               <a
-                href="https://drive.google.com/file/d/1PgvpHThs5XjTwGZgib9ZTVLa8QbhulWp/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Download Alexander's Resume"
-              >
-                Resume
-              </a>
-            </li>
-            <li>
-              <a
                 href="https://github.com/agrattan0820"
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Go to Alexander's GitHub"
               >
+                GitHub
                 <FaGithub />
-                <span className={commonStyles.hiddenText}>GitHub</span>
               </a>
             </li>
             <li>
@@ -142,8 +129,8 @@ export default function Homepage() {
                 rel="noopener noreferrer"
                 title="Connect with Alexander on LinkedIn"
               >
+                LinkedIn
                 <FaLinkedin />
-                <span className={commonStyles.hiddenText}>LinkedIn</span>
               </a>
             </li>
           </ul>

@@ -63,7 +63,7 @@
         }
       }
       p {
-        margin: 1rem 0 0.5rem 0;
+        margin-top: 1rem;
         line-height: 20px;
         font-size: 0.875rem;
         font-weight: 300;
@@ -74,6 +74,12 @@
         @media (max-height: 800px) {
           font-size: 0.875rem;
           line-height: 20px;
+        }
+
+        &:last-of-type {
+          margin-bottom: 1.5rem;
+          text-decoration: underline;
+          text-underline-offset: 0.25rem;
         }
       }
       .projectReadMore {

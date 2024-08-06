@@ -1,6 +1,12 @@
 import { StaticImageData } from "next/image";
 
 import ArtificialUnintelligence from "../images/Artificial_Unintelligence.png";
+import Alcohol101Plus from "../images/alcohol101plus-og.jpg";
+import ResponsibilityWorks from "../images/rw-og.png";
+import HaydenAI from "../images/hayden-ai-og.png";
+import SafeDrive from "../images/safe-opengraph.jpg";
+import VesperAI from "../images/vesper-og.png";
+import VirtualBar from "../images/virtual-bar.png";
 import FoodPhantoms from "../images/Food_Phantoms.png";
 import BigBurgh from "../images/big-burgh.png";
 import SecretPittsburgh from "../images/secret_pittsburgh.png";
@@ -30,10 +36,10 @@ export type ProjectType = {
   mobileImage?: StaticImageData;
   figma?: StaticImageData;
   old?: StaticImageData;
-  code: string;
+  code?: string;
   link?: string;
   slug: string;
-  tools: string[];
+  type: string;
 };
 
 export const projectsList: ProjectType[] = [
@@ -45,7 +51,61 @@ export const projectsList: ProjectType[] = [
     link: "https://www.artificialunintelligence.gg",
     code: "https://github.com/agrattan0820/artificial-unintelligence",
     slug: "artificial-unintelligence",
-    tools: ["React/Next.js", "TypeScript", "Express.js", "Socket.io"],
+    type: "Personal Project",
+  },
+  {
+    name: "Alcohol101+",
+    description:
+      "An innovative, interactive program which helps students make safe and responsible decisions about alcohol.",
+    image: Alcohol101Plus,
+    link: "https://www.alcohol101.plus",
+    slug: "alcohol101-plus",
+    type: "with Actual Size for Responsibility.org",
+  },
+  {
+    name: "Hayden AI Marketing Website",
+    description:
+      "Hayden AI creates cutting-edge AI for smarter cities and this website highlights its various platforms and technologies.",
+    image: HaydenAI,
+    link: "https://www.hayden.ai",
+    slug: "hayden-ai",
+    type: "with Actual Size for Hayden AI",
+  },
+  {
+    name: "Responsibility Works",
+    description:
+      "An online alcohol responsibility course that assists employers and employees in training and maintaining safe and responsible workplaces.",
+    image: ResponsibilityWorks,
+    link: "https://responsibilityworks.com",
+    slug: "responsibility-works",
+    type: "with Actual Size for Responsibility.org",
+  },
+  {
+    name: "SAFE Marketing Website",
+    description:
+      "SAFE drives change by educating on the importance of ignition interlocks, a technology that encourages a responsible life after DUI.",
+    image: SafeDrive,
+    link: "https://www.safedrive.org",
+    slug: "safe-drive",
+    type: "with Actual Size for SAFE",
+  },
+  {
+    name: "Virtual Bar App",
+    description:
+      "A iOS, Android, and web app that allows users to gain a better understanding of how different factors affect their blood-alcohol concentration – or BAC.",
+    image: VirtualBar,
+    link: "https://apps.apple.com/us/app/virtual-bar/id1055457361",
+    slug: "virtual-bar",
+    type: "with Actual Size for Responsibility.org",
+  },
+  {
+    name: "Vesper AI Marketing Website",
+    description:
+      "Vesper AI, a subsiduary of Hayden AI, turns crowdsourced data into operational intelligence that saves lives, at Actual Size I created this website to tell this story.",
+    image: VesperAI,
+    link: "https://www.vespersolutions.ai",
+    slug: "vesper-ai",
+    type: "with Actual Size for Hayden AI",
   },
   {
     name: "Food Phantoms",
@@ -55,7 +115,7 @@ export const projectsList: ProjectType[] = [
     link: "https://food-phantoms.deno.dev/",
     code: "https://github.com/agrattan0820/food-phantoms-frontend",
     slug: "food-phantoms",
-    tools: ["Preact/Fresh", "TypeScript", "Deno", "Golang"],
+    type: "Personal Project",
   },
   {
     name: "Big Burgh Redesign",
@@ -64,7 +124,7 @@ export const projectsList: ProjectType[] = [
     image: BigBurgh,
     code: "https://github.com/agrattan0820/big-burgh",
     slug: "big-burgh",
-    tools: ["React Native/Expo", "TypeScript", "Styled Components"],
+    type: "Personal Project",
   },
   {
     name: "Secret Pittsburgh",
@@ -75,7 +135,7 @@ export const projectsList: ProjectType[] = [
     link: "https://secretpittsburgh.org/",
     code: "https://github.com/agrattan0820/secret-pittsburgh",
     slug: "secret-pittsburgh",
-    tools: ["React/Gatsby", "Tailwind CSS"],
+    type: "Personal Project",
   },
   {
     name: "Pitt CSC",
@@ -90,7 +150,7 @@ export const projectsList: ProjectType[] = [
     link: "https://pittcsc.org/",
     slug: "pitt-csc",
     code: "https://github.com/pittcsc/pittcsc-website",
-    tools: ["React/Gatsby", "Tailwind CSS", "Notion API", "Framer Motion"],
+    type: "Personal Project",
   },
   {
     name: "Grademyaid",
@@ -104,7 +164,7 @@ export const projectsList: ProjectType[] = [
     link: "https://grademyaid.netlify.app/",
     slug: "grademyaid",
     code: "https://github.com/agrattan0820/grade-my-aid",
-    tools: ["React", "Framer Motion", "Scss"],
+    type: "Personal Project",
   },
   {
     name: "Grosseries",
@@ -113,7 +173,7 @@ export const projectsList: ProjectType[] = [
     image: Grosseries,
     code: "https://github.com/agrattan0820/cs1635-flutter-project",
     slug: "grosseries",
-    tools: ["Flutter"],
+    type: "Personal Project",
   },
   {
     name: "Pollock Is Sh!t",
@@ -124,7 +184,7 @@ export const projectsList: ProjectType[] = [
     link: "https://pollockisshit.netlify.app/",
     code: "https://github.com/agrattan0820/Pollock-is-Poop",
     slug: "pollock-is-sh!t",
-    tools: ["React/Next.js", "Tailwind CSS", "p5.js"],
+    type: "Personal Project",
   },
   {
     name: "Belly Button Chrome Extension",
@@ -135,20 +195,7 @@ export const projectsList: ProjectType[] = [
     link: "http://getbellybutton.com/",
     code: "https://github.com/agrattan0820/belly-button",
     slug: "belly-button",
-    tools: ["HTML", "CSS", "JavaScript", "Chrome API"],
-  },
-  {
-    name: "Allegory of the Cave",
-    description:
-      "An experiment where I created an audiovisual experience with an interactive 3D sun. Created for the University of Pittsburgh's ENGCMP 1130 class.",
-    longDescription:
-      "One of my assignments for the University of Pittsburgh class, Projects in Digital Composition (ENGCMP 1130), was to create a piece of content that characterizes or responds to Plato's Allegory of the Cave.\nThree.js is a JavaScript library I had experimented with in the past but I had failed to make anything significant with it. For this project I wanted to push myself to understand using 3D on the web and how it can create engaging experiences.",
-    image: AllegoryOfTheCave,
-    mobileImage: AllegoryOfTheCaveMobile,
-    link: "https://allegory-of-the-cave.netlify.app/",
-    code: "https://github.com/agrattan0820/allegory-of-the-cave",
-    slug: "allegory-cave",
-    tools: ["HTML", "CSS", "JavaScript", "Three.js"],
+    type: "Personal Project",
   },
   {
     name: "Virtual Safari",
@@ -159,6 +206,6 @@ export const projectsList: ProjectType[] = [
     link: "https://virtualsafari.netlify.app/",
     slug: "virtual-safari",
     code: "https://github.com/agrattan0820/Virtual-Safari",
-    tools: ["HTML", "CSS", "JavaScript"],
+    type: "Personal Project",
   },
 ];

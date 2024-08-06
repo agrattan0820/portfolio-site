@@ -13,7 +13,7 @@ export const useBallAnimation = ({
 }: UseBallAnimationProps) => {
   useGSAP(() => {
     const mm = gsap.matchMedia();
-    const breakPoint = 967;
+    const breakPoint = 768;
 
     mm.add(
       {
@@ -62,6 +62,12 @@ export const useBallAnimation = ({
                   ease: "power3.out",
                 })
                 .from("#jobTitle", {
+                  duration: reduceMotion ? 0 : 0.5,
+                  y: 100,
+                  opacity: 0,
+                  ease: "power3.out",
+                })
+                .from("#aboutContainer", {
                   duration: reduceMotion ? 0 : 0.5,
                   y: 100,
                   opacity: 0,
