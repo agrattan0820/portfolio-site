@@ -1,5 +1,5 @@
 import "../styles/global.scss";
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/next";
 import { Metadata } from "next";
 import { Raleway } from "next/font/google";
 import SmoothScroll from "../components/smooth-scroll";

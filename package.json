@@ -23,16 +23,14 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.4.0",
-    "rehype-pretty-code": "^0.14.0",
     "sass": "^1.83.0",
     "sharp": "^0.33.5"
   },
   "devDependencies": {
+    "@shikijs/rehype": "^1.25.1",
     "@types/mdx": "^2.0.13",
     "@types/node": "^22.10.4",
     "@types/react": "^19.0.2",
-    "@typescript-eslint/eslint-plugin": "^8.19.0",
-    "@typescript-eslint/parser": "^8.19.0",
     "shiki": "^1.25.1",
     "typescript": "^5.7.2"
   }

@@ -72,7 +72,7 @@ export default function Homepage() {
             <h2>About Me</h2>
             <p>
               Hi there! My name is Alexander Grattan and I&apos;m a software
-              developer at Gray Swan AI, a AI safety and security company
+              developer at Gray Swan AI, an AI safety and security company
               located in Pittsburgh, PA. <br />
               <br /> My current software development skills primarily focus
               around web development, but I also enjoy experimenting with app

@@ -1,9 +1,12 @@
 import createMDX from "@next/mdx";
-import rehypePrettyCode from "rehype-pretty-code";
+import rehypeShiki from "@shikijs/rehype";
 
 /** @type {import('rehype-pretty-code').Options} */
 const options = {
-  theme: "one-dark-pro",
+  themes: {
+    light: "one-dark-pro",
+    dark: "one-dark-pro",
+  },
 };
 
 /** @type {import('next').NextConfig} */
@@ -18,7 +21,7 @@ const nextConfig = {
 const withMDX = createMDX({
   options: {
     remarkPlugins: [],
-    rehypePlugins: [[rehypePrettyCode, options]],
+    rehypePlugins: [[rehypeShiki, options]],
   },
 });
 
