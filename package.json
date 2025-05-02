@@ -24,7 +24,7 @@
     "react-dom": "^19.0.0",
     "react-icons": "^5.4.0",
     "sass": "^1.83.0",
-    "sharp": "^0.33.5"
+    "sharp": "^0.34.1"
   },
   "devDependencies": {
     "@shikijs/rehype": "^1.25.1",
