@@ -31,7 +31,12 @@ export default function ProjectListing({ project }: ProjectListingProps) {
             {mobileSrc && (
               <source srcSet={mobileSrc} media="(max-width:967px)" />
             )}
-            <img {...rest} src={imageSrc} className={styles.projectImage} />
+            <img
+              {...rest}
+              src={imageSrc}
+              className={styles.projectImage}
+              alt={name}
+            />
           </picture>
         </a>
         <div id="projectInfo" className={styles.projectInfo}>

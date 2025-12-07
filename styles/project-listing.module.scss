@@ -156,7 +156,8 @@
         object-position: center;
         border-radius: 20px;
         transition: box-shadow 0.3s ease;
-        box-shadow: 0 2.8px 2.2px rgba(211, 211, 211, 0.02),
+        box-shadow:
+          0 2.8px 2.2px rgba(211, 211, 211, 0.02),
           0 6.7px 5.3px rgba(211, 211, 211, 0.028),
           0 12.5px 10px rgba(211, 211, 211, 0.035),
           0 22.3px 17.9px rgba(211, 211, 211, 0.042),
@@ -164,7 +165,9 @@
           0 100px 80px rgba(211, 211, 211, 0.07);
         &:hover,
         &:focus {
-          box-shadow: 0 0 0 4px $black, 0 0 0 8px white,
+          box-shadow:
+            0 0 0 4px $black,
+            0 0 0 8px white,
             0 2.8px 2.2px rgba(256, 256, 256, 0.02),
             0 6.7px 5.3px rgba(256, 256, 256, 0.028),
             0 12.5px 10px rgba(256, 256, 256, 0.035),
