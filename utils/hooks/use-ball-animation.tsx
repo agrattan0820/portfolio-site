@@ -157,7 +157,7 @@ export const useBallAnimation = ({
 
           homeAnimation();
         }
-      }
+      },
     );
 
     return () => mm.revert();
