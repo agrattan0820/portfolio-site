@@ -94,15 +94,6 @@ export const projectsList: ProjectType[] = [
     type: "with Actual Size for Responsibility.org",
   },
   {
-    name: "Vesper AI Marketing Website",
-    description:
-      "Vesper AI, a subsiduary of Hayden AI, turns crowdsourced data into operational intelligence that saves lives, at Actual Size I created this website to tell this story.",
-    image: VesperAI,
-    link: "https://www.vespersolutions.ai",
-    slug: "vesper-ai",
-    type: "with Actual Size for Hayden AI",
-  },
-  {
     name: "Big Burgh Unofficial Redesign",
     description:
       "An unofficial new design and construction of the Big Burgh app used to help Pittsburgh natives find resources such as food and shelter.",
@@ -132,7 +123,7 @@ export const projectsList: ProjectType[] = [
     mobileImage: PittCSCMobile,
     figma: PittCSCFigma,
     old: PittCSCOld,
-    link: "https://pittcsc.org/",
+    link: "https://pittcsc.org",
     slug: "pitt-csc",
     code: "https://github.com/pittcsc/pittcsc-website",
     type: "Personal Project",
