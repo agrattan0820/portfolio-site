@@ -7,12 +7,9 @@ import HaydenAI from "../images/hayden-ai-og.png";
 import SafeDrive from "../images/safe-opengraph.jpg";
 import VesperAI from "../images/vesper-og.png";
 import VirtualBar from "../images/virtual-bar.png";
-import FoodPhantoms from "../images/Food_Phantoms.png";
 import BigBurgh from "../images/big-burgh.png";
 import SecretPittsburgh from "../images/secret_pittsburgh.png";
 import SecretPittsburghMobile from "../images/secret_pittsburgh_small.png";
-import PollockIsShit from "../images/Pollock_Is_Shit_Screenshot.png";
-import PollockIsShitMobile from "../images/Pollock_is_Shit_OG.png";
 import PittCSC from "../images/Pitt_CSC_Screenshot.png";
 import PittCSCMobile from "../images/Pitt_CSC_Screenshot_Small.png";
 import PittCSCFigma from "../images/Pitt_CSC_Figma_Screenshot.png";
@@ -23,8 +20,6 @@ import GradeMyAidFigma from "../images/Grademyaid_Figma_Screenshot.png";
 import Grosseries from "../images/grosseries.png";
 import BellyButton from "../images/Belly_Button_Design.jpg";
 import BellyButtonMobile from "../images/Belly_Button_Design_Small.jpg";
-import AllegoryOfTheCave from "../images/Allegory_Cave_Screenshot.jpg";
-import AllegoryOfTheCaveMobile from "../images/Allegory_Cave_Screenshot_Small.jpg";
 import VirtualSafari from "../images/Virtual_Safari_Screenshot.png";
 import VirtualSafariMobile from "../images/Virtual_Safari_Screenshot_Small.png";
 
@@ -108,19 +103,9 @@ export const projectsList: ProjectType[] = [
     type: "with Actual Size for Hayden AI",
   },
   {
-    name: "Food Phantoms",
+    name: "Big Burgh Unofficial Redesign",
     description:
-      "Web app to find if a restaurant on Doordash or Uber Eats is a ghost kitchen or a virtual kitchen where the food served originates from an unexpected establishment.",
-    image: FoodPhantoms,
-    link: "https://food-phantoms.deno.dev/",
-    code: "https://github.com/agrattan0820/food-phantoms-frontend",
-    slug: "food-phantoms",
-    type: "Personal Project",
-  },
-  {
-    name: "Big Burgh Redesign",
-    description:
-      "A new design and construction of the Big Burgh app (not an official redesign) used to help Pittsburgh natives find resources such as food and shelter.",
+      "An unofficial new design and construction of the Big Burgh app used to help Pittsburgh natives find resources such as food and shelter.",
     image: BigBurgh,
     code: "https://github.com/agrattan0820/big-burgh",
     slug: "big-burgh",
@@ -132,7 +117,7 @@ export const projectsList: ProjectType[] = [
       "Website for the Secret Pittsburgh class at the University of Pittsburgh (ENGLIT 1412) dedicated to uncovering hidden spaces and unusual places in the city of Pittsburgh.",
     image: SecretPittsburgh,
     mobileImage: SecretPittsburghMobile,
-    link: "https://secretpittsburgh.org/",
+    link: "https://secretpittsburgh.org",
     code: "https://github.com/agrattan0820/secret-pittsburgh",
     slug: "secret-pittsburgh",
     type: "Personal Project",
@@ -161,29 +146,9 @@ export const projectsList: ProjectType[] = [
     longDescription:
       "This was built for Pitt CSC Hacks, a competition sponsored by the University of Pittsburgh's Computer Science Club and was my first time participating in a coding competition. Going into the experience I was quite nervous.\nI stuck to my guns and went with an idea that I had the past summer which was a website that helps students analyze their financial aid package based on information about the school, similar to how Niche.com grades colleges and universities.\nI ended up finding a partner who didn't know much about web development, but was willing to work with me in developing this idea.\nThis was my first foray into handling large amounts of data and trying to contextualize it for a user. If I were to fix one thing about the site, it would be effectively distinguishing the grades between each other so that a user's result is crystal clear.",
     figma: GradeMyAidFigma,
-    link: "https://grademyaid.netlify.app/",
+    link: "https://grademyaid.netlify.app",
     slug: "grademyaid",
     code: "https://github.com/agrattan0820/grade-my-aid",
-    type: "Personal Project",
-  },
-  {
-    name: "Grosseries",
-    description:
-      "A mobile app that helps individuals to track expiration dates and the inventory of their food, a group project for the University of Pittsburgh's CS1635 created with the app development framework, Flutter.",
-    image: Grosseries,
-    code: "https://github.com/agrattan0820/cs1635-flutter-project",
-    slug: "grosseries",
-    type: "Personal Project",
-  },
-  {
-    name: "Pollock Is Sh!t",
-    description:
-      "Web app that manipulates image data to create a Pollock-like painting (because literally anyone could've been Pollock).",
-    image: PollockIsShit,
-    mobileImage: PollockIsShitMobile,
-    link: "https://pollockisshit.netlify.app/",
-    code: "https://github.com/agrattan0820/Pollock-is-Poop",
-    slug: "pollock-is-sh!t",
     type: "Personal Project",
   },
   {
@@ -192,7 +157,7 @@ export const projectsList: ProjectType[] = [
       "Browser extension that helps developers and accessibility engineers inspect a website's buttons and determine if they follow HTML standards and Web Content Accessibility Guidelines (WCAG).",
     image: BellyButton,
     mobileImage: BellyButtonMobile,
-    link: "http://getbellybutton.com/",
+    link: "http://getbellybutton.com",
     code: "https://github.com/agrattan0820/belly-button",
     slug: "belly-button",
     type: "Personal Project",
@@ -203,7 +168,7 @@ export const projectsList: ProjectType[] = [
       "A recreation of Timon and Pumbaa's Virtual Safari, a choose-your-own adventure from The Lion King DVD.\nI edited the choices into individual clips using the video editor, DaVinci Resolve, and used JavaScript to develop the site interaction.",
     image: VirtualSafari,
     mobileImage: VirtualSafariMobile,
-    link: "https://virtualsafari.netlify.app/",
+    link: "https://virtualsafari.netlify.app",
     slug: "virtual-safari",
     code: "https://github.com/agrattan0820/Virtual-Safari",
     type: "Personal Project",
