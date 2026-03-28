@@ -16,7 +16,7 @@
     "@mdx-js/react": "^3.1.1",
     "@next/mdx": "^16.2.1",
     "@vercel/analytics": "^1.6.1",
-    "eslint": "^9.39.4",
+    "eslint": "^10.0.0",
     "eslint-config-next": "^16.2.1",
     "framer-motion": "^12.38.0",
     "gsap": "^3.14.2",
